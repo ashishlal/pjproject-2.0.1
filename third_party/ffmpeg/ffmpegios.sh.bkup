@@ -1,0 +1,53 @@
+ARCH=""
+PLATFORM="iPhoneOS.platform"
+CPU=""
+CPU_TYPE="i386"
+case $1 in
+-armv6)
+    ARCH="armv6"
+    PLATFORM="iPhoneOS.platform"
+    CPU="arm1176jzf-s"
+    CPU_TYPE="arm"
+    ;;
+-armv7)
+    ARCH="armv7"
+    PLATFORM="iPhoneOS.platform"
+    CPU="cortex-a8"
+    CPU_TYPE="arm"
+    ;;
+-i386)
+    ARCH="i386"
+    PLATFORM="iPhoneSimulator.platform"
+    CPU="i386"
+    ;;
+*)
+    echo "That option is not recognized"
+    exit
+    ;;
+esac
+echo Configure for $ARCH build
+./configure \
+--cc=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc \
+--as='gas-preprocessor.pl /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc' \
+--nm="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/nm" \
+--sysroot=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk \
+--target-os=darwin \
+--arch=arm \
+--cpu=cortex-a8 \
+--enable-pic \
+--extra-cflags='-arch armv7 -miphoneos-version-min=4.3' \
+--extra-ldflags='-arch armv7 -miphoneos-version-min=4.3 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk' \
+--prefix=compiled/armv7 \
+--enable-cross-compile \
+--enable-nonfree \
+--enable-gpl \
+--disable-bzlib \
+--disable-armv5te \
+--disable-swscale-alpha \
+--disable-doc \
+--disable-ffmpeg \
+--disable-ffplay \
+--disable-ffprobe \
+--disable-ffserver \
+--disable-asm \
+--disable-debug
