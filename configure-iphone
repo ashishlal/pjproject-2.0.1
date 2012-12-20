@@ -23,48 +23,57 @@ if test "$*" = "--help" -o "$*" = "-h"; then
   exit 0
 fi
 
+export DEVPATH=/Developer/Platforms/iPhoneOS.platform/Developer
+export CC=/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc
+export IPHONESDK=iPhoneOS5.1.sdk
 PJSIP_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 BUILD_FFMPEG=0
 BUILD_SDL=0
 ARCH=armv7
 FFMPEG_DIR=$PJSIP_DIR/third_party/ffmpeg
 SDL_DIR=$PJSIP_DIR/third_party/sdl
-export FFMPEG_INCLUDE_DIR=${PJSIP_DIR}/third_party/ffmpeg/compiled/${ARCH}/include
-export SDL_INCLUDE_DIR=${PJSIP_DIR}/third_party/sdl/build/${ARCH}/include
-export FFMPEG_LIB_DIR=${PJSIP_DIR}/third_party/ffmpeg/compiled/${ARCH}/lib
-export SDL_LIB_DIR=${PJSIP_DIR}/third_party/sdl/build/${ARCH}/build/.libs
-
-echo "FFMPEG_INCLUDE_DIR = $FFMPEG_INCLUDE_DIR"
 
 for i in $*
 do
 case $i in
-    --arch)
-        ARCH=`echo $i | sed 's/[-a-zA-Z0-9]*=//'`
+    --armv6)
+        ARCH=armv6
+        export IPHONESDK=iPhoneOS5.1.sdk
+        ;;  
+    --armv7)
+        ARCH=armv7
         ;;  
     --build-ffmpeg)
         BUILD_FFMPEG=1
+        echo "BUILD_FFMPEG....=$BUILD_FFMPEG"
         ;;  
     --build-sdl)
         BUILD_SDL=1
         ;;  
     --default)
+        echo "ARCH-default = $ARCH"
         ;;
 esac
 done
+export FFMPEG_INCLUDE_DIR=${PJSIP_DIR}/third_party/ffmpeg/compiled/${ARCH}/include
+export SDL_INCLUDE_DIR=${PJSIP_DIR}/third_party/sdl/build/${ARCH}/include
+export FFMPEG_LIB_DIR=${PJSIP_DIR}/third_party/ffmpeg/compiled/${ARCH}/lib
+export SDL_LIB_DIR=${PJSIP_DIR}/third_party/sdl/build/${ARCH}/build/.libs
 echo "PJSIP_DIR=$PJSIP_DIR, ARCH=$ARCH, BUILD_FFMPEG=$BUILD_FFMPEG, BUILD_SDL=$BUILD_SDL"
+echo "FFMPEG_INCLUDE_DIR = $FFMPEG_INCLUDE_DIR"
 
 if (( $BUILD_FFMPEG == 1 ))
 then
     cd $FFMPEG_DIR
+    echo "Building FFMPEG for $ARCH"
     make clean
-    ./ffmpegios.sh -$ARCH && make && make install
+    ./ffmpegios.sh $ARCH $DEVPATH $CC $IPHONESDK && make && make install
 fi
 
 if (( $BUILD_SDL == 1 ))
 then
     cd $SDL_DIR/build-scripts
-    ./iosbuild.sh configure-$ARCH && ./iosbuild.sh make-$ARCH 
+    ./iosbuild.sh $DEVPATH $IPHONESDK configure-$ARCH && ./iosbuild.sh $DEVPATH $IPHONESDK make-$ARCH 
 fi
 
 cd $PJSIP_DIR
@@ -157,14 +166,14 @@ fi
 
 # Other settings to feed to configure script. 
 #ARCH="-arch armv6"
-ARCH="-arch armv7"
-export CFLAGS="${CFLAGS} -DPJ_SDK_NAME=\"\\\"`basename $SDKPATH`\\\"\" ${ARCH} -isysroot ${SDKPATH} -I ${FFMPEG_INCLUDE_DIR} -I ${SDL_INCLUDE_DIR} -I/usr/local/include"
-export LDFLAGS="${LDFLAGS} ${ARCH} -isysroot ${SDKPATH} -framework AudioToolbox -framework Foundation -L ${SDL_LIB_DIR} -L ${FFMPEG_LIB_DIR} -lSDL2 -lavformat -lavcodec -lswscale -lavutil -lavdevice -lavfilter -framework OpenGLES -lz"
+MYARCH="-arch $ARCH"
+export CFLAGS="${CFLAGS} -DPJ_SDK_NAME=\"\\\"`basename $SDKPATH`\\\"\" ${MYARCH} -isysroot ${SDKPATH} -I ${FFMPEG_INCLUDE_DIR} -I ${SDL_INCLUDE_DIR} -I/usr/local/include"
+export LDFLAGS="${LDFLAGS} ${MYARCH} -isysroot ${SDKPATH} -framework AudioToolbox -framework Foundation -L ${SDL_LIB_DIR} -L ${FFMPEG_LIB_DIR} -lSDL2 -lavformat -lavcodec -lswscale -lavutil -lavdevice -lavfilter -framework OpenGLES -lz"
 export AR="${DEVPATH}/usr/bin/libtool -static -o"
 export RANLIB="echo ranlib"
 # Use gcc -E as preprocessor instead of cpp, since cpp will find the
 # header files in standard /usr/include instead of in isysroot
-export CPP="${CC} ${ARCH} -E -isysroot ${SDKPATH}"
+export CPP="${CC} ${MYARCH} -E -isysroot ${SDKPATH}"
 
 # Print settings
 if test "1" = "1"; then

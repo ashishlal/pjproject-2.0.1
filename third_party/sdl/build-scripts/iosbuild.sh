@@ -3,49 +3,17 @@
 # Build a fat binary for iOS
 # Based on fatbuild.sh and code from the Ignifuga Game Engine
 
-# Number of CPUs (for make -j)
+#ARCH=$1
+DEV_PATH=$1
+SDK_PATH=$DEV_PATH/SDKs/$2
+
 NCPU=`sysctl -n hw.ncpu`
 if test x$NJOB = x; then
     NJOB=$NCPU
 fi
 
-# SDK path
-XCODE_PATH=`xcode-select --print-path`
-if [ -z "$XCODE_PATH" ]; then
-    echo "Could not find XCode location (use xcode-select -switch to set the correct path)"
-    exit 1
-fi
-
 prepare_environment() {
     ARCH=$1
-    
-    if test x$SDK_VERSION = x; then
-      export SDK_VERSION=`xcodebuild -showsdks | grep iphoneos | sed "s|.*iphoneos||"`
-      if [ -z "$XCODE_PATH" ]; then
-          echo "Could not find a valid iOS SDK"
-          exit 1
-      fi  
-    fi
-    
-    case $ARCH in
-        armv6)
-            DEV_PATH="$XCODE_PATH/Platforms/iPhoneOS.platform/Developer"
-            SDK_PATH="$DEV_PATH/SDKs/iPhoneOS$SDK_VERSION.sdk"
-            ;;
-        armv7)
-            DEV_PATH="$XCODE_PATH/Platforms/iPhoneOS.platform/Developer"
-            SDK_PATH="$DEV_PATH/SDKs/iPhoneOS$SDK_VERSION.sdk"
-            ;;
-        i386)
-            DEV_PATH="$XCODE_PATH/Platforms/iPhoneSimulator.platform/Developer"
-            SDK_PATH="$DEV_PATH/SDKs/iPhoneSimulator$SDK_VERSION.sdk"
-            ;;
-        *)
-            echo "Unknown Architecture $ARCH"
-            exit 1
-            ;;
-    esac
-
     if [ ! -d "$SDK_PATH" ]; then
         echo "Could not find iOS SDK at $SDK_PATH"
         exit 1
@@ -115,10 +83,10 @@ cd $srcdir
 # configure, configure-armv6, configure-armv7, configure-i386
 # make, make-armv6, make-armv7, make-i386, merge
 # clean
-if test x"$1" = x; then
+if test x"$3" = x; then
     phase=all
 else
-    phase="$1"
+    phase="$3"
 fi
 case $phase in
     all)

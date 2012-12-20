@@ -1,7 +1,7 @@
-export CC = /Applications/XCode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc -c
-export CXX = /Applications/XCode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-g++ -c
-export AR = /Applications/XCode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/libtool -static -o
-export LD = /Applications/XCode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc
+export CC = /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc -c
+export CXX = /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/g++ -c
+export AR = /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/libtool -static -o
+export LD = /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc
 export LDOUT = -o 
 export RANLIB = echo ranlib
 
