@@ -32,6 +32,7 @@ BUILD_SDL=0
 ARCH=armv7
 FFMPEG_DIR=$PJSIP_DIR/third_party/ffmpeg
 SDL_DIR=$PJSIP_DIR/third_party/sdl
+x264_DIR=$PJSIP_DIR/third_party/x264
 
 for i in $*
 do
@@ -59,6 +60,7 @@ export FFMPEG_INCLUDE_DIR=${PJSIP_DIR}/third_party/ffmpeg/compiled/${ARCH}/inclu
 export SDL_INCLUDE_DIR=${PJSIP_DIR}/third_party/sdl/build/${ARCH}/include
 export FFMPEG_LIB_DIR=${PJSIP_DIR}/third_party/ffmpeg/compiled/${ARCH}/lib
 export SDL_LIB_DIR=${PJSIP_DIR}/third_party/sdl/build/${ARCH}/build/.libs
+export x264_LIB_DIR=${PJSIP_DIR}/third_party/x264/x264-${ARCH}/lib
 echo "PJSIP_DIR=$PJSIP_DIR, ARCH=$ARCH, BUILD_FFMPEG=$BUILD_FFMPEG, BUILD_SDL=$BUILD_SDL"
 echo "FFMPEG_INCLUDE_DIR = $FFMPEG_INCLUDE_DIR"
 
@@ -168,7 +170,7 @@ fi
 #ARCH="-arch armv6"
 MYARCH="-arch $ARCH"
 export CFLAGS="${CFLAGS} -DPJ_SDK_NAME=\"\\\"`basename $SDKPATH`\\\"\" ${MYARCH} -isysroot ${SDKPATH} -I ${FFMPEG_INCLUDE_DIR} -I ${SDL_INCLUDE_DIR} -I/usr/local/include"
-export LDFLAGS="${LDFLAGS} ${MYARCH} -isysroot ${SDKPATH} -framework AudioToolbox -framework Foundation -L ${SDL_LIB_DIR} -L ${FFMPEG_LIB_DIR} -lSDL2 -lavformat -lavcodec -lswscale -lavutil -lavdevice -lavfilter -framework OpenGLES -lz"
+export LDFLAGS="${LDFLAGS} ${MYARCH} -isysroot ${SDKPATH} -framework AudioToolbox -framework Foundation -L ${SDL_LIB_DIR} -L ${FFMPEG_LIB_DIR} -L ${x264_LIB_DIR} -lx264 -lSDL2 -lavformat -lavcodec -lswscale -lavutil -lavdevice -lavfilter -framework OpenGLES -lz"
 export AR="${DEVPATH}/usr/bin/libtool -static -o"
 export RANLIB="echo ranlib"
 # Use gcc -E as preprocessor instead of cpp, since cpp will find the

@@ -8,5 +8,5 @@ Description: FFmpeg video filtering library
 Version: 2.53.0
 Requires: 
 Conflicts:
-Libs: ${libdir}/libavfilter.a -lm -lz 
+Libs: ${libdir}/libavfilter.a -lx264 -lm -lz 
 Cflags: -I${includedir}

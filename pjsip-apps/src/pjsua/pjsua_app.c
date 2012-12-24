@@ -28,6 +28,9 @@
 //#define TRANSPORT_ADAPTER_SAMPLE
 //#define HAVE_MULTIPART_TEST
 
+/* +++lal */
+#define PJSUA_HAS_VIDEO 1
+
 /* Ringtones		    US	       UK  */
 #define RINGBACK_FREQ1	    440	    /* 400 */
 #define RINGBACK_FREQ2	    480	    /* 450 */
@@ -4715,21 +4718,29 @@ void console_app_main(const pj_str_t *uri_to_call)
 
 	    } else if (menuin[1] == 'a') {
 
-		char id[80], registrar[80], realm[80], uname[80], passwd[30];
+		//char id[80], registrar[80], realm[80], uname[80], passwd[30];
 		pjsua_acc_config acc_cfg;
 		pj_status_t status;
-
-		if (!simple_input("Your SIP URL:", id, sizeof(id)))
-		    break;
-		if (!simple_input("URL of the registrar:", registrar, sizeof(registrar)))
-		    break;
-		if (!simple_input("Auth Realm:", realm, sizeof(realm)))
-		    break;
-		if (!simple_input("Auth Username:", uname, sizeof(uname)))
-		    break;
-		if (!simple_input("Auth Password:", passwd, sizeof(passwd)))
-		    break;
-
+//
+//		if (!simple_input("Your SIP URL:", id, sizeof(id)))
+//		    break;
+//		if (!simple_input("URL of the registrar:", registrar, sizeof(registrar)))
+//		    break;
+//		if (!simple_input("Auth Realm:", realm, sizeof(realm)))
+//		    break;
+//		if (!simple_input("Auth Username:", uname, sizeof(uname)))
+//		    break;
+//		if (!simple_input("Auth Password:", passwd, sizeof(passwd)))
+//		    break;
+            
+            
+            char* id = "sip:ashishlalwork1@sip2sip.info";
+            char* registrar = "sip:sip2sip.info;transport=udp";
+            char* realm = "sip2sip.info";
+            char* uname = "ashishlalwork1";
+            char* passwd = "68alidrlhw";
+//this will not work since it needs a nameserver
+            
 		pjsua_acc_config_default(&acc_cfg);
 		acc_cfg.id = pj_str(id);
 		acc_cfg.reg_uri = pj_str(registrar);
@@ -4739,7 +4750,13 @@ void console_app_main(const pj_str_t *uri_to_call)
 		acc_cfg.cred_info[0].username = pj_str(uname);
 		acc_cfg.cred_info[0].data_type = 0;
 		acc_cfg.cred_info[0].data = pj_str(passwd);
-
+       // cfg->cfg.nameserver[cfg->cfg.nameserver_count++] = pj_str(pj_optarg);
+        
+            if (1) {
+                acc_cfg.proxy_cnt = 1;
+                acc_cfg.proxy[0] = pj_str("sip:85.17.186.7:5060;transport=tcp");
+            }
+            
 		acc_cfg.rtp_cfg = app_config.rtp_cfg;
 		app_config_init_video(&acc_cfg);
 

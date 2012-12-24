@@ -1009,17 +1009,36 @@ static pj_status_t put_frame(void *data)
 	glBegin(GL_TRIANGLE_STRIP);
         /* +++lal: changed glVertex2i to glVertex2f */
 #ifdef ORIGINAL_CODE 
+	glBegin(GL_TRIANGLE_STRIP);
 	glTexCoord2f(0, 0); glVertex2i(0, 0);
 	glTexCoord2f(1, 0); glVertex2i(stream->param.disp_size.w, 0);
 	glTexCoord2f(0, 1); glVertex2i(0, stream->param.disp_size.h);
 	glTexCoord2f(1, 1);
         glVertex2i(stream->param.disp_size.w, stream->param.disp_size.h);
 #else
+
 	glTexCoord2f(0, 0); glVertex2f((float)0, (float)0);
 	glTexCoord2f(1, 0); glVertex2f(stream->param.disp_size.w, 0);
 	glTexCoord2f(0, 1); glVertex2f(0, stream->param.disp_size.h);
 	glTexCoord2f(1, 1);
         glVertex2f(stream->param.disp_size.w, stream->param.disp_size.h);
+/*
+        float vertex2[] = { 0, 0, stream->param.disp_size.w, 0, 0, stream->param.disp_size.h};
+        float textureCoord2[] = {0,0,1,0,0,1,1,1};
+        glLoadIdentity();
+        //glClear(GL_DEPTH_BUFFER_BIT);
+
+        glEnableClientState(GL_VERTEX_ARRAY);
+        glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+
+        glVertexPointer(2, GL_FLOAT, 0, &vertex2);
+        glTexCoordPointer( 2, GL_FLOAT, 0, &textureCoord2);
+        glBindTexture(GL_TEXTURE_2D, textureCoord2);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA,
+		     stream->rect.w, stream->rect.h, 0,
+		     GL_RGBA, GL_UNSIGNED_BYTE, frame->buf);
+*/
+        glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
 #endif
 	glEnd();
         SDL_GL_SwapWindow(stream->window);

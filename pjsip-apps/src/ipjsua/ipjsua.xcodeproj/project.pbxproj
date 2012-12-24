@@ -48,6 +48,16 @@
 		3AE90EBA115F7BCE00FAEAA5 /* libpjsdp-arm-apple-darwin11.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AE90EB4115F7BCE00FAEAA5 /* libpjsdp-arm-apple-darwin11.a */; };
 		3AE90EBB115F7BCE00FAEAA5 /* libspeex-arm-apple-darwin11.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AE90EB5115F7BCE00FAEAA5 /* libspeex-arm-apple-darwin11.a */; };
 		3AE90EBC115F7BCE00FAEAA5 /* libsrtp-arm-apple-darwin11.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AE90EB6115F7BCE00FAEAA5 /* libsrtp-arm-apple-darwin11.a */; };
+		75050ACD1688946400FC0AFE /* libx264.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75050ACC1688946400FC0AFE /* libx264.a */; };
+		75529EBA16844F5A00144B51 /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75529EB216844F5A00144B51 /* libavcodec.a */; };
+		75529EBB16844F5A00144B51 /* libavdevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75529EB316844F5A00144B51 /* libavdevice.a */; };
+		75529EBC16844F5A00144B51 /* libavfilter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75529EB416844F5A00144B51 /* libavfilter.a */; };
+		75529EBD16844F5A00144B51 /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75529EB516844F5A00144B51 /* libavformat.a */; };
+		75529EBE16844F5A00144B51 /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75529EB616844F5A00144B51 /* libavutil.a */; };
+		75529EBF16844F5A00144B51 /* libpostproc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75529EB716844F5A00144B51 /* libpostproc.a */; };
+		75529EC016844F5A00144B51 /* libswresample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75529EB816844F5A00144B51 /* libswresample.a */; };
+		75529EC116844F5A00144B51 /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75529EB916844F5A00144B51 /* libswscale.a */; };
+		75529EC316844FD000144B51 /* libSDL2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75529EC216844FD000144B51 /* libSDL2.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +110,16 @@
 		3AE90EB4115F7BCE00FAEAA5 /* libpjsdp-arm-apple-darwin11.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libpjsdp-arm-apple-darwin11.a"; path = "../../../pjmedia/lib/libpjsdp-arm-apple-darwin11.a"; sourceTree = SOURCE_ROOT; };
 		3AE90EB5115F7BCE00FAEAA5 /* libspeex-arm-apple-darwin11.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libspeex-arm-apple-darwin11.a"; path = "../../../third_party/lib/libspeex-arm-apple-darwin11.a"; sourceTree = SOURCE_ROOT; };
 		3AE90EB6115F7BCE00FAEAA5 /* libsrtp-arm-apple-darwin11.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libsrtp-arm-apple-darwin11.a"; path = "../../../third_party/lib/libsrtp-arm-apple-darwin11.a"; sourceTree = SOURCE_ROOT; };
+		75050ACC1688946400FC0AFE /* libx264.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libx264.a; path = "../../../third_party/x264/x264-armv6/lib/libx264.a"; sourceTree = "<group>"; };
+		75529EB216844F5A00144B51 /* libavcodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavcodec.a; path = ../../../third_party/ffmpeg/compiled/armv6/lib/libavcodec.a; sourceTree = "<group>"; };
+		75529EB316844F5A00144B51 /* libavdevice.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavdevice.a; path = ../../../third_party/ffmpeg/compiled/armv6/lib/libavdevice.a; sourceTree = "<group>"; };
+		75529EB416844F5A00144B51 /* libavfilter.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavfilter.a; path = ../../../third_party/ffmpeg/compiled/armv6/lib/libavfilter.a; sourceTree = "<group>"; };
+		75529EB516844F5A00144B51 /* libavformat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavformat.a; path = ../../../third_party/ffmpeg/compiled/armv6/lib/libavformat.a; sourceTree = "<group>"; };
+		75529EB616844F5A00144B51 /* libavutil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavutil.a; path = ../../../third_party/ffmpeg/compiled/armv6/lib/libavutil.a; sourceTree = "<group>"; };
+		75529EB716844F5A00144B51 /* libpostproc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpostproc.a; path = ../../../third_party/ffmpeg/compiled/armv6/lib/libpostproc.a; sourceTree = "<group>"; };
+		75529EB816844F5A00144B51 /* libswresample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libswresample.a; path = ../../../third_party/ffmpeg/compiled/armv6/lib/libswresample.a; sourceTree = "<group>"; };
+		75529EB916844F5A00144B51 /* libswscale.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libswscale.a; path = ../../../third_party/ffmpeg/compiled/armv6/lib/libswscale.a; sourceTree = "<group>"; };
+		75529EC216844FD000144B51 /* libSDL2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDL2.a; path = ../../../third_party/sdl/build/armv6/build/libs/libSDL2.a; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ipjsua-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ipjsua-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,6 +158,16 @@
 				3AE0669A138E70F0008EE71A /* CoreMedia.framework in Frameworks */,
 				3AE0669B138E70F0008EE71A /* CoreVideo.framework in Frameworks */,
 				3AE0669D138E710C008EE71A /* QuartzCore.framework in Frameworks */,
+				75529EBA16844F5A00144B51 /* libavcodec.a in Frameworks */,
+				75529EBB16844F5A00144B51 /* libavdevice.a in Frameworks */,
+				75529EBC16844F5A00144B51 /* libavfilter.a in Frameworks */,
+				75529EBD16844F5A00144B51 /* libavformat.a in Frameworks */,
+				75529EBE16844F5A00144B51 /* libavutil.a in Frameworks */,
+				75529EBF16844F5A00144B51 /* libpostproc.a in Frameworks */,
+				75529EC016844F5A00144B51 /* libswresample.a in Frameworks */,
+				75529EC116844F5A00144B51 /* libswscale.a in Frameworks */,
+				75529EC316844FD000144B51 /* libSDL2.a in Frameworks */,
+				75050ACD1688946400FC0AFE /* libx264.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +264,16 @@
 		3AE909B211587D2700FAEAA5 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				75050ACC1688946400FC0AFE /* libx264.a */,
+				75529EC216844FD000144B51 /* libSDL2.a */,
+				75529EB216844F5A00144B51 /* libavcodec.a */,
+				75529EB316844F5A00144B51 /* libavdevice.a */,
+				75529EB416844F5A00144B51 /* libavfilter.a */,
+				75529EB516844F5A00144B51 /* libavformat.a */,
+				75529EB616844F5A00144B51 /* libavutil.a */,
+				75529EB716844F5A00144B51 /* libpostproc.a */,
+				75529EB816844F5A00144B51 /* libswresample.a */,
+				75529EB916844F5A00144B51 /* libswscale.a */,
 				3AE90EB1115F7BCE00FAEAA5 /* libg7221codec-arm-apple-darwin11.a */,
 				3AE90EB2115F7BCE00FAEAA5 /* libilbccodec-arm-apple-darwin11.a */,
 				3AE90EB3115F7BCE00FAEAA5 /* libmilenage-arm-apple-darwin11.a */,
@@ -338,11 +378,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					armv7,
-					armv6,
-				);
-				CODE_SIGN_IDENTITY = "";
+				ARCHS = armv6;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ashish Lal (42M6NVF8XZ)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -353,8 +391,8 @@
 					USE_GUI,
 				);
 				INFOPLIST_FILE = "ipjsua-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
-				"IPHONEOS_DEPLOYMENT_TARGET[arch=*]" = 4.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				"IPHONEOS_DEPLOYMENT_TARGET[arch=*]" = 4.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../third_party/lib\"",
@@ -366,12 +404,17 @@
 					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/Frameworks/AVFoundation.framework\"",
 					"\"$(SRCROOT)/../../../../../Library/Developer/Xcode/DerivedData/SDLiPhoneOS-fyjdxvchuwlpnghehmebkvasdrke/Build/Products/Debug-iphoneos\"",
 					"\"$(SRCROOT)/../../../../video/ffmpeg-iphone/lib\"",
+					"\"$(SRCROOT)/../../../third_party/ffmpeg/compiled/armv6/lib\"",
+					"\"$(SRCROOT)/../../../third_party/sdl/build/armv6/build/libs\"",
+					"\"$(SRCROOT)/../../../third_party/x264/x264-armv6/lib\"",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = ipjsua;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos5.1;
 				TARGETED_DEVICE_FAMILY = 1;
-				VALID_ARCHS = "armv6 armv7";
+				VALID_ARCHS = armv6;
 			};
 			name = Debug;
 		};
@@ -379,11 +422,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					armv7,
-					armv6,
-				);
-				CODE_SIGN_IDENTITY = "";
+				ARCHS = armv6;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ashish Lal (42M6NVF8XZ)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ipjsua_Prefix.pch;
@@ -392,7 +433,7 @@
 					USE_GUI,
 				);
 				INFOPLIST_FILE = "ipjsua-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../third_party/lib\"",
@@ -404,19 +445,25 @@
 					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/Frameworks/AVFoundation.framework\"",
 					"\"$(SRCROOT)/../../../../../Library/Developer/Xcode/DerivedData/SDLiPhoneOS-fyjdxvchuwlpnghehmebkvasdrke/Build/Products/Debug-iphoneos\"",
 					"\"$(SRCROOT)/../../../../video/ffmpeg-iphone/lib\"",
+					"\"$(SRCROOT)/../../../third_party/ffmpeg/compiled/armv6/lib\"",
+					"\"$(SRCROOT)/../../../third_party/sdl/build/armv6/build/libs\"",
+					"\"$(SRCROOT)/../../../third_party/x264/x264-armv6/lib\"",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = ipjsua;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos5.1;
 				TARGETED_DEVICE_FAMILY = 1;
-				VALID_ARCHS = "armv6 armv7";
+				VALID_ARCHS = armv6;
 			};
 			name = Release;
 		};
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = armv6;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ashish Lal (42M6NVF8XZ)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = USE_GUI;
@@ -429,6 +476,7 @@
 					../../../pjnath/include,
 					../../../pjmedia/include,
 				);
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				LIBRARY_SEARCH_PATHS = (
 					../../../pjlib/lib,
 					"../../../pjlib-util/lib",
@@ -437,16 +485,19 @@
 					../../../pjsip/lib,
 					../../../third_party/lib,
 				);
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "";
-				SDKROOT = iphoneos;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos5.1;
+				VALID_ARCHS = armv6;
 			};
 			name = Debug;
 		};
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = armv6;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ashish Lal (42M6NVF8XZ)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = USE_GUI;
@@ -459,6 +510,7 @@
 					../../../pjnath/include,
 					../../../pjmedia/include,
 				);
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				LIBRARY_SEARCH_PATHS = (
 					../../../pjlib/lib,
 					"../../../pjlib-util/lib",
@@ -467,9 +519,11 @@
 					../../../pjsip/lib,
 					../../../third_party/lib,
 				);
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "";
-				SDKROOT = iphoneos;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos5.1;
+				VALID_ARCHS = armv6;
 			};
 			name = Release;
 		};
