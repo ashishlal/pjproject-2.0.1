@@ -24,7 +24,6 @@ if test "$*" = "--help" -o "$*" = "-h"; then
 fi
 
 export DEVPATH=/Developer/Platforms/iPhoneOS.platform/Developer
-export CC=/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc
 export IPHONESDK=iPhoneOS5.1.sdk
 PJSIP_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 BUILD_FFMPEG=0
@@ -33,7 +32,7 @@ ARCH=armv7
 FFMPEG_DIR=$PJSIP_DIR/third_party/ffmpeg
 SDL_DIR=$PJSIP_DIR/third_party/sdl
 x264_DIR=$PJSIP_DIR/third_party/x264
-
+MYHOST="arm-apple-darwin11"
 for i in $*
 do
 case $i in
@@ -43,6 +42,12 @@ case $i in
         ;;  
     --armv7)
         ARCH=armv7
+        ;;  
+    --i386)
+        ARCH=i386
+        # MYHOST="i386-apple-darwin11"
+        export DEVPATH=/Developer/Platforms/iPhoneSimulator.platform/Developer
+        export IPHONESDK=iPhoneSimulator5.1.sdk
         ;;  
     --build-ffmpeg)
         BUILD_FFMPEG=1
@@ -56,6 +61,7 @@ case $i in
         ;;
 esac
 done
+export CC=$DEVPATH/usr/bin/gcc
 export FFMPEG_INCLUDE_DIR=${PJSIP_DIR}/third_party/ffmpeg/compiled/${ARCH}/include
 export SDL_INCLUDE_DIR=${PJSIP_DIR}/third_party/sdl/build/${ARCH}/include
 export FFMPEG_LIB_DIR=${PJSIP_DIR}/third_party/ffmpeg/compiled/${ARCH}/lib
@@ -69,7 +75,7 @@ then
     cd $FFMPEG_DIR
     echo "Building FFMPEG for $ARCH"
     make clean
-    ./ffmpegios.sh $ARCH $DEVPATH $CC $IPHONESDK && make && make install
+    ./ffmpegios.sh $ARCH $DEVPATH $IPHONESDK && make && make install
 fi
 
 if (( $BUILD_SDL == 1 ))
@@ -169,8 +175,14 @@ fi
 # Other settings to feed to configure script. 
 #ARCH="-arch armv6"
 MYARCH="-arch $ARCH"
-export CFLAGS="${CFLAGS} -DPJ_SDK_NAME=\"\\\"`basename $SDKPATH`\\\"\" ${MYARCH} -isysroot ${SDKPATH} -I ${FFMPEG_INCLUDE_DIR} -I ${SDL_INCLUDE_DIR} -I/usr/local/include"
-export LDFLAGS="${LDFLAGS} ${MYARCH} -isysroot ${SDKPATH} -framework AudioToolbox -framework Foundation -L ${SDL_LIB_DIR} -L ${FFMPEG_LIB_DIR} -L ${x264_LIB_DIR} -lx264 -lSDL2 -lavformat -lavcodec -lswscale -lavutil -lavdevice -lavfilter -framework OpenGLES -lz"
+MYEXTRA_FLAGS=""
+if [ $ARCH == "i386" ]
+then
+    MYEXTRA_CFLAGS="-02 -m32 -miphoneos-version-min=3.0 -DPJ_CONFIG_IPHONE_SIMULATOR"
+    MYEXTRA_LDFLAGS="-02 -m32"
+fi
+export CFLAGS="${CFLAGS} -DPJ_SDK_NAME=\"\\\"`basename $SDKPATH`\\\"\" ${MYARCH} -isysroot ${SDKPATH} -I ${FFMPEG_INCLUDE_DIR} -I ${SDL_INCLUDE_DIR} -I/usr/local/include $MYEXTRA_CFLAGS"
+export LDFLAGS="${LDFLAGS} ${MYARCH} -isysroot ${SDKPATH} -framework AudioToolbox -framework Foundation -L ${SDL_LIB_DIR} -L ${FFMPEG_LIB_DIR} -L ${x264_LIB_DIR} -lx264 -lSDL2 -lavformat -lavcodec -lswscale -lavutil -lavdevice -lavfilter -framework OpenGLES -lz $MYEXTRA_LDFLAGS"
 export AR="${DEVPATH}/usr/bin/libtool -static -o"
 export RANLIB="echo ranlib"
 # Use gcc -E as preprocessor instead of cpp, since cpp will find the
@@ -191,7 +203,7 @@ fi
 
 # And finally invoke the configure script itself
 # ./aconfigure --host=arm-apple-darwin9 --disable-floating-point --disable-sdl --disable-ffmpeg --with-ffmpeg=/Users/Ashish/Projects/elance-pjsip-compile/pjproject-2.0.1/third_party/ffmpeg --with-sdl=/Users/Ashish/Projects/elance-pjsip-compile/pjproject-2.0.1/third_party/sdl $*
-./aconfigure --host=arm-apple-darwin11 --disable-floating-point --disable-sdl --disable-ffmpeg --with-ffmpeg=$FFMPEG_DIR --with-sdl=$SDL_DIR
+./aconfigure --host=$MYHOST --disable-floating-point --disable-sdl --disable-ffmpeg --with-ffmpeg=$FFMPEG_DIR --with-sdl=$SDL_DIR
 
 if test "$?" = "0"; then
   echo "Done configuring for `basename $SDKPATH`"

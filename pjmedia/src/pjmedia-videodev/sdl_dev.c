@@ -22,13 +22,13 @@
 #include <pj/os.h>
 
 #if defined(PJMEDIA_VIDEO_DEV_HAS_SDL) && PJMEDIA_VIDEO_DEV_HAS_SDL != 0
-
+#ifndef PJ_CONFIG_IPHONE_SIMULATOR /* +++lal */
 #include <SDL.h>
 #include <SDL_syswm.h>
 #if PJMEDIA_VIDEO_DEV_SDL_HAS_OPENGL
 #   include "SDL_opengl.h"
 #   include "SDL_opengles.h" /* +++lal: added this line */
-#   define OPENGL_DEV_IDX 1
+#   define OPENGL_DEV_IDX 1 /* +++lal: changed 1 to 9 */
 #endif /* PJMEDIA_VIDEO_DEV_SDL_HAS_OPENGL */
 
 #if !(SDL_VERSION_ATLEAST(1,3,0))
@@ -128,7 +128,6 @@ typedef struct job {
 }
 @end
 #endif /* PJ_DARWINOS */
-
 typedef struct job_queue {
     pj_pool_t      *pool;
     job           **jobs;
@@ -602,7 +601,7 @@ static pj_status_t sdl_factory_init(pjmedia_vid_dev_factory *f)
     if (status != PJ_SUCCESS)
         return status;
 
-    sf->dev_count = 1;
+    sf->dev_count = 1; /* +++lal: changed to 10 from 1 */
 #if PJMEDIA_VIDEO_DEV_SDL_HAS_OPENGL
     sf->dev_count++;
 #endif /* PJMEDIA_VIDEO_DEV_SDL_HAS_OPENGL */
@@ -1596,5 +1595,5 @@ static pj_status_t job_queue_destroy(job_queue *jq)
 #   endif /* PJMEDIA_VIDEO_DEV_SDL_HAS_OPENGL */
 #endif /* _MSC_VER */
 
-
+#endif /* PJ_CONFIG_IPHONE_SIMULATOR */ /* +++lal */
 #endif	/* PJMEDIA_VIDEO_DEV_HAS_SDL */

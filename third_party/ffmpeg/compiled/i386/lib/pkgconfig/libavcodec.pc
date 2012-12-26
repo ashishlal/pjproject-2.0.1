@@ -9,6 +9,6 @@ Version: 53.42.4
 Requires: libavutil = 51.32.0
 Requires.private: 
 Conflicts:
-Libs: -L${libdir} -lavcodec -lm -lz
+Libs: -L${libdir} -lavcodec -lx264 -lm -lz
 Libs.private: 
 Cflags: -I${includedir}

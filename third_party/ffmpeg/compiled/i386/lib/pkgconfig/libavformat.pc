@@ -9,6 +9,6 @@ Version: 53.24.2
 Requires: libavcodec = 53.42.4
 Requires.private: 
 Conflicts:
-Libs: -L${libdir} -lavformat -lm -lz
+Libs: -L${libdir} -lavformat -lx264 -lm -lz
 Libs.private: 
 Cflags: -I${includedir}

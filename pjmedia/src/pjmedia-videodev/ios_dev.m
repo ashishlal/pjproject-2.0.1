@@ -84,12 +84,12 @@ struct ios_stream
     pj_uint8_t		    bpp;
     unsigned		    bytes_per_row;
     unsigned		    frame_size;
-    
+#ifndef PJ_CONFIG_IPHONE_SIMULATOR    
     AVCaptureSession		*cap_session;
     AVCaptureDeviceInput	*dev_input;
     AVCaptureVideoDataOutput	*video_output;
     VOutDelegate		*vout_delegate;
-    
+#endif    
     UIImageView		*imgView;
     void		*buf;
     dispatch_queue_t     render_queue;
@@ -302,6 +302,7 @@ static pj_status_t ios_factory_default_param(pj_pool_t *pool,
     return PJ_SUCCESS;
 }
 
+#ifndef PJ_CONFIG_IPHONE_SIMULATOR
 @implementation VOutDelegate
 - (void)update_image
 {    
@@ -376,6 +377,7 @@ static pj_status_t ios_factory_default_param(pj_pool_t *pool,
 }
 @end
 
+#endif
 static ios_fmt_info* get_ios_format_info(pjmedia_format_id id)
 {
     unsigned i;
@@ -396,6 +398,7 @@ static pj_status_t ios_factory_create_stream(
 					void *user_data,
 					pjmedia_vid_dev_stream **p_vid_strm)
 {
+#ifndef PJ_CONFIG_IPHONE_SIMULATOR
     struct ios_factory *qf = (struct ios_factory*)f;
     pj_pool_t *pool;
     struct ios_stream *strm;
@@ -537,12 +540,16 @@ on_error:
     ios_stream_destroy((pjmedia_vid_dev_stream *)strm);
     
     return status;
+#else
+    return PJ_SUCCESS;
+#endif
 }
 
 /* API: Get stream info. */
 static pj_status_t ios_stream_get_param(pjmedia_vid_dev_stream *s,
 				        pjmedia_vid_dev_param *pi)
 {
+#ifndef PJ_CONFIG_IPHONE_SIMULATOR
     struct ios_stream *strm = (struct ios_stream*)s;
 
     PJ_ASSERT_RETURN(strm && pi, PJ_EINVAL);
@@ -555,7 +562,9 @@ static pj_status_t ios_stream_get_param(pjmedia_vid_dev_stream *s,
         pi->flags |= PJMEDIA_VID_DEV_CAP_INPUT_SCALE;
     }
 */
+#else
     return PJ_SUCCESS;
+#endif
 }
 
 /* API: get capability */
@@ -563,6 +572,7 @@ static pj_status_t ios_stream_get_cap(pjmedia_vid_dev_stream *s,
 				      pjmedia_vid_dev_cap cap,
 				      void *pval)
 {
+#ifndef PJ_CONFIG_IPHONE_SIMULATOR
     struct ios_stream *strm = (struct ios_stream*)s;
 
     PJ_UNUSED_ARG(strm);
@@ -576,6 +586,9 @@ static pj_status_t ios_stream_get_cap(pjmedia_vid_dev_stream *s,
     } else {
 	return PJMEDIA_EVID_INVCAP;
     }
+#else
+	return PJ_SUCCESS;
+#endif
 }
 
 /* API: set capability */
@@ -583,6 +596,7 @@ static pj_status_t ios_stream_set_cap(pjmedia_vid_dev_stream *s,
 				      pjmedia_vid_dev_cap cap,
 				      const void *pval)
 {
+#ifndef PJ_CONFIG_IPHONE_SIMULATOR
     struct ios_stream *strm = (struct ios_stream*)s;
 
     PJ_UNUSED_ARG(strm);
@@ -594,12 +608,14 @@ static pj_status_t ios_stream_set_cap(pjmedia_vid_dev_stream *s,
 	return PJ_SUCCESS;
     }
 
+#endif
     return PJMEDIA_EVID_INVCAP;
 }
 
 /* API: Start stream. */
 static pj_status_t ios_stream_start(pjmedia_vid_dev_stream *strm)
 {
+#ifndef PJ_CONFIG_IPHONE_SIMULATOR
     struct ios_stream *stream = (struct ios_stream*)strm;
 
     PJ_UNUSED_ARG(stream);
@@ -612,7 +628,7 @@ static pj_status_t ios_stream_start(pjmedia_vid_dev_stream *strm)
 	if (![stream->cap_session isRunning])
 	    return PJ_EUNKNOWN;
     }
-    
+#endif    
     return PJ_SUCCESS;
 }
 
@@ -621,6 +637,7 @@ static pj_status_t ios_stream_start(pjmedia_vid_dev_stream *strm)
 static pj_status_t ios_stream_put_frame(pjmedia_vid_dev_stream *strm,
 					const pjmedia_frame *frame)
 {
+#ifndef PJ_CONFIG_IPHONE_SIMULATOR
     struct ios_stream *stream = (struct ios_stream*)strm;
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     
@@ -636,13 +653,15 @@ static pj_status_t ios_stream_put_frame(pjmedia_vid_dev_stream *strm,
                    ^{[stream->vout_delegate update_image];});
     
     [pool release];
-    
+#endif 
     return PJ_SUCCESS;
 }
 
 /* API: Stop stream. */
 static pj_status_t ios_stream_stop(pjmedia_vid_dev_stream *strm)
 {
+#ifndef PJ_CONFIG_IPHONE_SIMULATOR
+    return PJ_SUCCESS;
     struct ios_stream *stream = (struct ios_stream*)strm;
 
     PJ_UNUSED_ARG(stream);
@@ -652,6 +671,7 @@ static pj_status_t ios_stream_stop(pjmedia_vid_dev_stream *strm)
     if (stream->cap_session && [stream->cap_session isRunning])
 	[stream->cap_session stopRunning];
     
+#endif
     return PJ_SUCCESS;
 }
 
@@ -659,6 +679,9 @@ static pj_status_t ios_stream_stop(pjmedia_vid_dev_stream *strm)
 /* API: Destroy stream. */
 static pj_status_t ios_stream_destroy(pjmedia_vid_dev_stream *strm)
 {
+#ifdef PJ_CONFIG_IPHONE_SIMULATOR
+    return PJ_SUCCESS;
+#else
     struct ios_stream *stream = (struct ios_stream*)strm;
 
     PJ_ASSERT_RETURN(stream != NULL, PJ_EINVAL);
@@ -697,6 +720,7 @@ static pj_status_t ios_stream_destroy(pjmedia_vid_dev_stream *strm)
     pj_pool_release(stream->pool);
 
     return PJ_SUCCESS;
+#endif
 }
 
 #endif

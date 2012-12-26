@@ -1,7 +1,7 @@
-export CC = /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc -c
-export CXX = /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/g++ -c
-export AR = /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/libtool -static -o
-export LD = /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc
+export CC = /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc -c
+export CXX = /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/g++ -c
+export AR = /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/libtool -static -o
+export LD = /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc
 export LDOUT = -o 
 export RANLIB = echo ranlib
 

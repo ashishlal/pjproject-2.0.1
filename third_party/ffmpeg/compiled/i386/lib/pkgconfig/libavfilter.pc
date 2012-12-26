@@ -9,6 +9,6 @@ Version: 2.53.0
 Requires: 
 Requires.private: 
 Conflicts:
-Libs: -L${libdir} -lavfilter -lm -lz
+Libs: -L${libdir} -lavfilter -lx264 -lm -lz
 Libs.private: 
 Cflags: -I${includedir}

@@ -78,7 +78,9 @@ pjmedia_vid_dev_factory* pjmedia_cbar_factory(pj_pool_factory *pf);
 #endif
 
 #if PJMEDIA_VIDEO_DEV_HAS_SDL
+#ifndef PJ_CONFIG_IPHONE_SIMULATOR
 pjmedia_vid_dev_factory* pjmedia_sdl_factory(pj_pool_factory *pf);
+#endif
 #endif
 
 #if PJMEDIA_VIDEO_DEV_HAS_FFMPEG
@@ -390,7 +392,9 @@ PJ_DEF(pj_status_t) pjmedia_vid_dev_subsys_init(pj_pool_factory *pf)
     vid_subsys.drv[vid_subsys.drv_cnt++].create = &pjmedia_cbar_factory;
 #endif
 #if PJMEDIA_VIDEO_DEV_HAS_SDL
+#ifndef PJ_CONFIG_IPHONE_SIMULATOR
     vid_subsys.drv[vid_subsys.drv_cnt++].create = &pjmedia_sdl_factory;
+#endif
 #endif
 
     /* Initialize each factory and build the device ID list */

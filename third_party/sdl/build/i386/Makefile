@@ -17,16 +17,16 @@ distfile = $(distdir).tar.gz
 
 
 SHELL	= /bin/sh
-CC      = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2
+CC      = /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2
 INCLUDE = -Iinclude -I../../include
-CFLAGS  = -g -O2 -pipe -no-cpp-precomp -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk             -miphoneos-version-min=3.0 -I/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk/usr/include/ -arch i386  -DUSING_GENERATED_CONFIG_H
+CFLAGS  = -g -O2 -pipe -no-cpp-precomp -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk             -miphoneos-version-min=3.0 -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/usr/include/ -arch i386  -DUSING_GENERATED_CONFIG_H
 EXTRA_CFLAGS=-I./include
-LDFLAGS = -L/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk/usr/lib/ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk              -miphoneos-version-min=3.0 -static-libgcc -arch i386
+LDFLAGS = -L/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/usr/lib/ -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk              -miphoneos-version-min=3.0 -static-libgcc -arch i386
 EXTRA_LDFLAGS=-lm
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
 INSTALL = /usr/bin/install -c
-AR	= /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/ar
-RANLIB	= /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/ranlib
+AR	= /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/ar
+RANLIB	= /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/ranlib
 WINDRES	= :
 
 TARGET  = libSDL2.la
