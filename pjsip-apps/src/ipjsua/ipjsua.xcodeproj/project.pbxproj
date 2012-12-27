@@ -48,16 +48,35 @@
 		3AE90EBA115F7BCE00FAEAA5 /* libpjsdp-arm-apple-darwin11.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AE90EB4115F7BCE00FAEAA5 /* libpjsdp-arm-apple-darwin11.a */; };
 		3AE90EBB115F7BCE00FAEAA5 /* libspeex-arm-apple-darwin11.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AE90EB5115F7BCE00FAEAA5 /* libspeex-arm-apple-darwin11.a */; };
 		3AE90EBC115F7BCE00FAEAA5 /* libsrtp-arm-apple-darwin11.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AE90EB6115F7BCE00FAEAA5 /* libsrtp-arm-apple-darwin11.a */; };
-		75050ACD1688946400FC0AFE /* libx264.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75050ACC1688946400FC0AFE /* libx264.a */; };
-		75529EBA16844F5A00144B51 /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75529EB216844F5A00144B51 /* libavcodec.a */; };
-		75529EBB16844F5A00144B51 /* libavdevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75529EB316844F5A00144B51 /* libavdevice.a */; };
-		75529EBC16844F5A00144B51 /* libavfilter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75529EB416844F5A00144B51 /* libavfilter.a */; };
-		75529EBD16844F5A00144B51 /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75529EB516844F5A00144B51 /* libavformat.a */; };
-		75529EBE16844F5A00144B51 /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75529EB616844F5A00144B51 /* libavutil.a */; };
-		75529EBF16844F5A00144B51 /* libpostproc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75529EB716844F5A00144B51 /* libpostproc.a */; };
-		75529EC016844F5A00144B51 /* libswresample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75529EB816844F5A00144B51 /* libswresample.a */; };
-		75529EC116844F5A00144B51 /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75529EB916844F5A00144B51 /* libswscale.a */; };
-		75529EC316844FD000144B51 /* libSDL2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75529EC216844FD000144B51 /* libSDL2.a */; };
+		7564B194168C8DAB00B2F45B /* libpj-arm-apple-darwin11.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7564B188168C8DAB00B2F45B /* libpj-arm-apple-darwin11.a */; };
+		7564B195168C8DAC00B2F45B /* libpjlib-util-arm-apple-darwin11.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7564B189168C8DAB00B2F45B /* libpjlib-util-arm-apple-darwin11.a */; };
+		7564B196168C8DAC00B2F45B /* libpjmedia-arm-apple-darwin11.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7564B18A168C8DAB00B2F45B /* libpjmedia-arm-apple-darwin11.a */; };
+		7564B197168C8DAC00B2F45B /* libpjmedia-audiodev-arm-apple-darwin11.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7564B18B168C8DAB00B2F45B /* libpjmedia-audiodev-arm-apple-darwin11.a */; };
+		7564B198168C8DAC00B2F45B /* libpjmedia-codec-arm-apple-darwin11.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7564B18C168C8DAB00B2F45B /* libpjmedia-codec-arm-apple-darwin11.a */; };
+		7564B199168C8DAC00B2F45B /* libpjmedia-videodev-arm-apple-darwin11.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7564B18D168C8DAB00B2F45B /* libpjmedia-videodev-arm-apple-darwin11.a */; };
+		7564B19A168C8DAC00B2F45B /* libpjnath-arm-apple-darwin11.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7564B18E168C8DAB00B2F45B /* libpjnath-arm-apple-darwin11.a */; };
+		7564B19B168C8DAC00B2F45B /* libpjsdp-arm-apple-darwin11.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7564B18F168C8DAB00B2F45B /* libpjsdp-arm-apple-darwin11.a */; };
+		7564B19C168C8DAC00B2F45B /* libpjsip-arm-apple-darwin11.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7564B190168C8DAB00B2F45B /* libpjsip-arm-apple-darwin11.a */; };
+		7564B19D168C8DAC00B2F45B /* libpjsip-simple-arm-apple-darwin11.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7564B191168C8DAB00B2F45B /* libpjsip-simple-arm-apple-darwin11.a */; };
+		7564B19E168C8DAC00B2F45B /* libpjsip-ua-arm-apple-darwin11.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7564B192168C8DAB00B2F45B /* libpjsip-ua-arm-apple-darwin11.a */; };
+		7564B19F168C8DAC00B2F45B /* libpjsua-arm-apple-darwin11.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7564B193168C8DAB00B2F45B /* libpjsua-arm-apple-darwin11.a */; };
+		7564B1A8168C924C00B2F45B /* libg7221codec-arm-apple-darwin11.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7564B1A1168C924C00B2F45B /* libg7221codec-arm-apple-darwin11.a */; };
+		7564B1A9168C924C00B2F45B /* libgsmcodec-arm-apple-darwin11.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7564B1A2168C924C00B2F45B /* libgsmcodec-arm-apple-darwin11.a */; };
+		7564B1AA168C924C00B2F45B /* libilbccodec-arm-apple-darwin11.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7564B1A3168C924C00B2F45B /* libilbccodec-arm-apple-darwin11.a */; };
+		7564B1AB168C924C00B2F45B /* libmilenage-arm-apple-darwin11.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7564B1A4168C924C00B2F45B /* libmilenage-arm-apple-darwin11.a */; };
+		7564B1AC168C924C00B2F45B /* libresample-arm-apple-darwin11.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7564B1A5168C924C00B2F45B /* libresample-arm-apple-darwin11.a */; };
+		7564B1AD168C924C00B2F45B /* libspeex-arm-apple-darwin11.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7564B1A6168C924C00B2F45B /* libspeex-arm-apple-darwin11.a */; };
+		7564B1AE168C924C00B2F45B /* libsrtp-arm-apple-darwin11.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7564B1A7168C924C00B2F45B /* libsrtp-arm-apple-darwin11.a */; };
+		7564B1C0168C929000B2F45B /* libSDL2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7564B1BF168C929000B2F45B /* libSDL2.a */; };
+		7564B1C2168C929B00B2F45B /* libx264.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7564B1C1168C929B00B2F45B /* libx264.a */; };
+		7564B1FB168C978200B2F45B /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7564B1F3168C978200B2F45B /* libavcodec.a */; };
+		7564B1FC168C978200B2F45B /* libavdevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7564B1F4168C978200B2F45B /* libavdevice.a */; };
+		7564B1FD168C978200B2F45B /* libavfilter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7564B1F5168C978200B2F45B /* libavfilter.a */; };
+		7564B1FE168C978200B2F45B /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7564B1F6168C978200B2F45B /* libavformat.a */; };
+		7564B1FF168C978200B2F45B /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7564B1F7168C978200B2F45B /* libavutil.a */; };
+		7564B200168C978200B2F45B /* libpostproc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7564B1F8168C978200B2F45B /* libpostproc.a */; };
+		7564B201168C978200B2F45B /* libswresample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7564B1F9168C978200B2F45B /* libswresample.a */; };
+		7564B202168C978200B2F45B /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7564B1FA168C978200B2F45B /* libswscale.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,16 +129,35 @@
 		3AE90EB4115F7BCE00FAEAA5 /* libpjsdp-arm-apple-darwin11.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libpjsdp-arm-apple-darwin11.a"; path = "../../../pjmedia/lib/libpjsdp-arm-apple-darwin11.a"; sourceTree = SOURCE_ROOT; };
 		3AE90EB5115F7BCE00FAEAA5 /* libspeex-arm-apple-darwin11.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libspeex-arm-apple-darwin11.a"; path = "../../../third_party/lib/libspeex-arm-apple-darwin11.a"; sourceTree = SOURCE_ROOT; };
 		3AE90EB6115F7BCE00FAEAA5 /* libsrtp-arm-apple-darwin11.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libsrtp-arm-apple-darwin11.a"; path = "../../../third_party/lib/libsrtp-arm-apple-darwin11.a"; sourceTree = SOURCE_ROOT; };
-		75050ACC1688946400FC0AFE /* libx264.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libx264.a; path = "../../../third_party/x264/x264-armv6/lib/libx264.a"; sourceTree = "<group>"; };
-		75529EB216844F5A00144B51 /* libavcodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavcodec.a; path = ../../../third_party/ffmpeg/compiled/armv6/lib/libavcodec.a; sourceTree = "<group>"; };
-		75529EB316844F5A00144B51 /* libavdevice.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavdevice.a; path = ../../../third_party/ffmpeg/compiled/armv6/lib/libavdevice.a; sourceTree = "<group>"; };
-		75529EB416844F5A00144B51 /* libavfilter.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavfilter.a; path = ../../../third_party/ffmpeg/compiled/armv6/lib/libavfilter.a; sourceTree = "<group>"; };
-		75529EB516844F5A00144B51 /* libavformat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavformat.a; path = ../../../third_party/ffmpeg/compiled/armv6/lib/libavformat.a; sourceTree = "<group>"; };
-		75529EB616844F5A00144B51 /* libavutil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavutil.a; path = ../../../third_party/ffmpeg/compiled/armv6/lib/libavutil.a; sourceTree = "<group>"; };
-		75529EB716844F5A00144B51 /* libpostproc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpostproc.a; path = ../../../third_party/ffmpeg/compiled/armv6/lib/libpostproc.a; sourceTree = "<group>"; };
-		75529EB816844F5A00144B51 /* libswresample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libswresample.a; path = ../../../third_party/ffmpeg/compiled/armv6/lib/libswresample.a; sourceTree = "<group>"; };
-		75529EB916844F5A00144B51 /* libswscale.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libswscale.a; path = ../../../third_party/ffmpeg/compiled/armv6/lib/libswscale.a; sourceTree = "<group>"; };
-		75529EC216844FD000144B51 /* libSDL2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDL2.a; path = ../../../third_party/sdl/build/armv6/build/libs/libSDL2.a; sourceTree = "<group>"; };
+		7564B188168C8DAB00B2F45B /* libpj-arm-apple-darwin11.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libpj-arm-apple-darwin11.a"; path = "../../../compiled-universal/lib/libpj-arm-apple-darwin11.a"; sourceTree = "<group>"; };
+		7564B189168C8DAB00B2F45B /* libpjlib-util-arm-apple-darwin11.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libpjlib-util-arm-apple-darwin11.a"; path = "../../../compiled-universal/lib/libpjlib-util-arm-apple-darwin11.a"; sourceTree = "<group>"; };
+		7564B18A168C8DAB00B2F45B /* libpjmedia-arm-apple-darwin11.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libpjmedia-arm-apple-darwin11.a"; path = "../../../compiled-universal/lib/libpjmedia-arm-apple-darwin11.a"; sourceTree = "<group>"; };
+		7564B18B168C8DAB00B2F45B /* libpjmedia-audiodev-arm-apple-darwin11.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libpjmedia-audiodev-arm-apple-darwin11.a"; path = "../../../compiled-universal/lib/libpjmedia-audiodev-arm-apple-darwin11.a"; sourceTree = "<group>"; };
+		7564B18C168C8DAB00B2F45B /* libpjmedia-codec-arm-apple-darwin11.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libpjmedia-codec-arm-apple-darwin11.a"; path = "../../../compiled-universal/lib/libpjmedia-codec-arm-apple-darwin11.a"; sourceTree = "<group>"; };
+		7564B18D168C8DAB00B2F45B /* libpjmedia-videodev-arm-apple-darwin11.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libpjmedia-videodev-arm-apple-darwin11.a"; path = "../../../compiled-universal/lib/libpjmedia-videodev-arm-apple-darwin11.a"; sourceTree = "<group>"; };
+		7564B18E168C8DAB00B2F45B /* libpjnath-arm-apple-darwin11.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libpjnath-arm-apple-darwin11.a"; path = "../../../compiled-universal/lib/libpjnath-arm-apple-darwin11.a"; sourceTree = "<group>"; };
+		7564B18F168C8DAB00B2F45B /* libpjsdp-arm-apple-darwin11.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libpjsdp-arm-apple-darwin11.a"; path = "../../../compiled-universal/lib/libpjsdp-arm-apple-darwin11.a"; sourceTree = "<group>"; };
+		7564B190168C8DAB00B2F45B /* libpjsip-arm-apple-darwin11.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libpjsip-arm-apple-darwin11.a"; path = "../../../compiled-universal/lib/libpjsip-arm-apple-darwin11.a"; sourceTree = "<group>"; };
+		7564B191168C8DAB00B2F45B /* libpjsip-simple-arm-apple-darwin11.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libpjsip-simple-arm-apple-darwin11.a"; path = "../../../compiled-universal/lib/libpjsip-simple-arm-apple-darwin11.a"; sourceTree = "<group>"; };
+		7564B192168C8DAB00B2F45B /* libpjsip-ua-arm-apple-darwin11.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libpjsip-ua-arm-apple-darwin11.a"; path = "../../../compiled-universal/lib/libpjsip-ua-arm-apple-darwin11.a"; sourceTree = "<group>"; };
+		7564B193168C8DAB00B2F45B /* libpjsua-arm-apple-darwin11.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libpjsua-arm-apple-darwin11.a"; path = "../../../compiled-universal/lib/libpjsua-arm-apple-darwin11.a"; sourceTree = "<group>"; };
+		7564B1A1168C924C00B2F45B /* libg7221codec-arm-apple-darwin11.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libg7221codec-arm-apple-darwin11.a"; path = "../../../compiled-universal/lib/libg7221codec-arm-apple-darwin11.a"; sourceTree = "<group>"; };
+		7564B1A2168C924C00B2F45B /* libgsmcodec-arm-apple-darwin11.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libgsmcodec-arm-apple-darwin11.a"; path = "../../../compiled-universal/lib/libgsmcodec-arm-apple-darwin11.a"; sourceTree = "<group>"; };
+		7564B1A3168C924C00B2F45B /* libilbccodec-arm-apple-darwin11.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libilbccodec-arm-apple-darwin11.a"; path = "../../../compiled-universal/lib/libilbccodec-arm-apple-darwin11.a"; sourceTree = "<group>"; };
+		7564B1A4168C924C00B2F45B /* libmilenage-arm-apple-darwin11.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libmilenage-arm-apple-darwin11.a"; path = "../../../compiled-universal/lib/libmilenage-arm-apple-darwin11.a"; sourceTree = "<group>"; };
+		7564B1A5168C924C00B2F45B /* libresample-arm-apple-darwin11.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libresample-arm-apple-darwin11.a"; path = "../../../compiled-universal/lib/libresample-arm-apple-darwin11.a"; sourceTree = "<group>"; };
+		7564B1A6168C924C00B2F45B /* libspeex-arm-apple-darwin11.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libspeex-arm-apple-darwin11.a"; path = "../../../compiled-universal/lib/libspeex-arm-apple-darwin11.a"; sourceTree = "<group>"; };
+		7564B1A7168C924C00B2F45B /* libsrtp-arm-apple-darwin11.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libsrtp-arm-apple-darwin11.a"; path = "../../../compiled-universal/lib/libsrtp-arm-apple-darwin11.a"; sourceTree = "<group>"; };
+		7564B1BF168C929000B2F45B /* libSDL2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDL2.a; path = "../../../compiled-universal/sdl/libSDL2.a"; sourceTree = "<group>"; };
+		7564B1C1168C929B00B2F45B /* libx264.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libx264.a; path = "../../../compiled-universal/x264/libx264.a"; sourceTree = "<group>"; };
+		7564B1F3168C978200B2F45B /* libavcodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavcodec.a; path = ../../../third_party/ffmpeg/compiled/i386/lib/libavcodec.a; sourceTree = "<group>"; };
+		7564B1F4168C978200B2F45B /* libavdevice.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavdevice.a; path = ../../../third_party/ffmpeg/compiled/i386/lib/libavdevice.a; sourceTree = "<group>"; };
+		7564B1F5168C978200B2F45B /* libavfilter.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavfilter.a; path = ../../../third_party/ffmpeg/compiled/i386/lib/libavfilter.a; sourceTree = "<group>"; };
+		7564B1F6168C978200B2F45B /* libavformat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavformat.a; path = ../../../third_party/ffmpeg/compiled/i386/lib/libavformat.a; sourceTree = "<group>"; };
+		7564B1F7168C978200B2F45B /* libavutil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavutil.a; path = ../../../third_party/ffmpeg/compiled/i386/lib/libavutil.a; sourceTree = "<group>"; };
+		7564B1F8168C978200B2F45B /* libpostproc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpostproc.a; path = ../../../third_party/ffmpeg/compiled/i386/lib/libpostproc.a; sourceTree = "<group>"; };
+		7564B1F9168C978200B2F45B /* libswresample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libswresample.a; path = ../../../third_party/ffmpeg/compiled/i386/lib/libswresample.a; sourceTree = "<group>"; };
+		7564B1FA168C978200B2F45B /* libswscale.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libswscale.a; path = ../../../third_party/ffmpeg/compiled/i386/lib/libswscale.a; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ipjsua-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ipjsua-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,16 +196,35 @@
 				3AE0669A138E70F0008EE71A /* CoreMedia.framework in Frameworks */,
 				3AE0669B138E70F0008EE71A /* CoreVideo.framework in Frameworks */,
 				3AE0669D138E710C008EE71A /* QuartzCore.framework in Frameworks */,
-				75529EBA16844F5A00144B51 /* libavcodec.a in Frameworks */,
-				75529EBB16844F5A00144B51 /* libavdevice.a in Frameworks */,
-				75529EBC16844F5A00144B51 /* libavfilter.a in Frameworks */,
-				75529EBD16844F5A00144B51 /* libavformat.a in Frameworks */,
-				75529EBE16844F5A00144B51 /* libavutil.a in Frameworks */,
-				75529EBF16844F5A00144B51 /* libpostproc.a in Frameworks */,
-				75529EC016844F5A00144B51 /* libswresample.a in Frameworks */,
-				75529EC116844F5A00144B51 /* libswscale.a in Frameworks */,
-				75529EC316844FD000144B51 /* libSDL2.a in Frameworks */,
-				75050ACD1688946400FC0AFE /* libx264.a in Frameworks */,
+				7564B194168C8DAB00B2F45B /* libpj-arm-apple-darwin11.a in Frameworks */,
+				7564B195168C8DAC00B2F45B /* libpjlib-util-arm-apple-darwin11.a in Frameworks */,
+				7564B196168C8DAC00B2F45B /* libpjmedia-arm-apple-darwin11.a in Frameworks */,
+				7564B197168C8DAC00B2F45B /* libpjmedia-audiodev-arm-apple-darwin11.a in Frameworks */,
+				7564B198168C8DAC00B2F45B /* libpjmedia-codec-arm-apple-darwin11.a in Frameworks */,
+				7564B199168C8DAC00B2F45B /* libpjmedia-videodev-arm-apple-darwin11.a in Frameworks */,
+				7564B19A168C8DAC00B2F45B /* libpjnath-arm-apple-darwin11.a in Frameworks */,
+				7564B19B168C8DAC00B2F45B /* libpjsdp-arm-apple-darwin11.a in Frameworks */,
+				7564B19C168C8DAC00B2F45B /* libpjsip-arm-apple-darwin11.a in Frameworks */,
+				7564B19D168C8DAC00B2F45B /* libpjsip-simple-arm-apple-darwin11.a in Frameworks */,
+				7564B19E168C8DAC00B2F45B /* libpjsip-ua-arm-apple-darwin11.a in Frameworks */,
+				7564B19F168C8DAC00B2F45B /* libpjsua-arm-apple-darwin11.a in Frameworks */,
+				7564B1A8168C924C00B2F45B /* libg7221codec-arm-apple-darwin11.a in Frameworks */,
+				7564B1A9168C924C00B2F45B /* libgsmcodec-arm-apple-darwin11.a in Frameworks */,
+				7564B1AA168C924C00B2F45B /* libilbccodec-arm-apple-darwin11.a in Frameworks */,
+				7564B1AB168C924C00B2F45B /* libmilenage-arm-apple-darwin11.a in Frameworks */,
+				7564B1AC168C924C00B2F45B /* libresample-arm-apple-darwin11.a in Frameworks */,
+				7564B1AD168C924C00B2F45B /* libspeex-arm-apple-darwin11.a in Frameworks */,
+				7564B1AE168C924C00B2F45B /* libsrtp-arm-apple-darwin11.a in Frameworks */,
+				7564B1C0168C929000B2F45B /* libSDL2.a in Frameworks */,
+				7564B1C2168C929B00B2F45B /* libx264.a in Frameworks */,
+				7564B1FB168C978200B2F45B /* libavcodec.a in Frameworks */,
+				7564B1FC168C978200B2F45B /* libavdevice.a in Frameworks */,
+				7564B1FD168C978200B2F45B /* libavfilter.a in Frameworks */,
+				7564B1FE168C978200B2F45B /* libavformat.a in Frameworks */,
+				7564B1FF168C978200B2F45B /* libavutil.a in Frameworks */,
+				7564B200168C978200B2F45B /* libpostproc.a in Frameworks */,
+				7564B201168C978200B2F45B /* libswresample.a in Frameworks */,
+				7564B202168C978200B2F45B /* libswscale.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,16 +321,35 @@
 		3AE909B211587D2700FAEAA5 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				75050ACC1688946400FC0AFE /* libx264.a */,
-				75529EC216844FD000144B51 /* libSDL2.a */,
-				75529EB216844F5A00144B51 /* libavcodec.a */,
-				75529EB316844F5A00144B51 /* libavdevice.a */,
-				75529EB416844F5A00144B51 /* libavfilter.a */,
-				75529EB516844F5A00144B51 /* libavformat.a */,
-				75529EB616844F5A00144B51 /* libavutil.a */,
-				75529EB716844F5A00144B51 /* libpostproc.a */,
-				75529EB816844F5A00144B51 /* libswresample.a */,
-				75529EB916844F5A00144B51 /* libswscale.a */,
+				7564B1F3168C978200B2F45B /* libavcodec.a */,
+				7564B1F4168C978200B2F45B /* libavdevice.a */,
+				7564B1F5168C978200B2F45B /* libavfilter.a */,
+				7564B1F6168C978200B2F45B /* libavformat.a */,
+				7564B1F7168C978200B2F45B /* libavutil.a */,
+				7564B1F8168C978200B2F45B /* libpostproc.a */,
+				7564B1F9168C978200B2F45B /* libswresample.a */,
+				7564B1FA168C978200B2F45B /* libswscale.a */,
+				7564B1C1168C929B00B2F45B /* libx264.a */,
+				7564B1BF168C929000B2F45B /* libSDL2.a */,
+				7564B1A1168C924C00B2F45B /* libg7221codec-arm-apple-darwin11.a */,
+				7564B1A2168C924C00B2F45B /* libgsmcodec-arm-apple-darwin11.a */,
+				7564B1A3168C924C00B2F45B /* libilbccodec-arm-apple-darwin11.a */,
+				7564B1A4168C924C00B2F45B /* libmilenage-arm-apple-darwin11.a */,
+				7564B1A5168C924C00B2F45B /* libresample-arm-apple-darwin11.a */,
+				7564B1A6168C924C00B2F45B /* libspeex-arm-apple-darwin11.a */,
+				7564B1A7168C924C00B2F45B /* libsrtp-arm-apple-darwin11.a */,
+				7564B188168C8DAB00B2F45B /* libpj-arm-apple-darwin11.a */,
+				7564B189168C8DAB00B2F45B /* libpjlib-util-arm-apple-darwin11.a */,
+				7564B18A168C8DAB00B2F45B /* libpjmedia-arm-apple-darwin11.a */,
+				7564B18B168C8DAB00B2F45B /* libpjmedia-audiodev-arm-apple-darwin11.a */,
+				7564B18C168C8DAB00B2F45B /* libpjmedia-codec-arm-apple-darwin11.a */,
+				7564B18D168C8DAB00B2F45B /* libpjmedia-videodev-arm-apple-darwin11.a */,
+				7564B18E168C8DAB00B2F45B /* libpjnath-arm-apple-darwin11.a */,
+				7564B18F168C8DAB00B2F45B /* libpjsdp-arm-apple-darwin11.a */,
+				7564B190168C8DAB00B2F45B /* libpjsip-arm-apple-darwin11.a */,
+				7564B191168C8DAB00B2F45B /* libpjsip-simple-arm-apple-darwin11.a */,
+				7564B192168C8DAB00B2F45B /* libpjsip-ua-arm-apple-darwin11.a */,
+				7564B193168C8DAB00B2F45B /* libpjsua-arm-apple-darwin11.a */,
 				3AE90EB1115F7BCE00FAEAA5 /* libg7221codec-arm-apple-darwin11.a */,
 				3AE90EB2115F7BCE00FAEAA5 /* libilbccodec-arm-apple-darwin11.a */,
 				3AE90EB3115F7BCE00FAEAA5 /* libmilenage-arm-apple-darwin11.a */,
@@ -378,7 +454,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = armv6;
+				ARCHS = (
+					armv6,
+					i386,
+				);
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ashish Lal (42M6NVF8XZ)";
 				COPY_PHASE_STRIP = NO;
@@ -407,6 +486,12 @@
 					"\"$(SRCROOT)/../../../third_party/ffmpeg/compiled/armv6/lib\"",
 					"\"$(SRCROOT)/../../../third_party/sdl/build/armv6/build/libs\"",
 					"\"$(SRCROOT)/../../../third_party/x264/x264-armv6/lib\"",
+					"\"$(SRCROOT)/../../../compiled-universal/lib\"",
+					"\"$(SRCROOT)/../../../compiled-universal/ffmpeg\"",
+					"\"$(SRCROOT)/../../../compiled-universal/sdl\"",
+					"\"$(SRCROOT)/../../../compiled-universal/x264\"",
+					"\"$(SRCROOT)/../../../third_party/ffmpeg/compiled/i386/lib\"",
+					"\"$(SRCROOT)\"",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = ipjsua;
@@ -414,7 +499,7 @@
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos5.1;
 				TARGETED_DEVICE_FAMILY = 1;
-				VALID_ARCHS = armv6;
+				VALID_ARCHS = "armv6 i386";
 			};
 			name = Debug;
 		};
@@ -422,10 +507,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = armv6;
+				ARCHS = (
+					armv6,
+					i386,
+				);
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ashish Lal (42M6NVF8XZ)";
-				COPY_PHASE_STRIP = YES;
+				COPY_PHASE_STRIP = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ipjsua_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -448,6 +536,12 @@
 					"\"$(SRCROOT)/../../../third_party/ffmpeg/compiled/armv6/lib\"",
 					"\"$(SRCROOT)/../../../third_party/sdl/build/armv6/build/libs\"",
 					"\"$(SRCROOT)/../../../third_party/x264/x264-armv6/lib\"",
+					"\"$(SRCROOT)/../../../compiled-universal/lib\"",
+					"\"$(SRCROOT)/../../../compiled-universal/ffmpeg\"",
+					"\"$(SRCROOT)/../../../compiled-universal/sdl\"",
+					"\"$(SRCROOT)/../../../compiled-universal/x264\"",
+					"\"$(SRCROOT)/../../../third_party/ffmpeg/compiled/i386/lib\"",
+					"\"$(SRCROOT)\"",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = ipjsua;
@@ -455,7 +549,7 @@
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos5.1;
 				TARGETED_DEVICE_FAMILY = 1;
-				VALID_ARCHS = armv6;
+				VALID_ARCHS = "armv6 i386";
 			};
 			name = Release;
 		};

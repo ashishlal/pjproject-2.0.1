@@ -29,6 +29,7 @@
 //#define HAVE_MULTIPART_TEST
 
 /* +++lal */
+//#undef PJSUA_HAS_VIDEO
 #define PJSUA_HAS_VIDEO 1
 
 /* Ringtones		    US	       UK  */

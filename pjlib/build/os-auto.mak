@@ -23,7 +23,7 @@ export TEST_OBJS +=	main.o
 #
 # Additional LDFLAGS for pjlib-test
 #
-export TEST_LDFLAGS += -O2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk -framework AudioToolbox -framework Foundation -L /Users/Ashish/mygithub/pjproject-2.0.1/third_party/sdl/build/i386/build/.libs -L /Users/Ashish/mygithub/pjproject-2.0.1/third_party/ffmpeg/compiled/i386/lib -L /Users/Ashish/mygithub/pjproject-2.0.1/third_party/x264/x264-i386/lib -lx264 -lSDL2 -lavformat -lavcodec -lswscale -lavutil -lavdevice -lavfilter -framework OpenGLES -lz -02 -m32 -lpthread  -framework CoreAudio -framework CoreFoundation -framework AudioToolbox -framework CFNetwork -framework UIKit -framework UIKit -framework AVFoundation -framework CoreGraphics -framework QuartzCore -framework CoreVideo -framework CoreMedia
+export TEST_LDFLAGS += -O2 -arch armv7 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk -framework AudioToolbox -framework Foundation -L /Users/Ashish/mygithub/pjproject-2.0.1/third_party/sdl/build/armv7/build/.libs -L /Users/Ashish/mygithub/pjproject-2.0.1/third_party/ffmpeg/compiled/armv7/lib -L /Users/Ashish/mygithub/pjproject-2.0.1/third_party/x264/x264-armv7/lib -lx264 -lSDL2 -lavformat -lavcodec -lswscale -lavutil -lavdevice -lavfilter -framework OpenGLES -lz  -lpthread  -framework CoreAudio -framework CoreFoundation -framework AudioToolbox -framework CFNetwork -framework UIKit -framework UIKit -framework AVFoundation -framework CoreGraphics -framework QuartzCore -framework CoreVideo -framework CoreMedia
 
 #
 # TARGETS are make targets in the Makefile, to be executed for this given

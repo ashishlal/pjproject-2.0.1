@@ -223,3 +223,4 @@ cp  pjlib-util/lib/* $LIB_OTARGET
 cp  pjsip/lib/* $LIB_OTARGET
 cp  pjmedia/lib/* $LIB_OTARGET
 cp  pjnath/lib/* $LIB_OTARGET
+cp  third_party/lib/* $LIB_OTARGET
