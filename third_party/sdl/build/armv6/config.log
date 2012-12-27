@@ -30,8 +30,8 @@ Kernel configured for up to 2 processors.
 Processor type: i486 (Intel 80486)
 Processors active: 0 1
 Primary memory available: 2.00 gigabytes
-Default processor set: 142 tasks, 628 threads, 2 processors
-Load average: 1.31, Mach factor: 0.86
+Default processor set: 129 tasks, 564 threads, 2 processors
+Load average: 2.54, Mach factor: 0.18
 /bin/machine           = unknown
 /usr/bin/oslevel       = unknown
 /bin/universe          = unknown
@@ -861,7 +861,7 @@ configure:16675: checking for _strrev
 configure:16675: /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -o conftest -g -O2 -pipe -no-cpp-precomp -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk             -miphoneos-version-min=3.0 -I/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/usr/include/ -arch armv6 -Iinclude -I../../include   -Iinclude -I../../include  -L/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/usr/lib/ -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk              -miphoneos-version-min=3.0 -static-libgcc -arch armv6  conftest.c  >&5
 Undefined symbols for architecture armv6:
   "__strrev", referenced from:
-      _main in ccQoRNnQ.o
+      _main in ccHuHm5l.o
 ld: symbol(s) not found for architecture armv6
 collect2: ld returned 1 exit status
 configure:16675: $? = 1
@@ -967,7 +967,7 @@ configure:16675: checking for _strupr
 configure:16675: /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -o conftest -g -O2 -pipe -no-cpp-precomp -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk             -miphoneos-version-min=3.0 -I/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/usr/include/ -arch armv6 -Iinclude -I../../include   -Iinclude -I../../include  -L/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/usr/lib/ -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk              -miphoneos-version-min=3.0 -static-libgcc -arch armv6  conftest.c  >&5
 Undefined symbols for architecture armv6:
   "__strupr", referenced from:
-      _main in ccM3lXpA.o
+      _main in ccTTYjbO.o
 ld: symbol(s) not found for architecture armv6
 collect2: ld returned 1 exit status
 configure:16675: $? = 1
@@ -1073,7 +1073,7 @@ configure:16675: checking for _strlwr
 configure:16675: /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -o conftest -g -O2 -pipe -no-cpp-precomp -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk             -miphoneos-version-min=3.0 -I/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/usr/include/ -arch armv6 -Iinclude -I../../include   -Iinclude -I../../include  -L/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/usr/lib/ -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk              -miphoneos-version-min=3.0 -static-libgcc -arch armv6  conftest.c  >&5
 Undefined symbols for architecture armv6:
   "__strlwr", referenced from:
-      _main in cclVgb3q.o
+      _main in ccVkzW31.o
 ld: symbol(s) not found for architecture armv6
 collect2: ld returned 1 exit status
 configure:16675: $? = 1
@@ -1194,7 +1194,7 @@ configure:16675: checking for itoa
 configure:16675: /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -o conftest -g -O2 -pipe -no-cpp-precomp -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk             -miphoneos-version-min=3.0 -I/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/usr/include/ -arch armv6 -Iinclude -I../../include   -Iinclude -I../../include  -L/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/usr/lib/ -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk              -miphoneos-version-min=3.0 -static-libgcc -arch armv6  conftest.c  >&5
 Undefined symbols for architecture armv6:
   "_itoa", referenced from:
-      _main in ccKOap8x.o
+      _main in ccRoYoCk.o
 ld: symbol(s) not found for architecture armv6
 collect2: ld returned 1 exit status
 configure:16675: $? = 1
@@ -1303,7 +1303,7 @@ configure:16675: checking for _ltoa
 configure:16675: /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -o conftest -g -O2 -pipe -no-cpp-precomp -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk             -miphoneos-version-min=3.0 -I/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/usr/include/ -arch armv6 -Iinclude -I../../include   -Iinclude -I../../include  -L/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/usr/lib/ -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk              -miphoneos-version-min=3.0 -static-libgcc -arch armv6  conftest.c  >&5
 Undefined symbols for architecture armv6:
   "__ltoa", referenced from:
-      _main in ccjP0D28.o
+      _main in ccBvb4yM.o
 ld: symbol(s) not found for architecture armv6
 collect2: ld returned 1 exit status
 configure:16675: $? = 1
@@ -1412,7 +1412,7 @@ configure:16675: checking for _uitoa
 configure:16675: /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -o conftest -g -O2 -pipe -no-cpp-precomp -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk             -miphoneos-version-min=3.0 -I/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/usr/include/ -arch armv6 -Iinclude -I../../include   -Iinclude -I../../include  -L/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/usr/lib/ -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk              -miphoneos-version-min=3.0 -static-libgcc -arch armv6  conftest.c  >&5
 Undefined symbols for architecture armv6:
   "__uitoa", referenced from:
-      _main in ccIJ5kl9.o
+      _main in ccR6VQTL.o
 ld: symbol(s) not found for architecture armv6
 collect2: ld returned 1 exit status
 configure:16675: $? = 1
@@ -1521,7 +1521,7 @@ configure:16675: checking for _ultoa
 configure:16675: /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -o conftest -g -O2 -pipe -no-cpp-precomp -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk             -miphoneos-version-min=3.0 -I/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/usr/include/ -arch armv6 -Iinclude -I../../include   -Iinclude -I../../include  -L/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/usr/lib/ -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk              -miphoneos-version-min=3.0 -static-libgcc -arch armv6  conftest.c  >&5
 Undefined symbols for architecture armv6:
   "__ultoa", referenced from:
-      _main in ccTg9TiD.o
+      _main in ccLkDhJa.o
 ld: symbol(s) not found for architecture armv6
 collect2: ld returned 1 exit status
 configure:16675: $? = 1
@@ -1638,7 +1638,7 @@ configure:16675: checking for _i64toa
 configure:16675: /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -o conftest -g -O2 -pipe -no-cpp-precomp -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk             -miphoneos-version-min=3.0 -I/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/usr/include/ -arch armv6 -Iinclude -I../../include   -Iinclude -I../../include  -L/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/usr/lib/ -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk              -miphoneos-version-min=3.0 -static-libgcc -arch armv6  conftest.c  >&5
 Undefined symbols for architecture armv6:
   "__i64toa", referenced from:
-      _main in ccRvwFgw.o
+      _main in ccDa1qwK.o
 ld: symbol(s) not found for architecture armv6
 collect2: ld returned 1 exit status
 configure:16675: $? = 1
@@ -1749,7 +1749,7 @@ configure:16675: checking for _ui64toa
 configure:16675: /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -o conftest -g -O2 -pipe -no-cpp-precomp -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk             -miphoneos-version-min=3.0 -I/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/usr/include/ -arch armv6 -Iinclude -I../../include   -Iinclude -I../../include  -L/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/usr/lib/ -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk              -miphoneos-version-min=3.0 -static-libgcc -arch armv6  conftest.c  >&5
 Undefined symbols for architecture armv6:
   "__ui64toa", referenced from:
-      _main in ccJRhNK6.o
+      _main in ccVGDIHA.o
 ld: symbol(s) not found for architecture armv6
 collect2: ld returned 1 exit status
 configure:16675: $? = 1
@@ -1886,7 +1886,7 @@ configure:16675: checking for _stricmp
 configure:16675: /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -o conftest -g -O2 -pipe -no-cpp-precomp -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk             -miphoneos-version-min=3.0 -I/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/usr/include/ -arch armv6 -Iinclude -I../../include   -Iinclude -I../../include  -L/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/usr/lib/ -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk              -miphoneos-version-min=3.0 -static-libgcc -arch armv6  conftest.c  >&5
 Undefined symbols for architecture armv6:
   "__stricmp", referenced from:
-      _main in cc3Nrkc4.o
+      _main in cc2h2kTs.o
 ld: symbol(s) not found for architecture armv6
 collect2: ld returned 1 exit status
 configure:16675: $? = 1
@@ -2008,7 +2008,7 @@ configure:16675: checking for _strnicmp
 configure:16675: /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -o conftest -g -O2 -pipe -no-cpp-precomp -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk             -miphoneos-version-min=3.0 -I/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/usr/include/ -arch armv6 -Iinclude -I../../include   -Iinclude -I../../include  -L/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/usr/lib/ -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk              -miphoneos-version-min=3.0 -static-libgcc -arch armv6  conftest.c  >&5
 Undefined symbols for architecture armv6:
   "__strnicmp", referenced from:
-      _main in cc42f7nc.o
+      _main in ccX1Uq0V.o
 ld: symbol(s) not found for architecture armv6
 collect2: ld returned 1 exit status
 configure:16675: $? = 1
@@ -2150,7 +2150,7 @@ configure:16675: checking for fseeko64
 configure:16675: /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -o conftest -g -O2 -pipe -no-cpp-precomp -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk             -miphoneos-version-min=3.0 -I/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/usr/include/ -arch armv6 -Iinclude -I../../include   -Iinclude -I../../include  -L/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/usr/lib/ -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk              -miphoneos-version-min=3.0 -static-libgcc -arch armv6  conftest.c  >&5
 Undefined symbols for architecture armv6:
   "_fseeko64", referenced from:
-      _main in cceSK481.o
+      _main in ccSYycLT.o
 ld: symbol(s) not found for architecture armv6
 collect2: ld returned 1 exit status
 configure:16675: $? = 1
@@ -3944,7 +3944,7 @@ configure:20993: checking for sem_timedwait
 configure:21012: /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -o conftest -g -O2 -pipe -no-cpp-precomp -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk             -miphoneos-version-min=3.0 -I/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/usr/include/ -arch armv6 -Iinclude -I../../include  -D_THREAD_SAFE  -Iinclude -I../../include  -L/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/usr/lib/ -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk              -miphoneos-version-min=3.0 -static-libgcc -arch armv6  conftest.c  -lm -liconv  >&5
 Undefined symbols for architecture armv6:
   "_sem_timedwait", referenced from:
-      _main in ccfM0MzW.o
+      _main in ccIeiU6W.o
 ld: symbol(s) not found for architecture armv6
 collect2: ld returned 1 exit status
 configure:21012: $? = 1
@@ -4072,7 +4072,7 @@ configure:21025: checking for pthread_spin_trylock
 configure:21045: /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -o conftest -g -O2 -pipe -no-cpp-precomp -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk             -miphoneos-version-min=3.0 -I/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/usr/include/ -arch armv6 -Iinclude -I../../include  -D_THREAD_SAFE  -Iinclude -I../../include  -L/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/usr/lib/ -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk              -miphoneos-version-min=3.0 -static-libgcc -arch armv6  conftest.c  -lm -liconv  >&5
 Undefined symbols for architecture armv6:
   "_pthread_spin_trylock", referenced from:
-      _main in cc07lQZX.o
+      _main in ccGnS59H.o
 ld: symbol(s) not found for architecture armv6
 collect2: ld returned 1 exit status
 configure:21045: $? = 1
@@ -4320,7 +4320,7 @@ configure:21115: checking for pthread_set_name_np
 configure:21135: /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -o conftest -g -O2 -pipe -no-cpp-precomp -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk             -miphoneos-version-min=3.0 -I/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/usr/include/ -arch armv6 -Iinclude -I../../include  -D_THREAD_SAFE  -Iinclude -I../../include  -L/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/usr/lib/ -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk              -miphoneos-version-min=3.0 -static-libgcc -arch armv6  conftest.c  -lm -liconv  >&5
 Undefined symbols for architecture armv6:
   "_pthread_set_name_np", referenced from:
-      _main in ccVrl1MS.o
+      _main in cc0Uoxns.o
 ld: symbol(s) not found for architecture armv6
 collect2: ld returned 1 exit status
 configure:21135: $? = 1

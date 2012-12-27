@@ -210,3 +210,16 @@ if test "$?" = "0"; then
   echo ""
 fi
 
+make dep && make
+
+LIB_OTARGET="compiled/$ARCH/libs"
+
+echo ${LIB_OTARGET}
+
+[ -d $LIB_OTARGET ] || mkdir -p $LIB_OTARGET
+
+cp  pjlib/lib/* $LIB_OTARGET
+cp  pjlib-util/lib/* $LIB_OTARGET
+cp  pjsip/lib/* $LIB_OTARGET
+cp  pjmedia/lib/* $LIB_OTARGET
+cp  pjnath/lib/* $LIB_OTARGET

@@ -30,8 +30,8 @@ Kernel configured for up to 2 processors.
 Processor type: i486 (Intel 80486)
 Processors active: 0 1
 Primary memory available: 2.00 gigabytes
-Default processor set: 138 tasks, 683 threads, 2 processors
-Load average: 2.54, Mach factor: 0.70
+Default processor set: 134 tasks, 611 threads, 2 processors
+Load average: 2.86, Mach factor: 0.39
 /bin/machine           = unknown
 /usr/bin/oslevel       = unknown
 /bin/universe          = unknown
@@ -866,7 +866,7 @@ configure:16675: checking for _strrev
 configure:16675: /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -o conftest -g -O2 -pipe -no-cpp-precomp -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk             -miphoneos-version-min=3.0 -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/usr/include/ -arch i386 -Iinclude -I../../include   -Iinclude -I../../include  -L/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/usr/lib/ -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk              -miphoneos-version-min=3.0 -static-libgcc -arch i386  conftest.c  >&5
 Undefined symbols for architecture i386:
   "__strrev", referenced from:
-      _main in cco9Dhsh.o
+      _main in ccmYZoi4.o
 ld: symbol(s) not found for architecture i386
 collect2: ld returned 1 exit status
 configure:16675: $? = 1
@@ -974,7 +974,7 @@ configure:16675: checking for _strupr
 configure:16675: /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -o conftest -g -O2 -pipe -no-cpp-precomp -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk             -miphoneos-version-min=3.0 -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/usr/include/ -arch i386 -Iinclude -I../../include   -Iinclude -I../../include  -L/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/usr/lib/ -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk              -miphoneos-version-min=3.0 -static-libgcc -arch i386  conftest.c  >&5
 Undefined symbols for architecture i386:
   "__strupr", referenced from:
-      _main in cc1lXcDI.o
+      _main in cc0RLWa3.o
 ld: symbol(s) not found for architecture i386
 collect2: ld returned 1 exit status
 configure:16675: $? = 1
@@ -1082,7 +1082,7 @@ configure:16675: checking for _strlwr
 configure:16675: /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -o conftest -g -O2 -pipe -no-cpp-precomp -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk             -miphoneos-version-min=3.0 -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/usr/include/ -arch i386 -Iinclude -I../../include   -Iinclude -I../../include  -L/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/usr/lib/ -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk              -miphoneos-version-min=3.0 -static-libgcc -arch i386  conftest.c  >&5
 Undefined symbols for architecture i386:
   "__strlwr", referenced from:
-      _main in ccV6VAwe.o
+      _main in ccjeciXe.o
 ld: symbol(s) not found for architecture i386
 collect2: ld returned 1 exit status
 configure:16675: $? = 1
@@ -1205,7 +1205,7 @@ configure:16675: checking for itoa
 configure:16675: /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -o conftest -g -O2 -pipe -no-cpp-precomp -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk             -miphoneos-version-min=3.0 -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/usr/include/ -arch i386 -Iinclude -I../../include   -Iinclude -I../../include  -L/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/usr/lib/ -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk              -miphoneos-version-min=3.0 -static-libgcc -arch i386  conftest.c  >&5
 Undefined symbols for architecture i386:
   "_itoa", referenced from:
-      _main in ccYXMAYO.o
+      _main in ccMO0MdZ.o
 ld: symbol(s) not found for architecture i386
 collect2: ld returned 1 exit status
 configure:16675: $? = 1
@@ -1316,7 +1316,7 @@ configure:16675: checking for _ltoa
 configure:16675: /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -o conftest -g -O2 -pipe -no-cpp-precomp -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk             -miphoneos-version-min=3.0 -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/usr/include/ -arch i386 -Iinclude -I../../include   -Iinclude -I../../include  -L/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/usr/lib/ -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk              -miphoneos-version-min=3.0 -static-libgcc -arch i386  conftest.c  >&5
 Undefined symbols for architecture i386:
   "__ltoa", referenced from:
-      _main in ccEZRfd4.o
+      _main in ccpWPVj6.o
 ld: symbol(s) not found for architecture i386
 collect2: ld returned 1 exit status
 configure:16675: $? = 1
@@ -1427,7 +1427,7 @@ configure:16675: checking for _uitoa
 configure:16675: /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -o conftest -g -O2 -pipe -no-cpp-precomp -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk             -miphoneos-version-min=3.0 -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/usr/include/ -arch i386 -Iinclude -I../../include   -Iinclude -I../../include  -L/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/usr/lib/ -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk              -miphoneos-version-min=3.0 -static-libgcc -arch i386  conftest.c  >&5
 Undefined symbols for architecture i386:
   "__uitoa", referenced from:
-      _main in ccYZVqQH.o
+      _main in ccfJkfRH.o
 ld: symbol(s) not found for architecture i386
 collect2: ld returned 1 exit status
 configure:16675: $? = 1
@@ -1538,7 +1538,7 @@ configure:16675: checking for _ultoa
 configure:16675: /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -o conftest -g -O2 -pipe -no-cpp-precomp -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk             -miphoneos-version-min=3.0 -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/usr/include/ -arch i386 -Iinclude -I../../include   -Iinclude -I../../include  -L/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/usr/lib/ -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk              -miphoneos-version-min=3.0 -static-libgcc -arch i386  conftest.c  >&5
 Undefined symbols for architecture i386:
   "__ultoa", referenced from:
-      _main in ccadpRjd.o
+      _main in ccK6nSq0.o
 ld: symbol(s) not found for architecture i386
 collect2: ld returned 1 exit status
 configure:16675: $? = 1
@@ -1657,7 +1657,7 @@ configure:16675: checking for _i64toa
 configure:16675: /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -o conftest -g -O2 -pipe -no-cpp-precomp -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk             -miphoneos-version-min=3.0 -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/usr/include/ -arch i386 -Iinclude -I../../include   -Iinclude -I../../include  -L/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/usr/lib/ -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk              -miphoneos-version-min=3.0 -static-libgcc -arch i386  conftest.c  >&5
 Undefined symbols for architecture i386:
   "__i64toa", referenced from:
-      _main in cc89qvEy.o
+      _main in ccnPEgcw.o
 ld: symbol(s) not found for architecture i386
 collect2: ld returned 1 exit status
 configure:16675: $? = 1
@@ -1770,7 +1770,7 @@ configure:16675: checking for _ui64toa
 configure:16675: /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -o conftest -g -O2 -pipe -no-cpp-precomp -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk             -miphoneos-version-min=3.0 -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/usr/include/ -arch i386 -Iinclude -I../../include   -Iinclude -I../../include  -L/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/usr/lib/ -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk              -miphoneos-version-min=3.0 -static-libgcc -arch i386  conftest.c  >&5
 Undefined symbols for architecture i386:
   "__ui64toa", referenced from:
-      _main in ccUGW8F7.o
+      _main in ccs1HRtW.o
 ld: symbol(s) not found for architecture i386
 collect2: ld returned 1 exit status
 configure:16675: $? = 1
@@ -1909,7 +1909,7 @@ configure:16675: checking for _stricmp
 configure:16675: /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -o conftest -g -O2 -pipe -no-cpp-precomp -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk             -miphoneos-version-min=3.0 -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/usr/include/ -arch i386 -Iinclude -I../../include   -Iinclude -I../../include  -L/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/usr/lib/ -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk              -miphoneos-version-min=3.0 -static-libgcc -arch i386  conftest.c  >&5
 Undefined symbols for architecture i386:
   "__stricmp", referenced from:
-      _main in ccwQtpYf.o
+      _main in ccrwonRN.o
 ld: symbol(s) not found for architecture i386
 collect2: ld returned 1 exit status
 configure:16675: $? = 1
@@ -2033,7 +2033,7 @@ configure:16675: checking for _strnicmp
 configure:16675: /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -o conftest -g -O2 -pipe -no-cpp-precomp -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk             -miphoneos-version-min=3.0 -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/usr/include/ -arch i386 -Iinclude -I../../include   -Iinclude -I../../include  -L/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/usr/lib/ -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk              -miphoneos-version-min=3.0 -static-libgcc -arch i386  conftest.c  >&5
 Undefined symbols for architecture i386:
   "__strnicmp", referenced from:
-      _main in ccheWJc6.o
+      _main in ccU5Udb5.o
 ld: symbol(s) not found for architecture i386
 collect2: ld returned 1 exit status
 configure:16675: $? = 1
@@ -2177,7 +2177,7 @@ configure:16675: checking for fseeko64
 configure:16675: /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -o conftest -g -O2 -pipe -no-cpp-precomp -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk             -miphoneos-version-min=3.0 -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/usr/include/ -arch i386 -Iinclude -I../../include   -Iinclude -I../../include  -L/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/usr/lib/ -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk              -miphoneos-version-min=3.0 -static-libgcc -arch i386  conftest.c  >&5
 Undefined symbols for architecture i386:
   "_fseeko64", referenced from:
-      _main in cccyYQ2X.o
+      _main in ccwlV5PR.o
 ld: symbol(s) not found for architecture i386
 collect2: ld returned 1 exit status
 configure:16675: $? = 1
@@ -3421,7 +3421,7 @@ configure:20993: checking for sem_timedwait
 configure:21012: /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -o conftest -g -O2 -pipe -no-cpp-precomp -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk             -miphoneos-version-min=3.0 -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/usr/include/ -arch i386 -Iinclude -I../../include  -D_THREAD_SAFE  -Iinclude -I../../include  -L/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/usr/lib/ -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk              -miphoneos-version-min=3.0 -static-libgcc -arch i386  conftest.c  -lm -liconv  >&5
 Undefined symbols for architecture i386:
   "_sem_timedwait", referenced from:
-      _main in ccuQo84O.o
+      _main in cciKoiLL.o
 ld: symbol(s) not found for architecture i386
 collect2: ld returned 1 exit status
 configure:21012: $? = 1
@@ -3555,7 +3555,7 @@ configure:21025: checking for pthread_spin_trylock
 configure:21045: /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -o conftest -g -O2 -pipe -no-cpp-precomp -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk             -miphoneos-version-min=3.0 -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/usr/include/ -arch i386 -Iinclude -I../../include  -D_THREAD_SAFE  -Iinclude -I../../include  -L/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/usr/lib/ -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk              -miphoneos-version-min=3.0 -static-libgcc -arch i386  conftest.c  -lm -liconv  >&5
 Undefined symbols for architecture i386:
   "_pthread_spin_trylock", referenced from:
-      _main in ccZaT0l2.o
+      _main in ccQPCMv3.o
 ld: symbol(s) not found for architecture i386
 collect2: ld returned 1 exit status
 configure:21045: $? = 1
@@ -3815,7 +3815,7 @@ configure:21115: checking for pthread_set_name_np
 configure:21135: /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -o conftest -g -O2 -pipe -no-cpp-precomp -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk             -miphoneos-version-min=3.0 -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/usr/include/ -arch i386 -Iinclude -I../../include  -D_THREAD_SAFE  -Iinclude -I../../include  -L/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/usr/lib/ -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk              -miphoneos-version-min=3.0 -static-libgcc -arch i386  conftest.c  -lm -liconv  >&5
 Undefined symbols for architecture i386:
   "_pthread_set_name_np", referenced from:
-      _main in cccDp5z8.o
+      _main in cc8q2plq.o
 ld: symbol(s) not found for architecture i386
 collect2: ld returned 1 exit status
 configure:21135: $? = 1
