@@ -1,0 +1,49 @@
+#!/bin/bash
+
+set -e
+
+ARCHS="armv6 armv7 i386"
+
+for ARCH in $ARCHS
+do
+  if [ -d compiled/$ARCH ]
+  then
+    MAIN_ARCH=$ARCH
+  fi
+done
+echo "Main arch is $ARCH"
+if [ -z "$MAIN_ARCH" ]
+then
+  echo "Please compile an architecture"
+  exit 1
+fi
+
+
+OUTPUT_DIR="compiled-universal"
+rm -rf $OUTPUT_DIR/lib
+rm -rf $OUTPUT_DIR/include
+
+mkdir -p $OUTPUT_DIR/lib $OUTPUT_DIR/include
+
+for LIB in compiled/$MAIN_ARCH/libs/*.a
+do
+  LIB=`basename $LIB`
+  LIPO_CREATE=""
+  echo "LIB=$LIB"
+  for ARCH in $ARCHS
+  do
+    if [ -d compiled/$ARCH ]
+    then
+      LIPO_CREATE="$LIPO_CREATE-arch $ARCH compiled/$ARCH/libs/$LIB "
+    fi
+  done
+  OUTPUT="$OUTPUT_DIR/lib/$LIB"
+  echo "Creating: $OUTPUT"
+  echo "LIPO_CREATE=$LIPO_CREATE"
+  lipo -create $LIPO_CREATE -output $OUTPUT
+  lipo -info $OUTPUT
+done
+
+# echo "Copying headers from compiled/$MAIN_ARCH..."
+# cp -R compiled/$MAIN_ARCH/include/* $OUTPUT_DIR/include
+
