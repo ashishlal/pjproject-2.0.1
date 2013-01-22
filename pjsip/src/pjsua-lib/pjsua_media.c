@@ -2054,7 +2054,24 @@ static void stop_media_session(pjsua_call_id call_id)
     pjsua_call *call = &pjsua_var.calls[call_id];
     unsigned mi;
 
-    pj_log_push_indent();
+    PJ_LOG(4,(THIS_FILE, "--my10--"));
+    pj_log_push_indent(); 
+
+    pj_thread_desc rtpdesc;
+    pj_thread_t *thread = 0;
+    pj_status_t status;
+    // Register the thread with PJLIB, this is must for any external
+    //threads
+    // which need to use the PJLIB framework
+    if (!pj_thread_is_registered())
+    {
+        status = pj_thread_register("Threadname1", rtpdesc, &thread );
+        if (status != PJ_SUCCESS)
+        {
+            perror("Threadname Failed to register with PJLIB,exit");
+            exit(1);
+        }
+    }
 
     for (mi=0; mi<call->med_cnt; ++mi) {
 	pjsua_call_media *call_med = &call->media[mi];
@@ -2068,9 +2085,10 @@ static void stop_media_session(pjsua_call_id call_id)
 	    pjsua_vid_stop_stream(call_med);
 	}
 #endif
+    PJ_LOG(4,(THIS_FILE, "--my11--"));
 
-	PJ_LOG(4,(THIS_FILE, "Media session call%02d:%d is destroyed",
-			     call_id, mi));
+	/* PJ_LOG(4,(THIS_FILE, "Media session call%02d:%d is destroyed",
+			     call_id, mi)); */
         call_med->prev_state = call_med->state;
 	call_med->state = PJSUA_CALL_MEDIA_NONE;
 
@@ -2102,8 +2120,9 @@ static void stop_media_session(pjsua_call_id call_id)
 #endif
 	}
     }
+    PJ_LOG(4,(THIS_FILE, "--my12--"));
 
-    pj_log_pop_indent();
+    pj_log_pop_indent(); 
 }
 
 pj_status_t pjsua_media_channel_deinit(pjsua_call_id call_id)
@@ -2178,11 +2197,13 @@ pj_status_t pjsua_media_channel_update(pjsua_call_id call_id,
 	return PJ_EBUSY;
 
     PJ_LOG(4,(THIS_FILE, "Call %d: updating media..", call_id));
-    pj_log_push_indent();
+    pj_log_push_indent(); 
 
+    PJ_LOG(4,(THIS_FILE, "--my0--"));
     /* Destroy existing media session, if any. */
     stop_media_session(call->index);
 
+    PJ_LOG(4,(THIS_FILE, "--my1--"));
     /* Call media count must be at least equal to SDP media. Note that
      * it may not be equal when remote removed any SDP media line.
      */
@@ -2194,6 +2215,7 @@ pj_status_t pjsua_media_channel_update(pjsua_call_id call_id,
     /* Sort audio/video based on "quality" */
     sort_media(local_sdp, &STR_AUDIO, acc->cfg.use_srtp,
 	       maudidx, &maudcnt, &mtotaudcnt);
+    PJ_LOG(4,(THIS_FILE, "--my2--"));
 #if PJMEDIA_HAS_VIDEO
     sort_media(local_sdp, &STR_VIDEO, acc->cfg.use_srtp,
 	       mvididx, &mvidcnt, &mtotvidcnt);
@@ -2201,6 +2223,7 @@ pj_status_t pjsua_media_channel_update(pjsua_call_id call_id,
     PJ_UNUSED_ARG(STR_VIDEO);
     mvidcnt = mtotvidcnt = 0;
 #endif
+    PJ_LOG(4,(THIS_FILE, "--my3--"));
 
     /* Applying media count limitation. Note that in generating SDP answer,
      * no media count limitation applied, as we didn't know yet which media
@@ -2232,6 +2255,7 @@ pj_status_t pjsua_media_channel_update(pjsua_call_id call_id,
 	need_renego_sdp = PJ_TRUE;
     }
 
+    PJ_LOG(4,(THIS_FILE, "--my4--"));
     /* Process each media stream */
     for (mi=0; mi < call->med_prov_cnt; ++mi) {
 	pjsua_call_media *call_med = &call->media_prov[mi];
@@ -2257,6 +2281,7 @@ pj_status_t pjsua_media_channel_update(pjsua_call_id call_id,
 	    goto on_error;
 #endif
 	}
+    PJ_LOG(4,(THIS_FILE, "--my5--"));
 
 	if (call_med->type==PJMEDIA_TYPE_AUDIO) {
 	    pjmedia_stream_info the_si, *si = &the_si;
@@ -2323,6 +2348,7 @@ pj_status_t pjsua_media_channel_update(pjsua_call_id call_id,
 		    call_med->state = PJSUA_CALL_MEDIA_ACTIVE;
 	    }
 
+    PJ_LOG(4,(THIS_FILE, "--my6--"));
 	    /* Call implementation */
 	    status = pjsua_aud_channel_update(call_med, tmp_pool, si,
 	                                      local_sdp, remote_sdp);
@@ -2375,6 +2401,7 @@ pj_status_t pjsua_media_channel_update(pjsua_call_id call_id,
 		call->audio_idx = mi;
 	    }
 
+    PJ_LOG(4,(THIS_FILE, "--my7--"));
 #if defined(PJMEDIA_HAS_VIDEO) && (PJMEDIA_HAS_VIDEO != 0)
 	} else if (call_med->type==PJMEDIA_TYPE_VIDEO) {
 	    pjmedia_vid_stream_info the_si, *si = &the_si;
@@ -2506,6 +2533,7 @@ pj_status_t pjsua_media_channel_update(pjsua_call_id call_id,
 	} else {
 	    got_media = PJ_TRUE;
 	}
+    PJ_LOG(4,(THIS_FILE, "--my8--"));
     }
 
     /* Update call media from provisional media */
@@ -2534,11 +2562,12 @@ pj_status_t pjsua_media_channel_update(pjsua_call_id call_id,
 	    goto on_error;
     }
 
-    pj_log_pop_indent();
+    PJ_LOG(4,(THIS_FILE, "--my9--"));
+    pj_log_pop_indent(); 
     return (got_media? PJ_SUCCESS : PJMEDIA_SDPNEG_ENOMEDIA);
 
 on_error:
-    pj_log_pop_indent();
+    /* pj_log_pop_indent();*/
     return status;
 }
 

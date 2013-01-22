@@ -649,6 +649,23 @@ PJ_DEF(pj_status_t) pj_thread_resume(pj_thread_t *p)
     return rc;
 }
 
+PJ_DEF(pj_status_t) pj_thread_auto_register(void)
+
+{
+    pj_status_t rc;
+    if(!pj_thread_is_registered())
+    {
+      pj_thread_desc rpc_thread_desc;
+      pj_thread_t* thread_ptr;
+      rc = pj_thread_register("auto_thr%p", rpc_thread_desc, &thread_ptr);
+    }
+    else
+    {
+      rc = PJ_SUCCESS;
+    }
+    return rc;
+}
+
 /*
  * pj_thread_this()
  */
@@ -658,9 +675,12 @@ PJ_DEF(pj_thread_t*) pj_thread_this(void)
     pj_thread_t *rec = (pj_thread_t*)pj_thread_local_get(thread_tls_id);
     
     if (rec == NULL) {
+        
+        if(pj_thread_auto_register() != PJ_SUCCESS) 
 	pj_assert(!"Calling pjlib from unknown/external thread. You must "
 		   "register external threads with pj_thread_register() "
 		   "before calling any pjlib functions.");
+        
     }
 
     /*
@@ -1232,7 +1252,8 @@ PJ_DEF(pj_status_t) pj_mutex_lock(pj_mutex_t *mutex)
     status = pthread_mutex_lock( &mutex->mutex );
 
 
-#if PJ_DEBUG
+/* +++lal */
+#if 0
     if (status == PJ_SUCCESS) {
 	mutex->owner = pj_thread_this();
 	pj_ansi_strcpy(mutex->owner_name, mutex->owner->obj_name);
@@ -1270,9 +1291,10 @@ PJ_DEF(pj_status_t) pj_mutex_unlock(pj_mutex_t *mutex)
     pj_status_t status;
 
     PJ_CHECK_STACK();
-    PJ_ASSERT_RETURN(mutex, PJ_EINVAL);
+    /* PJ_ASSERT_RETURN(mutex, PJ_EINVAL);  */
+    if(!mutex) return PJ_EINVAL;
 
-#if PJ_DEBUG
+#if 0
     pj_assert(mutex->owner == pj_thread_this());
     if (--mutex->nesting_level == 0) {
 	mutex->owner = NULL;

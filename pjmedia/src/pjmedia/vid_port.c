@@ -667,7 +667,8 @@ static pj_status_t convert_frame(pjmedia_vid_port *vp,
 static void copy_frame_to_buffer(pjmedia_vid_port *vp,
                                  pjmedia_frame *frame)
 {
-    pj_mutex_lock(vp->frm_mutex);
+    pj_status_t s = pj_mutex_lock(vp->frm_mutex);
+    if(s != PJ_SUCCESS) return;
     pjmedia_frame_copy(vp->frm_buf, frame);
     pj_mutex_unlock(vp->frm_mutex);
 }

@@ -89,6 +89,10 @@ struct ios_stream
     AVCaptureDeviceInput	*dev_input;
     AVCaptureVideoDataOutput	*video_output;
     VOutDelegate		*vout_delegate;
+    UIImageView *cap_image_view;
+    CALayer *customLayer;
+    AVCaptureVideoPreviewLayer *prevLayer;
+    int sessionOff;
 #endif    
     UIImageView		*imgView;
     void		*buf;
@@ -131,6 +135,8 @@ static pj_status_t ios_stream_put_frame(pjmedia_vid_dev_stream *strm,
 					const pjmedia_frame *frame);
 static pj_status_t ios_stream_stop(pjmedia_vid_dev_stream *strm);
 static pj_status_t ios_stream_destroy(pjmedia_vid_dev_stream *strm);
+
+void ios_register_main_thread();
 
 /* Operations */
 static pjmedia_vid_dev_factory_op factory_op =
@@ -307,6 +313,7 @@ static pj_status_t ios_factory_default_param(pj_pool_t *pool,
 - (void)update_image
 {    
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+            /* PJ_LOG(4, (THIS_FILE, "Inside update_image")); */
     
     /* Create a device-dependent RGB color space */
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB(); 
@@ -334,14 +341,28 @@ static pj_status_t ios_factory_default_param(pj_pool_t *pool,
     
     /* Release the Quartz image */
     CGImageRelease(quartzImage);
+    /* dispatch_async(dispatch_get_main_queue(),
+                   ^{[stream->customLayer setContents:image];});  */
     
     dispatch_async(dispatch_get_main_queue(),
-                   ^{[stream->imgView setImage:image];});
-    /*
-    [stream->imgView performSelectorOnMainThread:@selector(setImage:)
-		     withObject:image waitUntilDone:NO];
-     */
+                   ^{[stream->imgView setImage:image];}); 
     
+#if 0
+            /* PJ_LOG(4, (THIS_FILE, "Inside update_image-2: 0x%02x", image)); */
+    UIWindow *window = [[UIApplication sharedApplication] keyWindow];
+    if(!window)
+       ;
+       /* PJ_LOG(4, (THIS_FILE, "Could not bring imgView on top")); */
+    else {
+        if(stream->imgView) {
+            /* PJ_LOG(4, (THIS_FILE, "111111-imgView 0x%02x on top", stream->imgView)); */
+            dispatch_async(dispatch_get_main_queue(), ^{[window bringSubviewToFront:stream->imgView];});
+        }
+    }
+#endif
+   /* [stream->imgView performSelectorOnMainThread:@selector(setImage:)
+		     withObject:image waitUntilDone:NO]; */
+     
     [pool release];
 }    
 
@@ -351,7 +372,9 @@ static pj_status_t ios_factory_default_param(pj_pool_t *pool,
 {
     pjmedia_frame frame;
     CVImageBufferRef imageBuffer;
-
+            /* PJ_LOG(4, (THIS_FILE, "Inside captureOutput-1")); */
+    if(stream->sessionOff) return;
+    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
     if (!sampleBuffer)
 	return;
     
@@ -361,19 +384,55 @@ static pj_status_t ios_factory_default_param(pj_pool_t *pool,
     /* Lock the base address of the pixel buffer */
     CVPixelBufferLockBaseAddress(imageBuffer, 0); 
     
+#if 1    
     frame.type = PJMEDIA_FRAME_TYPE_VIDEO;
     frame.buf = CVPixelBufferGetBaseAddress(imageBuffer);
     frame.size = stream->frame_size;
     frame.bit_info = 0;
     frame.timestamp.u64 = stream->frame_ts.u64;
-    
+    uint8_t *baseAddress = (uint8_t *)CVPixelBufferGetBaseAddress(imageBuffer); 
+    size_t bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer); 
+    size_t width = CVPixelBufferGetWidth(imageBuffer); 
+    size_t height = CVPixelBufferGetHeight(imageBuffer);  
+    stream->buf = baseAddress; 
+    stream->size.w = width;
+    stream->size.h = height; 
+    stream->bytes_per_row = bytesPerRow;
+   
+/*
+    // Create a device-dependent RGB color space
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB(); 
+
+    // Create a bitmap graphics context with the sample buffer data
+    CGContextRef context = CGBitmapContextCreate(baseAddress, width, height, 8, 
+      bytesPerRow, colorSpace, kCGBitmapByteOrder32Little | kCGImageAlphaPremultipliedFirst); 
+    // Create a Quartz image from the pixel data in the bitmap graphics context
+    CGImageRef quartzImage = CGBitmapContextCreateImage(context); 
+    // Unlock the pixel buffer
+     UIImage *image = [UIImage imageWithCGImage:quartzImage];
+
+    dispatch_async(dispatch_get_main_queue(),
+                   ^{[stream->cap_image_view setImage:image];}); */
+            /* PJ_LOG(4, (THIS_FILE, "Inside captureOutput-2")); */
     if (stream->vid_cb.capture_cb)
         (*stream->vid_cb.capture_cb)(&stream->base, stream->user_data, &frame);
-
-    stream->frame_ts.u64 += stream->ts_inc;
+#else
+    uint8_t *baseAddress = (uint8_t *)CVPixelBufferGetBaseAddress(imageBuffer); 
+    size_t bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer); 
+    size_t width = CVPixelBufferGetWidth(imageBuffer); 
+    size_t height = CVPixelBufferGetHeight(imageBuffer);  
+    stream->buf = baseAddress; 
+    stream->size.w = width;
+    stream->size.h = height; 
+    stream->bytes_per_row = bytesPerRow;
     
+#endif
+            /* PJ_LOG(4, (THIS_FILE, "Inside captureOutput-3")); */
+    stream->frame_ts.u64 += stream->ts_inc;
+    /* [stream->cap_image_view performSelectorOnMainThread:@selector(setImage:) withObject:image waitUntilDone:YES]; */
     /* Unlock the pixel buffer */
     CVPixelBufferUnlockBaseAddress(imageBuffer,0);
+    [pool drain];
 }
 @end
 
@@ -408,6 +467,8 @@ static pj_status_t ios_factory_create_stream(
     ios_fmt_info *ifi = get_ios_format_info(param->fmt.id);
     NSError *error;
 
+    NSAutoreleasePool *mypool = [[NSAutoreleasePool alloc] init];
+
     PJ_ASSERT_RETURN(f && param && p_vid_strm, PJ_EINVAL);
     PJ_ASSERT_RETURN(param->fmt.type == PJMEDIA_TYPE_VIDEO &&
 		     param->fmt.detail_type == PJMEDIA_FORMAT_DETAIL_VIDEO &&
@@ -438,7 +499,7 @@ static pj_status_t ios_factory_create_stream(
     strm->bytes_per_row = strm->size.w * strm->bpp / 8;
     strm->frame_size = strm->bytes_per_row * strm->size.h;
     strm->ts_inc = PJMEDIA_SPF2(param->clock_rate, &vfd->fps, 1);
-
+    strm->sessionOff = 1;
     if (param->dir & PJMEDIA_DIR_CAPTURE) {
         /* Create capture stream here */
 	strm->cap_session = [[AVCaptureSession alloc] init];
@@ -464,7 +525,7 @@ static pj_status_t ios_factory_create_stream(
 	    status = PJMEDIA_EVID_SYSERR;
 	    goto on_error;
 	}
-	[strm->cap_session addInput:strm->dev_input];
+	dispatch_async(dispatch_get_main_queue(), ^{[strm->cap_session addInput:strm->dev_input];});
 	
 	strm->video_output = [[[AVCaptureVideoDataOutput alloc] init]
 			      autorelease];
@@ -472,7 +533,8 @@ static pj_status_t ios_factory_create_stream(
 	    status = PJMEDIA_EVID_SYSERR;
 	    goto on_error;
 	}
-	[strm->cap_session addOutput:strm->video_output];
+        strm->video_output.alwaysDiscardsLateVideoFrames = YES; 
+	dispatch_async(dispatch_get_main_queue(), ^{[strm->cap_session addOutput:strm->video_output];});
 	
 	/* Configure the video output */
 	strm->vout_delegate = [VOutDelegate alloc];
@@ -482,6 +544,7 @@ static pj_status_t ios_factory_create_stream(
 			    queue:queue];
 	dispatch_release(queue);	
 	
+#if 0
 	strm->video_output.videoSettings =
 	    [NSDictionary dictionaryWithObjectsAndKeys:
 			  [NSNumber numberWithInt:ifi->ios_format],
@@ -492,6 +555,34 @@ static pj_status_t ios_factory_create_stream(
 			  kCVPixelBufferHeightKey, nil];
 	strm->video_output.minFrameDuration = CMTimeMake(vfd->fps.denum,
 							 vfd->fps.num);	
+#else
+        NSString* key = (NSString*)kCVPixelBufferPixelFormatTypeKey; 
+	NSNumber* value = [NSNumber numberWithUnsignedInt:kCVPixelFormatType_32BGRA]; 
+	strm->video_output.videoSettings = [NSDictionary dictionaryWithObject:value forKey:key];
+	strm->video_output.minFrameDuration = CMTimeMake(1, 15);
+#endif
+        [strm->cap_session setSessionPreset:AVCaptureSessionPresetMedium];
+	/*We add the Custom Layer (We need to change the orientation of the layer so that the video is displayed correctly)*/
+	UIWindow *window = [[UIApplication sharedApplication] keyWindow];
+        /*
+        UIWindow *topWindow = [[[UIApplication sharedApplication].windows sortedArrayUsingComparator:^NSComparisonResult(UIWindow *win1, UIWindow *win2) { return win1.windowLevel - win2.windowLevel; } ] lastObject];
+        UIView *topView = [[topWindow subviews] lastObject]; */
+	strm->customLayer = [CALayer layer];
+	strm->customLayer.frame = CGRectMake(300,0,100,100);
+	strm->customLayer.transform = CATransform3DRotate(CATransform3DIdentity, M_PI/2.0f, 0, 0, 1);
+	strm->customLayer.contentsGravity = kCAGravityResizeAspectFill;
+	/*We add the imageView*/
+	/*We add the preview layer*/
+	strm->prevLayer = [AVCaptureVideoPreviewLayer layerWithSession: strm->cap_session];
+	strm->prevLayer.frame = CGRectMake(200, 0, 100, 100);
+	strm->prevLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+#if 0
+        UIView *topView = [[[[UIApplication sharedApplication] keyWindow] subviews] lastObject];
+	dispatch_async(dispatch_get_main_queue(), ^{[topView.layer addSublayer:strm->customLayer];});
+	dispatch_async(dispatch_get_main_queue(), ^{[topView.layer addSublayer: strm->prevLayer];});
+#endif
+        /* dispatch_async(dispatch_get_main_queue(), ^{[window bringSubviewToFront:topView];}); */
+
     } else if (param->dir & PJMEDIA_DIR_RENDER) {
         /* Create renderer stream here */
 	/* Get the main window */
@@ -502,12 +593,16 @@ static pj_status_t ios_factory_create_stream(
 	    window = (UIWindow *)param->window.info.ios.window;
 	
 	pj_assert(window);
-	strm->imgView = [[UIImageView alloc] initWithFrame:[window bounds]];
+        strm->imgView = [[UIImageView alloc] init];
+	strm->imgView.frame = CGRectMake(0, 0, 100, 100);
 	if (!strm->imgView) {
 	    status = PJ_ENOMEM;
 	    goto on_error;
 	}
-	[window addSubview:strm->imgView];
+	dispatch_async(dispatch_get_main_queue(), ^{[window addSubview:strm->imgView];});
+        /* +++lal: */
+        /* dispatch_async(dispatch_get_main_queue(), ^{[window bringSubviewToFront:strm->imgView];}); */
+        //[window makeKeyAndVisible];
 	
 	if (!strm->vout_delegate) {
 	    strm->vout_delegate = [VOutDelegate alloc];
@@ -534,11 +629,13 @@ static pj_status_t ios_factory_create_stream(
     strm->base.op = &stream_op;
     *p_vid_strm = &strm->base;
     
+    [mypool release];
     return PJ_SUCCESS;
     
 on_error:
     ios_stream_destroy((pjmedia_vid_dev_stream *)strm);
     
+    [mypool release];
     return status;
 #else
     return PJ_SUCCESS;
@@ -619,15 +716,24 @@ static pj_status_t ios_stream_start(pjmedia_vid_dev_stream *strm)
     struct ios_stream *stream = (struct ios_stream*)strm;
 
     PJ_UNUSED_ARG(stream);
-
-    PJ_LOG(4, (THIS_FILE, "Starting ios video stream"));
+    NSAutoreleasePool *mypool = [[NSAutoreleasePool alloc] init];
 
     if (stream->cap_session) {
-	[stream->cap_session startRunning];
-    
-	if (![stream->cap_session isRunning])
+#if 1
+        stream->sessionOff = 0;
+        UIView *topView = [[[[UIApplication sharedApplication] keyWindow] subviews] lastObject];
+	dispatch_async(dispatch_get_main_queue(), ^{[topView.layer addSublayer:stream->customLayer];});
+	dispatch_async(dispatch_get_main_queue(), ^{[topView.layer addSublayer: stream->prevLayer];});
+	dispatch_async(dispatch_get_main_queue(), ^{[stream->cap_session startRunning];});
+#endif    
+	/* if (![stream->cap_session isRunning]) {
+            PJ_LOG(4, (THIS_FILE, "!!!!!!!!!!VIDEO STREAM NOT RUNNING!!!!!!!!!!!!!!!!"));
+            [mypool release];
 	    return PJ_EUNKNOWN;
+        } */
     }
+    /* ++lal */
+    [mypool release];
 #endif    
     return PJ_SUCCESS;
 }
@@ -639,20 +745,23 @@ static pj_status_t ios_stream_put_frame(pjmedia_vid_dev_stream *strm,
 {
 #ifndef PJ_CONFIG_IPHONE_SIMULATOR
     struct ios_stream *stream = (struct ios_stream*)strm;
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init]; 
+            /* PJ_LOG(4, (THIS_FILE, ".............Inside ios_stream_put_frame............")); */
     
     pj_assert(stream->frame_size >= frame->size);
-    pj_memcpy(stream->buf, frame->buf, frame->size);
+    pj_memcpy(stream->buf, frame->buf, frame->size); 
+    /* memcpy(stream->buf, frame->buf, frame->size);  */
     /* Perform video display in a background thread */
-/*   
-    [stream->vout_delegate update_image];
-    [NSThread detachNewThreadSelector:@selector(update_image)
-	      toTarget:stream->vout_delegate withObject:nil];
-*/
+   
+    /* [stream->vout_delegate update_image]; */
+    /* [NSThread detachNewThreadSelector:@selector(update_image)
+	      toTarget:stream->vout_delegate withObject:nil]; */
+
+
     dispatch_async(stream->render_queue,
-                   ^{[stream->vout_delegate update_image];});
+                   ^{[stream->vout_delegate update_image];}); 
     
-    [pool release];
+    [pool release]; 
 #endif 
     return PJ_SUCCESS;
 }
@@ -666,10 +775,14 @@ static pj_status_t ios_stream_stop(pjmedia_vid_dev_stream *strm)
 
     PJ_UNUSED_ARG(stream);
 
-    PJ_LOG(4, (THIS_FILE, "Stopping ios video stream"));
+    PJ_LOG(4, (THIS_FILE, "Stopping ios video stream")); 
 
-    if (stream->cap_session && [stream->cap_session isRunning])
-	[stream->cap_session stopRunning];
+        stream->sessionOff = 1;
+    if (stream->cap_session && [stream->cap_session isRunning])  {
+	dispatch_async(dispatch_get_main_queue(), ^{[stream->customLayer removeFromSuperLayer];});
+	dispatch_async(dispatch_get_main_queue(), ^{[stream->prevLayer removeFromSuperLayer];});
+	dispatch_async(dispatch_get_main_queue(), ^{[stream->cap_session stopRunning];});
+    }
     
 #endif
     return PJ_SUCCESS;
@@ -722,6 +835,23 @@ static pj_status_t ios_stream_destroy(pjmedia_vid_dev_stream *strm)
     return PJ_SUCCESS;
 #endif
 }
+void ios_register_main_thread()
+{
+    pj_thread_desc rtpdesc;
+    pj_thread_t *thread = 0;
+    pj_status_t status;
+    if (!pj_thread_is_registered())
+    {
+        status = pj_thread_register("Main thread", rtpdesc, &thread );
+        if (status != PJ_SUCCESS)
+        {
+            perror("MainThread Failed to register with PJLIB,exit");
+            exit(1);
+        }
+    }
+
+}
+
 
 #endif
 #endif	/* PJMEDIA_VIDEO_DEV_HAS_IOS */

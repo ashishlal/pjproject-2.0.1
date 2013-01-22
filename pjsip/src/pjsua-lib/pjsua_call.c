@@ -2794,7 +2794,7 @@ PJ_DEF(pj_status_t) pjsua_call_send_request(pjsua_call_id call_id,
 
     PJ_LOG(4,(THIS_FILE, "Call %d sending %.*s request..",
             	          call_id, (int)method_str->slen, method_str->ptr));
-    pj_log_push_indent();
+    pj_log_push_indent(); 
 
     status = acquire_call("pjsua_call_send_request", call_id, &call, &dlg);
     if (status != PJ_SUCCESS)

@@ -4735,11 +4735,19 @@ void console_app_main(const pj_str_t *uri_to_call)
 //		    break;
             
             
-            char* id = "sip:ashishlalwork1@sip2sip.info";
-            char* registrar = "sip:sip2sip.info;transport=udp";
+#if 0
+            char* id = "sip:ashishlalwork3@sip2sip.info";
+            char* registrar = "sip:sip2sip.info;transport=tcp";
             char* realm = "sip2sip.info";
+            char* uname = "ashishlalwork3";
+            char* passwd = "e2wdxxxeyk";
+#else
+            char* id = "sip:ashishlalwork1@sip.antisip.com";
+            char* registrar = "sip:sip.antisip.com";
+            char* realm = "sip.antisip.com";
             char* uname = "ashishlalwork1";
-            char* passwd = "68alidrlhw";
+            char* passwd = "1234";
+#endif
 //this will not work since it needs a nameserver
             
 		pjsua_acc_config_default(&acc_cfg);
@@ -4753,10 +4761,10 @@ void console_app_main(const pj_str_t *uri_to_call)
 		acc_cfg.cred_info[0].data = pj_str(passwd);
        // cfg->cfg.nameserver[cfg->cfg.nameserver_count++] = pj_str(pj_optarg);
         
-            if (1) {
-                acc_cfg.proxy_cnt = 1;
-                acc_cfg.proxy[0] = pj_str("sip:85.17.186.7:5060;transport=tcp");
-            }
+  //          if (1) {
+  //              acc_cfg.proxy_cnt = 1;
+  //              acc_cfg.proxy[0] = pj_str("sip:85.17.186.7:5060;transport=tcp");
+  //          }
             
 		acc_cfg.rtp_cfg = app_config.rtp_cfg;
 		app_config_init_video(&acc_cfg);
@@ -6078,6 +6086,30 @@ pj_status_t app_main(void)
 	app_destroy();
 	return status;
     }
+
+#if 0
+    pj_thread_desc rtpdesc;
+    pj_thread_t *thread = 0;
+    
+    // Register the thread with PJLIB, this is must for any external
+    //threads
+    // which need to use the PJLIB framework
+    if (!pj_thread_is_registered())
+    {
+        status = pj_thread_register("Threadname0", rtpdesc, &thread );
+        if (status != PJ_SUCCESS)
+        {
+            perror("Threadname Failed to register with PJLIB,exit");
+            exit(1);
+        }
+    }
+    
+    // if (pj_thread_is_registered())
+    // {
+    // REPORTERROR("Threadname is succesfully registered with PJMedia");
+    // }
+#endif
+    
 
     /* Start console refresh thread */
     if (stdout_refresh > 0) {

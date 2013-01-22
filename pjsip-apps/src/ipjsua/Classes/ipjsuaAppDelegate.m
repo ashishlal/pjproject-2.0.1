@@ -180,12 +180,12 @@ pj_bool_t showNotification(pjsua_call_id call_id)
     
     do {
 	app_restart = PJ_FALSE;
-	if (app_init(3, argv) != PJ_SUCCESS) {
+    if (app_init(3, argv) != PJ_SUCCESS) {
 	    NSString *str = @"Failed to initialize pjsua\n";
 	    [app performSelectorOnMainThread:@selector(displayMsg:) withObject:str waitUntilDone:YES];
 	} else {
-	    app_running = true;
-	    app_main();
+	    
+        app_main();
 	    
 	    app_destroy();
 	    /* This is on purpose */
@@ -223,7 +223,9 @@ pj_bool_t showNotification(pjsua_call_id call_id)
     app_running = false;
     thread_quit = false;
     /* Start pjsua thread */
-    [NSThread detachNewThreadSelector:@selector(start_app) toTarget:self withObject:nil];
+    
+   [NSThread detachNewThreadSelector:@selector(start_app) toTarget:self withObject:nil];
+    //[self performSelectorOnMainThread:@selector(start_app) withObject:nil waitUntilDone:NO];
 }
 
 /*

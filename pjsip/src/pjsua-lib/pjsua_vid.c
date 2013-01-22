@@ -491,6 +491,7 @@ static pj_status_t create_vid_win(pjsua_vid_win_type type,
     }
     if (i == PJSUA_MAX_VID_WINS) {
 	pj_log_pop_indent();
+	        PJ_LOG(4,(THIS_FILE, "--------11---------"));
 	return PJ_ETOOMANY;
     }
 
@@ -504,8 +505,10 @@ static pj_status_t create_vid_win(pjsua_vid_win_type type,
 	 * Determine if the device supports native preview.
 	 */
 	status = pjmedia_vid_dev_get_info(cap_id, &vdi);
-	if (status != PJ_SUCCESS)
+	if (status != PJ_SUCCESS) {
+	        PJ_LOG(4,(THIS_FILE, "--------22---------"));
 	    goto on_error;
+        }
 
 	if (enable_native_preview &&
 	     (vdi.caps & PJMEDIA_VID_DEV_CAP_INPUT_PREVIEW))
@@ -516,8 +519,10 @@ static pj_status_t create_vid_win(pjsua_vid_win_type type,
 
 	status = pjmedia_vid_dev_default_param(w->pool, cap_id,
 					       &vp_param.vidparam);
-	if (status != PJ_SUCCESS)
+	if (status != PJ_SUCCESS) {
+	        PJ_LOG(4,(THIS_FILE, "--------33---------"));
 	    goto on_error;
+        }
 
 	if (w->is_native) {
 	    vp_param.vidparam.flags |= PJMEDIA_VID_DEV_CAP_OUTPUT_HIDE;
@@ -541,8 +546,10 @@ static pj_status_t create_vid_win(pjsua_vid_win_type type,
 	    vp_param.vidparam.fmt = *fmt;
 
 	status = pjmedia_vid_port_create(w->pool, &vp_param, &w->vp_cap);
-	if (status != PJ_SUCCESS)
+	if (status != PJ_SUCCESS) {
+	        PJ_LOG(4,(THIS_FILE, "--------44---------"));
 	    goto on_error;
+        }
 
 	/* Update format info */
 	fmt_ = vp_param.vidparam.fmt;
@@ -551,13 +558,17 @@ static pj_status_t create_vid_win(pjsua_vid_win_type type,
 	/* Create video tee */
 	status = pjmedia_vid_tee_create(w->pool, fmt, VID_TEE_MAX_PORT,
 					&w->tee);
-	if (status != PJ_SUCCESS)
+	if (status != PJ_SUCCESS) {
+	        PJ_LOG(4,(THIS_FILE, "--------55---------"));
 	    goto on_error;
+        }
 
 	/* Connect capturer to the video tee */
 	status = pjmedia_vid_port_connect(w->vp_cap, w->tee, PJ_FALSE);
-	if (status != PJ_SUCCESS)
+	if (status != PJ_SUCCESS) {
+	        PJ_LOG(4,(THIS_FILE, "--------66---------"));
 	    goto on_error;
+        }
 
 	/* If device supports native preview, enable it */
 	if (w->is_native) {
@@ -581,8 +592,10 @@ static pj_status_t create_vid_win(pjsua_vid_win_type type,
     if (!w->is_native) {
 	status = pjmedia_vid_dev_default_param(w->pool, rend_id,
 					       &vp_param.vidparam);
-	if (status != PJ_SUCCESS)
+	if (status != PJ_SUCCESS) {
+	        PJ_LOG(4,(THIS_FILE, "--------77---------"));
 	    goto on_error;
+        }
 
 	vp_param.active = (w->type == PJSUA_WND_TYPE_STREAM);
 	vp_param.vidparam.dir = PJMEDIA_DIR_RENDER;
@@ -594,8 +607,10 @@ static pj_status_t create_vid_win(pjsua_vid_win_type type,
         vp_param.vidparam.window_flags = wnd_flags;
 
 	status = pjmedia_vid_port_create(w->pool, &vp_param, &w->vp_rend);
-	if (status != PJ_SUCCESS)
+	if (status != PJ_SUCCESS) {
+	        PJ_LOG(4,(THIS_FILE, "--------88---------"));
 	    goto on_error;
+        }
 
 	/* For preview window, connect capturer & renderer (via tee) */
 	if (w->type == PJSUA_WND_TYPE_PREVIEW) {
@@ -603,8 +618,10 @@ static pj_status_t create_vid_win(pjsua_vid_win_type type,
 
 	    rend_port = pjmedia_vid_port_get_passive_port(w->vp_rend);
 	    status = pjmedia_vid_tee_add_dst_port2(w->tee, 0, rend_port);
-	    if (status != PJ_SUCCESS)
+	    if (status != PJ_SUCCESS) {
+	        PJ_LOG(4,(THIS_FILE, "--------99---------"));
 		goto on_error;
+            }
 	}
 
 	PJ_LOG(4,(THIS_FILE,
@@ -766,8 +783,10 @@ pj_status_t pjsua_vid_channel_update(pjsua_call_media *call_med,
 
 	    status = pjmedia_vid_dev_get_info(call_med->strm.v.cap_dev,
 					      &dev_info);
-	    if (status != PJ_SUCCESS)
+	    if (status != PJ_SUCCESS) {
+	        PJ_LOG(4,(THIS_FILE, "--------1---------"));
 		goto on_error;
+            }
 
 	    /* Find matched format ID */
 	    for (i = 0; i < codec_info->dec_fmt_id_cnt; ++i) {
@@ -791,13 +810,17 @@ pj_status_t pjsua_vid_channel_update(pjsua_call_media *call_med,
 	status = pjmedia_vid_stream_create(pjsua_var.med_endpt, NULL, si,
 					   call_med->tp, NULL,
 					   &call_med->strm.v.stream);
-	if (status != PJ_SUCCESS)
+	if (status != PJ_SUCCESS) {
+	        PJ_LOG(4,(THIS_FILE, "--------2---------"));
 	    goto on_error;
+        }
 
 	/* Start stream */
 	status = pjmedia_vid_stream_start(call_med->strm.v.stream);
-	if (status != PJ_SUCCESS)
+	if (status != PJ_SUCCESS) {
+	        PJ_LOG(4,(THIS_FILE, "--------3---------"));
 	    goto on_error;
+        }
 
 	/* Setup decoding direction */
 	if (si->dir & PJMEDIA_DIR_DECODING)
@@ -813,6 +836,7 @@ pj_status_t pjsua_vid_channel_update(pjsua_call_media *call_med,
 						 &media_port);
 	    if (status != PJ_SUCCESS) {
 		pj_log_pop_indent();
+	        PJ_LOG(4,(THIS_FILE, "--------4---------"));
 		goto on_error;
 	    }
 
@@ -826,6 +850,7 @@ pj_status_t pjsua_vid_channel_update(pjsua_call_media *call_med,
                                     acc->cfg.vid_wnd_flags,
 				    &wid);
 	    if (status != PJ_SUCCESS) {
+	        PJ_LOG(4,(THIS_FILE, "--------5---------"));
 		pj_log_pop_indent();
 		goto on_error;
 	    }
@@ -843,12 +868,14 @@ pj_status_t pjsua_vid_channel_update(pjsua_call_media *call_med,
 					      PJ_FALSE);
 	    if (status != PJ_SUCCESS) {
 		pj_log_pop_indent();
+	        PJ_LOG(4,(THIS_FILE, "--------6---------"));
 		goto on_error;
 	    }
 
 	    /* Start renderer */
 	    status = pjmedia_vid_port_start(w->vp_rend);
 	    if (status != PJ_SUCCESS) {
+	        PJ_LOG(4,(THIS_FILE, "--------7---------"));
 		pj_log_pop_indent();
 		goto on_error;
 	    }
@@ -875,6 +902,7 @@ pj_status_t pjsua_vid_channel_update(pjsua_call_media *call_med,
 						 &media_port);
 	    if (status != PJ_SUCCESS) {
 		pj_log_pop_indent();
+	        PJ_LOG(4,(THIS_FILE, "--------8---------"));
 		goto on_error;
 	    }
 
@@ -897,6 +925,7 @@ pj_status_t pjsua_vid_channel_update(pjsua_call_media *call_med,
 					&wid);
 		if (status != PJ_SUCCESS) {
 		pj_log_pop_indent();
+	        PJ_LOG(4,(THIS_FILE, "--------9---------"));
 		    return status;
 		}
 		just_created = PJ_TRUE;
@@ -912,6 +941,7 @@ pj_status_t pjsua_vid_channel_update(pjsua_call_media *call_med,
 	    status = pjmedia_vid_tee_add_dst_port2(w->tee, 0, media_port);
 	    if (status != PJ_SUCCESS) {
 		pj_log_pop_indent();
+	        PJ_LOG(4,(THIS_FILE, "--------10---------"));
 		goto on_error;
 	    }
 
@@ -920,6 +950,7 @@ pj_status_t pjsua_vid_channel_update(pjsua_call_media *call_med,
 		status = pjmedia_vid_port_start(w->vp_cap);
 		if (status != PJ_SUCCESS) {
 		    pj_log_pop_indent();
+	        PJ_LOG(4,(THIS_FILE, "--------11---------"));
 		    goto on_error;
 		}
 	    }
@@ -935,8 +966,10 @@ pj_status_t pjsua_vid_channel_update(pjsua_call_media *call_med,
     if (!acc->cfg.vid_out_auto_transmit && call_med->strm.v.stream) {
 	status = pjmedia_vid_stream_pause(call_med->strm.v.stream,
 					  PJMEDIA_DIR_ENCODING);
-	if (status != PJ_SUCCESS)
+	if (status != PJ_SUCCESS) {
+	        PJ_LOG(4,(THIS_FILE, "--------12---------"));
 	    goto on_error;
+        }
     }
 
     pj_log_pop_indent();
@@ -959,8 +992,8 @@ void pjsua_vid_stop_stream(pjsua_call_media *call_med)
     if (!strm)
 	return;
 
-    PJ_LOG(4,(THIS_FILE, "Stopping video stream.."));
-    pj_log_push_indent();
+    /* +++lal: PJ_LOG(4,(THIS_FILE, "Stopping video stream..")); 
+    pj_log_push_indent(); */
 
     if (call_med->strm.v.cap_win_id != PJSUA_INVALID_ID) {
 	pjmedia_port *media_port;
@@ -1019,7 +1052,7 @@ void pjsua_vid_stop_stream(pjsua_call_media *call_med)
     pjmedia_vid_stream_destroy(strm);
     call_med->strm.v.stream = NULL;
 
-    pj_log_pop_indent();
+    /* pj_log_pop_indent(); */
 }
 
 /*
