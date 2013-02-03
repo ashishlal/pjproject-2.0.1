@@ -21,14 +21,15 @@
 #include <pj/assert.h>
 #include <pj/errno.h>
 #include <pj/string.h>
-
+#include <pj/list.h>
+#include <pj/math.h>
 
 #if defined(PJMEDIA_HAS_VIDEO) && (PJMEDIA_HAS_VIDEO != 0)
 
 
 #define THIS_FILE	"h263_packetizer.c"
 
-
+#if 0
 /* H.263 packetizer definition */
 struct pjmedia_h263_packetizer {
     /* Current settings */
@@ -37,8 +38,57 @@ struct pjmedia_h263_packetizer {
     /* Unpacketizer state */
     unsigned	    unpack_last_sync_pos;
     pj_bool_t	    unpack_prev_lost;
-};
 
+    int width;
+	int height;
+	unsigned pict_type;
+};
+#endif
+
+PJ_DEF(pj_status_t) pjmedia_h263_1998_packetize(pjmedia_h263_packetizer *pktz,
+    pj_uint8_t *bits,
+    pj_size_t bits_len,
+    unsigned *pos,
+    const pj_uint8_t **payload,
+	pj_size_t *payload_len);
+
+PJ_DEF(pj_status_t) pjmedia_h263_1998_unpacketize (pjmedia_h263_packetizer *pktz,
+												const pj_uint8_t *payload,
+												pj_size_t payload_len,
+												pj_uint8_t *bits,
+												pj_size_t bits_size,
+												unsigned *pos);
+PJ_DEF(pj_status_t) pjmedia_h263_1996_packetize(pjmedia_h263_packetizer *pktz,
+									pj_uint8_t *bits,
+									pj_size_t bits_len,
+									unsigned *pos,
+									pj_uint8_t **payload,
+									pj_size_t *payload_len);
+										
+PJ_DEF(pj_status_t) pjmedia_h263_1996_unpacketize (pjmedia_h263_packetizer *pktz,
+			const pj_uint8_t *payload,
+			pj_size_t payload_len,
+			pj_uint8_t *bits,
+			pj_size_t bits_size,
+			unsigned *pos);
+			 
+
+static int get_gbsc_bytealigned(pj_uint8_t *begin, pj_uint8_t *end){
+        int i;
+        int len = end - begin;
+        for (i = len - 2;  /*len + length of scan window*/
+           i > 2 + 2; /*length of scan window + 2 avoidance of 1st gob or psc*/
+           i--){
+                if(*(begin + i) == 0 &&
+                   *(begin + i+1) == 0 &&
+                   (*(begin + i+2) & 0x80) == 0x80){
+                  /*printf("JV psc/gob found! %2x %2x %2x", *(begin + i), *(begin + i+1), *(begin + i + 2));*/
+                  return i;
+                }
+        }
+        /*printf("JV no psc or gob found!");*/
+        return len;
+}
 
 /*
  * Find synchronization point (PSC, slice, GSBC, EOS, EOSBS) in H.263 
@@ -90,12 +140,20 @@ PJ_DEF(pj_status_t) pjmedia_h263_packetizer_create(
 
     PJ_ASSERT_RETURN(pool && p, PJ_EINVAL);
 
-    if (cfg && cfg->mode != PJMEDIA_H263_PACKETIZER_MODE_RFC4629)
-	return PJ_ENOTSUP;
-
+    //if (cfg && (cfg->mode != PJMEDIA_H263_PACKETIZER_MODE_RFC4629 && cfg->mode != PJMEDIA_H263_PACKETIZER_MODE_RFC2190))
+	//    return PJ_ENOTSUP;
+	if(!cfg) return PJ_ENOTSUP;
     p_ = PJ_POOL_ZALLOC_T(pool, pjmedia_h263_packetizer);
     if (cfg) {
-	pj_memcpy(&p_->cfg, cfg, sizeof(*cfg));
+	    pj_memcpy(&p_->cfg, cfg, sizeof(*cfg));
+	    if(cfg->mode == PJMEDIA_H263_PACKETIZER_MODE_RFC2190) {
+			p_->cfg.mtu = PJMEDIA_MAX_VID_PAYLOAD_SIZE;
+#define H263_MAX_ENCODE_SIZE 20000
+			p_->max_encoded_size = H263_MAX_ENCODE_SIZE;
+			p_->pktOrig= (unsigned *)malloc(p_->max_encoded_size+64+4);
+			unsigned  *r = (unsigned *)(((unsigned)(p_->pktOrig) + 64) & (~63));
+			p_->packet = (pj_uint8_t *)r;
+		}
     } else {
 	p_->cfg.mode = PJMEDIA_H263_PACKETIZER_MODE_RFC4629;
 	p_->cfg.mtu = PJMEDIA_MAX_VID_PAYLOAD_SIZE;
@@ -111,6 +169,23 @@ PJ_DEF(pj_status_t) pjmedia_h263_packetizer_create(
  * Generate an RTP payload from H.263 frame bitstream, in-place processing.
  */
 PJ_DEF(pj_status_t) pjmedia_h263_packetize(pjmedia_h263_packetizer *pktz,
+                                           pj_uint8_t *bits,
+                                           pj_size_t bits_len,
+                                           unsigned *pos,
+                                           const pj_uint8_t **payload,
+                                           pj_size_t *payload_len) {
+    if (pktz->cfg.mode == PJMEDIA_H263_PACKETIZER_MODE_RFC4629) {
+        return pjmedia_h263_1998_packetize(pktz, bits, bits_len, pos, payload, payload_len);
+    } else if (pktz->cfg.mode == PJMEDIA_H263_PACKETIZER_MODE_RFC2190) {
+        return pjmedia_h263_1996_packetize(pktz, bits, bits_len, pos, (pj_uint8_t **)payload, payload_len);
+    }
+	return PJ_SUCCESS;
+}
+
+/*
+ * Generate an RTP payload from H.263 frame bitstream, in-place processing.
+ */
+PJ_DEF(pj_status_t) pjmedia_h263_1998_packetize(pjmedia_h263_packetizer *pktz,
 					   pj_uint8_t *bits,
                                            pj_size_t bits_len,
                                            unsigned *pos,
@@ -125,6 +200,7 @@ PJ_DEF(pj_status_t) pjmedia_h263_packetize(pjmedia_h263_packetizer *pktz,
     p = bits + *pos;
     end = bits + bits_len;
 
+    //printf_hex_with_text("[pjmedia_h263_1998_packetize] bitstream", bits, bits_len);
     /* Put two octets payload header */
     if ((end-p > 2) && *p==0 && *(p+1)==0) {
         /* The bitstream starts with synchronization point, just override
@@ -157,18 +233,39 @@ PJ_DEF(pj_status_t) pjmedia_h263_packetize(pjmedia_h263_packetizer *pktz,
     *payload_len = end-p;
     *pos = end - bits;
 
+    //printf_hex_with_text("[pjmedia_h263_1998_packetize] payload", *payload, *payload_len);
+    
     return PJ_SUCCESS;
 }
-
+/* Hieu add */
 
 /*
  * Append an RTP payload to a H.263 picture bitstream.
  */
 PJ_DEF(pj_status_t) pjmedia_h263_unpacketize (pjmedia_h263_packetizer *pktz,
-					      const pj_uint8_t *payload,
+                                              const pj_uint8_t *payload,
                                               pj_size_t payload_len,
                                               pj_uint8_t *bits,
                                               pj_size_t bits_size,
+                                              unsigned *pos) {
+    if (pktz->cfg.mode == PJMEDIA_H263_PACKETIZER_MODE_RFC4629) {
+        return pjmedia_h263_1998_unpacketize(pktz, payload, payload_len, bits, bits_size, pos);
+    } else if (pktz->cfg.mode == PJMEDIA_H263_PACKETIZER_MODE_RFC2190) {
+        return pjmedia_h263_1996_unpacketize(pktz, payload, payload_len, bits, bits_size, pos);
+    }
+	return PJ_SUCCESS;
+}
+
+/* End Hieu adding */
+
+/*
+ * Append an RTP payload to a H.263 picture bitstream.
+ */
+PJ_DEF(pj_status_t) pjmedia_h263_1998_unpacketize (pjmedia_h263_packetizer *pktz,
+					      const pj_uint8_t *payload,
+                          pj_size_t payload_len,
+                          pj_uint8_t *bits,
+                          pj_size_t bits_size,
 					      unsigned *pos)
 {
     pj_uint8_t P, V, PLEN;
@@ -177,12 +274,14 @@ PJ_DEF(pj_status_t) pjmedia_h263_unpacketize (pjmedia_h263_packetizer *pktz,
 
     q = bits + *pos;
 
+   // printf("-------------%s: Inside pjmedia_h263_1998_unpacketize-------------\n", THIS_FILE);
     /* Check if this is a missing/lost packet */
     if (payload == NULL) {
 	pktz->unpack_prev_lost = PJ_TRUE;
 	return PJ_SUCCESS;
     }
 
+    //printf_hex_with_text("[pjmedia_h263_1998_unpacketize] payload", payload, payload_len);
     /* H263 payload header size is two octets */
     if (payload_len < 2) {
 	/* Invalid bitstream, discard this payload */
@@ -287,8 +386,158 @@ PJ_DEF(pj_status_t) pjmedia_h263_unpacketize (pjmedia_h263_packetizer *pktz,
 
     pktz->unpack_prev_lost = PJ_FALSE;
 
+    //printf_hex_with_text("[pjmedia_h263_1998_unpacketize] bitstream", bits, bits_size);
+    
     return PJ_SUCCESS;
 }
+
+/* Hieu add */
+PJ_DEF(pj_status_t) pjmedia_h263_1996_packetize(pjmedia_h263_packetizer *pktz,
+                                                pj_uint8_t *bits,
+                                                pj_size_t bits_len,
+                                                unsigned *pos,
+                                                pj_uint8_t **payload,
+                                                pj_size_t *payload_len)
+{
+	pj_uint8_t *p, *end;
+
+    pj_assert(pktz && bits && pos && payload && payload_len);
+    pj_assert(*pos <= bits_len);
+	unsigned flags=0;
+	
+    p = bits + *pos;
+    end = bits + bits_len;
+	
+	//printf("------------------%s: Inside pjmedia_h263_1996_packetize---------------, %d\n", THIS_FILE, (int)(end-p));
+
+	if(*pos == 0) {
+		if(bits_len < pktz->max_encoded_size) {
+	        memcpy(pktz->packet, bits, bits_len);
+        }
+        else {
+			pktz->max_encoded_size = bits_len;
+			pktz->pktOrig = (unsigned *)realloc(pktz->pktOrig, pktz->max_encoded_size+64+4);
+			unsigned  *r = (unsigned *)(((unsigned)(pktz->pktOrig) + 64) & (~63));
+			pktz->packet = (pj_uint8_t *)r;
+			memcpy(pktz->packet, bits, bits_len);
+        }
+	}
+	const unsigned char * data = pktz->packet + *pos;
+    {
+	    unsigned len = get_gbsc_bytealigned((pj_uint8_t *)data, 
+	                   (pj_uint8_t *)PJ_MIN(((unsigned)(data))+pktz->cfg.mtu,((unsigned)(pktz->packet))+bits_len));
+	    unsigned char header[4];
+		memset(header, 0, 4);
+        // assume video size is CIF or QCIF
+        if (pktz->width == 352 && pktz->height == 288) header[1] = 0x60;
+        else header[1] = 0x40;
+        
+        int iFrame = ((data[4] & 2) == 0);
+		if(!iFrame) header[1] |= 0x10;
+        *payload = p;
+		memcpy(p, header, 4);
+		p += 4;
+		memcpy(p, data, len);
+		p += len;
+		*payload_len = (4 + len);
+		unsigned pos1 = *pos;
+		*pos = (p - bits-4) < bits_len?(p-bits-4):bits_len;
+		//printf("bits: 0x%02x, p: 0x%02x, payload_len: %d, pos1: %d, pos: %d, bits_len: %d, iFrame:%d\n", 
+		//    bits, p, *payload_len, pos1, *pos, bits_len, pktz->pict_type);
+	}
+
+    return PJ_SUCCESS;
+}
+
+PJ_DEF(pj_status_t) pjmedia_h263_1996_unpacketize (pjmedia_h263_packetizer *pktz,
+                                                   const pj_uint8_t *payload,
+                                                   pj_size_t payload_len,
+                                                   pj_uint8_t *bits,
+                                                   pj_size_t bits_size,
+                                                   unsigned *pos)
+{
+	unsigned char mode; 
+	unsigned hdrLen;
+	int iFrame=0;
+    const pj_uint8_t *p = payload;
+    pj_uint8_t *q;
+	
+    q = bits + *pos;
+
+   // printf("-------------%s: Inside pjmedia_h263_1996_unpacketize-------------\n", THIS_FILE);
+    /* Check if this is a missing/lost packet */
+    if (payload == NULL) {
+	    pktz->unpack_prev_lost = PJ_TRUE;
+	     return PJ_SUCCESS;
+    }
+
+    /* H263-1996 payload header size is atleast 4 octets */
+    if (payload_len < 4) {
+	    /* Invalid bitstream, discard this payload */
+	    pktz->unpack_prev_lost = PJ_TRUE;
+	    return PJ_EINVAL;
+    }
+
+    /* Reset last sync point for every new picture bitstream */
+    if (*pos == 0)
+	    pktz->unpack_last_sync_pos = 0;
+	if ((p[0] & 0x80) == 0) {
+		iFrame = ((p[1] & 0x10) == 0);
+	    hdrLen = 4;
+	    mode = 'A';
+	} 
+	else if ((p[0] & 0x40) == 0) {
+		iFrame = ((p[4] & 0x80) == 0);
+	    hdrLen = 8;
+	    mode = 'B';
+	} 
+	else {
+	    iFrame = ((p[4] & 0x80) == 0);
+	    hdrLen = 12;
+	    mode = 'C';
+	}
+	/* H263-1996 payload header size is more than hdrLen */
+    if (payload_len < hdrLen) {
+	    /* Invalid bitstream, discard this payload */
+	    pktz->unpack_prev_lost = PJ_TRUE;
+	    return PJ_EINVAL;
+    }
+
+    /* Reset last sync point for every new picture bitstream */
+    if (*pos == 0)
+	    pktz->unpack_last_sync_pos = 0;
+
+    /* Get bitstream length */
+	p += hdrLen;
+    if (payload_len > (pj_size_t)(p - payload)) {
+	    payload_len -= (p - payload);
+    } else {
+	    /* Invalid bitstream, discard this payload */
+	    pktz->unpack_prev_lost = PJ_TRUE;
+	    return PJ_EINVAL;
+    }
+
+    /* Validate bitstream length */
+    if (bits_size < *pos + payload_len + hdrLen) {
+	    /* Insufficient bistream buffer, discard this payload */
+	    pj_assert(!"Insufficient H.263 bitstream buffer");
+	    pktz->unpack_prev_lost = PJ_TRUE;
+	    return PJ_ETOOSMALL;
+    }
+	/* Write the payload to the bitstream */
+    pj_memcpy(q, p, payload_len);
+    q += payload_len;
+
+    /* Update the bitstream writing offset */
+    *pos = q - bits;
+
+    //printf("Unpack: bits: 0x%02x, p: 0x%02x, payload_len: %d, hdrLen: %d, pos: %d, bits_len: %d, iFrame:%d\n", 
+	//    bits, p, payload_len, hdrLen, *pos, bits_size, iFrame);
+	
+    pktz->unpack_prev_lost = PJ_FALSE;
+	
+}
+/* End Hieu adding */
 
 
 #endif /* PJMEDIA_HAS_VIDEO */

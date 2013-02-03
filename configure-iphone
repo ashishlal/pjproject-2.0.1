@@ -24,7 +24,7 @@ if test "$*" = "--help" -o "$*" = "-h"; then
 fi
 
 export DEVPATH=/Developer/Platforms/iPhoneOS.platform/Developer
-export IPHONESDK=iPhoneOS5.1.sdk
+export IPHONESDK=iPhoneOS6.0.sdk
 PJSIP_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 BUILD_FFMPEG=0
 BUILD_SDL=0
@@ -38,7 +38,7 @@ do
 case $i in
     --armv6)
         ARCH=armv6
-        export IPHONESDK=iPhoneOS5.1.sdk
+        export IPHONESDK=iPhoneOS6.0.sdk
         ;;  
     --armv7)
         ARCH=armv7
@@ -47,7 +47,7 @@ case $i in
         ARCH=i386
         # MYHOST="i386-apple-darwin11"
         export DEVPATH=/Developer/Platforms/iPhoneSimulator.platform/Developer
-        export IPHONESDK=iPhoneSimulator5.1.sdk
+        export IPHONESDK=iPhoneSimulator6.0.sdk
         ;;  
     --build-ffmpeg)
         BUILD_FFMPEG=1

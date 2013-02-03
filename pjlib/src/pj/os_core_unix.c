@@ -1238,7 +1238,8 @@ PJ_DEF(pj_status_t) pj_mutex_lock(pj_mutex_t *mutex)
     pj_status_t status;
 
     PJ_CHECK_STACK();
-    PJ_ASSERT_RETURN(mutex, PJ_EINVAL);
+    /* PJ_ASSERT_RETURN(mutex, PJ_EINVAL); */
+    if(!mutex) return PJ_EINVAL;
 
 #if PJ_DEBUG
     PJ_LOG(6,(mutex->obj_name, "Mutex: thread %s is waiting (mutex owner=%s)", 

@@ -989,11 +989,13 @@ void pjsua_vid_stop_stream(pjsua_call_media *call_med)
 
     pj_assert(call_med->type == PJMEDIA_TYPE_VIDEO);
 
-    if (!strm)
-	return;
+    if (!strm) {
+		printf("---------%s: strm is NULL----------", THIS_FILE);
+	      return;
+    }
 
-    /* +++lal: PJ_LOG(4,(THIS_FILE, "Stopping video stream..")); 
-    pj_log_push_indent(); */
+    PJ_LOG(4,(THIS_FILE, "Stopping video stream..")); 
+    pj_log_push_indent();
 
     if (call_med->strm.v.cap_win_id != PJSUA_INVALID_ID) {
 	pjmedia_port *media_port;
@@ -1001,16 +1003,20 @@ void pjsua_vid_stop_stream(pjsua_call_media *call_med)
 	pj_status_t status;
 
 	/* Stop the capture before detaching stream and unsubscribing event */
+	PJ_LOG(4,(THIS_FILE, "----01----")); 
 	pjmedia_vid_port_stop(w->vp_cap);
 
 	/* Disconnect video stream from capture device */
+	PJ_LOG(4,(THIS_FILE, "----02----")); 
 	status = pjmedia_vid_stream_get_port(call_med->strm.v.stream,
 					     PJMEDIA_DIR_ENCODING,
 					     &media_port);
 	if (status == PJ_SUCCESS) {
+		PJ_LOG(4,(THIS_FILE, "----03----")); 
 	    pjmedia_vid_tee_remove_dst_port(w->tee, media_port);
 	}
 
+    PJ_LOG(4,(THIS_FILE, "----1----")); 
         /* Unsubscribe event */
 	pjmedia_event_unsubscribe(NULL, &call_media_on_event, call_med,
                                   w->vp_cap);
@@ -1025,7 +1031,7 @@ void pjsua_vid_stop_stream(pjsua_call_media *call_med)
 
     if (call_med->strm.v.rdr_win_id != PJSUA_INVALID_ID) {
 	pjsua_vid_win *w = &pjsua_var.win[call_med->strm.v.rdr_win_id];
-
+    PJ_LOG(4,(THIS_FILE, "----2----")); 
 	/* Stop the render before unsubscribing event */
 	pjmedia_vid_port_stop(w->vp_rend);
 	pjmedia_event_unsubscribe(NULL, &call_media_on_event, call_med,
@@ -1035,6 +1041,7 @@ void pjsua_vid_stop_stream(pjsua_call_media *call_med)
 	call_med->strm.v.rdr_win_id = PJSUA_INVALID_ID;
     }
 
+    PJ_LOG(4,(THIS_FILE, "----3----")); 
     if ((call_med->dir & PJMEDIA_DIR_ENCODING) &&
 	(pjmedia_vid_stream_get_stat(strm, &stat) == PJ_SUCCESS))
     {
@@ -1051,8 +1058,8 @@ void pjsua_vid_stop_stream(pjsua_call_media *call_med)
 
     pjmedia_vid_stream_destroy(strm);
     call_med->strm.v.stream = NULL;
-
-    /* pj_log_pop_indent(); */
+    PJ_LOG(4,(THIS_FILE, "----4----")); 
+    pj_log_pop_indent();
 }
 
 /*

@@ -458,11 +458,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					armv6,
-					i386,
-				);
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ashish Lal (42M6NVF8XZ)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ashish Lal (42M6NVF8XZ)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -474,8 +471,8 @@
 					USE_GUI,
 				);
 				INFOPLIST_FILE = "ipjsua-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
-				"IPHONEOS_DEPLOYMENT_TARGET[arch=*]" = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[arch=*]" = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../../../compiled-universal/lib\"",
 					"\"$(SRCROOT)/../../../compiled-universal/ffmpeg\"",
@@ -499,11 +496,11 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = ipjsua;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos5.1;
+				PROVISIONING_PROFILE = "2AB07D19-66AA-4A3C-910A-E5EF2DA05FD6";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2AB07D19-66AA-4A3C-910A-E5EF2DA05FD6";
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
-				VALID_ARCHS = "armv6 i386";
+				VALID_ARCHS = "armv7 armv6 i386 armv7s";
 			};
 			name = Debug;
 		};
@@ -511,11 +508,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					armv6,
-					i386,
-				);
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ashish Lal (42M6NVF8XZ)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ashish Lal (42M6NVF8XZ)";
 				COPY_PHASE_STRIP = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -525,7 +519,7 @@
 					USE_GUI,
 				);
 				INFOPLIST_FILE = "ipjsua-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../../../compiled-universal/lib\"",
 					"\"$(SRCROOT)/../../../compiled-universal/ffmpeg\"",
@@ -549,11 +543,11 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = ipjsua;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos5.1;
+				PROVISIONING_PROFILE = "2AB07D19-66AA-4A3C-910A-E5EF2DA05FD6";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2AB07D19-66AA-4A3C-910A-E5EF2DA05FD6";
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
-				VALID_ARCHS = "armv6 i386";
+				VALID_ARCHS = "armv7 armv6 i386 armv7s";
 			};
 			name = Release;
 		};

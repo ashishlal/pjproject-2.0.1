@@ -865,6 +865,7 @@ PJ_DEF(pj_status_t) pjmedia_vid_dev_stream_put_frame(
 /* API: Stop the stream. */
 PJ_DEF(pj_status_t) pjmedia_vid_dev_stream_stop(pjmedia_vid_dev_stream *strm)
 {
+	printf("-----Inside pjmedia_vid_dev_stream_stop------\n");
     strm->sys.is_running = PJ_FALSE;
     return strm->op->stop(strm);
 }

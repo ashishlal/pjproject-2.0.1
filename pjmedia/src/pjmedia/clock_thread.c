@@ -26,6 +26,7 @@
 #include <pj/string.h>
 #include <pj/compat/high_precision.h>
 
+#define THIS_FILE   "clock_thread.c"
 /* API: Init clock source */
 PJ_DEF(pj_status_t) pjmedia_clock_src_init( pjmedia_clock_src *clocksrc,
                                             pjmedia_type media_type,
@@ -243,11 +244,14 @@ PJ_DEF(pj_status_t) pjmedia_clock_stop(pjmedia_clock *clock)
     clock->quitting = PJ_TRUE;
 
     if (clock->thread) {
+	//	printf("%s:------------1--------------, 0x%02x, %d\n", THIS_FILE, clock, (int)(clock->quitting));
 	if (pj_thread_join(clock->thread) == PJ_SUCCESS) {
+	//	printf("%s:------------2--------------\n", THIS_FILE);
 	    pj_thread_destroy(clock->thread);
 	    clock->thread = NULL;
 	    pj_pool_reset(clock->pool);
 	} else {
+	//	printf("%s:------------3--------------\n", THIS_FILE);
 	    clock->quitting = PJ_FALSE;
 	}
     }
@@ -348,6 +352,7 @@ static int clock_thread(void *arg)
 	    pj_thread_set_prio(pj_thread_this(), max);
     }
 
+    //printf("%s:------------11--------------\n", THIS_FILE);
     /* Get the first tick */
     pj_get_timestamp(&clock->next_tick);
     clock->next_tick.u64 += clock->interval.u64;
@@ -363,7 +368,7 @@ static int clock_thread(void *arg)
 	    msec = pj_elapsed_msec(&now, &clock->next_tick);
 	    pj_thread_sleep(msec);
 	}
-
+    //printf("%s:------------12--------------, 0x%02x, %d\n", THIS_FILE, clock, (int)(clock->quitting));
 	/* Skip if not running */
 	if (!clock->running) {
 	    /* Calculate next tick */
@@ -372,7 +377,7 @@ static int clock_thread(void *arg)
 	}
 
 	pj_lock_acquire(clock->lock);
-
+    //printf("%s:------------13--------------, 0x%02x, %d\n", THIS_FILE, clock, (int)(clock->quitting));
 	/* Call callback, if any */
 	if (clock->cb)
 	    (*clock->cb)(&clock->timestamp, clock->user_data);
@@ -383,10 +388,10 @@ static int clock_thread(void *arg)
 
 	/* Increment timestamp */
 	clock->timestamp.u64 += clock->timestamp_inc;
-
+    //printf("%s:------------14--------------, 0x%02x, %d\n", THIS_FILE, clock, (int)(clock->quitting));
 	/* Calculate next tick */
 	clock_calc_next_tick(clock, &now);
-
+    //printf("%s:------------15--------------\n", THIS_FILE);
 	pj_lock_release(clock->lock);
     }
 

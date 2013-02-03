@@ -25,6 +25,7 @@
 #include <pj/pool.h>
 #include <pj/string.h>
 
+#define THIS_FILE "master_port.c"
 
 struct pjmedia_master_port
 {
@@ -119,7 +120,7 @@ PJ_DEF(pj_status_t) pjmedia_master_port_create( pj_pool_t *pool,
 	pj_lock_destroy(m->lock);
 	return status;
     }
-
+    printf("%s: ------------------m: 0x%02x, Clock created: 0x%02x--------------------", THIS_FILE, m, m->clock);
     /* Done */
     *p_m = m;
 

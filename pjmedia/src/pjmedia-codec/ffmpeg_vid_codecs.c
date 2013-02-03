@@ -271,6 +271,7 @@ static FUNC_UNPACKETIZE(h264_unpacketize);
 #endif
 
 static pj_status_t h263_preopen(ffmpeg_private *ff);
+static pj_status_t h263_1996_preopen(ffmpeg_private *ff);
 static FUNC_PACKETIZE(h263_packetize);
 static FUNC_UNPACKETIZE(h263_unpacketize);
 
@@ -302,9 +303,23 @@ static ffmpeg_codec_desc codec_desc[] =
 	      {{"QCIF",4},  {"1",1}}, } },
     },
 #endif
-
+#if 0
+    {
+	{PJMEDIA_FORMAT_H263, PJMEDIA_RTP_PT_H263, {"H263",4}},
+	PJMEDIA_FORMAT_H263,
+	{352, 288},	{15, 1},	256000, 256000,
+	&h263_packetize, &h263_unpacketize, &h263_1996_preopen, NULL, NULL,
+	{2, { {{"CIF",3},   {"1",1}}, 
+	      {{"QCIF",4},  {"1",1}}, } },
+    },
+#endif
     {
 	{PJMEDIA_FORMAT_H263,	PJMEDIA_RTP_PT_H263,	{"H263",4}},
+	PJMEDIA_FORMAT_H263,
+	{352, 288},	{15, 1},	256000, 256000,
+	&h263_packetize, &h263_unpacketize, &h263_1996_preopen, NULL, NULL,
+	{2, { {{"CIF",3},   {"1",1}}, 
+	      {{"QCIF",4},  {"1",1}}, } },
     },
     {
 	{PJMEDIA_FORMAT_H261,	PJMEDIA_RTP_PT_H261,	{"H261",4}},
@@ -523,6 +538,50 @@ static pj_status_t h263_preopen(ffmpeg_private *ff)
 	ctx->height = vfd->size.h;
 	ctx->time_base.num = vfd->fps.denum;
 	ctx->time_base.den = vfd->fps.num;
+	data->pktz->width = ctx->width;
+	data->pktz->height = ctx->height;
+    }
+
+    return status;
+}
+
+/* H263 pre-open */
+static pj_status_t h263_1996_preopen(ffmpeg_private *ff)
+{
+    h263_data *data;
+    pjmedia_h263_packetizer_cfg pktz_cfg;
+    pj_status_t status;
+
+    data = PJ_POOL_ZALLOC_T(ff->pool, h263_data);
+    ff->data = data;
+
+    /* Create packetizer */
+    pktz_cfg.mtu = ff->param.enc_mtu;
+    pktz_cfg.mode = PJMEDIA_H263_PACKETIZER_MODE_RFC2190;
+    status = pjmedia_h263_packetizer_create(ff->pool, &pktz_cfg, &data->pktz);
+    if (status != PJ_SUCCESS)
+	return status;
+
+    /* Apply fmtp settings to codec param */
+    if (!ff->param.ignore_fmtp) {
+	status = pjmedia_vid_codec_h263_apply_fmtp(&ff->param);
+    }
+
+    /* Override generic params after applying SDP fmtp */
+    if (ff->param.dir & PJMEDIA_DIR_ENCODING) {
+	pjmedia_video_format_detail *vfd;
+	AVCodecContext *ctx = ff->enc_ctx;
+
+	vfd = pjmedia_format_get_video_format_detail(&ff->param.enc_fmt, 
+						     PJ_TRUE);
+
+	/* Override generic params after applying SDP fmtp */
+	ctx->width = vfd->size.w;
+	ctx->height = vfd->size.h;
+	ctx->time_base.num = vfd->fps.denum;
+	ctx->time_base.den = vfd->fps.num;
+	data->pktz->width = ctx->width;
+	data->pktz->height = ctx->height;
     }
 
     return status;
@@ -1368,6 +1427,13 @@ static pj_status_t  ffmpeg_packetize ( pjmedia_vid_codec *codec,
 {
     ffmpeg_private *ff = (ffmpeg_private*)codec->codec_data;
 
+    AVCodecContext *ctx = ff->enc_ctx;
+    h263_data *data = (h263_data*)ff->data;
+
+    data->pktz->width = ctx->width;
+	data->pktz->height = ctx->height;
+	data->pktz->pict_type = ff->enc_ctx->coded_frame->pict_type;
+	
     if (ff->desc->packetize) {
 	return (*ff->desc->packetize)(ff, bits, bits_len, bits_pos,
                                       payload, payload_len);
@@ -1469,7 +1535,11 @@ static pj_status_t ffmpeg_codec_encode_whole(pjmedia_vid_codec *codec,
 	if (ff->enc_ctx->coded_frame->key_frame)
 	    output->bit_info |= PJMEDIA_VID_FRM_KEYFRAME;
     }
-
+    //int mb_info_size = 0;
+	//const uint8_t *mb_info =
+	//  av_packet_get_side_data(avpacket, AV_PKT_DATA_H263_MB_INFO,
+	 //                                &mb_info_size);
+	
     return PJ_SUCCESS;
 }
 
@@ -1777,6 +1847,7 @@ static pj_status_t ffmpeg_codec_decode( pjmedia_vid_codec *codec,
     PJ_ASSERT_RETURN(codec && pkt_count > 0 && packets && output,
                      PJ_EINVAL);
 
+	//printf("---------------%s: Inside ffmpeg_codec_decode-----------------\n", THIS_FILE);
     if (ff->whole) {
 	pj_assert(pkt_count==1);
 	return ffmpeg_codec_decode_whole(codec, &packets[0], out_size, output);

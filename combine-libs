@@ -8,7 +8,7 @@ for ARCH in $ARCHS
 do
   if [ -d compiled/$ARCH ]
   then
-    MAIN_ARCH=$ARCH
+      MAIN_ARCH=$ARCH
   fi
 done
 echo "Main arch is $ARCH"

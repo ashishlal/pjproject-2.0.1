@@ -319,7 +319,7 @@ PJ_DEF(pj_status_t) pjmedia_vid_port_create( pj_pool_t *pool,
                                        vp, &vp->clock);
         if (status != PJ_SUCCESS)
             goto on_error;
-
+		printf("%s: ------------------vp: 0x%02x, Clock created: 0x%02x--------------------", THIS_FILE, vp, vp->clock);
     } else if (vp->role==ROLE_PASSIVE) {
 	vid_pasv_port *pp;
 
@@ -488,12 +488,16 @@ PJ_DEF(pj_status_t) pjmedia_vid_port_stop(pjmedia_vid_port *vp)
 {
     pj_status_t status;
 
+	printf("-----Inside pjmedia_vid_port_stop1------, 0x%02x\n", vp);
     PJ_ASSERT_RETURN(vp, PJ_EINVAL);
 
+	printf("-----Inside pjmedia_vid_port_stop2------\n");
     if (vp->clock) {
+	printf("-----Inside pjmedia_vid_port_stop3------, 0x%02x\n", vp->clock);
 	status = pjmedia_clock_stop(vp->clock);
     }
 
+    printf("-----Inside pjmedia_vid_port_stop4------\n");
     status = pjmedia_vid_dev_stream_stop(vp->strm);
 
     return status;

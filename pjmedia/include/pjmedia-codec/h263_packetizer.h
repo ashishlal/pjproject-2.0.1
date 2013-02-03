@@ -30,7 +30,7 @@
 
 PJ_BEGIN_DECL
 
-
+#define FF_I_TYPE  1
 /**
  * Opaque declaration for H.263 packetizer.
  */
@@ -51,7 +51,7 @@ typedef enum
      * H.263 RTP packetization using legacy RFC 2190.
      * This is currently not supported.
      */
-    PJMEDIA_H263_PACKETIZER_MODE_RFC2190,
+    PJMEDIA_H263_PACKETIZER_MODE_RFC2190
 
 } pjmedia_h263_packetizer_mode;
 
@@ -75,6 +75,21 @@ typedef struct pjmedia_h263_packetizer_cfg
 
 } pjmedia_h263_packetizer_cfg;
 
+struct pjmedia_h263_packetizer {
+    /* Current settings */
+    pjmedia_h263_packetizer_cfg cfg;
+    
+    /* Unpacketizer state */
+    unsigned	    unpack_last_sync_pos;
+    pj_bool_t	    unpack_prev_lost;
+
+    int width;
+	int height;
+	unsigned pict_type;
+	unsigned max_encoded_size;
+	unsigned *pktOrig;
+	pj_uint8_t *packet;
+};
 
 /**
  * Create H.263 packetizer.

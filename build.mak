@@ -106,7 +106,7 @@ PJ_VIDEO_LDFLAGS += $(SDL_LDFLAGS) $(FFMPEG_LDFLAGS) $(V4L2_LDFLAGS)
 export APP_CC := /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc
 export APP_CXX := /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/g++
 export APP_CFLAGS := -DPJ_AUTOCONF=1\
-	-O2 -Wno-unused-label -DPJ_SDK_NAME="\"iPhoneOS5.1.sdk\"" -arch armv6 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk -I /Users/abc/lal/mygithub/pjproject-2.0.1/third_party/ffmpeg/compiled/armv6/include -I /Users/abc/lal/mygithub/pjproject-2.0.1/third_party/sdl/build/armv6/include -I/usr/local/include  -DPJ_IS_BIG_ENDIAN=0 -DPJ_IS_LITTLE_ENDIAN=1\
+	-O2 -Wno-unused-label -DPJ_SDK_NAME="\"iPhoneOS6.0.sdk\"" -arch armv7 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk -I /Users/abc/lal/mygithub/pjproject-2.0.1/third_party/ffmpeg/compiled/armv7/include -I /Users/abc/lal/mygithub/pjproject-2.0.1/third_party/sdl/build/armv7/include -I/usr/local/include  -DPJ_IS_BIG_ENDIAN=0 -DPJ_IS_LITTLE_ENDIAN=1\
 	$(PJ_VIDEO_CFLAGS) \
 	-I$(PJDIR)/pjlib/include\
 	-I$(PJDIR)/pjlib-util/include\
@@ -121,7 +121,7 @@ export APP_LDFLAGS := -L$(PJDIR)/pjlib/lib\
 	-L$(PJDIR)/pjsip/lib\
 	-L$(PJDIR)/third_party/lib\
 	$(PJ_VIDEO_LDFLAGS) \
-	-O2 -arch armv6 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk -framework AudioToolbox -framework Foundation -L /Users/abc/lal/mygithub/pjproject-2.0.1/third_party/sdl/build/armv6/build/.libs -L /Users/abc/lal/mygithub/pjproject-2.0.1/third_party/ffmpeg/compiled/armv6/lib -L /Users/abc/lal/mygithub/pjproject-2.0.1/third_party/x264/x264-armv6/lib -lx264 -lSDL2 -lavformat -lavcodec -lswscale -lavutil -lavdevice -lavfilter -framework OpenGLES -lz 
+	-O2 -arch armv7 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk -framework AudioToolbox -framework Foundation -L /Users/abc/lal/mygithub/pjproject-2.0.1/third_party/sdl/build/armv7/build/.libs -L /Users/abc/lal/mygithub/pjproject-2.0.1/third_party/ffmpeg/compiled/armv7/lib -L /Users/abc/lal/mygithub/pjproject-2.0.1/third_party/x264/x264-armv7/lib -lx264 -lSDL2 -lavformat -lavcodec -lswscale -lavutil -lavdevice -lavfilter -framework OpenGLES -lz 
 export APP_LDLIBS := -lpjsua-$(TARGET_NAME)\
 	-lpjsip-ua-$(TARGET_NAME)\
 	-lpjsip-simple-$(TARGET_NAME)\
@@ -164,6 +164,6 @@ export PJ_LIB_FILES := $(APP_LIB_FILES)
 export PJ_INSTALL_DIR := /usr/local
 export PJ_INSTALL_INC_DIR := $(PJ_INSTALL_DIR)/include
 export PJ_INSTALL_LIB_DIR := $(PJ_INSTALL_DIR)/lib
-export PJ_INSTALL_CFLAGS := -I$(PJ_INSTALL_INC_DIR) -DPJ_AUTOCONF=1	-O2 -Wno-unused-label -DPJ_SDK_NAME="\"iPhoneOS5.1.sdk\"" -arch armv6 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk -I /Users/abc/lal/mygithub/pjproject-2.0.1/third_party/ffmpeg/compiled/armv6/include -I /Users/abc/lal/mygithub/pjproject-2.0.1/third_party/sdl/build/armv6/include -I/usr/local/include  -DPJ_IS_BIG_ENDIAN=0 -DPJ_IS_LITTLE_ENDIAN=1
+export PJ_INSTALL_CFLAGS := -I$(PJ_INSTALL_INC_DIR) -DPJ_AUTOCONF=1	-O2 -Wno-unused-label -DPJ_SDK_NAME="\"iPhoneOS6.0.sdk\"" -arch armv7 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk -I /Users/abc/lal/mygithub/pjproject-2.0.1/third_party/ffmpeg/compiled/armv7/include -I /Users/abc/lal/mygithub/pjproject-2.0.1/third_party/sdl/build/armv7/include -I/usr/local/include  -DPJ_IS_BIG_ENDIAN=0 -DPJ_IS_LITTLE_ENDIAN=1
 export PJ_INSTALL_CXXFLAGS := $(PJ_INSTALL_CFLAGS)
 export PJ_INSTALL_LDFLAGS := -L$(PJ_INSTALL_LIB_DIR) $(APP_LDLIBS)
