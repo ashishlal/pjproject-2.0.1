@@ -428,12 +428,24 @@ PJ_DEF(pj_status_t) pjmedia_h263_1996_packetize(pjmedia_h263_packetizer *pktz,
 	                   (pj_uint8_t *)PJ_MIN(((unsigned)(data))+pktz->cfg.mtu,((unsigned)(pktz->packet))+bits_len));
 	    unsigned char header[4];
 		memset(header, 0, 4);
+		int iFrame = ((data[4] & 2) == 0);
+#ifndef MS_LYNC
         // assume video size is CIF or QCIF
-        if (pktz->width == 352 && pktz->height == 288) header[1] = 0x60;
+        if (pktz->width == 352 && pktz->height == 288) 
+            header[1] = 0x60;
         else header[1] = 0x40;
-        
-        int iFrame = ((data[4] & 2) == 0);
 		if(!iFrame) header[1] |= 0x10;
+#else
+        // Assume CIF only for MS-Lync
+        if(!iFrame {
+			header[0] = 0x05;
+			header[1] = 0x60;
+	    }
+	    else {
+		    header[0] = 0x02;
+			header[1] = 0x70;
+	    }
+#endif
         *payload = p;
 		memcpy(p, header, 4);
 		p += 4;
@@ -481,6 +493,7 @@ PJ_DEF(pj_status_t) pjmedia_h263_1996_unpacketize (pjmedia_h263_packetizer *pktz
     /* Reset last sync point for every new picture bitstream */
     if (*pos == 0)
 	    pktz->unpack_last_sync_pos = 0;
+#ifndef MS_LYNC
 	if ((p[0] & 0x80) == 0) {
 		iFrame = ((p[1] & 0x10) == 0);
 	    hdrLen = 4;
@@ -496,6 +509,35 @@ PJ_DEF(pj_status_t) pjmedia_h263_1996_unpacketize (pjmedia_h263_packetizer *pktz
 	    hdrLen = 12;
 	    mode = 'C';
 	}
+#else
+    if ((p[0] == 0x05) && (p[1] == 0x60) && (p[2] == 0) && (p[3] == 0)) {
+		iFrame = 0;
+	    hdrLen = 4;
+	    mode = 'A';
+	} 
+	else if ((p[0] == 0x02) && (p[1] == 0x70) && (p[2] == 0) && (p[3] == 0)) {
+		iFrame = 1;
+	    hdrLen = 4;
+	    mode = 'A';
+	} 
+	else if ((p[0] == 0xbd) && (p[1] == 0x67) && (p[2] == 0) && (p[3] == 0x14)
+	         && (p[4] == 0) && (p[5] == 0) && (p[6] == 0) && (p[7] == 0)) {
+		iFrame = 0;
+		hdrLen = 8;
+		mode = 'B';
+	}
+	else if ((p[0] == 0xa1) && (p[1] == 0x67) && (p[2] == 0) && (p[3] == 0x18)
+	         && (p[4] == 0x8f) && (p[5] == 0) && (p[6] == 0x80) && (p[7] == 0)) {
+		iFrame = 1;
+		hdrLen = 8;
+		mode = 'B';
+	}
+	else {
+	    iFrame = 0;
+	    hdrLen = 12;
+	    mode = 'C';
+	}
+#endif
 	/* H263-1996 payload header size is more than hdrLen */
     if (payload_len < hdrLen) {
 	    /* Invalid bitstream, discard this payload */
