@@ -28,6 +28,7 @@
 
 
 #define THIS_FILE	"h263_packetizer.c"
+//#define MS_LYNC 1
 
 #if 0
 /* H.263 packetizer definition */
@@ -437,7 +438,7 @@ PJ_DEF(pj_status_t) pjmedia_h263_1996_packetize(pjmedia_h263_packetizer *pktz,
 		if(!iFrame) header[1] |= 0x10;
 #else
         // Assume CIF only for MS-Lync
-        if(!iFrame {
+        if(!iFrame) {
 			header[0] = 0x05;
 			header[1] = 0x60;
 	    }
@@ -455,7 +456,7 @@ PJ_DEF(pj_status_t) pjmedia_h263_1996_packetize(pjmedia_h263_packetizer *pktz,
 		unsigned pos1 = *pos;
 		*pos = (p - bits-4) < bits_len?(p-bits-4):bits_len;
 		//printf("bits: 0x%02x, p: 0x%02x, payload_len: %d, pos1: %d, pos: %d, bits_len: %d, iFrame:%d\n", 
-		//    bits, p, *payload_len, pos1, *pos, bits_len, pktz->pict_type);
+		//    bits, p, *payload_len, pos1, *pos, bits_len, iFrame);
 	}
 
     return PJ_SUCCESS;

@@ -30,8 +30,8 @@
 
 #define THIS_FILE		"h264_packetizer.c"
 
-#define DBG_PACKETIZE		0
-#define DBG_UNPACKETIZE		0
+//#define DBG_PACKETIZE		0
+//#define DBG_UNPACKETIZE		1
 
 
 /* H.264 packetizer definition */
@@ -109,6 +109,7 @@ PJ_DEF(pj_status_t) pjmedia_h264_packetizer_create(
 
     *p = p_;
 
+    PJ_LOG(3, (THIS_FILE, "-------pjmedia_h264_packetizer_create----------- return success"));
     return PJ_SUCCESS;
 }
 
@@ -352,7 +353,7 @@ PJ_DEF(pj_status_t) pjmedia_h264_unpacketize(pjmedia_h264_packetizer *pktz,
     pj_uint8_t nal_type;
 
     PJ_UNUSED_ARG(pktz);
-
+//#define DBG_UNPACKETIZE 1
 #if DBG_UNPACKETIZE
     if (*bits_pos == 0 && payload_len) {
 	PJ_LOG(3, ("h264unpack", ">> Start unpacking new frame <<"));
@@ -403,9 +404,25 @@ PJ_DEF(pj_status_t) pjmedia_h264_unpacketize(pjmedia_h264_packetizer *pktz,
 	pktz->unpack_last_sync_pos = *bits_pos;
 
 #if DBG_UNPACKETIZE
-	PJ_LOG(3, ("h264unpack", "Unpacked single H264 NAL unit "
+	PJ_LOG(3, ("h264unpack-1", "Unpacked single H264 NAL unit "
 		   "(type=%d, NRI=%d, len=%d)",
 		   nal_type, (*payload&0x60)>>5, payload_len));
+	// print the payload in hex
+#if 0
+	{
+		int i=0, j=0;
+		for(i=0; i < payload_len; i+=16) {
+			for(j=i; (j < (i+16)) && ( j < payload_len); j++) {
+				printf("%02x ", payload[j]);
+			//	printf("%02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x\n",
+			//	    payload[k], payload[k+1],payload[k+2], payload[k+3], payload[k+4], payload[k+5], payload[k+6], 
+			//	payload[k+7], payload[k+8], payload[k+9], payload[k+10], payload[k+11], payload[k+12], payload[k+13],
+			//	payload[k+14], payload[k+15]);
+			}
+			printf("\n");
+		}
+	}
+#endif
 #endif
 
     }
@@ -455,7 +472,7 @@ PJ_DEF(pj_status_t) pjmedia_h264_unpacketize(pjmedia_h264_packetizer *pktz,
 	}
 
 #if DBG_UNPACKETIZE
-	PJ_LOG(3, ("h264unpack", "Unpacked %d H264 NAL units (len=%d)",
+	PJ_LOG(3, ("h264unpack-2", "Unpacked %d H264 NAL units (len=%d)",
 		   cnt, payload_len));
 #endif
 
@@ -516,7 +533,7 @@ PJ_DEF(pj_status_t) pjmedia_h264_unpacketize(pjmedia_h264_packetizer *pktz,
 	}
 
 #if DBG_UNPACKETIZE
-	PJ_LOG(3, ("h264unpack", "Unpacked fragmented H264 NAL unit "
+	PJ_LOG(3, ("h264unpack-3", "Unpacked fragmented H264 NAL unit "
 		   "(type=%d, NRI=%d, len=%d)",
 		   TYPE, NRI, payload_len));
 #endif

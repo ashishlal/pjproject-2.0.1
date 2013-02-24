@@ -344,7 +344,7 @@ static pj_status_t ios_factory_default_param(pj_pool_t *pool,
     }
     // End Hieu adding
     
-    
+	//printf("====Inside update_image: %d, %d", stream->size.w, stream->size.h);
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     
     /* Create a device-dependent RGB color space */
@@ -565,7 +565,7 @@ static pj_status_t ios_factory_create_stream(
         // Hieu change to AVCaptureSessionPreset320x240
         //strm->cap_session.sessionPreset = AVCaptureSessionPresetMedium;
         strm->cap_session.sessionPreset = AVCaptureSessionPreset352x288;
-        
+        //strm->cap_session.sessionPreset = AVCaptureSessionPreset640x480;
         AVCaptureDevice *videoDevice;
         NSArray *devices = [AVCaptureDevice devices];
         for (AVCaptureDevice *device in devices) {
@@ -677,7 +677,9 @@ static pj_status_t ios_factory_create_stream(
                 //[window sendSubviewToBack:strm->imgView];// Hieu add
 #else
        strm->imgView = [[UIImageView alloc] init];
-        strm->imgView.frame = CGRectMake(0, 0, 320, height-52);
+       strm->imgView.frame = CGRectMake(0, 0, 320, height-52);
+        // +++lal: for h.264
+        //strm->imgView.frame = CGRectMake(0, 0, 640, 480);
         if (!strm->imgView) {
             status = PJ_ENOMEM;
             goto on_error;
@@ -782,6 +784,14 @@ static pj_status_t ios_stream_set_cap(pjmedia_vid_dev_stream *s,
     
     if (cap==PJMEDIA_VID_DEV_CAP_INPUT_SCALE)
     {
+		pjmedia_format *fmt = (pjmedia_format *)pval;
+		
+	    strm->size.w = fmt->det.vid.size.w;
+	    strm->size.h = fmt->det.vid.size.h;
+	    strm->bytes_per_row = strm->size.w * strm->bpp / 8;
+	   // strm->frame_size = strm->bytes_per_row * strm->size.h;
+	    printf("========ios_dev: changed format to w: %d h: %d============\n", 
+			fmt->det.vid.size.w, fmt->det.vid.size.h);
         return PJ_SUCCESS;
     }
     
@@ -834,7 +844,7 @@ static pj_status_t ios_stream_put_frame(pjmedia_vid_dev_stream *strm,
         return PJ_EINVALIDOP;
     }
     // End Hieu adding
-    
+    //printf("=========here4: %d %d===========\n", stream->frame_size, frame->size);
     pj_assert(stream->frame_size >= frame->size);
     pj_memcpy(stream->buf, frame->buf, frame->size);
     /* Perform video display in a background thread */

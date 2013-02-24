@@ -585,7 +585,7 @@ static pj_status_t client_port_event_cb(pjmedia_event *event,
         const pjmedia_video_format_detail *vfd;
         pjmedia_vid_dev_param vid_param;
         pj_status_t status;
-        
+		printf("-----------------here1: Inside client_port_event_cb---------------\n");
 	pjmedia_vid_port_stop(vp);
         
         /* Retrieve the video format detail */
@@ -600,7 +600,11 @@ static pj_status_t client_port_event_cb(pjmedia_event *event,
 	/* Only copy the size here */
 	vp->conv.conv_param.dst.det.vid.size =
 	    event->data.fmt_changed.new_fmt.det.vid.size;
-
+	printf("---------here2: New format: w: %d, h: %d, fps: %d/%d, max_bps: %d, avg_bps: %d------------------\n",
+	    event->data.fmt_changed.new_fmt.det.vid.size.w, event->data.fmt_changed.new_fmt.det.vid.size.h,
+	    event->data.fmt_changed.new_fmt.det.vid.fps.num, event->data.fmt_changed.new_fmt.det.vid.fps.denum,
+		event->data.fmt_changed.new_fmt.det.vid.max_bps, event->data.fmt_changed.new_fmt.det.vid.avg_bps);
+	    
 	status = create_converter(vp);
 	if (status != PJ_SUCCESS) {
 	    PJ_PERROR(4,(THIS_FILE, status, "Error recreating converter"));
@@ -614,8 +618,13 @@ static pj_status_t client_port_event_cb(pjmedia_event *event,
             (vid_param.fmt.det.vid.size.w !=
              vp->conv.conv_param.dst.det.vid.size.w))
         {
+	        printf("---------here3: New format: w: %d, h: %d, fps: %d/%d, max_bps: %d, avg_bps: %d------------------\n",
+			    vp->conv.conv_param.dst.det.vid.size.w, vp->conv.conv_param.dst.det.vid.size.h,
+			    vp->conv.conv_param.dst.det.vid.fps.num, vp->conv.conv_param.dst.det.vid.fps.denum,
+				vp->conv.conv_param.dst.det.vid.max_bps, vp->conv.conv_param.dst.det.vid.avg_bps);
             status = pjmedia_vid_dev_stream_set_cap(vp->strm,
-                                                    PJMEDIA_VID_DEV_CAP_FORMAT,
+                                                    PJMEDIA_VID_DEV_CAP_INPUT_SCALE,
+                                                    //PJMEDIA_VID_DEV_CAP_FORMAT,
                                                     &vp->conv.conv_param.dst);
             if (status != PJ_SUCCESS) {
                 PJ_LOG(3, (THIS_FILE, "failure in changing the format of the "
@@ -623,6 +632,12 @@ static pj_status_t client_port_event_cb(pjmedia_event *event,
                 PJ_LOG(3, (THIS_FILE, "reverting to its original format: %s",
                                       status != PJMEDIA_EVID_ERR ? "success" :
                                       "failure"));
+                // +++lal: added the line below
+                pjmedia_vid_port_start(vp);
+                if(status != PJMEDIA_EVID_ERR) {
+	                return pjmedia_event_publish(NULL, vp, event,
+				                                 PJMEDIA_EVENT_PUBLISH_POST_EVENT);
+                }
                 return status;
             }
         }

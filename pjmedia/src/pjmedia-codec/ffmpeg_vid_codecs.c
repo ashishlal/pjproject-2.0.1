@@ -275,12 +275,11 @@ static pj_status_t h263_1996_preopen(ffmpeg_private *ff);
 static FUNC_PACKETIZE(h263_packetize);
 static FUNC_UNPACKETIZE(h263_unpacketize);
 
-
 /* Internal codec info */
 static ffmpeg_codec_desc codec_desc[] =
 {
-#if PJMEDIA_HAS_FFMPEG_CODEC_H264
-    {
+#if 0
+	{
 	{PJMEDIA_FORMAT_H264, PJMEDIA_RTP_PT_H264, {"H264",4},
 	 {"Constrained Baseline (level=30, pack=1)", 39}},
 	0,
@@ -289,6 +288,19 @@ static ffmpeg_codec_desc codec_desc[] =
 	&pjmedia_vid_codec_h264_match_sdp,
 	/* Leading space for better compatibility (strange indeed!) */
 	{2, { {{"profile-level-id",16},    {"42e01e",6}}, 
+	      {{" packetization-mode",19},  {"1",1}}, } },
+	},
+#endif
+#if PJMEDIA_HAS_FFMPEG_CODEC_H264
+    {
+	{PJMEDIA_FORMAT_H264, PJMEDIA_RTP_PT_H264, {"H264",4},
+	 {"Constrained Baseline (level=1.3, pack=1)", 40}},
+	0,
+	{352, 288},	{15, 1},	384000, 384000,
+	&h264_packetize, &h264_unpacketize, &h264_preopen, &h264_postopen,
+	&pjmedia_vid_codec_h264_match_sdp,
+	/* Leading space for better compatibility (strange indeed!) */
+	{2, { {{"profile-level-id",16},    {"42000d",6}}, 
 	      {{" packetization-mode",19},  {"1",1}}, } },
     },
 #endif
@@ -468,7 +480,7 @@ static pj_status_t h264_preopen(ffmpeg_private *ff)
 	    ctx->extradata = data->fmtp.sprop_param_sets;
 	}
     }
-
+     PJ_LOG(3, (THIS_FILE, "-------h264_preopen----------- return success"));
     return PJ_SUCCESS;
 }
 

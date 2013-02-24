@@ -659,6 +659,7 @@ static void free_vid_win(pjsua_vid_win_id wid)
     if (w->vp_cap) {
         pjmedia_event_unsubscribe(NULL, &call_media_on_event, NULL,
                                   w->vp_cap);
+    PJ_LOG(4,(THIS_FILE, "----04----\n")); 
 	pjmedia_vid_port_stop(w->vp_cap);
 	pjmedia_vid_port_disconnect(w->vp_cap);
 	pjmedia_vid_port_destroy(w->vp_cap);
@@ -666,6 +667,7 @@ static void free_vid_win(pjsua_vid_win_id wid)
     if (w->vp_rend) {
         pjmedia_event_unsubscribe(NULL, &call_media_on_event, NULL,
                                   w->vp_rend);
+    PJ_LOG(4,(THIS_FILE, "----05----\n")); 
 	pjmedia_vid_port_stop(w->vp_rend);
 	pjmedia_vid_port_destroy(w->vp_rend);
     }
@@ -1003,7 +1005,7 @@ void pjsua_vid_stop_stream(pjsua_call_media *call_med)
 	pj_status_t status;
 
 	/* Stop the capture before detaching stream and unsubscribing event */
-	PJ_LOG(4,(THIS_FILE, "----01----")); 
+	PJ_LOG(4,(THIS_FILE, "----01----\n")); 
 	pjmedia_vid_port_stop(w->vp_cap);
 
 	/* Disconnect video stream from capture device */
@@ -1031,7 +1033,7 @@ void pjsua_vid_stop_stream(pjsua_call_media *call_med)
 
     if (call_med->strm.v.rdr_win_id != PJSUA_INVALID_ID) {
 	pjsua_vid_win *w = &pjsua_var.win[call_med->strm.v.rdr_win_id];
-    PJ_LOG(4,(THIS_FILE, "----2----")); 
+    PJ_LOG(4,(THIS_FILE, "----2----\n")); 
 	/* Stop the render before unsubscribing event */
 	pjmedia_vid_port_stop(w->vp_rend);
 	pjmedia_event_unsubscribe(NULL, &call_media_on_event, call_med,
@@ -1188,6 +1190,7 @@ PJ_DEF(pj_status_t) pjsua_vid_preview_stop(pjmedia_vid_dev_index id)
 			    cap_dev, PJMEDIA_VID_DEV_CAP_INPUT_PREVIEW,
 			    &enabled);
 	} else {
+		PJ_LOG(4,(THIS_FILE, "----03----\n")); 
 	    status = pjmedia_vid_port_stop(w->vp_rend);
 	}
 

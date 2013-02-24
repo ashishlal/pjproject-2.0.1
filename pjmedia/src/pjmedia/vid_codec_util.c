@@ -323,6 +323,7 @@ PJ_DEF(pj_status_t) pjmedia_vid_codec_h264_parse_fmtp(
 	    h264_fmtp->profile_idc = (pj_uint8_t)((tmp >> 16) & 0xFF);
 	    h264_fmtp->profile_iop = (pj_uint8_t)((tmp >> 8) & 0xFF);
 	    h264_fmtp->level = (pj_uint8_t)(tmp & 0xFF);
+		printf("============%d %d %d================\n", h264_fmtp->profile_idc, h264_fmtp->profile_iop, h264_fmtp->level);
 	} else if (pj_stricmp(&fmtp->param[i].name, &PACKETIZATION_MODE)==0) {
 	    tmp = pj_strtoul(&fmtp->param[i].val);
 	    if (tmp >= 0 && tmp <= 2) 
