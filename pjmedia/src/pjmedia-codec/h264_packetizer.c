@@ -30,9 +30,10 @@
 
 #define THIS_FILE		"h264_packetizer.c"
 
-//#define DBG_PACKETIZE		0
+//#define DBG_PACKETIZE		1
 //#define DBG_UNPACKETIZE		1
 
+//#define MS_LYNC 1
 
 /* H.264 packetizer definition */
 struct pjmedia_h264_packetizer
@@ -139,6 +140,9 @@ PJ_DEF(pj_status_t) pjmedia_h264_packetize(pjmedia_h264_packetizer *pktz,
     }
 #endif
 
+#if defined (MS_LYNC) && (MS_LYNC == 1)
+    const pj_uint8_t nal_prefix14_code[3] = {0, 0x80, 0x0c};
+#endif
     p = buf + *pos;
     end = buf + buf_len;
 
@@ -172,7 +176,21 @@ PJ_DEF(pj_status_t) pjmedia_h264_packetize(pjmedia_h264_packetizer *pktz,
 		  nal_end - nal_start, pktz->cfg.mtu));
 	return PJ_ETOOSMALL;
     }
-
+#if defined(MS_LYNC) && (MS_LYNC == 1)
+     if (pktz->cfg.mode==PJMEDIA_H264_PACKETIZER_MODE_SINGLE_NAL) {
+	     pj_uint8_t TYPE;
+	     TYPE = *nal_octet & 0x1F;
+	     if(TYPE == 14) {
+		     // add 3 more octets
+		     p = buf + *pos;
+			 *payload = p;
+			 *p = *nal_start;
+			 p++;
+			 pj_memcpy(p, nal_prefix14_code, sizeof(nal_prefix14_code));
+			 p += sizeof(nal_prefix14_code);
+	     }
+	 }
+#endif
     /* Evaluate the proper payload format structure */
 
     /* Fragmentation (FU-A) packet */
@@ -204,6 +222,16 @@ PJ_DEF(pj_status_t) pjmedia_h264_packetize(pjmedia_h264_packetizer *pktz,
 
 	/* Init FU header (one octed: S+E+R+TYPE) */
 	*p = TYPE;
+#if defined(MS_LYNC) && (MS_LYNC == 1)
+	     if(TYPE == 14) {
+		     // add 3 more octets
+		     //p = buf + *pos;
+			 //*p = *nal_start;
+			 p++;
+			 pj_memcpy(p, nal_prefix14_code, sizeof(nal_prefix14_code));
+			 p += sizeof(nal_prefix14_code);
+	     }
+#endif
 	if (nal_octet)
 	    *p |= (1 << 7); /* S bit flag = start of fragmentation */
 	if (nal_end-nal_start+HEADER_SIZE_FU_A <= pktz->cfg.mtu)
@@ -353,7 +381,9 @@ PJ_DEF(pj_status_t) pjmedia_h264_unpacketize(pjmedia_h264_packetizer *pktz,
     pj_uint8_t nal_type;
 
     PJ_UNUSED_ARG(pktz);
-//#define DBG_UNPACKETIZE 1
+#if defined (MS_LYNC) && (MS_LYNC == 1)
+    const pj_uint8_t nal_prefix14_code[3] = {0, 0x80, 0x0c};
+#endif
 #if DBG_UNPACKETIZE
     if (*bits_pos == 0 && payload_len) {
 	PJ_LOG(3, ("h264unpack", ">> Start unpacking new frame <<"));
@@ -394,7 +424,12 @@ PJ_DEF(pj_status_t) pjmedia_h264_unpacketize(pjmedia_h264_packetizer *pktz,
 	/* Write NAL unit start code */
 	pj_memcpy(p, &nal_start_code, PJ_ARRAY_SIZE(nal_start_code));
 	p += PJ_ARRAY_SIZE(nal_start_code);
-
+#if defined(MS_LYNC) && (MS_LYNC == 1)
+	     if(nal_type == 14) {
+		     // add 3 more octets
+			 payload += sizeof(nal_prefix14_code);
+	     }
+#endif
 	/* Write NAL unit */
 	pj_memcpy(p, payload, payload_len);
 	p += payload_len;
@@ -408,7 +443,7 @@ PJ_DEF(pj_status_t) pjmedia_h264_unpacketize(pjmedia_h264_packetizer *pktz,
 		   "(type=%d, NRI=%d, len=%d)",
 		   nal_type, (*payload&0x60)>>5, payload_len));
 	// print the payload in hex
-#if 0
+#if 1
 	{
 		int i=0, j=0;
 		for(i=0; i < payload_len; i+=16) {
