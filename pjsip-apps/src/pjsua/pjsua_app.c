@@ -4733,7 +4733,7 @@ void console_app_main(const pj_str_t *uri_to_call)
 //		    break;
 //		if (!simple_input("Auth Password:", passwd, sizeof(passwd)))
 //		    break;
-            
+            pj_activesock_enable_iphone_os_bg(PJ_TRUE);
             
 #if 0
             char* id = "sip:ashishlalwork3@sip2sip.info";
@@ -4743,7 +4743,7 @@ void console_app_main(const pj_str_t *uri_to_call)
             char* passwd = "e2wdxxxeyk";
 #else
             char* id = "sip:ashishlalwork1@sip.antisip.com";
-            char* registrar = "sip:sip.antisip.com";
+            char* registrar = "sip:sip.antisip.com;transport=tcp";
             char* realm = "sip.antisip.com";
             char* uname = "ashishlalwork1";
             char* passwd = "1234";
