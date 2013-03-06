@@ -1,0 +1,1900 @@
+2013-02-01 16:18:47.787 ipjsua[3559:907] Application windows are expected to have a root view controller at the end of application launch
+2013-02-01 16:18:47.794 ipjsua[3559:5003] 16:18:47.794 os_core_unix.c !pjlib 2.0.1 for POSIX initialized
+2013-02-01 16:18:47.804 ipjsua[3559:5003] 16:18:47.802 sip_endpoint.c  .Creating endpoint instance...
+2013-02-01 16:18:47.814 ipjsua[3559:5003] 16:18:47.814          pjlib  .select() I/O Queue created (0x1af1f44)
+2013-02-01 16:18:47.817 ipjsua[3559:5003] 16:18:47.816 sip_endpoint.c  .Module "mod-msg-print" registered
+2013-02-01 16:18:47.819 ipjsua[3559:5003] 16:18:47.819 sip_transport.  .Transport manager created.
+2013-02-01 16:18:47.823 ipjsua[3559:5003] 16:18:47.823   pjsua_core.c  .PJSUA state changed: NULL --> CREATED
+2013-02-01 16:18:47.838 ipjsua[3559:5003] 16:18:47.838 sip_endpoint.c  .Module "mod-pjsua-log" registered
+2013-02-01 16:18:47.840 ipjsua[3559:5003] 16:18:47.840 sip_endpoint.c  .Module "mod-tsx-layer" registered
+2013-02-01 16:18:47.843 ipjsua[3559:5003] 16:18:47.843 sip_endpoint.c  .Module "mod-stateful-util" registered
+2013-02-01 16:18:47.846 ipjsua[3559:5003] 16:18:47.846 sip_endpoint.c  .Module "mod-ua" registered
+2013-02-01 16:18:47.849 ipjsua[3559:5003] 16:18:47.849 sip_endpoint.c  .Module "mod-100rel" registered
+2013-02-01 16:18:47.851 ipjsua[3559:5003] 16:18:47.851 sip_endpoint.c  .Module "mod-pjsua" registered
+2013-02-01 16:18:47.854 ipjsua[3559:5003] 16:18:47.854 sip_endpoint.c  .Module "mod-invite" registered
+2013-02-01 16:18:47.862 ipjsua[3559:5003] 16:18:47.862 coreaudio_dev.  .. dev_id 0: iPhone IO device  (in=1, out=1) 8000Hz
+2013-02-01 16:18:47.869 ipjsua[3559:5003] 16:18:47.869 coreaudio_dev.  ..core audio initialized
+2013-02-01 16:18:47.873 ipjsua[3559:5003] 16:18:47.873          pjlib  ..select() I/O Queue created (0x1acfc14)
+2013-02-01 16:18:47.923 ipjsua[3559:5003] 16:18:47.923    pjsua_vid.c  ..Initializing video subsystem..
+2013-02-01 16:18:47.978 ipjsua[3559:5003] 16:18:47.978      ios_dev.m  ...iOS video initialized with 2 devices
+2013-02-01 16:18:47.985 ipjsua[3559:5003] 16:18:47.985 colorbar_dev.c  ...Colorbar video src initialized with 1 device(s):
+2013-02-01 16:18:47.988 ipjsua[3559:5003] 16:18:47.988 colorbar_dev.c  ... 0: Colorbar generator
+2013-02-01 16:18:47.997 ipjsua[3559:5003] 16:18:47.997      sdl_dev.c  ...SDL 2.0 initialized
+2013-02-01 16:18:47.999 ipjsua[3559:5003] 16:18:47.999 sip_endpoint.c  .Module "mod-evsub" registered
+2013-02-01 16:18:48.001 ipjsua[3559:5003] 16:18:48.001 sip_endpoint.c  .Module "mod-presence" registered
+2013-02-01 16:18:48.003 ipjsua[3559:5003] 16:18:48.003 sip_endpoint.c  .Module "mod-mwi" registered
+2013-02-01 16:18:48.004 ipjsua[3559:5003] 16:18:48.004 sip_endpoint.c  .Module "mod-refer" registered
+2013-02-01 16:18:48.007 ipjsua[3559:5003] 16:18:48.007 sip_endpoint.c  .Module "mod-pjsua-pres" registered
+2013-02-01 16:18:48.010 ipjsua[3559:5003] 16:18:48.010 sip_endpoint.c  .Module "mod-pjsua-im" registered
+2013-02-01 16:18:48.012 ipjsua[3559:5003] 16:18:48.012 sip_endpoint.c  .Module "mod-pjsua-options" registered
+2013-02-01 16:18:48.014 ipjsua[3559:5003] 16:18:48.014   pjsua_core.c  .1 SIP worker threads created
+2013-02-01 16:18:48.015 ipjsua[3559:5003] 16:18:48.015   pjsua_core.c  .pjsua version 2.0.1 for iPhone OS-6.0.1/arm/iOS-SDK-6.0 initialized
+2013-02-01 16:18:48.017 ipjsua[3559:5003] 16:18:48.017   pjsua_core.c  .PJSUA state changed: CREATED --> INIT
+2013-02-01 16:18:48.018 ipjsua[3559:5003] 16:18:48.018 sip_endpoint.c  Module "mod-default-handler" registered
+2013-02-01 16:18:48.020 ipjsua[3559:5003] 16:18:48.020   pjsua_core.c  SIP UDP socket reachable at 192.168.1.4:5060
+2013-02-01 16:18:48.023 ipjsua[3559:5003] 16:18:48.023   udp0x1b05a00  SIP UDP transport started, published address is 192.168.1.4:5060
+2013-02-01 16:18:48.025 ipjsua[3559:5003] 16:18:48.025    pjsua_acc.c  Adding account: id=<sip:192.168.1.4:5060>
+2013-02-01 16:18:48.027 ipjsua[3559:5003] 16:18:48.027    pjsua_acc.c  .Account <sip:192.168.1.4:5060> added with id 0
+2013-02-01 16:18:48.029 ipjsua[3559:5003] 16:18:48.029    pjsua_acc.c  Modifying accunt 0
+2013-02-01 16:18:48.031 ipjsua[3559:5003] 16:18:48.031    pjsua_acc.c  Acc 0: setting online status to 1..
+2013-02-01 16:18:48.033 ipjsua[3559:5003] 16:18:48.033    tcplis:5060  SIP TCP listener ready for incoming connections at 192.168.1.4:5060
+2013-02-01 16:18:48.036 ipjsua[3559:5003] 16:18:48.035    pjsua_acc.c  Adding account: id=<sip:192.168.1.4:5060;transport=TCP>
+2013-02-01 16:18:48.038 ipjsua[3559:5003] 16:18:48.037    pjsua_acc.c  .Account <sip:192.168.1.4:5060;transport=TCP> added with id 1
+2013-02-01 16:18:48.039 ipjsua[3559:5003] 16:18:48.039    pjsua_acc.c  Modifying accunt 1
+2013-02-01 16:18:48.041 ipjsua[3559:5003] 16:18:48.041    pjsua_acc.c  Acc 1: setting online status to 1..
+2013-02-01 16:18:48.043 ipjsua[3559:5003] 16:18:48.043   pjsua_core.c  PJSUA state changed: INIT --> STARTING
+2013-02-01 16:18:48.045 ipjsua[3559:5003] 16:18:48.045  pjsua_media.c  ..NAT type detection failed: Invalid STUN server or server not configured (PJNATH_ESTUNINSERVER)
+2013-02-01 16:18:48.047 ipjsua[3559:5003] 16:18:48.047 sip_endpoint.c  .Module "mod-unsolicited-mwi" registered
+2013-02-01 16:18:48.049 ipjsua[3559:5003] 16:18:48.048   pjsua_core.c  .PJSUA state changed: STARTING --> RUNNING
+2013-02-01 16:18:48.051 ipjsua[3559:5003] >>>>
+2013-02-01 16:18:48.053 ipjsua[3559:5003] Account list:
+2013-02-01 16:18:48.054 ipjsua[3559:5003]   [ 0] <sip:192.168.1.4:5060>: does not register
+2013-02-01 16:18:48.056 ipjsua[3559:5003]        Online status: Online
+2013-02-01 16:18:48.058 ipjsua[3559:5003]  *[ 1] <sip:192.168.1.4:5060;transport=TCP>: does not register
+2013-02-01 16:18:48.060 ipjsua[3559:5003]        Online status: Online
+2013-02-01 16:18:48.061 ipjsua[3559:5003] Buddy list:
+2013-02-01 16:18:48.063 ipjsua[3559:5003]  -none-
+2013-02-01 16:18:48.065 ipjsua[3559:5003] 
+2013-02-01 16:18:48.066 ipjsua[3559:5003] +=============================================================================+
+2013-02-01 16:18:48.068 ipjsua[3559:5003] |       Call Commands:         |   Buddy, IM & Presence:  |     Account:      |
+2013-02-01 16:18:48.070 ipjsua[3559:5003] |                              |                          |                   |
+2013-02-01 16:18:48.071 ipjsua[3559:5003] |  m  Make new call            | +b  Add new buddy       .| +a  Add new accnt |
+2013-02-01 16:18:48.073 ipjsua[3559:5003] |  M  Make multiple calls      | -b  Delete buddy         | -a  Delete accnt. |
+2013-02-01 16:18:48.075 ipjsua[3559:5003] |  a  Answer call              |  i  Send IM              | !a  Modify accnt. |
+2013-02-01 16:18:48.077 ipjsua[3559:5003] |  h  Hangup call  (ha=all)    |  s  Subscribe presence   | rr  (Re-)register |
+2013-02-01 16:18:48.079 ipjsua[3559:5003] |  H  Hold call                |  u  Unsubscribe presence | ru  Unregister    |
+2013-02-01 16:18:48.081 ipjsua[3559:5003] |  v  re-inVite (release hold) |  t  ToGgle Online status |  >  Cycle next ac.|
+2013-02-01 16:18:48.083 ipjsua[3559:5003] |  U  send UPDATE              |  T  Set online status    |  <  Cycle prev ac.|
+2013-02-01 16:18:48.085 ipjsua[3559:5003] | ],[ Select next/prev call    +--------------------------+-------------------+
+2013-02-01 16:18:48.086 ipjsua[3559:5003] |  x  Xfer call                |      Media Commands:     |  Status & Config: |
+2013-02-01 16:18:48.088 ipjsua[3559:5003] |  X  Xfer with Replaces       |                          |                   |
+2013-02-01 16:18:48.090 ipjsua[3559:5003] |  #  Send RFC 2833 DTMF       | cl  List ports           |  d  Dump status   |
+2013-02-01 16:18:48.091 ipjsua[3559:5003] |  *  Send DTMF with INFO      | cc  Connect port         | dd  Dump detailed |
+2013-02-01 16:18:48.094 ipjsua[3559:5003] | dq  Dump curr. call quality  | cd  Disconnect port      | dc  Dump config   |
+2013-02-01 16:18:48.096 ipjsua[3559:5003] |                              |  V  Adjust audio Volume  |  f  Save config   |
+2013-02-01 16:18:48.098 ipjsua[3559:5003] |  S  Send arbitrary REQUEST   | Cp  Codec priorities     |                   |
+2013-02-01 16:18:48.099 ipjsua[3559:5003] +-----------------------------------------------------------------------------+
+2013-02-01 16:18:48.101 ipjsua[3559:5003] | Video: "vid help" for more info                                             |
+2013-02-01 16:18:48.103 ipjsua[3559:5003] +-----------------------------------------------------------------------------+
+2013-02-01 16:18:48.105 ipjsua[3559:5003] |  q  QUIT   L  ReLoad   sleep MS   echo [0|1|txt]     n: detect NAT type     |
+2013-02-01 16:18:48.107 ipjsua[3559:5003] +=============================================================================+
+2013-02-01 16:18:48.109 ipjsua[3559:5003] You have 0 active call
+2013-02-01 16:18:48.110 ipjsua[3559:5003] >>> 
+2013-02-01 16:19:01.718 ipjsua[3559:5003] 16:19:01.718    pjsua_acc.c  Adding account: id=sip:ashishlalwork1@sip.antisip.com
+2013-02-01 16:19:01.720 ipjsua[3559:5003] 16:19:01.720    pjsua_acc.c  .Account sip:ashishlalwork1@sip.antisip.com added with id 2
+2013-02-01 16:19:01.721 ipjsua[3559:5003] 16:19:01.721    pjsua_acc.c  .Acc 2: setting registration..
+2013-02-01 16:19:01.729 ipjsua[3559:5003] 16:19:01.729   pjsua_core.c  ...TX 571 bytes Request msg REGISTER/cseq=14435 (tdta0x22fd000) to UDP 91.121.81.212:5060:
+REGISTER sip:sip.antisip.com SIP/2.0
+
+Via: SIP/2.0/UDP 192.168.1.4:5060;rport;branch=z9hG4bKPjdn2FHLasrILblwCYK1VJgZOdxhIEgm7b
+
+Max-Forwards: 70
+
+From: <sip:ashishlalwork1@sip.antisip.com>;tag=gxS2XqCAIJY1vM4BBeB44aZUhTRg7ZeT
+
+To: <sip:ashishlalwork1@sip.antisip.com>
+
+Call-ID: GxIOT2z6bmTzUvEZyK8VjeQpeL5sBi3J
+
+CSeq: 14435 REGISTER
+
+User-Agent: PJSUA v2.0.1 iPhone OS-6.0.1/arm/iOS-SDK-6.0
+
+Contact: <sip:ashishlalwork1@192.168.1.4:5060;ob>
+
+Expires: 300
+
+Allow: PRACK, INVITE, ACK, BYE, CANCEL, UPDATE, SUBSCRIBE, NOTIFY, REFER, MESSAGE, OPTIONS
+
+Content-Length:  0
+
+
+
+
+--end msg--
+2013-02-01 16:19:01.731 ipjsua[3559:5003] 16:19:01.731    pjsua_acc.c  ..Acc 2: Registration sent
+2013-02-01 16:19:01.732 ipjsua[3559:5003] >>> 
+2013-02-01 16:19:02.231 ipjsua[3559:6503] 16:19:02.231   pjsua_core.c  .TX 571 bytes Request msg REGISTER/cseq=14435 (tdta0x22fd000) to UDP 91.121.81.212:5060:
+REGISTER sip:sip.antisip.com SIP/2.0
+
+Via: SIP/2.0/UDP 192.168.1.4:5060;rport;branch=z9hG4bKPjdn2FHLasrILblwCYK1VJgZOdxhIEgm7b
+
+Max-Forwards: 70
+
+From: <sip:ashishlalwork1@sip.antisip.com>;tag=gxS2XqCAIJY1vM4BBeB44aZUhTRg7ZeT
+
+To: <sip:ashishlalwork1@sip.antisip.com>
+
+Call-ID: GxIOT2z6bmTzUvEZyK8VjeQpeL5sBi3J
+
+CSeq: 14435 REGISTER
+
+User-Agent: PJSUA v2.0.1 iPhone OS-6.0.1/arm/iOS-SDK-6.0
+
+Contact: <sip:ashishlalwork1@192.168.1.4:5060;ob>
+
+Expires: 300
+
+Allow: PRACK, INVITE, ACK, BYE, CANCEL, UPDATE, SUBSCRIBE, NOTIFY, REFER, MESSAGE, OPTIONS
+
+Content-Length:  0
+
+
+
+
+--end msg--
+2013-02-01 16:19:03.232 ipjsua[3559:6503] 16:19:03.232   pjsua_core.c  .TX 571 bytes Request msg REGISTER/cseq=14435 (tdta0x22fd000) to UDP 91.121.81.212:5060:
+REGISTER sip:sip.antisip.com SIP/2.0
+
+Via: SIP/2.0/UDP 192.168.1.4:5060;rport;branch=z9hG4bKPjdn2FHLasrILblwCYK1VJgZOdxhIEgm7b
+
+Max-Forwards: 70
+
+From: <sip:ashishlalwork1@sip.antisip.com>;tag=gxS2XqCAIJY1vM4BBeB44aZUhTRg7ZeT
+
+To: <sip:ashishlalwork1@sip.antisip.com>
+
+Call-ID: GxIOT2z6bmTzUvEZyK8VjeQpeL5sBi3J
+
+CSeq: 14435 REGISTER
+
+User-Agent: PJSUA v2.0.1 iPhone OS-6.0.1/arm/iOS-SDK-6.0
+
+Contact: <sip:ashishlalwork1@192.168.1.4:5060;ob>
+
+Expires: 300
+
+Allow: PRACK, INVITE, ACK, BYE, CANCEL, UPDATE, SUBSCRIBE, NOTIFY, REFER, MESSAGE, OPTIONS
+
+Content-Length:  0
+
+
+
+
+--end msg--
+2013-02-01 16:19:03.261 ipjsua[3559:6503] 16:19:03.261   pjsua_core.c  .RX 503 bytes Response msg 401/REGISTER/cseq=14435 (rdata0x1b07014) from UDP 91.121.81.212:5060:
+SIP/2.0 401 Unauthorized
+
+Via: SIP/2.0/UDP 192.168.1.4:5060;rport=5060;branch=z9hG4bKPjdn2FHLasrILblwCYK1VJgZOdxhIEgm7b
+
+From: <sip:ashishlalwork1@sip.antisip.com>;tag=gxS2XqCAIJY1vM4BBeB44aZUhTRg7ZeT
+
+To: <sip:ashishlalwork1@sip.antisip.com>;tag=b27e1a1d33761e85846fc98f5f3a7e58.456b
+
+Call-ID: GxIOT2z6bmTzUvEZyK8VjeQpeL5sBi3J
+
+CSeq: 14435 REGISTER
+
+WWW-Authenticate: Digest realm="sip.antisip.com", nonce="UQuhglELnZp+NW5nBBrLuv9FS5AceJBG"
+
+Server: kamailio (3.2.1 (i386/linux))
+
+Content-Length: 0
+
+
+
+
+--end msg--
+2013-02-01 16:19:03.265 ipjsua[3559:6503] 16:19:03.265   pjsua_core.c  ....TX 759 bytes Request msg REGISTER/cseq=14436 (tdta0x22fd000) to UDP 91.121.81.212:5060:
+REGISTER sip:sip.antisip.com SIP/2.0
+
+Via: SIP/2.0/UDP 192.168.1.4:5060;rport;branch=z9hG4bKPjXXxmtPhM6Q5V-jHfWFWakd3oeKOoNAz6
+
+Max-Forwards: 70
+
+From: <sip:ashishlalwork1@sip.antisip.com>;tag=gxS2XqCAIJY1vM4BBeB44aZUhTRg7ZeT
+
+To: <sip:ashishlalwork1@sip.antisip.com>
+
+Call-ID: GxIOT2z6bmTzUvEZyK8VjeQpeL5sBi3J
+
+CSeq: 14436 REGISTER
+
+User-Agent: PJSUA v2.0.1 iPhone OS-6.0.1/arm/iOS-SDK-6.0
+
+Contact: <sip:ashishlalwork1@192.168.1.4:5060;ob>
+
+Expires: 300
+
+Allow: PRACK, INVITE, ACK, BYE, CANCEL, UPDATE, SUBSCRIBE, NOTIFY, REFER, MESSAGE, OPTIONS
+
+Authorization: Digest username="ashishlalwork1", realm="sip.antisip.com", nonce="UQuhglELnZp+NW5nBBrLuv9FS5AceJBG", uri="sip:sip.antisip.com", response="adf6c0a8c9f0bc98c6731811e51aecda"
+
+Content-Length:  0
+
+
+
+
+--end msg--
+2013-02-01 16:19:03.769 ipjsua[3559:6503] 16:19:03.769   pjsua_core.c  .TX 759 bytes Request msg REGISTER/cseq=14436 (tdta0x22fd000) to UDP 91.121.81.212:5060:
+REGISTER sip:sip.antisip.com SIP/2.0
+
+Via: SIP/2.0/UDP 192.168.1.4:5060;rport;branch=z9hG4bKPjXXxmtPhM6Q5V-jHfWFWakd3oeKOoNAz6
+
+Max-Forwards: 70
+
+From: <sip:ashishlalwork1@sip.antisip.com>;tag=gxS2XqCAIJY1vM4BBeB44aZUhTRg7ZeT
+
+To: <sip:ashishlalwork1@sip.antisip.com>
+
+Call-ID: GxIOT2z6bmTzUvEZyK8VjeQpeL5sBi3J
+
+CSeq: 14436 REGISTER
+
+User-Agent: PJSUA v2.0.1 iPhone OS-6.0.1/arm/iOS-SDK-6.0
+
+Contact: <sip:ashishlalwork1@192.168.1.4:5060;ob>
+
+Expires: 300
+
+Allow: PRACK, INVITE, ACK, BYE, CANCEL, UPDATE, SUBSCRIBE, NOTIFY, REFER, MESSAGE, OPTIONS
+
+Authorization: Digest username="ashishlalwork1", realm="sip.antisip.com", nonce="UQuhglELnZp+NW5nBBrLuv9FS5AceJBG", uri="sip:sip.antisip.com", response="adf6c0a8c9f0bc98c6731811e51aecda"
+
+Content-Length:  0
+
+
+
+
+--end msg--
+2013-02-01 16:19:03.799 ipjsua[3559:6503] 16:19:03.799   pjsua_core.c  .RX 503 bytes Response msg 401/REGISTER/cseq=14435 (rdata0x22fb014) from UDP 91.121.81.212:5060:
+SIP/2.0 401 Unauthorized
+
+Via: SIP/2.0/UDP 192.168.1.4:5060;rport=5060;branch=z9hG4bKPjdn2FHLasrILblwCYK1VJgZOdxhIEgm7b
+
+From: <sip:ashishlalwork1@sip.antisip.com>;tag=gxS2XqCAIJY1vM4BBeB44aZUhTRg7ZeT
+
+To: <sip:ashishlalwork1@sip.antisip.com>;tag=b27e1a1d33761e85846fc98f5f3a7e58.456b
+
+Call-ID: GxIOT2z6bmTzUvEZyK8VjeQpeL5sBi3J
+
+CSeq: 14435 REGISTER
+
+WWW-Authenticate: Digest realm="sip.antisip.com", nonce="UQuhg1ELnZvTG2K6R/qO5y70VsPJcqrR"
+
+Server: kamailio (3.2.1 (i386/linux))
+
+Content-Length: 0
+
+
+
+
+--end msg--
+2013-02-01 16:19:03.803 ipjsua[3559:6503] 16:19:03.803   pjsua_core.c  .RX 464 bytes Response msg 200/REGISTER/cseq=14436 (rdata0x22fb014) from UDP 91.121.81.212:5060:
+SIP/2.0 200 OK
+
+Via: SIP/2.0/UDP 192.168.1.4:5060;rport=5060;branch=z9hG4bKPjXXxmtPhM6Q5V-jHfWFWakd3oeKOoNAz6
+
+From: <sip:ashishlalwork1@sip.antisip.com>;tag=gxS2XqCAIJY1vM4BBeB44aZUhTRg7ZeT
+
+To: <sip:ashishlalwork1@sip.antisip.com>;tag=b27e1a1d33761e85846fc98f5f3a7e58.c3b7
+
+Call-ID: GxIOT2z6bmTzUvEZyK8VjeQpeL5sBi3J
+
+CSeq: 14436 REGISTER
+
+Contact: <sip:ashishlalwork1@192.168.1.4:5060;ob>;expires=300
+
+Server: kamailio (3.2.1 (i386/linux))
+
+Content-Length: 0
+
+
+
+
+--end msg--
+2013-02-01 16:19:03.805 ipjsua[3559:6503] 16:19:03.805    pjsua_acc.c  ....SIP outbound status for acc 2 is not active
+2013-02-01 16:19:03.806 ipjsua[3559:6503] 16:19:03.806    pjsua_acc.c  ....sip:ashishlalwork1@sip.antisip.com: registration success, status=200 (OK), will re-register in 300 seconds
+2013-02-01 16:19:03.807 ipjsua[3559:6503] 16:19:03.807    pjsua_acc.c  ....Keep-alive timer started for acc 2, destination:91.121.81.212:5060, interval:15s
+2013-02-01 16:19:03.988 ipjsua[3559:6503] 16:19:03.988   pjsua_core.c  .RX 464 bytes Response msg 200/REGISTER/cseq=14436 (rdata0x1b25014) from UDP 91.121.81.212:5060:
+SIP/2.0 200 OK
+
+Via: SIP/2.0/UDP 192.168.1.4:5060;rport=5060;branch=z9hG4bKPjXXxmtPhM6Q5V-jHfWFWakd3oeKOoNAz6
+
+From: <sip:ashishlalwork1@sip.antisip.com>;tag=gxS2XqCAIJY1vM4BBeB44aZUhTRg7ZeT
+
+To: <sip:ashishlalwork1@sip.antisip.com>;tag=b27e1a1d33761e85846fc98f5f3a7e58.c3b7
+
+Call-ID: GxIOT2z6bmTzUvEZyK8VjeQpeL5sBi3J
+
+CSeq: 14436 REGISTER
+
+Contact: <sip:ashishlalwork1@192.168.1.4:5060;ob>;expires=300
+
+Server: kamailio (3.2.1 (i386/linux))
+
+Content-Length: 0
+
+
+
+
+--end msg--
+2013-02-01 16:19:25.772 ipjsua[3559:5003] 16:19:25.772    pjsua_app.c !Video will be enabled in next offer/answer
+2013-02-01 16:19:25.775 ipjsua[3559:5003] >>> 
+2013-02-01 16:19:36.206 ipjsua[3559:5003] 16:19:36.206    pjsua_acc.c !Modifying accunt 2
+2013-02-01 16:19:36.208 ipjsua[3559:5003] >>> 
+2013-02-01 16:19:46.214 ipjsua[3559:5003] 16:19:46.213    pjsua_acc.c  Modifying accunt 2
+2013-02-01 16:19:46.216 ipjsua[3559:5003] >>> 
+2013-02-01 16:19:48.420 ipjsua[3559:5003] (You currently have 0 calls)
+2013-02-01 16:19:48.422 ipjsua[3559:5003] Buddy list:
+2013-02-01 16:19:48.424 ipjsua[3559:5003]  -none-
+2013-02-01 16:19:48.425 ipjsua[3559:5003] 
+2013-02-01 16:19:48.426 ipjsua[3559:5003] Choices:
+   0         For current dialog.
+  -1         All 0 buddies in buddy list
+  [1 - 0]    Select from buddy list
+  URL        An URL
+  <Enter>    Empty input (or 'q') to cancel
+2013-02-01 16:19:48.427 ipjsua[3559:5003] Make call: 
+2013-02-01 16:20:10.507 ipjsua[3559:5003] 16:20:10.507   pjsua_call.c !Making call with acc #2 to sip:ashishlalwork@sip.antisip.com
+2013-02-01 16:20:10.509 ipjsua[3559:5003] 16:20:10.509    pjsua_aud.c  .Set sound device: capture=-1, playback=-2
+2013-02-01 16:20:10.511 ipjsua[3559:5003] 16:20:10.511    pjsua_app.c  ..Turning sound device ON
+2013-02-01 16:20:10.512 ipjsua[3559:5003] 16:20:10.512    pjsua_aud.c  ..Opening sound device PCM@8000/1/20ms
+2013-02-01 16:20:10.513 ipjsua[3559:5003] 16:20:10.513 coreaudio_dev.  ...Using VoiceProcessingIO audio unit
+2013-02-01 16:20:10.941 ipjsua[3559:5003] 16:20:10.941 coreaudio_dev.  ...core audio stream started
+2013-02-01 16:20:10.948 ipjsua[3559:5003] 16:20:10.947  pjsua_media.c  .Call 0: initializing media..
+2013-02-01 16:20:10.949 ipjsua[3559:5003] 16:20:10.949  pjsua_media.c  ..RTP socket reachable at 192.168.1.4:4000
+2013-02-01 16:20:10.950 ipjsua[3559:5003] 16:20:10.950  pjsua_media.c  ..RTCP socket reachable at 192.168.1.4:4001
+2013-02-01 16:20:10.952 ipjsua[3559:5003] 16:20:10.952  pjsua_media.c  ..RTP socket reachable at 192.168.1.4:4002
+2013-02-01 16:20:10.953 ipjsua[3559:5003] 16:20:10.953  pjsua_media.c  ..RTCP socket reachable at 192.168.1.4:4003
+2013-02-01 16:20:10.954 ipjsua[3559:5003] 16:20:10.954  pjsua_media.c  ..Media index 0 selected for audio call 0
+2013-02-01 16:20:10.964 ipjsua[3559:6713] 16:20:10.964 os_core_unix.c  Info: possibly re-registering existing thread
+2013-02-01 16:20:10.970 ipjsua[3559:5003] 16:20:10.970  tcpc0x232ac14  ....TCP client transport created
+2013-02-01 16:20:10.972 ipjsua[3559:5003] 16:20:10.972  tcpc0x232ac14  ....TCP transport 192.168.1.4:56043 is connecting to 91.121.81.212:5060...
+2013-02-01 16:20:10.974 ipjsua[3559:5003] 16:20:10.974   pjsua_core.c  ....TX 1441 bytes Request msg INVITE/cseq=132 (tdta0x2328000) to tcp 91.121.81.212:5060:
+INVITE sip:ashishlalwork@sip.antisip.com SIP/2.0
+
+Via: SIP/2.0/TCP 192.168.1.4:56043;rport;branch=z9hG4bKPjfRM9jqvclCgvQwP5vGG9PohQznIbHNO9
+
+Max-Forwards: 70
+
+From: sip:ashishlalwork1@sip.antisip.com;tag=GGM4fUnodG4RzdWnR4CX03hMm4TIVgnU
+
+To: sip:ashishlalwork@sip.antisip.com
+
+Contact: <sip:ashishlalwork1@192.168.1.4:5060;ob>
+
+Call-ID: 5rM-4Hy4zwT.mkUrRFalAcv9HHSuLt7W
+
+CSeq: 132 INVITE
+
+Allow: PRACK, INVITE, ACK, BYE, CANCEL, UPDATE, SUBSCRIBE, NOTIFY, REFER, MESSAGE, OPTIONS
+
+Supported: replaces, 100rel, timer, norefersub
+
+Session-Expires: 1800
+
+Min-SE: 90
+
+User-Agent: PJSUA v2.0.1 iPhone OS-6.0.1/arm/iOS-SDK-6.0
+
+Content-Type: application/sdp
+
+Content-Length:   763
+
+
+
+v=0
+
+o=- 3568704610 3568704610 IN IP4 192.168.1.4
+
+s=pjmedia
+
+c=IN IP4 192.168.1.4
+
+b=AS:352
+
+t=0 0
+
+a=X-nat:0
+
+m=audio 4000 RTP/AVP 98 97 99 104 3 0 8 96
+
+c=IN IP4 192.168.1.4
+
+b=TIAS:64000
+
+a=rtcp:4001 IN IP4 192.168.1.4
+
+a=sendrecv
+
+a=rtpmap:98 speex/16000
+
+a=rtpmap:97 speex/8000
+
+a=rtpmap:99 speex/32000
+
+a=rtpmap:104 iLBC/8000
+
+a=fmtp:104 mode=30
+
+a=rtpmap:3 GSM/8000
+
+a=rtpmap:0 PCMU/8000
+
+a=rtpmap:8 PCMA/8000
+
+a=rtpmap:96 telephone-event/8000
+
+a=fmtp:96 0-15
+
+m=video 4002 RTP/AVP 97 96 34
+
+c=IN IP4 192.168.1.4
+
+b=TIAS:256000
+
+a=rtcp:4003 IN IP4 192.168.1.4
+
+a=sendrecv
+
+a=rtpmap:97 H264/90000
+
+a=fmtp:97 profile-level-id=42e01e; packetization-mode=1
+
+a=rtpmap:96 H263-1998/90000
+
+a=fmtp:96 CIF=1;QCIF=1
+
+a=rtpmap:34 H263/90000
+
+a=fmtp:34 CIF=1;QCIF=1
+
+
+--end msg--
+2013-02-01 16:20:10.978 ipjsua[3559:5003] 16:20:10.978    pjsua_app.c  .......Call 0 state changed to CALLING
+2013-02-01 16:20:10.980 ipjsua[3559:5003] >>> 
+2013-02-01 16:20:12.070 ipjsua[3559:6503] 16:20:12.069  tcpc0x232ac14 !TCP transport 192.168.1.4:56043 is connected to 91.121.81.212:5060
+2013-02-01 16:20:12.073 ipjsua[3559:6503] 16:20:12.073    pjsua_app.c  SIP tcp transport is connected to [91.121.81.212:5060]
+2013-02-01 16:20:14.360 ipjsua[3559:6503] 16:20:14.360   pjsua_core.c  .RX 539 bytes Response msg 407/INVITE/cseq=132 (rdata0x232adbc) from tcp 91.121.81.212:5060:
+SIP/2.0 407 Proxy Authentication Required
+
+Via: SIP/2.0/TCP 192.168.1.4:56043;rport=24790;branch=z9hG4bKPjfRM9jqvclCgvQwP5vGG9PohQznIbHNO9;received=122.170.84.126
+
+From: sip:ashishlalwork1@sip.antisip.com;tag=GGM4fUnodG4RzdWnR4CX03hMm4TIVgnU
+
+To: sip:ashishlalwork@sip.antisip.com;tag=b27e1a1d33761e85846fc98f5f3a7e58.7ef2
+
+Call-ID: 5rM-4Hy4zwT.mkUrRFalAcv9HHSuLt7W
+
+CSeq: 132 INVITE
+
+Proxy-Authenticate: Digest realm="sip.antisip.com", nonce="UQuhx1ELnd9/D8o3P4kJavu+V4MaFJG7"
+
+Server: kamailio (3.2.1 (i386/linux))
+
+Content-Length: 0
+
+
+
+
+--end msg--
+2013-02-01 16:20:14.362 ipjsua[3559:6503] 16:20:14.362   pjsua_core.c  ..TX 396 bytes Request msg ACK/cseq=132 (tdta0x1b3dc00) to tcp 91.121.81.212:5060:
+ACK sip:ashishlalwork@sip.antisip.com SIP/2.0
+
+Via: SIP/2.0/TCP 192.168.1.4:56043;rport;branch=z9hG4bKPjfRM9jqvclCgvQwP5vGG9PohQznIbHNO9
+
+Max-Forwards: 70
+
+From: sip:ashishlalwork1@sip.antisip.com;tag=GGM4fUnodG4RzdWnR4CX03hMm4TIVgnU
+
+To: sip:ashishlalwork@sip.antisip.com;tag=b27e1a1d33761e85846fc98f5f3a7e58.7ef2
+
+Call-ID: 5rM-4Hy4zwT.mkUrRFalAcv9HHSuLt7W
+
+CSeq: 132 ACK
+
+Content-Length:  0
+
+
+
+
+--end msg--
+2013-02-01 16:20:14.364 ipjsua[3559:6503] 16:20:14.364   pjsua_core.c  .......TX 1649 bytes Request msg INVITE/cseq=133 (tdta0x2328000) to tcp 91.121.81.212:5060:
+INVITE sip:ashishlalwork@sip.antisip.com SIP/2.0
+
+Via: SIP/2.0/TCP 192.168.1.4:56043;rport;branch=z9hG4bKPjWI2GS1MSaRl-wPku3zJ-noZmLVGDAzsY
+
+Max-Forwards: 70
+
+From: sip:ashishlalwork1@sip.antisip.com;tag=GGM4fUnodG4RzdWnR4CX03hMm4TIVgnU
+
+To: sip:ashishlalwork@sip.antisip.com
+
+Contact: <sip:ashishlalwork1@192.168.1.4:5060;ob>
+
+Call-ID: 5rM-4Hy4zwT.mkUrRFalAcv9HHSuLt7W
+
+CSeq: 133 INVITE
+
+Allow: PRACK, INVITE, ACK, BYE, CANCEL, UPDATE, SUBSCRIBE, NOTIFY, REFER, MESSAGE, OPTIONS
+
+Supported: replaces, 100rel, timer, norefersub
+
+Session-Expires: 1800
+
+Min-SE: 90
+
+User-Agent: PJSUA v2.0.1 iPhone OS-6.0.1/arm/iOS-SDK-6.0
+
+Proxy-Authorization: Digest username="ashishlalwork1", realm="sip.antisip.com", nonce="UQuhx1ELnd9/D8o3P4kJavu+V4MaFJG7", uri="sip:ashishlalwork@sip.antisip.com", response="140d98756fecbdae1a3c9fd884b837ea"
+
+Content-Type: application/sdp
+
+Content-Length:   763
+
+
+
+v=0
+
+o=- 3568704610 3568704610 IN IP4 192.168.1.4
+
+s=pjmedia
+
+c=IN IP4 192.168.1.4
+
+b=AS:352
+
+t=0 0
+
+a=X-nat:0
+
+m=audio 4000 RTP/AVP 98 97 99 104 3 0 8 96
+
+c=IN IP4 192.168.1.4
+
+b=TIAS:64000
+
+a=rtcp:4001 IN IP4 192.168.1.4
+
+a=sendrecv
+
+a=rtpmap:98 speex/16000
+
+a=rtpmap:97 speex/8000
+
+a=rtpmap:99 speex/32000
+
+a=rtpmap:104 iLBC/8000
+
+a=fmtp:104 mode=30
+
+a=rtpmap:3 GSM/8000
+
+a=rtpmap:0 PCMU/8000
+
+a=rtpmap:8 PCMA/8000
+
+a=rtpmap:96 telephone-event/8000
+
+a=fmtp:96 0-15
+
+m=video 4002 RTP/AVP 97 96 34
+
+c=IN IP4 192.168.1.4
+
+b=TIAS:256000
+
+a=rtcp:4003 IN IP4 192.168.1.4
+
+a=sendrecv
+
+a=rtpmap:97 H264/90000
+
+a=fmtp:97 profile-level-id=42e01e; packetization-mode=1
+
+a=rtpmap:96 H263-1998/90000
+
+a=fmtp:96 CIF=1;QCIF=1
+
+a=rtpmap:34 H263/90000
+
+a=fmtp:34 CIF=1;QCIF=1
+
+
+--end msg--
+2013-02-01 16:20:14.568 ipjsua[3559:6503] 16:20:14.568   pjsua_core.c  .RX 412 bytes Response msg 100/INVITE/cseq=133 (rdata0x232adbc) from tcp 91.121.81.212:5060:
+SIP/2.0 100 trying -- your call is important to us
+
+Via: SIP/2.0/TCP 192.168.1.4:56043;rport=24790;branch=z9hG4bKPjWI2GS1MSaRl-wPku3zJ-noZmLVGDAzsY;received=122.170.84.126
+
+From: sip:ashishlalwork1@sip.antisip.com;tag=GGM4fUnodG4RzdWnR4CX03hMm4TIVgnU
+
+To: sip:ashishlalwork@sip.antisip.com
+
+Call-ID: 5rM-4Hy4zwT.mkUrRFalAcv9HHSuLt7W
+
+CSeq: 133 INVITE
+
+Server: kamailio (3.2.1 (i386/linux))
+
+Content-Length: 0
+
+
+
+
+--end msg--
+2013-02-01 16:20:16.408 ipjsua[3559:6503] 16:20:16.408   pjsua_core.c  .RX 641 bytes Response msg 180/INVITE/cseq=133 (rdata0x232adbc) from tcp 91.121.81.212:5060:
+SIP/2.0 180 Ringing
+
+Via: SIP/2.0/TCP 192.168.1.4:56043;received=122.170.84.126;rport=24790;branch=z9hG4bKPjWI2GS1MSaRl-wPku3zJ-noZmLVGDAzsY
+
+Record-Route: <sip:91.121.81.212;lr;r2=on;frc=yes;mr=yes>
+
+Record-Route: <sip:91.121.81.212;transport=tcp;r2=on;lr;frc=yes;mr=yes>
+
+Contact: <sip:ashishlalwork@122.170.84.126:5060;rinstance=33560a7d2c9f89c8>
+
+To: <sip:ashishlalwork@sip.antisip.com>;tag=f79c692c
+
+From: <sip:ashishlalwork1@sip.antisip.com>;tag=GGM4fUnodG4RzdWnR4CX03hMm4TIVgnU
+
+Call-ID: 5rM-4Hy4zwT.mkUrRFalAcv9HHSuLt7W
+
+CSeq: 133 INVITE
+
+User-Agent: X-Lite release 5.0.0 stamp 67285
+
+Content-Length: 0
+
+P-PMR: mediarelay enabled
+
+
+
+
+--end msg--
+2013-02-01 16:20:16.411 ipjsua[3559:6503] 16:20:16.411    pjsua_aud.c  .....Conf connect: 1 --> 0
+2013-02-01 16:20:16.412 ipjsua[3559:6503] 16:20:16.412   conference.c  ......Port 1 (ringback) transmitting to port 0 (iPhone IO device)
+2013-02-01 16:20:16.413 ipjsua[3559:6503] 16:20:16.413    pjsua_app.c  .....Call 0 state changed to EARLY (180 Ringing)
+2013-02-01 16:20:20.480 ipjsua[3559:6503] 16:20:20.480   pjsua_core.c  .RX 1233 bytes Response msg 200/INVITE/cseq=133 (rdata0x232adbc) from tcp 91.121.81.212:5060:
+SIP/2.0 200 OK
+
+Via: SIP/2.0/TCP 192.168.1.4:56043;received=122.170.84.126;rport=24790;branch=z9hG4bKPjWI2GS1MSaRl-wPku3zJ-noZmLVGDAzsY
+
+Record-Route: <sip:91.121.81.212;lr;r2=on;frc=yes;mr=yes>
+
+Record-Route: <sip:91.121.81.212;transport=tcp;r2=on;lr;frc=yes;mr=yes>
+
+Contact: <sip:ashishlalwork@122.170.84.126:5060;rinstance=33560a7d2c9f89c8>
+
+To: <sip:ashishlalwork@sip.antisip.com>;tag=f79c692c
+
+From: <sip:ashishlalwork1@sip.antisip.com>;tag=GGM4fUnodG4RzdWnR4CX03hMm4TIVgnU
+
+Call-ID: 5rM-4Hy4zwT.mkUrRFalAcv9HHSuLt7W
+
+CSeq: 133 INVITE
+
+Allow: INVITE, ACK, CANCEL, OPTIONS, BYE, REFER, NOTIFY, MESSAGE, SUBSCRIBE, INFO
+
+Content-Type: application/sdp
+
+Supported: replaces
+
+User-Agent: X-Lite release 5.0.0 stamp 67285
+
+Content-Length: 460
+
+P-PMR: mediarelay enabled
+
+
+
+v=0
+
+o=- 1359715816607433 1 IN IP4 91.121.81.212
+
+s=CounterPath X-Lite 5.0.0
+
+c=IN IP4 91.121.81.212
+
+b=AS:1638
+
+t=0 0
+
+m=audio 39210 RTP/AVP 0 8 96
+
+a=rtpmap:96 telephone-event/8000
+
+a=fmtp:96 0-15
+
+a=sendrecv
+
+m=video 39212 RTP/AVP 96 34
+
+b=TIAS:1574400
+
+a=rtpmap:96 H263-1998/90000
+
+a=fmtp:96 QCIF=1;CUSTOM=160,120,1;CIF=1;CUSTOM=320,240,1;VGA=1;CIF4=1;I=1;J=1;T=1
+
+a=rtpmap:34 H263/90000
+
+a=fmtp:34 QCIF=1;CIF=1;VGA=1;CIF4=1
+
+a=sendrecv
+
+a=nortpproxy:yes
+
+
+--end msg--
+2013-02-01 16:20:20.485 ipjsua[3559:6503] 16:20:20.485    pjsua_app.c  .....Call 0 state changed to CONNECTING
+2013-02-01 16:20:20.487 ipjsua[3559:6503] 16:20:20.487  pjsua_media.c  .....Call 0: updating media..
+2013-02-01 16:20:20.488 ipjsua[3559:6503] 16:20:20.488  pjsua_media.c  ......--my0--
+2013-02-01 16:20:20.489 ipjsua[3559:6503] 16:20:20.489  pjsua_media.c  ......--my10--
+2013-02-01 16:20:20.490 ipjsua[3559:6503] 16:20:20.490  pjsua_media.c  .......--my12--
+2013-02-01 16:20:20.491 ipjsua[3559:6503] 16:20:20.491  pjsua_media.c  ......--my1--
+2013-02-01 16:20:20.492 ipjsua[3559:6503] 16:20:20.492  pjsua_media.c  ......--my2--
+2013-02-01 16:20:20.493 ipjsua[3559:6503] 16:20:20.493  pjsua_media.c  ......--my3--
+2013-02-01 16:20:20.494 ipjsua[3559:6503] 16:20:20.494  pjsua_media.c  ......--my4--
+2013-02-01 16:20:20.495 ipjsua[3559:6503] 16:20:20.495  pjsua_media.c  ......--my5--
+2013-02-01 16:20:20.498 ipjsua[3559:6503] 16:20:20.498  pjsua_media.c  ......--my6--
+2013-02-01 16:20:20.499 ipjsua[3559:6503] 16:20:20.499    pjsua_aud.c  ......Audio channel update..
+2013-02-01 16:20:20.502 ipjsua[3559:6503] 16:20:20.501  strm0x2331014  .......VAD temporarily disabled
+2013-02-01 16:20:20.504 ipjsua[3559:6503] 16:20:20.504  strm0x2331014  .......Encoder stream started
+2013-02-01 16:20:20.505 ipjsua[3559:6503] 16:20:20.505  strm0x2331014  .......Decoder stream started
+2013-02-01 16:20:20.508 ipjsua[3559:6503] 16:20:20.508  pjsua_media.c  ......Audio updated, stream #0: PCMU (sendrecv)
+2013-02-01 16:20:20.510 ipjsua[3559:6503] 16:20:20.510  pjsua_media.c  ......--my7--
+2013-02-01 16:20:20.514 ipjsua[3559:6503] 16:20:20.514  pjsua_media.c !......--my8--
+2013-02-01 16:20:20.515 ipjsua[3559:6503] 16:20:20.515  pjsua_media.c  ......--my5--
+2013-02-01 16:20:20.518 ipjsua[3559:6503] 16:20:20.518    pjsua_vid.c  ......Video channel update..
+err{or,}_recognition separate: 1; 1
+err{or,}_recognition combined: 1; 65537
+removing common factors from framerate
+intra_quant_bias = 0 inter_quant_bias = -64
+Unsupported bit depth: 0
+err{or,}_recognition separate: 1; 1
+err{or,}_recognition combined: 1; 65537
+2013-02-01 16:20:20.590 ipjsua[3559:6503] 16:20:20.590 vstenc0x1b3401  .......Encoder stream started
+2013-02-01 16:20:20.591 ipjsua[3559:6503] 16:20:20.591 vstdec0x1b3401  .......Decoder stream started
+2013-02-01 16:20:20.592 ipjsua[3559:6503] 16:20:20.592    pjsua_vid.c  .......Setting up RX..
+2013-02-01 16:20:20.593 ipjsua[3559:6503] 16:20:20.593    pjsua_vid.c  ........Creating video window: type=stream, cap_id=-1, rend_id=0
+2013-02-01 16:20:20.594 ipjsua[3559:6503] 16:20:20.594     vid_port.c  .........Opening device iOS UIView [iOS] for render: format=BGRA, size=352x288 @45000:1001 fps
+2013-02-01 16:20:20.595 ipjsua[3559:6503] Entered ios_factory_create_stream
+2013-02-01 16:20:20.597 ipjsua[3559:6503] 16:20:20.597     vid_port.c  .........Device iOS UIView [iOS] opened: format=BGRA, size=352x288 @45000:1001 fps
+No accelerated colorspace conversion found from yuv420p to bgra.
+2013-02-01 16:20:20.606 ipjsua[3559:6503] 16:20:20.606    pjsua_vid.c  .........stream window id 0 created for cap_dev=-1 rend_dev=0
+2013-02-01 16:20:20.608 ipjsua[3559:6503] 16:20:20.608    pjsua_vid.c  .........Window 0 created
+2013-02-01 16:20:20.609 ipjsua[3559:6503] 16:20:20.609      ios_dev.m  ........Starting ios video stream
+2013-02-01 16:20:20.611 ipjsua[3559:6503] 16:20:20.611    pjsua_vid.c  .......Setting up TX..
+2013-02-01 16:20:20.614 ipjsua[3559:6503] 16:20:20.614    pjsua_vid.c  ........Creating video window: type=preview, cap_id=1, rend_id=0
+2013-02-01 16:20:20.627 ipjsua[3559:6503] 16:20:20.626     vid_port.c  .........Opening device iOS AVCapture [iOS] for capture: format=BGRA, size=352x288 @30000:2002 fps
+2013-02-01 16:20:20.629 ipjsua[3559:6503] Entered ios_factory_create_stream
+
+Hieu register thread
+2013-02-01 16:20:20.671 ipjsua[3559:6503] Device name: Back Camera
+2013-02-01 16:20:20.672 ipjsua[3559:6503] Device name: Front Camera
+2013-02-01 16:20:20.685 ipjsua[3559:6503] WARNING: -[<AVCaptureVideoDataOutput: 0x141f1d0> setMinFrameDuration:] is deprecated.  Please use AVCaptureConnection's -setVideoMinFrameDuration:
+2013-02-01 16:20:20.688 ipjsua[3559:6503] 16:20:20.687     vid_port.c  .........Device iOS AVCapture [iOS] opened: format=BGRA, size=352x288 @30000:2002 fps
+2013-02-01 16:20:20.692 ipjsua[3559:6503] 16:20:20.692     vid_port.c  .........Opening device iOS UIView [iOS] for render: format=BGRA, size=352x288 @30000:2002 fps
+2013-02-01 16:20:20.693 ipjsua[3559:6503] Entered ios_factory_create_stream
+2013-02-01 16:20:20.697 ipjsua[3559:6503] 16:20:20.697     vid_port.c  .........Device iOS UIView [iOS] opened: format=BGRA, size=352x288 @30000:2002 fps
+No accelerated colorspace conversion found from yuv420p to bgra.
+2013-02-01 16:20:20.699 ipjsua[3559:6503] 16:20:20.699    pjsua_vid.c  .........preview window id 1 created for cap_dev=1 rend_dev=0
+2013-02-01 16:20:20.700 ipjsua[3559:6503] 16:20:20.700    pjsua_vid.c  .........Window 1 created
+2013-02-01 16:20:20.702 ipjsua[3559:6503] 16:20:20.701      ios_dev.m  ........Starting ios video stream
+2013-02-01 16:20:21.137 ipjsua[3559:6713] 16:20:21.137  strm0x2331014 !VAD re-enabled
+2013-02-01 16:20:21.273 ipjsua[3559:6503] 16:20:21.273  pjsua_media.c !......Video updated, stream #1: H263-1998 (sendrecv)
+2013-02-01 16:20:21.274 ipjsua[3559:6503] 16:20:21.274  pjsua_media.c  ......--my8--
+2013-02-01 16:20:21.280 ipjsua[3559:6503] 16:20:21.280  pjsua_media.c  ......--my9--
+2013-02-01 16:20:21.285 ipjsua[3559:6503] 16:20:21.284   pjsua_call.c  .....Got answer with multiple codecs, scheduling updating media session to use only one codec..
+2013-02-01 16:20:21.286 ipjsua[3559:6503] 16:20:21.286    pjsua_app.c  .....Call 0 media 0 [type=audio], status is Active
+2013-02-01 16:20:21.288 ipjsua[3559:6503] 16:20:21.288    pjsua_aud.c  .....Conf disconnect: 1 -x- 0
+2013-02-01 16:20:21.291 ipjsua[3559:6503] 16:20:21.291   conference.c  ......Port 1 (ringback) stop transmitting to port 0 (iPhone IO device)
+2013-02-01 16:20:21.293 ipjsua[3559:6503] 16:20:21.292    pjsua_aud.c  .....Conf connect: 3 --> 0
+2013-02-01 16:20:21.294 ipjsua[3559:6503] 16:20:21.294   conference.c  ......Port 3 (sip:ashishlalwork@sip.antisip.com) transmitting to port 0 (iPhone IO device)
+2013-02-01 16:20:21.296 ipjsua[3559:6503] 16:20:21.296    pjsua_aud.c  .....Conf connect: 0 --> 3
+2013-02-01 16:20:21.297 ipjsua[3559:6503] 16:20:21.297   conference.c  ......Port 0 (iPhone IO device) transmitting to port 3 (sip:ashishlalwork@sip.antisip.com)
+2013-02-01 16:20:21.304 ipjsua[3559:6713] 16:20:21.304   Master/sound  Underflow, buf_cnt=0, will generate 1 frame
+2013-02-01 16:20:21.307 ipjsua[3559:6503] 16:20:21.301    pjsua_app.c !.....Call 0 media 1 [type=video], status is Active
+2013-02-01 16:20:21.309 ipjsua[3559:6503] 16:20:21.309   pjsua_core.c  .....TX 516 bytes Request msg ACK/cseq=133 (tdta0x1b54000) to tcp 91.121.81.212:5060:
+ACK sip:ashishlalwork@122.170.84.126:5060;rinstance=33560a7d2c9f89c8 SIP/2.0
+
+Via: SIP/2.0/TCP 192.168.1.4:56043;rport;branch=z9hG4bKPjo-pW8suRX7rXwRxU1xt01JLe6qhzdH.g
+
+Max-Forwards: 70
+
+From: sip:ashishlalwork1@sip.antisip.com;tag=GGM4fUnodG4RzdWnR4CX03hMm4TIVgnU
+
+To: sip:ashishlalwork@sip.antisip.com;tag=f79c692c
+
+Call-ID: 5rM-4Hy4zwT.mkUrRFalAcv9HHSuLt7W
+
+CSeq: 133 ACK
+
+Route: <sip:91.121.81.212;transport=tcp;lr;r2=on;frc=yes;mr=yes>
+
+Route: <sip:91.121.81.212;lr;r2=on;frc=yes;mr=yes>
+
+Content-Length:  0
+
+
+
+
+--end msg--
+2013-02-01 16:20:21.311 ipjsua[3559:6503] 16:20:21.311    pjsua_app.c  .....Call 0 state changed to CONFIRMED
+2013-02-01 16:20:21.315 ipjsua[3559:6503] 16:20:21.314   pjsua_core.c  .RX 1233 bytes Response msg 200/INVITE/cseq=133 (rdata0x232adbc) from tcp 91.121.81.212:5060:
+SIP/2.0 200 OK
+
+Via: SIP/2.0/TCP 192.168.1.4:56043;received=122.170.84.126;rport=24790;branch=z9hG4bKPjWI2GS1MSaRl-wPku3zJ-noZmLVGDAzsY
+
+Record-Route: <sip:91.121.81.212;lr;r2=on;frc=yes;mr=yes>
+
+Record-Route: <sip:91.121.81.212;transport=tcp;r2=on;lr;frc=yes;mr=yes>
+
+Contact: <sip:ashishlalwork@122.170.84.126:5060;rinstance=33560a7d2c9f89c8>
+
+To: <sip:ashishlalwork@sip.antisip.com>;tag=f79c692c
+
+From: <sip:ashishlalwork1@sip.antisip.com>;tag=GGM4fUnodG4RzdWnR4CX03hMm4TIVgnU
+
+Call-ID: 5rM-4Hy4zwT.mkUrRFalAcv9HHSuLt7W
+
+CSeq: 133 INVITE
+
+Allow: INVITE, ACK, CANCEL, OPTIONS, BYE, REFER, NOTIFY, MESSAGE, SUBSCRIBE, INFO
+
+Content-Type: application/sdp
+
+Supported: replaces
+
+User-Agent: X-Lite release 5.0.0 stamp 67285
+
+Content-Length: 460
+
+P-PMR: mediarelay enabled
+
+
+
+v=0
+
+o=- 1359715816607433 1 IN IP4 91.121.81.212
+
+s=CounterPath X-Lite 5.0.0
+
+c=IN IP4 91.121.81.212
+
+b=AS:1638
+
+t=0 0
+
+m=audio 39210 RTP/AVP 0 8 96
+
+a=rtpmap:96 telephone-event/8000
+
+a=fmtp:96 0-15
+
+a=sendrecv
+
+m=video 39212 RTP/AVP 96 34
+
+b=TIAS:1574400
+
+a=rtpmap:96 H263-1998/90000
+
+a=fmtp:96 QCIF=1;CUSTOM=160,120,1;CIF=1;CUSTOM=320,240,1;VGA=1;CIF4=1;I=1;J=1;T=1
+
+a=rtpmap:34 H263/90000
+
+a=fmtp:34 QCIF=1;CIF=1;VGA=1;CIF4=1
+
+a=sendrecv
+
+a=nortpproxy:yes
+
+
+--end msg--
+2013-02-01 16:20:21.321 ipjsua[3559:6503] 16:20:21.320   pjsua_core.c  ...TX 516 bytes Request msg ACK/cseq=133 (tdta0x1b54000) to tcp 91.121.81.212:5060:
+ACK sip:ashishlalwork@122.170.84.126:5060;rinstance=33560a7d2c9f89c8 SIP/2.0
+
+Via: SIP/2.0/TCP 192.168.1.4:56043;rport;branch=z9hG4bKPjo-pW8suRX7rXwRxU1xt01JLe6qhzdH.g
+
+Max-Forwards: 70
+
+From: sip:ashishlalwork1@sip.antisip.com;tag=GGM4fUnodG4RzdWnR4CX03hMm4TIVgnU
+
+To: sip:ashishlalwork@sip.antisip.com;tag=f79c692c
+
+Call-ID: 5rM-4Hy4zwT.mkUrRFalAcv9HHSuLt7W
+
+CSeq: 133 ACK
+
+Route: <sip:91.121.81.212;transport=tcp;lr;r2=on;frc=yes;mr=yes>
+
+Route: <sip:91.121.81.212;lr;r2=on;frc=yes;mr=yes>
+
+Content-Length:  0
+
+
+
+
+--end msg--
+2013-02-01 16:20:21.325 ipjsua[3559:6503] 16:20:21.325   pjsua_call.c  Updating media session to use only one codec..
+2013-02-01 16:20:21.327 ipjsua[3559:6503] 16:20:21.327   pjsua_core.c  ...TX 1232 bytes Request msg INVITE/cseq=134 (tdta0x2337800) to tcp 91.121.81.212:5060:
+INVITE sip:ashishlalwork@122.170.84.126:5060;rinstance=33560a7d2c9f89c8 SIP/2.0
+
+Via: SIP/2.0/TCP 192.168.1.4:56043;rport;branch=z9hG4bKPjykqEqCT2itiwqA0zrDt7X4AH7temQqEm
+
+Max-Forwards: 70
+
+From: sip:ashishlalwork1@sip.antisip.com;tag=GGM4fUnodG4RzdWnR4CX03hMm4TIVgnU
+
+To: sip:ashishlalwork@sip.antisip.com;tag=f79c692c
+
+Contact: <sip:ashishlalwork1@192.168.1.4:5060;ob>
+
+Call-ID: 5rM-4Hy4zwT.mkUrRFalAcv9HHSuLt7W
+
+CSeq: 134 INVITE
+
+Route: <sip:91.121.81.212;transport=tcp;lr;r2=on;frc=yes;mr=yes>
+
+Route: <sip:91.121.81.212;lr;r2=on;frc=yes;mr=yes>
+
+Allow: PRACK, INVITE, ACK, BYE, CANCEL, UPDATE, SUBSCRIBE, NOTIFY, REFER, MESSAGE, OPTIONS
+
+Supported: replaces, 100rel, timer, norefersub
+
+Session-Expires: 1800
+
+Min-SE: 90
+
+Content-Type: application/sdp
+
+Content-Length:   450
+
+
+
+v=0
+
+o=- 3568704610 3568704611 IN IP4 192.168.1.4
+
+s=pjmedia
+
+c=IN IP4 192.168.1.4
+
+b=AS:352
+
+t=0 0
+
+a=X-nat:0
+
+m=audio 4000 RTP/AVP 0 96
+
+c=IN IP4 192.168.1.4
+
+b=TIAS:64000
+
+a=rtcp:4001 IN IP4 192.168.1.4
+
+a=sendrecv
+
+a=rtpmap:0 PCMU/8000
+
+a=rtpmap:96 telephone-event/8000
+
+a=fmtp:96 0-15
+
+m=video 4002 RTP/AVP 96
+
+c=IN IP4 192.168.1.4
+
+b=TIAS:256000
+
+a=rtcp:4003 IN IP4 192.168.1.4
+
+a=sendrecv
+
+a=rtpmap:96 H263-1998/90000
+
+a=fmtp:96 CIF=1;QCIF=1
+
+
+--end msg--
+
+Hieu register thread
+2013-02-01 16:20:21.496 ipjsua[3559:6503] 16:20:21.496   pjsua_core.c  .RX 1233 bytes Response msg 200/INVITE/cseq=133 (rdata0x232adbc) from tcp 91.121.81.212:5060:
+SIP/2.0 200 OK
+
+Via: SIP/2.0/TCP 192.168.1.4:56043;received=122.170.84.126;rport=24790;branch=z9hG4bKPjWI2GS1MSaRl-wPku3zJ-noZmLVGDAzsY
+
+Record-Route: <sip:91.121.81.212;lr;r2=on;frc=yes;mr=yes>
+
+Record-Route: <sip:91.121.81.212;transport=tcp;r2=on;lr;frc=yes;mr=yes>
+
+Contact: <sip:ashishlalwork@122.170.84.126:5060;rinstance=33560a7d2c9f89c8>
+
+To: <sip:ashishlalwork@sip.antisip.com>;tag=f79c692c
+
+From: <sip:ashishlalwork1@sip.antisip.com>;tag=GGM4fUnodG4RzdWnR4CX03hMm4TIVgnU
+
+Call-ID: 5rM-4Hy4zwT.mkUrRFalAcv9HHSuLt7W
+
+CSeq: 133 INVITE
+
+Allow: INVITE, ACK, CANCEL, OPTIONS, BYE, REFER, NOTIFY, MESSAGE, SUBSCRIBE, INFO
+
+Content-Type: application/sdp
+
+Supported: replaces
+
+User-Agent: X-Lite release 5.0.0 stamp 67285
+
+Content-Length: 460
+
+P-PMR: mediarelay enabled
+
+
+
+v=0
+
+o=- 1359715816607433 1 IN IP4 91.121.81.212
+
+s=CounterPath X-Lite 5.0.0
+
+c=IN IP4 91.121.81.212
+
+b=AS:1638
+
+t=0 0
+
+m=audio 39210 RTP/AVP 0 8 96
+
+a=rtpmap:96 telephone-event/8000
+
+a=fmtp:96 0-15
+
+a=sendrecv
+
+m=video 39212 RTP/AVP 96 34
+
+b=TIAS:1574400
+
+a=rtpmap:96 H263-1998/90000
+
+a=fmtp:96 QCIF=1;CUSTOM=160,120,1;CIF=1;CUSTOM=320,240,1;VGA=1;CIF4=1;I=1;J=1;T=1
+
+a=rtpmap:34 H263/90000
+
+a=fmtp:34 QCIF=1;CIF=1;VGA=1;CIF4=1
+
+a=sendrecv
+
+a=nortpproxy:yes
+
+
+--end msg--
+2013-02-01 16:20:21.513 ipjsua[3559:6503] 16:20:21.513   pjsua_core.c  .RX 425 bytes Response msg 100/INVITE/cseq=134 (rdata0x232adbc) from tcp 91.121.81.212:5060:
+SIP/2.0 100 trying -- your call is important to us
+
+Via: SIP/2.0/TCP 192.168.1.4:56043;rport=24790;branch=z9hG4bKPjykqEqCT2itiwqA0zrDt7X4AH7temQqEm;received=122.170.84.126
+
+From: sip:ashishlalwork1@sip.antisip.com;tag=GGM4fUnodG4RzdWnR4CX03hMm4TIVgnU
+
+To: sip:ashishlalwork@sip.antisip.com;tag=f79c692c
+
+Call-ID: 5rM-4Hy4zwT.mkUrRFalAcv9HHSuLt7W
+
+CSeq: 134 INVITE
+
+Server: kamailio (3.2.1 (i386/linux))
+
+Content-Length: 0
+
+
+
+
+--end msg--
+2013-02-01 16:20:21.758 ipjsua[3559:6503] 16:20:21.758   pjsua_core.c  .RX 1167 bytes Response msg 200/INVITE/cseq=134 (rdata0x232adbc) from tcp 91.121.81.212:5060:
+SIP/2.0 200 OK
+
+Via: SIP/2.0/TCP 192.168.1.4:56043;received=122.170.84.126;rport=24790;branch=z9hG4bKPjykqEqCT2itiwqA0zrDt7X4AH7temQqEm
+
+Record-Route: <sip:91.121.81.212;lr;r2=on;frc=yes;mr=yes>
+
+Record-Route: <sip:91.121.81.212;transport=tcp;r2=on;lr;frc=yes;mr=yes>
+
+Contact: <sip:ashishlalwork@122.170.84.126:5060;rinstance=33560a7d2c9f89c8>
+
+To: <sip:ashishlalwork@sip.antisip.com>;tag=f79c692c
+
+From: <sip:ashishlalwork1@sip.antisip.com>;tag=GGM4fUnodG4RzdWnR4CX03hMm4TIVgnU
+
+Call-ID: 5rM-4Hy4zwT.mkUrRFalAcv9HHSuLt7W
+
+CSeq: 134 INVITE
+
+Allow: INVITE, ACK, CANCEL, OPTIONS, BYE, REFER, NOTIFY, MESSAGE, SUBSCRIBE, INFO
+
+Content-Type: application/sdp
+
+Supported: replaces
+
+User-Agent: X-Lite release 5.0.0 stamp 67285
+
+Content-Length: 394
+
+P-PMR: mediarelay enabled
+
+
+
+v=0
+
+o=- 1359715816607433 2 IN IP4 91.121.81.212
+
+s=CounterPath X-Lite 5.0.0
+
+c=IN IP4 91.121.81.212
+
+b=AS:1638
+
+t=0 0
+
+m=audio 39210 RTP/AVP 0 96
+
+a=rtpmap:96 telephone-event/8000
+
+a=fmtp:96 0-15
+
+a=sendrecv
+
+m=video 39212 RTP/AVP 96
+
+b=TIAS:1574400
+
+a=rtpmap:96 H263-1998/90000
+
+a=fmtp:96 QCIF=1;CUSTOM=160,120,1;CIF=1;CUSTOM=320,240,1;VGA=1;CIF4=1;I=1;J=1;T=1
+
+a=sendrecv
+
+a=nortpproxy:yes
+
+
+--end msg--
+2013-02-01 16:20:21.766 ipjsua[3559:6503] 16:20:21.766  pjsua_media.c  .....Call 0: updating media..
+2013-02-01 16:20:21.771 ipjsua[3559:6503] 16:20:21.771  pjsua_media.c  ......--my0--
+2013-02-01 16:20:21.775 ipjsua[3559:6503] 16:20:21.775  pjsua_media.c  ......--my10--
+2013-02-01 16:20:21.777 ipjsua[3559:6503] 16:20:21.777  pjsua_media.c  .......--my11--
+2013-02-01 16:20:21.827 ipjsua[3559:6503] 16:20:21.827      ios_dev.m  .......Stopping ios video stream
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+Unsupported bit depth: 0
+warning: first frame is no keyframe
+2013-02-01 16:20:22.058 ipjsua[3559:6303] 16:20:22.058  pjsua_media.c !Sending video keyframe request via SIP INFO
+2013-02-01 16:20:22.060 ipjsua[3559:6303] 16:20:22.060   pjsua_call.c  Call 0 sending INFO request..
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+2013-02-01 16:20:22.129 ipjsua[3559:6503] 16:20:22.129    pjsua_vid.c !.......Window 1: destroying..
+2013-02-01 16:20:22.132 ipjsua[3559:6503] 16:20:22.132      ios_dev.m  ........Stopping ios video stream
+2013-02-01 16:20:22.134 ipjsua[3559:6503] 16:20:22.134     vid_port.c  ........Closing iOS AVCapture..
+2013-02-01 16:20:22.137 ipjsua[3559:6503] 16:20:22.137      ios_dev.m  ........Stopping ios video stream
+2013-02-01 16:20:22.147 ipjsua[3559:6503] 16:20:22.147      ios_dev.m  ........Stopping ios video stream
+2013-02-01 16:20:22.148 ipjsua[3559:6503] 16:20:22.148     vid_port.c  ........Closing iOS UIView..
+2013-02-01 16:20:22.155 ipjsua[3559:6503] 16:20:22.154      ios_dev.m  ........Stopping ios video stream
+2013-02-01 16:20:22.161 ipjsua[3559:6503] 16:20:22.160      ios_dev.m  .......Stopping ios video stream
+2013-02-01 16:20:22.162 ipjsua[3559:6503] 16:20:22.162    pjsua_vid.c  .......Window 0: destroying..
+2013-02-01 16:20:22.164 ipjsua[3559:6503] 16:20:22.164      ios_dev.m  ........Stopping ios video stream
+2013-02-01 16:20:22.165 ipjsua[3559:6503] 16:20:22.165     vid_port.c  ........Closing iOS UIView..
+2013-02-01 16:20:22.168 ipjsua[3559:6503] 16:20:22.168      ios_dev.m  ........Stopping ios video stream
+2013-02-01 16:20:22.174 ipjsua[3559:6503] 16:20:22.174  pjsua_media.c  .......--my11--
+2013-02-01 16:20:22.175 ipjsua[3559:6503] 16:20:22.175  pjsua_media.c  .......--my12--
+2013-02-01 16:20:22.177 ipjsua[3559:6503] 16:20:22.177  pjsua_media.c  ......--my1--
+2013-02-01 16:20:22.178 ipjsua[3559:6503] 16:20:22.178  pjsua_media.c  ......--my2--
+2013-02-01 16:20:22.181 ipjsua[3559:6503] 16:20:22.181  pjsua_media.c  ......--my3--
+2013-02-01 16:20:22.184 ipjsua[3559:6503] 16:20:22.183  pjsua_media.c  ......--my4--
+2013-02-01 16:20:22.185 ipjsua[3559:6503] 16:20:22.185  pjsua_media.c  ......--my5--
+2013-02-01 16:20:22.187 ipjsua[3559:6503] 16:20:22.187  pjsua_media.c  ......--my6--
+2013-02-01 16:20:22.188 ipjsua[3559:6503] 16:20:22.188    pjsua_aud.c  ......Audio channel update..
+2013-02-01 16:20:22.189 ipjsua[3559:6503] 16:20:22.189  strm0x2332214  .......VAD temporarily disabled
+2013-02-01 16:20:22.191 ipjsua[3559:6503] 16:20:22.191  strm0x2332214  .......Encoder stream started
+2013-02-01 16:20:22.193 ipjsua[3559:6503] 16:20:22.193  strm0x2332214  .......Decoder stream started
+2013-02-01 16:20:22.194 ipjsua[3559:6503] 16:20:22.194  pjsua_media.c  ......Audio updated, stream #0: PCMU (sendrecv)
+2013-02-01 16:20:22.195 ipjsua[3559:6503] 16:20:22.195  pjsua_media.c  ......--my7--
+2013-02-01 16:20:22.196 ipjsua[3559:6503] 16:20:22.196  pjsua_media.c  ......--my8--
+2013-02-01 16:20:22.197 ipjsua[3559:6503] 16:20:22.197  pjsua_media.c  ......--my5--
+2013-02-01 16:20:22.200 ipjsua[3559:6503] 16:20:22.200    pjsua_vid.c !......Video channel update..
+err{or,}_recognition separate: 1; 1
+err{or,}_recognition combined: 1; 65537
+removing common factors from framerate
+intra_quant_bias = 0 inter_quant_bias = -64
+Unsupported bit depth: 0
+err{or,}_recognition separate: 1; 1
+err{or,}_recognition combined: 1; 65537
+2013-02-01 16:20:22.207 ipjsua[3559:6503] 16:20:22.207 vstenc0x1b0821  .......Encoder stream started
+2013-02-01 16:20:22.209 ipjsua[3559:6503] 16:20:22.209 vstdec0x1b0821  .......Decoder stream started
+2013-02-01 16:20:22.210 ipjsua[3559:6503] 16:20:22.210    pjsua_vid.c  .......Setting up RX..
+2013-02-01 16:20:22.211 ipjsua[3559:6503] 16:20:22.211    pjsua_vid.c  ........Creating video window: type=stream, cap_id=-1, rend_id=0
+2013-02-01 16:20:22.213 ipjsua[3559:6503] 16:20:22.213     vid_port.c  .........Opening device iOS UIView [iOS] for render: format=BGRA, size=352x288 @45000:1001 fps
+2013-02-01 16:20:22.214 ipjsua[3559:6503] Entered ios_factory_create_stream
+2013-02-01 16:20:22.216 ipjsua[3559:6503] 16:20:22.216     vid_port.c  .........Device iOS UIView [iOS] opened: format=BGRA, size=352x288 @45000:1001 fps
+No accelerated colorspace conversion found from yuv420p to bgra.
+2013-02-01 16:20:22.220 ipjsua[3559:6503] 16:20:22.219    pjsua_vid.c  .........stream window id 0 created for cap_dev=-1 rend_dev=0
+2013-02-01 16:20:22.224 ipjsua[3559:6503] 16:20:22.224    pjsua_vid.c  .........Window 0 created
+2013-02-01 16:20:22.226 ipjsua[3559:6503] 16:20:22.226      ios_dev.m  ........Starting ios video stream
+2013-02-01 16:20:22.227 ipjsua[3559:6503] 16:20:22.227    pjsua_vid.c  .......Setting up TX..
+2013-02-01 16:20:22.228 ipjsua[3559:6503] 16:20:22.228    pjsua_vid.c  ........Creating video window: type=preview, cap_id=1, rend_id=0
+2013-02-01 16:20:22.232 ipjsua[3559:6503] 16:20:22.232     vid_port.c  .........Opening device iOS AVCapture [iOS] for capture: format=BGRA, size=352x288 @30000:2002 fps
+2013-02-01 16:20:22.236 ipjsua[3559:6503] Entered ios_factory_create_stream
+2013-02-01 16:20:22.238 ipjsua[3559:6503] Device name: Back Camera
+2013-02-01 16:20:22.239 ipjsua[3559:6503] Device name: Front Camera
+2013-02-01 16:20:22.243 ipjsua[3559:6503] WARNING: -[<AVCaptureVideoDataOutput: 0x14378f0> setMinFrameDuration:] is deprecated.  Please use AVCaptureConnection's -setVideoMinFrameDuration:
+2013-02-01 16:20:22.244 ipjsua[3559:6503] 16:20:22.244     vid_port.c  .........Device iOS AVCapture [iOS] opened: format=BGRA, size=352x288 @30000:2002 fps
+2013-02-01 16:20:22.249 ipjsua[3559:6503] 16:20:22.249     vid_port.c  .........Opening device iOS UIView [iOS] for render: format=BGRA, size=352x288 @30000:2002 fps
+2013-02-01 16:20:22.251 ipjsua[3559:6503] Entered ios_factory_create_stream
+2013-02-01 16:20:22.257 ipjsua[3559:6503] 16:20:22.256     vid_port.c !.........Device iOS UIView [iOS] opened: format=BGRA, size=352x288 @30000:2002 fps
+No accelerated colorspace conversion found from yuv420p to bgra.
+2013-02-01 16:20:22.260 ipjsua[3559:6503] 16:20:22.259    pjsua_vid.c  .........preview window id 1 created for cap_dev=1 rend_dev=0
+2013-02-01 16:20:22.263 ipjsua[3559:6503] 16:20:22.263    pjsua_vid.c  .........Window 1 created
+2013-02-01 16:20:22.267 ipjsua[3559:6503] 16:20:22.267      ios_dev.m  ........Starting ios video stream
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+Unsupported bit depth: 0
+warning: first frame is no keyframe
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+2013-02-01 16:20:22.832 ipjsua[3559:6713] 16:20:22.832  strm0x2332214 !VAD re-enabled
+2013-02-01 16:20:22.830 ipjsua[3559:6503] 16:20:22.830  pjsua_media.c  ......Video updated, stream #1: H263-1998 (sendrecv)
+2013-02-01 16:20:22.842 ipjsua[3559:6503] 16:20:22.841  pjsua_media.c !......--my8--
+2013-02-01 16:20:22.843 ipjsua[3559:6503] 16:20:22.843  pjsua_media.c  ......--my9--
+2013-02-01 16:20:22.844 ipjsua[3559:6503] 16:20:22.844    pjsua_app.c  .....Call 0 media 0 [type=audio], status is Active
+2013-02-01 16:20:22.845 ipjsua[3559:6503] 16:20:22.845    pjsua_aud.c  .....Conf connect: 3 --> 0
+2013-02-01 16:20:22.846 ipjsua[3559:6503] 16:20:22.846   conference.c  ......Port 3 (sip:ashishlalwork@sip.antisip.com) transmitting to port 0 (iPhone IO device)
+2013-02-01 16:20:22.848 ipjsua[3559:6503] 16:20:22.848    pjsua_aud.c  .....Conf connect: 0 --> 3
+2013-02-01 16:20:22.851 ipjsua[3559:6503] 16:20:22.851   conference.c  ......Port 0 (iPhone IO device) transmitting to port 3 (sip:ashishlalwork@sip.antisip.com)
+2013-02-01 16:20:22.852 ipjsua[3559:6503] 16:20:22.852    pjsua_app.c  .....Call 0 media 1 [type=video], status is Active
+2013-02-01 16:20:22.857 ipjsua[3559:6503] 16:20:22.857   pjsua_core.c  .....TX 516 bytes Request msg ACK/cseq=134 (tdta0x1b54000) to tcp 91.121.81.212:5060:
+ACK sip:ashishlalwork@122.170.84.126:5060;rinstance=33560a7d2c9f89c8 SIP/2.0
+
+Via: SIP/2.0/TCP 192.168.1.4:56043;rport;branch=z9hG4bKPj1t6Wgx7NyzcavO5qX6A85R59MY2EAA6o
+
+Max-Forwards: 70
+
+From: sip:ashishlalwork1@sip.antisip.com;tag=GGM4fUnodG4RzdWnR4CX03hMm4TIVgnU
+
+To: sip:ashishlalwork@sip.antisip.com;tag=f79c692c
+
+Call-ID: 5rM-4Hy4zwT.mkUrRFalAcv9HHSuLt7W
+
+CSeq: 134 ACK
+
+Route: <sip:91.121.81.212;transport=tcp;lr;r2=on;frc=yes;mr=yes>
+
+Route: <sip:91.121.81.212;lr;r2=on;frc=yes;mr=yes>
+
+Content-Length:  0
+
+
+
+
+--end msg--
+2013-02-01 16:20:22.861 ipjsua[3559:6503] 16:20:22.860   pjsua_core.c  .RX 1167 bytes Response msg 200/INVITE/cseq=134 (rdata0x232adbc) from tcp 91.121.81.212:5060:
+SIP/2.0 200 OK
+
+Via: SIP/2.0/TCP 192.168.1.4:56043;received=122.170.84.126;rport=24790;branch=z9hG4bKPjykqEqCT2itiwqA0zrDt7X4AH7temQqEm
+
+Record-Route: <sip:91.121.81.212;lr;r2=on;frc=yes;mr=yes>
+
+Record-Route: <sip:91.121.81.212;transport=tcp;r2=on;lr;frc=yes;mr=yes>
+
+Contact: <sip:ashishlalwork@122.170.84.126:5060;rinstance=33560a7d2c9f89c8>
+
+To: <sip:ashishlalwork@sip.antisip.com>;tag=f79c692c
+
+From: <sip:ashishlalwork1@sip.antisip.com>;tag=GGM4fUnodG4RzdWnR4CX03hMm4TIVgnU
+
+Call-ID: 5rM-4Hy4zwT.mkUrRFalAcv9HHSuLt7W
+
+CSeq: 134 INVITE
+
+Allow: INVITE, ACK, CANCEL, OPTIONS, BYE, REFER, NOTIFY, MESSAGE, SUBSCRIBE, INFO
+
+Content-Type: application/sdp
+
+Supported: replaces
+
+User-Agent: X-Lite release 5.0.0 stamp 67285
+
+Content-Length: 394
+
+P-PMR: mediarelay enabled
+
+
+
+v=0
+
+o=- 1359715816607433 2 IN IP4 91.121.81.212
+
+s=CounterPath X-Lite 5.0.0
+
+c=IN IP4 91.121.81.212
+
+b=AS:1638
+
+t=0 0
+
+m=audio 39210 RTP/AVP 0 96
+
+a=rtpmap:96 telephone-event/8000
+
+a=fmtp:96 0-15
+
+a=sendrecv
+
+m=video 39212 RTP/AVP 96
+
+b=TIAS:1574400
+
+a=rtpmap:96 H263-1998/90000
+
+a=fmtp:96 QCIF=1;CUSTOM=160,120,1;CIF=1;CUSTOM=320,240,1;VGA=1;CIF4=1;I=1;J=1;T=1
+
+a=sendrecv
+
+a=nortpproxy:yes
+
+
+--end msg--
+2013-02-01 16:20:22.864 ipjsua[3559:6303] 16:20:22.864   pjsua_core.c  ...TX 770 bytes Request msg INFO/cseq=135 (tdta0x1b6ec00) to tcp 91.121.81.212:5060:
+INFO sip:ashishlalwork@122.170.84.126:5060;rinstance=33560a7d2c9f89c8 SIP/2.0
+
+Via: SIP/2.0/TCP 192.168.1.4:56043;rport;branch=z9hG4bKPjRo9OF9ZffVSUBAa1ngC5pbfe09WdoIce
+
+Max-Forwards: 70
+
+From: sip:ashishlalwork1@sip.antisip.com;tag=GGM4fUnodG4RzdWnR4CX03hMm4TIVgnU
+
+To: sip:ashishlalwork@sip.antisip.com;tag=f79c692c
+
+Call-ID: 5rM-4Hy4zwT.mkUrRFalAcv9HHSuLt7W
+
+CSeq: 135 INFO
+
+Route: <sip:91.121.81.212;transport=tcp;lr;r2=on;frc=yes;mr=yes>
+
+Route: <sip:91.121.81.212;lr;r2=on;frc=yes;mr=yes>
+
+User-Agent: PJSUA v2.0.1 iPhone OS-6.0.1/arm/iOS-SDK-6.0
+
+Content-Type: application/media_control+xml
+
+Content-Length:   146
+
+
+
+<?xml version="1.0" encoding="utf-8" ?><media_control><vc_primitive><to_encoder><picture_fast_update/></to_encoder></vc_primitive></media_control>
+--end msg--
+2013-02-01 16:20:22.874 ipjsua[3559:6503] 16:20:22.873   pjsua_core.c  ...TX 516 bytes Request msg ACK/cseq=134 (tdta0x1b54000) to tcp 91.121.81.212:5060:
+ACK sip:ashishlalwork@122.170.84.126:5060;rinstance=33560a7d2c9f89c8 SIP/2.0
+
+Via: SIP/2.0/TCP 192.168.1.4:56043;rport;branch=z9hG4bKPj1t6Wgx7NyzcavO5qX6A85R59MY2EAA6o
+
+Max-Forwards: 70
+
+From: sip:ashishlalwork1@sip.antisip.com;tag=GGM4fUnodG4RzdWnR4CX03hMm4TIVgnU
+
+To: sip:ashishlalwork@sip.antisip.com;tag=f79c692c
+
+Call-ID: 5rM-4Hy4zwT.mkUrRFalAcv9HHSuLt7W
+
+CSeq: 134 ACK
+
+Route: <sip:91.121.81.212;transport=tcp;lr;r2=on;frc=yes;mr=yes>
+
+Route: <sip:91.121.81.212;lr;r2=on;frc=yes;mr=yes>
+
+Content-Length:  0
+
+
+
+
+--end msg--
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+2013-02-01 16:20:23.408 ipjsua[3559:6503] 16:20:23.407   pjsua_core.c  .RX 475 bytes Response msg 200/INFO/cseq=135 (rdata0x232adbc) from tcp 91.121.81.212:5060:
+SIP/2.0 200 OK
+
+Via: SIP/2.0/TCP 192.168.1.4:56043;received=122.170.84.126;rport=24790;branch=z9hG4bKPjRo9OF9ZffVSUBAa1ngC5pbfe09WdoIce
+
+Contact: <sip:ashishlalwork@122.170.84.126:5060;rinstance=33560a7d2c9f89c8>
+
+To: <sip:ashishlalwork@sip.antisip.com>;tag=f79c692c
+
+From: <sip:ashishlalwork1@sip.antisip.com>;tag=GGM4fUnodG4RzdWnR4CX03hMm4TIVgnU
+
+Call-ID: 5rM-4Hy4zwT.mkUrRFalAcv9HHSuLt7W
+
+CSeq: 135 INFO
+
+User-Agent: X-Lite release 5.0.0 stamp 67285
+
+Content-Length: 0
+
+
+
+
+--end msg--
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+2013-02-01 16:20:25.122 ipjsua[3559:6303] 16:20:25.122  pjsua_media.c  Sending video keyframe request via SIP INFO
+2013-02-01 16:20:25.123 ipjsua[3559:6303] 16:20:25.123   pjsua_call.c  Call 0 sending INFO request..
+2013-02-01 16:20:25.125 ipjsua[3559:6303] 16:20:25.125   pjsua_core.c  ...TX 770 bytes Request msg INFO/cseq=136 (tdta0x233d800) to tcp 91.121.81.212:5060:
+INFO sip:ashishlalwork@122.170.84.126:5060;rinstance=33560a7d2c9f89c8 SIP/2.0
+
+Via: SIP/2.0/TCP 192.168.1.4:56043;rport;branch=z9hG4bKPjl39jmxPsj1kxldKipuhIvmM0-GY2heRH
+
+Max-Forwards: 70
+
+From: sip:ashishlalwork1@sip.antisip.com;tag=GGM4fUnodG4RzdWnR4CX03hMm4TIVgnU
+
+To: sip:ashishlalwork@sip.antisip.com;tag=f79c692c
+
+Call-ID: 5rM-4Hy4zwT.mkUrRFalAcv9HHSuLt7W
+
+CSeq: 136 INFO
+
+Route: <sip:91.121.81.212;transport=tcp;lr;r2=on;frc=yes;mr=yes>
+
+Route: <sip:91.121.81.212;lr;r2=on;frc=yes;mr=yes>
+
+User-Agent: PJSUA v2.0.1 iPhone OS-6.0.1/arm/iOS-SDK-6.0
+
+Content-Type: application/media_control+xml
+
+Content-Length:   146
+
+
+
+<?xml version="1.0" encoding="utf-8" ?><media_control><vc_primitive><to_encoder><picture_fast_update/></to_encoder></vc_primitive></media_control>
+--end msg--
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+
+Hieu register thread
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+2013-02-01 16:20:25.491 ipjsua[3559:6503] 16:20:25.491   pjsua_core.c  .RX 475 bytes Response msg 200/INFO/cseq=136 (rdata0x232adbc) from tcp 91.121.81.212:5060:
+SIP/2.0 200 OK
+
+Via: SIP/2.0/TCP 192.168.1.4:56043;received=122.170.84.126;rport=24790;branch=z9hG4bKPjl39jmxPsj1kxldKipuhIvmM0-GY2heRH
+
+Contact: <sip:ashishlalwork@122.170.84.126:5060;rinstance=33560a7d2c9f89c8>
+
+To: <sip:ashishlalwork@sip.antisip.com>;tag=f79c692c
+
+From: <sip:ashishlalwork1@sip.antisip.com>;tag=GGM4fUnodG4RzdWnR4CX03hMm4TIVgnU
+
+Call-ID: 5rM-4Hy4zwT.mkUrRFalAcv9HHSuLt7W
+
+CSeq: 136 INFO
+
+User-Agent: X-Lite release 5.0.0 stamp 67285
+
+Content-Length: 0
+
+
+
+
+--end msg--
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+---------------ffmpeg_vid_codecs.c: Inside ffmpeg_codec_decode-----------------
+-------------h263_packetizer.c: Inside pjmedia_h263_1998_unpacketize-------------
+

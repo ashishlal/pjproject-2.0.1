@@ -4736,11 +4736,16 @@ void console_app_main(const pj_str_t *uri_to_call)
             pj_activesock_enable_iphone_os_bg(PJ_TRUE);
             
 #if 0
-            char* id = "sip:ashishlalwork3@sip2sip.info";
-            char* registrar = "sip:sip2sip.info;transport=tcp";
-            char* realm = "sip2sip.info";
-            char* uname = "ashishlalwork3";
-            char* passwd = "e2wdxxxeyk";
+            //char* id = "sip:ashishlalwork3@sip2sip.info";
+            //char* registrar = "sip:sip2sip.info;transport=tcp";
+            //char* realm = "sip2sip.info";
+            //char* uname = "ashishlalwork3";
+            //char* passwd = "e2wdxxxeyk";
+            char* id = "sip:hnguyen1.fisil@nextuc.net";
+            char* registrar = "sip:sip.nextuc.net:5061;transport=tcp";
+            char* realm = "nextuc.net";
+            char* uname = "hnguyen1.fisil";
+            char* passwd = "bigboss";
 #else
             char* id = "sip:ashishlalwork1@sip.antisip.com";
             char* registrar = "sip:sip.antisip.com;transport=tcp";

@@ -19,6 +19,7 @@
 #import <pjlib.h>
 #import <pjsua.h>
 #import "ipjsuaAppDelegate.h"
+#import "Reachability.h"
 
 extern pj_log_func *log_cb;
 
@@ -118,9 +119,10 @@ pj_bool_t showNotification(pjsua_call_id call_id)
     UILocalNotification* alert = [[[UILocalNotification alloc] init] autorelease];
     if (alert)
     {
-	alert.repeatInterval = 0;
-	alert.alertBody = @"Incoming call received...";
-	alert.alertAction = @"Answer";
+        alert.repeatInterval = 0;
+        alert.alertBody = @"Incoming call received...";
+        alert.soundName = UILocalNotificationDefaultSoundName;
+        alert.alertAction = @"Answer";
 	
 	[[UIApplication sharedApplication] presentLocalNotificationNow:alert];
     }
@@ -142,6 +144,37 @@ pj_bool_t showNotification(pjsua_call_id call_id)
 }
 
 #ifdef __IPHONE_4_0
+- (void)networkReachabilityDidChange:(NSNotification *)notification
+{
+    Reachability *currReach = [notification object];
+    NSParameterAssert([currReach isKindOfClass: [Reachability class]]);
+    
+    int currStatus = [currReach currentReachabilityStatus];
+    
+    // Check that current reachability is not the same as the old one
+    if(currReach != self.networkReachability)
+    {
+        switch (currStatus) {
+            case ReachableViaWiFi:
+                // fire off registration
+                [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(keepAlive) object: nil];
+                [self performSelectorOnMainThread:@selector(keepAlive) withObject:nil waitUntilDone:YES];
+                [[UIApplication sharedApplication] setKeepAliveTimeout:KEEP_ALIVE_INTERVAL handler: ^{
+                    [self performSelectorOnMainThread:@selector(keepAlive) withObject:nil waitUntilDone:YES];
+                }];
+                break;
+            case ReachableViaWWAN:
+                break;
+            case NotReachable:
+                // Don't do anything internet not reachable
+                break;
+            default:
+                break;
+        }
+        networkReachability = currReach;
+    }
+}
+
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
     [app performSelectorOnMainThread:@selector(answer_call) withObject:nil waitUntilDone:YES];
 }
@@ -205,7 +238,13 @@ pj_bool_t showNotification(pjsua_call_id call_id)
 }
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
-    /* If there is no config file in the document dir, copy the default config file into the directory */ 
+    
+    networkReachability = [Reachability reachabilityForInternetConnection];
+    [networkReachability startNotifier];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkReachabilityDidChange:) name:kReachabilityChangedNotification object:nil];
+    
+    /* If there is no config file in the document dir, copy the default config file into the directory */
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *cfgPath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"/config.cfg"];
     if (![[NSFileManager defaultManager] fileExistsAtPath:cfgPath]) {

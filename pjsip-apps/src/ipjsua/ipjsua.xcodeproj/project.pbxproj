@@ -14,6 +14,8 @@
 		28216C970DB411BC00E5133A /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28216C960DB411BC00E5133A /* FirstViewController.m */; };
 		282CCBFE0DB6C98000C4EA27 /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 282CCBFD0DB6C98000C4EA27 /* SecondView.xib */; };
 		2844C0DE16AB3C9A00B92778 /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 2844C0DD16AB3C9A00B92778 /* test.png */; };
+		284679FB16E65A0500CA0850 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 284679FA16E65A0500CA0850 /* SystemConfiguration.framework */; };
+		284679FF16E65A3600CA0850 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 284679FE16E65A3600CA0850 /* Reachability.m */; };
 		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
 		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
 		3A0D789F121E324E009D5030 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0D789E121E324E009D5030 /* CFNetwork.framework */; };
@@ -90,6 +92,9 @@
 		28216C960DB411BC00E5133A /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		282CCBFD0DB6C98000C4EA27 /* SecondView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondView.xib; sourceTree = "<group>"; };
 		2844C0DD16AB3C9A00B92778 /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = test.png; path = ../../../test.png; sourceTree = "<group>"; };
+		284679FA16E65A0500CA0850 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		284679FD16E65A3600CA0850 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		284679FE16E65A3600CA0850 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		288765070DF74369002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28A0AB4B0D9B1048005BE974 /* ipjsua_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ipjsua_Prefix.pch; sourceTree = "<group>"; };
 		28AD73870D9D96C1002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
@@ -168,6 +173,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				284679FB16E65A0500CA0850 /* SystemConfiguration.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */,
@@ -236,6 +242,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				284679FD16E65A3600CA0850 /* Reachability.h */,
+				284679FE16E65A3600CA0850 /* Reachability.m */,
 				3AE90DAB115BB1CF00FAEAA5 /* ConfigViewController.h */,
 				3AE90DAC115BB1CF00FAEAA5 /* ConfigViewController.m */,
 				28216C950DB411BC00E5133A /* FirstViewController.h */,
@@ -297,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				3AE06694138E70B9008EE71A /* libz.dylib */,
+				284679FA16E65A0500CA0850 /* SystemConfiguration.framework */,
 				3AE0669C138E710C008EE71A /* QuartzCore.framework */,
 				3AE06696138E70F0008EE71A /* CoreGraphics.framework */,
 				3AE06697138E70F0008EE71A /* CoreMedia.framework */,
@@ -448,6 +457,7 @@
 				3AE90A2D1158B52500FAEAA5 /* pjsua_app.c in Sources */,
 				3AE90C51115A35BB00FAEAA5 /* TabBarController.m in Sources */,
 				3AE90DAD115BB1CF00FAEAA5 /* ConfigViewController.m in Sources */,
+				284679FF16E65A3600CA0850 /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

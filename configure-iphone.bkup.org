@@ -1,0 +1,226 @@
+#!/bin/bash
+
+F="configure-iphone"
+
+if test "$*" = "--help" -o "$*" = "-h"; then
+  echo "$F [OPTIONS]"
+  echo ""
+  echo "where:"
+  echo "  OPTIONS    Other options that will be passed directly to"
+  echo "             ./aconfigure script. Run ./aconfigure --help"
+  echo "             for more info."
+  echo ""
+  echo "Environment variables:"
+  echo "  IPHONESDK  Optionally specify which SDK to use. Value is the full "
+  echo "             path of the SDK. By default, the latest SDK installed"
+  echo "             will be used."
+  echo "  CC         Optionally specify the path of the ARM cross compiler"
+  echo "             to use. By default, the compiler is deduced from the"
+  echo "             SDK."
+  echo "  ARCH       Optional flags to specify target architecture, e.g."
+  echo "                ARCH='-arch armv6'"
+  echo ""
+  exit 0
+fi
+
+export DEVPATH=/Developer/Platforms/iPhoneOS.platform/Developer
+export IPHONESDK=iPhoneOS6.0sdk
+PJSIP_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+BUILD_FFMPEG=0
+BUILD_SDL=0
+ARCH=armv7
+FFMPEG_DIR=$PJSIP_DIR/third_party/ffmpeg
+SDL_DIR=$PJSIP_DIR/third_party/sdl
+x264_DIR=$PJSIP_DIR/third_party/x264
+MYHOST="arm-apple-darwin11"
+for i in $*
+do
+case $i in
+    --armv6)
+        ARCH=armv6
+        export IPHONESDK=iPhoneOS5.1.sdk
+        ;;  
+    --armv7)
+        ARCH=armv7
+        ;;  
+    --i386)
+        ARCH=i386
+        # MYHOST="i386-apple-darwin11"
+        export DEVPATH=/Developer/Platforms/iPhoneSimulator.platform/Developer
+        export IPHONESDK=iPhoneSimulator5.1.sdk
+        ;;  
+    --build-ffmpeg)
+        BUILD_FFMPEG=1
+        echo "BUILD_FFMPEG....=$BUILD_FFMPEG"
+        ;;  
+    --build-sdl)
+        BUILD_SDL=1
+        ;;  
+    --default)
+        echo "ARCH-default = $ARCH"
+        ;;
+esac
+done
+export CC=$DEVPATH/usr/bin/gcc
+export FFMPEG_INCLUDE_DIR=${PJSIP_DIR}/third_party/ffmpeg/compiled/${ARCH}/include
+export SDL_INCLUDE_DIR=${PJSIP_DIR}/third_party/sdl/build/${ARCH}/include
+export FFMPEG_LIB_DIR=${PJSIP_DIR}/third_party/ffmpeg/compiled/${ARCH}/lib
+export SDL_LIB_DIR=${PJSIP_DIR}/third_party/sdl/build/${ARCH}/build/.libs
+export x264_LIB_DIR=${PJSIP_DIR}/third_party/x264/x264-${ARCH}/lib
+echo "PJSIP_DIR=$PJSIP_DIR, ARCH=$ARCH, BUILD_FFMPEG=$BUILD_FFMPEG, BUILD_SDL=$BUILD_SDL"
+echo "FFMPEG_INCLUDE_DIR = $FFMPEG_INCLUDE_DIR"
+
+if (( $BUILD_FFMPEG == 1 ))
+then
+    cd $FFMPEG_DIR
+    echo "Building FFMPEG for $ARCH"
+    make clean
+    ./ffmpegios.sh $ARCH $DEVPATH $IPHONESDK && make && make install
+fi
+
+if (( $BUILD_SDL == 1 ))
+then
+    cd $SDL_DIR/build-scripts
+    ./iosbuild.sh $DEVPATH $IPHONESDK configure-$ARCH && ./iosbuild.sh $DEVPATH $IPHONESDK make-$ARCH 
+fi
+
+cd $PJSIP_DIR
+# Set the main iPhone developer directory, if not set
+if test "x${DEVPATH}" = "x"; then
+  DEVPATH=/Applications/XCode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer
+  if test  ! -d $DEVPATH; then
+    DEVPATH=/Developer/Platforms/iPhoneOS.platform/Developer
+  fi
+  echo "$F: DEVPATH is not specified, using ${DEVPATH}"
+fi
+
+# Make sure $DEVPATH directory exist
+if test ! -d $DEVPATH; then
+  echo "$F error: directory $DEVPATH does not exist. Please install iPhone development kit"
+  exit 1
+fi
+
+# Choose SDK version to use
+if test "$IPHONESDK" = ""; then
+  # If IPHONESDK is not set, use the latest one
+  for f in `ls $DEVPATH/SDKs/`; do echo $f | sed 's/\(.sdk\)//'; done | sort | tail -1 > tmpsdkname
+  IPHONESDK=`cat tmpsdkname`.sdk
+  rm -f tmpsdkname
+  SDKPATH=${DEVPATH}/SDKs/${IPHONESDK}
+  echo "$F: IPHONESDK is not specified, choosing ${IPHONESDK}"
+elif test -d ${IPHONESDK}; then
+  # .. else if IPHONESDK is set and it points to a valid path, just use it
+  SDKPATH=${IPHONESDK}
+else
+  # .. else assume the SDK name is used.
+  SDKPATH=${DEVPATH}/SDKs/${IPHONESDK}
+fi
+
+# Test the SDK directory
+if test ! -d ${SDKPATH}/usr/include; then
+  echo "$F error: unable to find valid iPhone SDK in ${SDKPATH}"
+  exit 1
+fi
+
+# Default CFLAGS if it's not specified
+if test "$CFLAGS" = ""; then
+  CFLAGS="-O2 -Wno-unused-label" 
+fi
+
+# Default LDFLAGS if it's not specified
+if test "$LDFLAGS" = ""; then
+  LDFLAGS="-O2" 
+fi
+
+# Determine which gcc for this SDK. Binaries should have the
+# full path as it's not normally in user's PATH
+
+if test "${CC}" = ""; then
+  # Try to use llvm-gcc if available
+  gccpath="${DEVPATH}/usr/bin/llvm-gcc"
+  if test -e ${gccpath}; then
+    export CC="${gccpath}"
+
+    if test "${ARCH}" = ""; then
+       export ARCH="-arch armv7"
+       echo "$F: ARCH is not specified, choosing ${ARCH}"
+    fi
+  else
+    for archpath in `ls -d ${SDKPATH}/usr/lib/gcc/arm-apple-darwin*`; do
+       archname=`basename ${archpath}`
+       for gccver in `ls ${archpath}`; do
+          gccpath="${DEVPATH}/usr/bin/${archname}-gcc-${gccver}"
+          if test -e ${gccpath}; then
+            export CC="${gccpath}"
+          fi
+       done
+    done
+  fi
+  if test ! "${CC}" = ""; then
+    echo "$F: CC is not specified, choosing ${CC}"
+  fi
+fi
+
+if test "${CC}" = ""; then
+    echo "$F error: unable to find gcc for ${IPHONESDK}. If you think you have the right gcc, set the full path in CC environment variable."
+    exit 1
+fi
+
+# Set CXX if not set
+if test "${CXX}" = ""; then
+  export CXX=`echo ${CC} | sed 's/gcc/g++/'`
+  echo "$F: CXX is not specified, using ${CXX}"
+fi
+
+# Other settings to feed to configure script. 
+#ARCH="-arch armv6"
+MYARCH="-arch $ARCH"
+MYEXTRA_FLAGS=""
+if [ $ARCH == "i386" ]
+then
+    MYEXTRA_CFLAGS="-02 -m32 -miphoneos-version-min=3.0 -DPJ_CONFIG_IPHONE_SIMULATOR"
+    MYEXTRA_LDFLAGS="-02 -m32"
+fi
+export CFLAGS="${CFLAGS} -DPJ_SDK_NAME=\"\\\"`basename $SDKPATH`\\\"\" ${MYARCH} -isysroot ${SDKPATH} -I ${FFMPEG_INCLUDE_DIR} -I ${SDL_INCLUDE_DIR} -I/usr/local/include $MYEXTRA_CFLAGS"
+export LDFLAGS="${LDFLAGS} ${MYARCH} -isysroot ${SDKPATH} -framework AudioToolbox -framework Foundation -L ${SDL_LIB_DIR} -L ${FFMPEG_LIB_DIR} -L ${x264_LIB_DIR} -lx264 -lSDL2 -lavformat -lavcodec -lswscale -lavutil -lavdevice -lavfilter -framework OpenGLES -lz $MYEXTRA_LDFLAGS"
+export AR="${DEVPATH}/usr/bin/libtool -static -o"
+export RANLIB="echo ranlib"
+# Use gcc -E as preprocessor instead of cpp, since cpp will find the
+# header files in standard /usr/include instead of in isysroot
+export CPP="${CC} ${MYARCH} -E -isysroot ${SDKPATH}"
+
+# Print settings
+if test "1" = "1"; then
+  echo "$F: calling ./aconfigure with env vars:"
+  echo " CC = ${CC}"
+  echo " CXX = ${CXX}"
+  echo " SDKPATH = ${SDKPATH}"
+  echo " CFLAGS = ${CFLAGS}"
+  echo " LDFLAGS = ${LDFLAGS}"
+  echo " AR = ${AR}"
+  echo " RANLIB = ${RANLIB}"
+fi
+
+# And finally invoke the configure script itself
+# ./aconfigure --host=arm-apple-darwin9 --disable-floating-point --disable-sdl --disable-ffmpeg --with-ffmpeg=/Users/Ashish/Projects/elance-pjsip-compile/pjproject-2.0.1/third_party/ffmpeg --with-sdl=/Users/Ashish/Projects/elance-pjsip-compile/pjproject-2.0.1/third_party/sdl $*
+./aconfigure --host=$MYHOST --disable-floating-point --disable-sdl --disable-ffmpeg --with-ffmpeg=$FFMPEG_DIR --with-sdl=$SDL_DIR
+
+if test "$?" = "0"; then
+  echo "Done configuring for `basename $SDKPATH`"
+  echo ""
+fi
+
+make dep && make
+
+LIB_OTARGET="compiled/$ARCH/libs"
+
+echo ${LIB_OTARGET}
+
+[ -d $LIB_OTARGET ] || mkdir -p $LIB_OTARGET
+
+cp  pjlib/lib/* $LIB_OTARGET
+cp  pjlib-util/lib/* $LIB_OTARGET
+cp  pjsip/lib/* $LIB_OTARGET
+cp  pjmedia/lib/* $LIB_OTARGET
+cp  pjnath/lib/* $LIB_OTARGET
+cp  third_party/lib/* $LIB_OTARGET

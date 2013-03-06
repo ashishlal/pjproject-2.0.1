@@ -1,0 +1,1102 @@
+
+========================
+ASL is here to serve you
+> 
+
+Fri Jan 18 17:45:45 unknown kernel[0] <Debug>: AirPort: Link Down on en0. Reason 1 (Unspecified).
+Fri Jan 18 17:45:45 unknown kernel[0] <Debug>: AppleMRVL868x::setCIPHER_KEY(): WiFi not powered on (0x3)
+Fri Jan 18 17:45:45 unknown configd[25] <Debug>: usbeth_handle_interfaces_found:666 found iointerface
+Fri Jan 18 17:45:45 unknown configd[25] <Debug>: usbeth_handle_interfaces_found:666 found iointerface
+Fri Jan 18 17:45:45 unknown CommCenter[31] <Notice>: Telling CSI to exit low power.
+Fri Jan 18 17:45:45 unknown configd[25] <Debug>: usbeth_handle_interface_found:565 handling interface 0x1659f
+Fri Jan 18 17:45:45 unknown configd[25] <Debug>: usbeth_handle_interface_found:565 handling interface 0x1659f
+Fri Jan 18 17:45:45 unknown kernel[0] <Debug>: AppleMRVL868x::setCIPHER_KEY(): WiFi not powered on (0x3)
+Fri Jan 18 17:45:45 unknown kernel[0] <Debug>: AppleMRVL868x::setCIPHER_KEY(): WiFi not powered on (0x3)
+Fri Jan 18 17:45:45 unknown kernel[0] <Debug>: AppleMRVL868x::setCIPHER_KEY(): WiFi not powered on (0x3)
+Fri Jan 18 17:45:45 unknown kernel[0] <Debug>: AppleMRVL868x::setCIPHER_KEY(): WiFi not powered on (0x3)
+Fri Jan 18 17:45:45 unknown kernel[0] <Debug>: AppleMRVL868x::getSCAN_RESULT(): WiFi not powered on (0x1)
+Fri Jan 18 17:45:45 unknown kernel[0] <Debug>: [205922.466312166]: AppleS5L8900XSDIO::sendCommand(): Timeout waiting for CMDRDY indication
+Fri Jan 18 17:38:28 unknown kernel[0] <Debug>: System Sleep
+Fri Jan 18 17:45:45 unknown kernel[0] <Debug>: pmu wake events: rtc
+Fri Jan 18 17:45:45 unknown kernel[0] <Debug>: AppleEmbeddedUSBArbitrator::setPowerStateGated : powerstate = 1
+Fri Jan 18 17:45:45 unknown kernel[0] <Debug>: ApplePCF50635PMURTC: Unexpected RTC alarm interrupt
+Fri Jan 18 17:45:45 unknown kernel[0] <Debug>: AirPort: Enabled AppleMRVL868x (link 1, sys 0, user 1)
+Fri Jan 18 17:45:45 unknown kernel[0] <Debug>: AppleMRVL868x::setPOWER() [kernel_task]: 1
+Fri Jan 18 17:45:45 unknown kernel[0] <Debug>: ApplePCF50635PMUPowerSource: AppleUSBCableType Detached
+Fri Jan 18 17:45:45 unknown SpringBoard[159] <Notice>: MultitouchHID(228d40) uilock state: 1 -> 1
+Fri Jan 18 17:45:45 unknown CLTM[25] <Notice>: CLTM: created idle sleep assertion
+Fri Jan 18 17:45:45 unknown CLTM[25] <Notice>: CLTM: got kIOMessageSystemWillPowerOn
+Fri Jan 18 17:45:45 unknown CLTM[25] <Notice>: CLTM: cleared idle sleep assertion
+Fri Jan 18 17:45:46 unknown SpringBoard[159] <Warning>: NO WIFI BARS: current WiFi network name is (null)
+Fri Jan 18 17:45:46 unknown configd[25] <Notice>: Sleep: Success - BATT 87 - Idle Sleep
+Fri Jan 18 17:45:46 unknown configd[25] <Notice>: Wake: Success - BATT 87
+Fri Jan 18 17:45:46 unknown kernel[0] <Debug>: AppleMRVL868x::setSCAN_REQ() [configd]: Already scanning for networks, refusing scan request
+Fri Jan 18 17:45:46 unknown apsd[153] <Warning>: Unable to cancel system wake for 2013-01-18 12:15:45 +0000. IOPMCancelScheduledPowerEvent() returned 0xe00002f0
+Fri Jan 18 17:45:46 unknown configd[25] <Debug>: CaptiveNetworkSupport:CaptiveHandleNetworkChanged:2325 key: State:/Network/Service/CB285D60-D7C0-47F6-9312-8C09686A805C/IPv4
+Fri Jan 18 17:45:46 unknown configd[25] <Debug>: CaptiveNetworkSupport:CaptiveHandleInterfaceChanged:2191 Interface = en0, primaryServiceID =NULL
+Fri Jan 18 17:45:46 unknown configd[25] <Debug>: CaptiveNetworkSupport:CaptiveSCDisableServiceByID:361 Disabled CB285D60-D7C0-47F6-9312-8C09686A805C
+Fri Jan 18 17:45:46 unknown configd[25] <Notice>: CaptiveNetworkSupport:CaptivePublishState:1012 en0 - PreProbe
+Fri Jan 18 17:45:46 unknown configd[25] <Debug>: CaptiveNetworkSupport:CaptiveSCDisableServiceByID:361 Disabled CB285D60-D7C0-47F6-9312-8C09686A805C
+Fri Jan 18 17:45:46 unknown configd[25] <Notice>: network configuration changed.
+Fri Jan 18 17:45:46 unknown configd[25] <Info>: hostname (prefs) = Administrators-iPhone
+Fri Jan 18 17:45:47 unknown kernel[0] <Debug>: AppleMRVL868x::setSCAN_REQ() [configd]: Already scanning for networks, refusing scan request
+Fri Jan 18 17:45:50 unknown CommCenter[31] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Fri Jan 18 17:45:50 unknown CommCenter[31] <Notice>: Scheduling PDP tear down timer for (380204450.034975) (current time == 380204150.035009)
+Fri Jan 18 17:45:54 unknown apsd[153] <Warning>: <APSCourier: 0x114780>: Stream error occurred for <APSTCPStream: 0x4765f0>: TLS Error Code=-9831 "peer reported unknown certificate authority"
+Fri Jan 18 17:45:55 unknown apsd[153] <Warning>: <APSCourier: 0x114780>: Stream error occurred for <APSTCPStream: 0x449920>: Error Domain=kCFErrorDomainCFNetwork Code=2 "The operation couldn’t be completed. (kCFErrorDomainCFNetwork error 2.)" UserInfo=0x430a00 {kCFGetAddrInfoFailureKey=8}
+Fri Jan 18 17:46:00 unknown configd[25] <Debug>: usbeth_handle_interfaces_found:666 found iointerface
+Fri Jan 18 17:46:00 unknown configd[25] <Debug>: usbeth_handle_interface_found:565 handling interface 0x16153
+Fri Jan 18 17:46:00 unknown SpringBoard[159] <Warning>: WiFi: Joined network Airtel. WiFi bars visible: NO
+Fri Jan 18 17:46:00 unknown kernel[0] <Debug>: AppleMRVL868x::setASSOCIATE() [configd]: lowerAuth = AUTHTYPE_OPEN, upperAuth = AUTHTYPE_WPA_PSK, key = CIPHER_PMK , don't disassociate    .
+Fri Jan 18 17:46:00 unknown kernel[0] <Debug>: AppleMRVL868x Joined AP:        @ 0x84ba3000, BSSID = 6c:fd:b9:47:68:3c, rssi = -68, rate = 54 (100%), channel =  6, encryption = 0x4, ap = 1, failures =   0, age = 1, ssid[ 6] = "Airtel"
+Fri Jan 18 17:46:00 unknown kernel[0] <Debug>: AirPort: Link Up on en0
+Fri Jan 18 17:46:01 unknown kernel[0] <Debug>: AppleMRVL868x::setCIPHER_KEY() [kernel_task]: type = CIPHER_TKIP, index = 0, flags = 0x4
+Fri Jan 18 17:46:01 unknown kernel[0] <Debug>: AirPort: RSN handshake complete on en0
+Fri Jan 18 17:46:01 unknown kernel[0] <Debug>: AppleMRVL868x::setCIPHER_KEY() [kernel_task]: type = CIPHER_TKIP, index = 1, flags = 0x0
+Fri Jan 18 17:46:01 unknown CommCenter[31] <Notice>: Telling CSI to go low power.
+Fri Jan 18 17:46:01 unknown CommCenter[31] <Notice>: CSI can enter low power, so now telling to do so.
+Fri Jan 18 17:46:01 unknown CommCenter[31] <Notice>: Will sleep.  Heard from CSI in 0.00391203 seconds
+Fri Jan 18 17:46:01 unknown configd[25] <Debug>: subnet_route_if_index: can't get interface name
+Fri Jan 18 17:50:51 unknown kernel[0] <Debug>: AppleEmbeddedUSBArbitrator::setPowerStateGated : powerstate = 0
+Fri Jan 18 17:50:51 unknown kernel[0] <Debug>: AirPort: Disabled AppleMRVL868x (link 2, sys 1, user 1)
+Fri Jan 18 17:50:51 unknown kernel[0] <Debug>: AppleMRVL868x::setPOWER() [kernel_task]: 0
+Fri Jan 18 17:50:51 unknown kernel[0] <Debug>: AppleMRVL868x::getSCAN_RESULT(): WiFi not powered on (0x3)
+Fri Jan 18 17:50:51 unknown kernel[0] <Debug>: AppleMRVL868x Deauth'ed AP:     @ 0x84ba3000, BSSID = 6c:fd:b9:47:68:3c, rssi = -69, rate = 54 (100%), channel =  6, encryption = 0x4, ap = 1, failures =   0, age = 3, ssid[ 6] = "Airtel"
+Fri Jan 18 17:50:51 unknown kernel[0] <Debug>: AirPort: Link Down on en0. Reason 1 (Unspecified).
+Fri Jan 18 17:50:51 unknown kernel[0] <Debug>: AppleMRVL868x::setCIPHER_KEY(): WiFi not powered on (0x3)
+Fri Jan 18 17:50:51 unknown CommCenter[31] <Notice>: Telling CSI to exit low power.
+Fri Jan 18 17:50:51 unknown kernel[0] <Debug>: AppleMRVL868x::setCIPHER_KEY(): WiFi not powered on (0x3)
+Fri Jan 18 17:50:51 unknown kernel[0] <Debug>: AppleMRVL868x::setCIPHER_KEY(): WiFi not powered on (0x3)
+Fri Jan 18 17:50:51 unknown kernel[0] <Debug>: AppleMRVL868x::setCIPHER_KEY(): WiFi not powered on (0x3)
+Fri Jan 18 17:50:51 unknown kernel[0] <Debug>: AppleMRVL868x::setCIPHER_KEY(): WiFi not powered on (0x3)
+Fri Jan 18 17:50:51 unknown kernel[0] <Debug>: AppleMRVL868x::getSCAN_RESULT(): WiFi not powered on (0x1)
+Fri Jan 18 17:50:51 unknown kernel[0] <Debug>: [205939.380182166]: AppleS5L8900XSDIO::sendCommand(): Timeout waiting for CMDRDY indication
+Fri Jan 18 17:46:01 unknown kernel[0] <Debug>: System Sleep
+Fri Jan 18 17:50:51 unknown kernel[0] <Debug>: pmu wake events: exton2(bb)
+Fri Jan 18 17:50:51 unknown kernel[0] <Debug>: AppleEmbeddedUSBArbitrator::setPowerStateGated : powerstate = 1
+Fri Jan 18 17:50:51 unknown kernel[0] <Debug>: AirPort: Enabled AppleMRVL868x (link 1, sys 0, user 1)
+Fri Jan 18 17:50:51 unknown kernel[0] <Debug>: AppleMRVL868x::setPOWER() [kernel_task]: 1
+Fri Jan 18 17:50:51 unknown kernel[0] <Debug>: ApplePCF50635PMUPowerSource: AppleUSBCableType Detached
+Fri Jan 18 17:50:51 unknown configd[25] <Debug>: CaptiveNetworkSupport:CaptiveHandleNetworkChanged:2325 key: State:/Network/Service/CB285D60-D7C0-47F6-9312-8C09686A805C/IPv4
+Fri Jan 18 17:50:51 unknown configd[25] <Debug>: CaptiveNetworkSupport:CaptiveHandleInterfaceChanged:2191 Interface = en0, primaryServiceID =CB285D60-D7C0-47F6-9312-8C09686A805C
+Fri Jan 18 17:50:51 unknown configd[25] <Error>: CaptiveNetworkSupport:CaptiveCopyCurrentWiFiNetwork:803 WiFiDeviceClientCopyCurrentNetwork for en0 failed
+Fri Jan 18 17:50:51 unknown SpringBoard[159] <Notice>: MultitouchHID(228d40) uilock state: 1 -> 1
+Fri Jan 18 17:50:51 unknown configd[25] <Notice>: CaptiveNetworkSupport:CaptivePublishState:1012 en0 - Probe
+Fri Jan 18 17:50:51 unknown configd[25] <Notice>: CaptiveNetworkSupport:CaptiveStartDetect:2175 starting probe to determine captivity...
+Fri Jan 18 17:50:51 unknown configd[25] <Notice>: CaptiveNetworkSupport:wispr_detect_redirect_async:424 user-agent:"CaptiveNetworkSupport-166 wispr" url:"http://www.apple.com/library/test/success.html"
+Fri Jan 18 17:50:51 unknown configd[25] <Notice>: network configuration changed.
+Fri Jan 18 17:50:51 unknown configd[25] <Debug>: async_http_read_stream:385 kCFStreamEventOpenCompleted
+Fri Jan 18 17:50:51 unknown configd[25] <Info>: hostname (prefs) = Administrators-iPhone
+Fri Jan 18 17:50:51 unknown configd[25] <Debug>: usbeth_handle_interfaces_found:666 found iointerface
+Fri Jan 18 17:50:51 unknown configd[25] <Debug>: usbeth_handle_interface_found:565 handling interface 0x1487f
+Fri Jan 18 17:50:51 unknown configd[25] <Debug>: usbeth_handle_interfaces_found:666 found iointerface
+Fri Jan 18 17:50:51 unknown configd[25] <Debug>: usbeth_handle_interface_found:565 handling interface 0x14883
+Fri Jan 18 17:50:52 unknown CLTM[25] <Notice>: CLTM: created idle sleep assertion
+Fri Jan 18 17:50:52 unknown CLTM[25] <Notice>: CLTM: got kIOMessageSystemWillPowerOn
+Fri Jan 18 17:50:52 unknown configd[25] <Notice>: Sleep: Success - BATT 87 - Idle Sleep
+Fri Jan 18 17:50:52 unknown configd[25] <Notice>: Wake: Success - BATT 87
+Fri Jan 18 17:50:52 unknown CLTM[25] <Notice>: CLTM: cleared idle sleep assertion
+Fri Jan 18 17:50:53 unknown kernel[0] <Debug>: AppleMRVL868x::setSCAN_REQ() [configd]: Already scanning for networks, refusing scan request
+Fri Jan 18 17:50:53 unknown configd[25] <Debug>: CaptiveNetworkSupport:CaptiveHandleNetworkChanged:2325 key: State:/Network/Service/CB285D60-D7C0-47F6-9312-8C09686A805C/IPv4
+Fri Jan 18 17:50:53 unknown configd[25] <Debug>: CaptiveNetworkSupport:CaptiveHandleInterfaceChanged:2191 Interface = en0, primaryServiceID =NULL
+Fri Jan 18 17:50:53 unknown configd[25] <Notice>: CaptiveNetworkSupport:CaptivePublishState:1012 en0 - PreProbe
+Fri Jan 18 17:50:53 unknown configd[25] <Debug>: CaptiveNetworkSupport:CaptiveSCDisableServiceByID:361 Disabled CB285D60-D7C0-47F6-9312-8C09686A805C
+Fri Jan 18 17:50:53 unknown configd[25] <Notice>: network configuration changed.
+Fri Jan 18 17:50:53 unknown configd[25] <Info>: hostname (prefs) = Administrators-iPhone
+Fri Jan 18 17:50:53 unknown mDNSResponder[22] <Error>: Note: InterfaceID 00000002 for question www.apple.com. (Addr) not currently found in active interface list
+Fri Jan 18 17:50:56 unknown CommCenter[31] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Fri Jan 18 17:50:56 unknown CommCenter[31] <Notice>: Scheduling PDP tear down timer for (380204756.027700) (current time == 380204456.027731)
+Fri Jan 18 17:51:00 unknown apsd[153] <Warning>: <APSCourier: 0x114780>: Stream error occurred for <APSTCPStream: 0x4260c0>: TLS Error Code=-9831 "peer reported unknown certificate authority"
+Fri Jan 18 17:51:06 unknown configd[25] <Debug>: usbeth_handle_interfaces_found:666 found iointerface
+Fri Jan 18 17:51:06 unknown configd[25] <Debug>: usbeth_handle_interface_found:565 handling interface 0x15e57
+Fri Jan 18 17:51:06 unknown SpringBoard[159] <Warning>: WiFi: Joined network Airtel. WiFi bars visible: NO
+Fri Jan 18 17:51:06 unknown kernel[0] <Debug>: AppleMRVL868x::setASSOCIATE() [configd]: lowerAuth = AUTHTYPE_OPEN, upperAuth = AUTHTYPE_WPA_PSK, key = CIPHER_PMK , don't disassociate    .
+Fri Jan 18 17:51:06 unknown kernel[0] <Debug>: AppleMRVL868x Joined AP:        @ 0x82486000, BSSID = 6c:fd:b9:47:68:3c, rssi = -62, rate = 54 (100%), channel =  6, encryption = 0x4, ap = 1, failures =   0, age = 1, ssid[ 6] = "Airtel"
+Fri Jan 18 17:51:06 unknown kernel[0] <Debug>: AirPort: Link Up on en0
+Fri Jan 18 17:51:06 unknown CommCenter[31] <Notice>: Telling CSI to go low power.
+Fri Jan 18 17:51:06 unknown CommCenter[31] <Notice>: CSI can enter low power, so now telling to do so.
+Fri Jan 18 17:51:06 unknown CommCenter[31] <Notice>: Will sleep.  Heard from CSI in 0.00394803 seconds
+Fri Jan 18 17:53:17 unknown kernel[0] <Debug>: AppleMRVL868x::setCIPHER_KEY() [kernel_task]: type = CIPHER_TKIP, index = 0, flags = 0x4
+Fri Jan 18 17:53:17 unknown kernel[0] <Debug>: AirPort: RSN handshake complete on en0
+Fri Jan 18 17:53:17 unknown kernel[0] <Debug>: AppleMRVL868x::setCIPHER_KEY() [kernel_task]: type = CIPHER_TKIP, index = 1, flags = 0x0
+Fri Jan 18 17:53:17 unknown kernel[0] <Debug>: AppleEmbeddedUSBArbitrator::setPowerStateGated : powerstate = 0
+Fri Jan 18 17:53:17 unknown kernel[0] <Debug>: AirPort: Disabled AppleMRVL868x (link 2, sys 1, user 1)
+Fri Jan 18 17:53:17 unknown kernel[0] <Debug>: AppleMRVL868x::setPOWER() [kernel_task]: 0
+Fri Jan 18 17:53:17 unknown kernel[0] <Debug>: AppleMRVL868x::getSCAN_RESULT(): WiFi not powered on (0x3)
+Fri Jan 18 17:53:17 unknown configd[25] <Debug>: usbeth_handle_interfaces_found:666 found iointerface
+Fri Jan 18 17:53:17 unknown configd[25] <Debug>: usbeth_handle_interface_found:565 handling interface 0x177b7
+Fri Jan 18 17:53:17 unknown CommCenter[31] <Notice>: Telling CSI to exit low power.
+Fri Jan 18 17:53:17 unknown kernel[0] <Debug>: AppleMRVL868x Deauth'ed AP:     @ 0x82486000, BSSID = 6c:fd:b9:47:68:3c, rssi = -62, rate = 54 (100%), channel =  6, encryption = 0x4, ap = 1, failures =   0, age = 2, ssid[ 6] = "Airtel"
+Fri Jan 18 17:53:17 unknown kernel[0] <Debug>: AirPort: Link Down on en0. Reason 1 (Unspecified).
+Fri Jan 18 17:53:17 unknown kernel[0] <Debug>: AppleMRVL868x::setCIPHER_KEY(): WiFi not powered on (0x3)
+Fri Jan 18 17:53:17 unknown kernel[0] <Debug>: AppleMRVL868x::setCIPHER_KEY(): WiFi not powered on (0x3)
+Fri Jan 18 17:53:17 unknown kernel[0] <Debug>: AppleMRVL868x::setCIPHER_KEY(): WiFi not powered on (0x3)
+Fri Jan 18 17:53:17 unknown kernel[0] <Debug>: AppleMRVL868x::setCIPHER_KEY(): WiFi not powered on (0x3)
+Fri Jan 18 17:53:17 unknown kernel[0] <Debug>: AppleMRVL868x::setCIPHER_KEY(): WiFi not powered on (0x3)
+Fri Jan 18 17:53:17 unknown kernel[0] <Debug>: AppleMRVL868x::getSCAN_RESULT(): WiFi not powered on (0x1)
+Fri Jan 18 17:53:17 unknown kernel[0] <Debug>: [205955.320276832]: AppleS5L8900XSDIO::sendCommand(): Timeout waiting for CMDRDY indication
+Fri Jan 18 17:51:06 unknown kernel[0] <Debug>: System Sleep
+Fri Jan 18 17:53:17 unknown kernel[0] <Debug>: pmu wake events: exton2(bb)
+Fri Jan 18 17:53:17 unknown kernel[0] <Debug>: AppleEmbeddedUSBArbitrator::setPowerStateGated : powerstate = 1
+Fri Jan 18 17:53:17 unknown kernel[0] <Debug>: AirPort: Enabled AppleMRVL868x (link 1, sys 0, user 1)
+Fri Jan 18 17:53:17 unknown kernel[0] <Debug>: AppleMRVL868x::setPOWER() [kernel_task]: 1
+Fri Jan 18 17:53:17 unknown kernel[0] <Debug>: ApplePCF50635PMUPowerSource: AppleUSBCableType Detached
+Fri Jan 18 17:53:17 unknown configd[25] <Debug>: usbeth_handle_interfaces_found:666 found iointerface
+Fri Jan 18 17:53:17 unknown configd[25] <Debug>: usbeth_handle_interface_found:565 handling interface 0x16e63
+Fri Jan 18 17:53:17 unknown SpringBoard[159] <Notice>: MultitouchHID(228d40) uilock state: 1 -> 1
+Fri Jan 18 17:53:18 unknown CLTM[25] <Notice>: CLTM: created idle sleep assertion
+Fri Jan 18 17:53:18 unknown CLTM[25] <Notice>: CLTM: got kIOMessageSystemWillPowerOn
+Fri Jan 18 17:53:18 unknown configd[25] <Notice>: Sleep: Success - BATT 87 - Idle Sleep
+Fri Jan 18 17:53:18 unknown configd[25] <Notice>: Wake: Success - BATT 87
+Fri Jan 18 17:53:18 unknown CLTM[25] <Notice>: CLTM: cleared idle sleep assertion
+Fri Jan 18 17:53:18 unknown kernel[0] <Debug>: AppleMRVL868x::setSCAN_REQ() [configd]: Already scanning for networks, refusing scan request
+Fri Jan 18 17:53:19 unknown kernel[0] <Debug>: AppleMRVL868x::setSCAN_REQ() [configd]: Already scanning for networks, refusing scan request
+Fri Jan 18 17:53:22 unknown CommCenter[31] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Fri Jan 18 17:53:22 unknown CommCenter[31] <Notice>: Scheduling PDP tear down timer for (380204902.027239) (current time == 380204602.027270)
+Fri Jan 18 17:53:22 unknown apsd[153] <Warning>: <APSCourier: 0x114780>: Stream error occurred for <APSTCPStream: 0x45d3a0>: Error Domain=kCFErrorDomainCFNetwork Code=2 "The operation couldn’t be completed. (kCFErrorDomainCFNetwork error 2.)" UserInfo=0x600710 {kCFGetAddrInfoFailureKey=8}
+Fri Jan 18 17:53:28 unknown CommCenter[31] <Notice>: Telling CSI to go low power.
+Fri Jan 18 17:53:28 unknown CommCenter[31] <Notice>: CSI can enter low power, so now telling to do so.
+Fri Jan 18 17:53:28 unknown CommCenter[31] <Notice>: Will sleep.  Heard from CSI in 0.00687903 seconds
+Fri Jan 18 18:03:56 unknown kernel[0] <Debug>: AppleEmbeddedUSBArbitrator::setPowerStateGated : powerstate = 0
+Fri Jan 18 18:03:56 unknown kernel[0] <Debug>: AirPort: Disabled AppleMRVL868x (link 1, sys 1, user 1)
+Fri Jan 18 18:03:56 unknown kernel[0] <Debug>: AppleMRVL868x::setPOWER() [kernel_task]: 0
+Fri Jan 18 18:03:56 unknown kernel[0] <Debug>: AppleMRVL868x::getSCAN_RESULT(): WiFi not powered on (0x3)
+Fri Jan 18 18:03:56 unknown kernel[0] <Debug>: AppleMRVL868x::getSCAN_RESULT(): WiFi not powered on (0x1)
+Fri Jan 18 18:03:56 unknown kernel[0] <Debug>: [205966.890416000]: AppleS5L8900XSDIO::sendCommand(): Timeout waiting for CMDRDY indication
+Fri Jan 18 17:53:28 unknown kernel[0] <Debug>: System Sleep
+Fri Jan 18 18:03:56 unknown kernel[0] <Debug>: pmu wake events: exton1(buttons)
+Fri Jan 18 18:03:56 unknown configd[25] <Debug>: usbeth_handle_interfaces_found:666 found iointerface
+Fri Jan 18 18:03:56 unknown kernel[0] <Debug>: AppleEmbeddedUSBArbitrator::setPowerStateGated : powerstate = 1
+Fri Jan 18 18:03:56 unknown kernel[0] <Debug>: AppleS5L8900XSDIO::sendCommand(): CMD52 Failure - SDIO Cmd Timeout: arg(0x00000a00), error count(1), dsta register(0x0000c004)
+Fri Jan 18 18:03:56 unknown kernel[0] <Debug>: AirPort: Enabled AppleMRVL868x (link 1, sys 0, user 1)
+Fri Jan 18 18:03:56 unknown kernel[0] <Debug>: AppleMRVL868x::setPOWER() [kernel_task]: 1
+Fri Jan 18 18:03:56 unknown CommCenter[31] <Notice>: Telling CSI to exit low power.
+Fri Jan 18 18:03:56 unknown configd[25] <Debug>: usbeth_handle_interface_found:565 handling interface 0x16cd7
+Fri Jan 18 18:03:56 unknown configd[25] <Debug>: usbeth_handle_interfaces_found:666 found iointerface
+Fri Jan 18 18:03:56 unknown configd[25] <Debug>: usbeth_handle_interface_found:565 handling interface 0x16cdb
+Fri Jan 18 18:03:56 unknown SpringBoard[159] <Notice>: MultitouchHID(21e470) uilock state: 1 -> 0
+Fri Jan 18 18:03:56 unknown kernel[0] <Debug>: ApplePCF50635PMUPowerSource: AppleUSBCableType Detached
+Fri Jan 18 18:03:57 unknown configd[25] <Notice>: Sleep: Success - BATT 87 - Idle Sleep
+Fri Jan 18 18:03:57 unknown configd[25] <Notice>: Wake: Success - BATT 87
+Fri Jan 18 18:03:57 unknown CLTM[25] <Notice>: CLTM: created idle sleep assertion
+Fri Jan 18 18:03:57 unknown CLTM[25] <Notice>: CLTM: got kIOMessageSystemWillPowerOn
+Fri Jan 18 18:03:57 unknown CLTM[25] <Notice>: CLTM: cleared idle sleep assertion
+Fri Jan 18 18:03:57 unknown kernel[0] <Debug>: AppleMRVL868x::setSCAN_REQ() [configd]: Already scanning for networks, refusing scan request
+Fri Jan 18 18:03:57 unknown kernel[0] <Debug>: AppleMRVL868x::setSCAN_REQ() [configd]: Already scanning for networks, refusing scan request
+Fri Jan 18 18:04:00 unknown kernel[0] <Debug>: ApplePCF50635PMUPowerSource: AppleUSBCableType USBHost
+Fri Jan 18 18:04:00 unknown kernel[0] <Debug>: AppleEmbeddedUSBArbitrator::handleUSBCableTypeChange : Connected to a USB host, entering device mode
+Fri Jan 18 18:04:00 unknown kernel[0] <Debug>: AppleS5L8900XUSBPhy::powerUp : _powered: 0
+Fri Jan 18 18:04:00 unknown kernel[0] <Debug>: AppleEmbeddedUSBArbitrator::enableDeviceClock : enable: 1, index: 0
+Fri Jan 18 18:04:00 unknown kernel[0] <Debug>: AppleS5L8900XUSBPhy::enableDeviceMode : enable: 1
+Fri Jan 18 18:04:00 unknown kernel[0] <Debug>: AppleSynopsysOTGDevice::handleUSBReset
+Fri Jan 18 18:04:00 unknown kernel[0] <Debug>: AppleSynopsysOTGDevice::handleUSBReset
+Fri Jan 18 18:04:01 unknown CommCenter[31] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Fri Jan 18 18:04:01 unknown CommCenter[31] <Notice>: Scheduling PDP tear down timer for (380205541.021687) (current time == 380205241.021721)
+Fri Jan 18 18:04:01 unknown /usr/libexec/securityd[5071] <Notice>: MS:Notice: Installing: (null) [securityd] (550.52)
+Fri Jan 18 18:04:01 unknown kernel[0] <Debug>: launchd[5072] Builtin profile: ptpd (sandbox)
+Fri Jan 18 18:04:01 unknown kernel[0] <Debug>: launchd[5070] Builtin profile: ptpd (sandbox)
+Fri Jan 18 18:04:02 unknown /usr/libexec/ptpd[5070] <Notice>: MS:Notice: Installing: (null) [ptpd] (550.52)
+Fri Jan 18 18:04:03 unknown configd[25] <Debug>: usbeth_handle_pairing_notification:838 Host is trusted
+Fri Jan 18 18:04:03 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+Fri Jan 18 18:04:03 unknown lockdownd[19] <Error>: 2ff68000 handle_connection: Could not receive USB message #5 from usbmuxd. Killing connection
+Fri Jan 18 18:04:04 unknown /usr/libexec/ptpd[5070] <Notice>: PTP interface has been activated at high speed.
+Fri Jan 18 18:04:04 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+Fri Jan 18 18:04:04 unknown lockdownd[19] <Error>: 2ffea000 handle_connection: Could not receive USB message #11 from Xcode. Killing connection
+Fri Jan 18 18:04:05 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+Fri Jan 18 18:04:05 unknown lockdownd[19] <Error>: 00389000 handle_connection: Could not receive USB message #7 from Xcode. Killing connection
+Fri Jan 18 18:04:07 unknown ptpd[5070] <Warning>: slow transaction: time was 0.365436 seconds 
+Fri Jan 18 18:04:07 unknown kernel[0] <Debug>: lockbot[5074] Builtin profile: gputoolsd (sandbox)
+Fri Jan 18 18:04:08 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+Fri Jan 18 18:04:08 unknown lockdownd[19] <Error>: 00389000 handle_connection: Could not receive USB message #6 from Xcode. Killing connection
+Fri Jan 18 18:04:08 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+Fri Jan 18 18:04:08 unknown lockdownd[19] <Error>: 2ffea000 handle_connection: Could not receive USB message #6 from Xcode. Killing connection
+Fri Jan 18 18:04:09 unknown /System/Library/Frameworks/CoreTelephony.framework/Support/CommCenterMobileHelper[5077] <Notice>: MS:Notice: Installing: com.apple.commcentermobilehelper [CommCenterMobileHelper] (550.52)
+Fri Jan 18 18:04:09 unknown SpringBoard[159] <Notice>: MultitouchHID(21e470) uilock state: 0 -> 1
+Fri Jan 18 18:04:10 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+Fri Jan 18 18:04:10 unknown lockdownd[19] <Error>: 00389000 handle_connection: Could not receive USB message #9 from Xcode. Killing connection
+Fri Jan 18 18:04:10 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+Fri Jan 18 18:04:10 unknown lockdownd[19] <Error>: 2ffea000 handle_connection: Could not receive USB message #6 from Xcode. Killing connection
+Fri Jan 18 18:04:10 unknown apsd[153] <Warning>: <APSCourier: 0x114780>: Stream error occurred for <APSTCPStream: 0x46a5f0>: TLS Error Code=-9831 "peer reported unknown certificate authority"
+Fri Jan 18 18:04:11 unknown ptpd[5070] <Warning>: slow transaction: time was 0.290279 seconds 
+Fri Jan 18 18:04:11 unknown SpringBoard[159] <Notice>: MultitouchHID(21e470) uilock state: 1 -> 0
+Fri Jan 18 18:04:11 unknown kernel[0] <Debug>: AppleMRVL868x::setASSOCIATE() [configd]: lowerAuth = AUTHTYPE_OPEN, upperAuth = AUTHTYPE_WPA_PSK, key = CIPHER_PMK , don't disassociate    .
+Fri Jan 18 18:04:11 unknown kernel[0] <Debug>: AppleMRVL868x Joined AP:        @ 0x82de0000, BSSID = 6c:fd:b9:47:68:3c, rssi = -64, rate = 54 (100%), channel =  6, encryption = 0x4, ap = 1, failures =   0, age = 2, ssid[ 6] = "Airtel"
+Fri Jan 18 18:04:11 unknown kernel[0] <Debug>: AirPort: Link Up on en0
+Fri Jan 18 18:04:11 unknown configd[25] <Debug>: usbeth_handle_interfaces_found:666 found iointerface
+Fri Jan 18 18:04:11 unknown configd[25] <Debug>: usbeth_handle_interface_found:565 handling interface 0x16a17
+Fri Jan 18 18:04:12 unknown SpringBoard[159] <Warning>: WiFi: Joined network Airtel. WiFi bars visible: NO
+Fri Jan 18 18:04:12 unknown kernel[0] <Debug>: AppleMRVL868x::setCIPHER_KEY() [kernel_task]: type = CIPHER_TKIP, index = 0, flags = 0x4
+Fri Jan 18 18:04:12 unknown kernel[0] <Debug>: AirPort: RSN handshake complete on en0
+Fri Jan 18 18:04:12 unknown kernel[0] <Debug>: AppleMRVL868x::setCIPHER_KEY() [kernel_task]: type = CIPHER_TKIP, index = 1, flags = 0x0
+Fri Jan 18 18:04:12 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+Fri Jan 18 18:04:12 unknown lockdownd[19] <Error>: 00389000 handle_connection: Could not receive USB message #6 from Xcode. Killing connection
+Fri Jan 18 18:04:14 unknown configd[25] <Debug>: subnet_route_if_index: can't get interface name
+Fri Jan 18 18:04:14 unknown configd[25] <Debug>: CaptiveNetworkSupport:CaptiveHandleNetworkChanged:2325 key: State:/Network/Service/CB285D60-D7C0-47F6-9312-8C09686A805C/IPv4
+Fri Jan 18 18:04:14 unknown configd[25] <Debug>: CaptiveNetworkSupport:CaptiveHandleInterfaceChanged:2191 Interface = en0, primaryServiceID =CB285D60-D7C0-47F6-9312-8C09686A805C
+Fri Jan 18 18:04:14 unknown configd[25] <Debug>: CaptiveNetworkSupport:CaptiveCopyCurrentWiFiNetwork:802 found current network: Airtel                                  : isHidden=0, isEAP=0, isWPA=1, isWEP=1
+Fri Jan 18 18:04:14 unknown configd[25] <Notice>: CaptiveNetworkSupport:CaptivePublishState:1012 en0 - Probe
+Fri Jan 18 18:04:14 unknown /usr/libexec/installd[5082] <Notice>: MS:Notice: Installing: (null) [installd] (550.52)
+Fri Jan 18 18:04:14 unknown configd[25] <Debug>: CaptiveNetworkSupport:CaptiveKnownCheck:459 WiFiNetworkGetProperty CaptiveNetwork for Airtel                                  : isHidden=0, isEAP=0, isWPA=1, isWEP=1 returned NULL
+Fri Jan 18 18:04:14 unknown configd[25] <Notice>: CaptiveNetworkSupport:CaptiveStartDetect:2150 Bypassing probe on Airtel because it is protected and not on the exception list
+Fri Jan 18 18:04:14 unknown configd[25] <Debug>: CaptiveNetworkSupport:CaptiveSCEnableServiceByID:341 Enabled CB285D60-D7C0-47F6-9312-8C09686A805C
+Fri Jan 18 18:04:14 unknown configd[25] <Notice>: network configuration changed.
+Fri Jan 18 18:04:14 unknown configd[25] <Notice>: CaptiveNetworkSupport:CaptivePublishState:1012 en0 - Unknown
+Fri Jan 18 18:04:15 unknown configd[25] <Info>: hostname (prefs) = Administrators-iPhone
+Fri Jan 18 18:04:15 unknown configd[25] <Notice>: network configuration changed.
+Fri Jan 18 18:04:15 unknown CommCenter[31] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Fri Jan 18 18:04:15 unknown CommCenter[31] <Notice>: Scheduling PDP tear down timer for (380205555.888164) (current time == 380205255.888196)
+Fri Jan 18 18:04:16 unknown configd[25] <Info>: hostname (prefs) = Administrators-iPhone
+Fri Jan 18 18:04:18 unknown lockdownd[19] <Error>: 00389000 handle_connection: Could not receive USB message #6 from Xcode. Killing connection
+Fri Jan 18 18:04:18 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+Fri Jan 18 18:04:18 unknown ptpd[5070] <Warning>: slow transaction: time was 0.268431 seconds 
+Fri Jan 18 18:04:20 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+Fri Jan 18 18:04:20 unknown lockdownd[19] <Error>: 00389000 handle_connection: Could not receive USB message #6 from Xcode. Killing connection
+Fri Jan 18 18:04:20 unknown /System/Library/Frameworks/CoreTelephony.framework/Support/CommCenterMobileHelper[5085] <Notice>: MS:Notice: Installing: com.apple.commcentermobilehelper [CommCenterMobileHelper] (550.52)
+Fri Jan 18 18:04:20 unknown SpringBoard[159] <Notice>: MultitouchHID(21e470) uilock state: 0 -> 1
+Fri Jan 18 18:04:21 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+Fri Jan 18 18:04:21 unknown apsd[153] <Warning>: <APSCourier: 0x114780>: Stream error occurred for <APSTCPStream: 0x46ea70>: TLS Error Code=-9831 "peer reported unknown certificate authority"
+Fri Jan 18 18:04:21 unknown lockdownd[19] <Error>: 00389000 handle_connection: Could not receive USB message #6 from Xcode. Killing connection
+Fri Jan 18 18:04:21 unknown ptpd[5070] <Warning>: slow transaction: time was 0.286685 seconds 
+Fri Jan 18 18:04:22 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+Fri Jan 18 18:04:22 unknown lockdownd[19] <Error>: 00389000 handle_connection: Could not receive USB message #9 from Xcode. Killing connection
+> 
+Fri Jan 18 18:04:23 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+Fri Jan 18 18:04:23 unknown lockdownd[19] <Error>: 00389000 handle_connection: Could not receive USB message #6 from Xcode. Killing connection
+> 
+Fri Jan 18 18:04:25 unknown lockdownd[19] <Error>: 00389000 handle_connection: Could not receive USB message #6 from Xcode. Killing connection
+Fri Jan 18 18:04:25 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+Fri Jan 18 18:04:26 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+Fri Jan 18 18:04:26 unknown lockdownd[19] <Error>: 00389000 handle_connection: Could not receive USB message #6 from Xcode. Killing connection
+> 
+Fri Jan 18 18:04:27 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+Fri Jan 18 18:04:27 unknown lockdownd[19] <Error>: 00389000 handle_connection: Could not receive USB message #6 from Xcode. Killing connection
+Fri Jan 18 18:04:28 unknown lockdownd[19] <Error>: 00389000 handle_connection: Could not receive USB message #6 from Xcode. Killing connection
+Fri Jan 18 18:04:28 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+Fri Jan 18 18:04:28 unknown apsd[153] <Warning>: <APSCourier: 0x114780>: Stream error occurred for <APSTCPStream: 0x44c980>: TLS Error Code=-9831 "peer reported unknown certificate authority"
+> 
+Fri Jan 18 18:04:28 unknown lockdownd[19] <Error>: 00389000 handle_connection: Could not receive USB message #6 from Xcode. Killing connection
+Fri Jan 18 18:04:28 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+Fri Jan 18 18:04:28 unknown /Developer/Library/Daemons/DTFetchSymbols[5092] <Notice>: Found paths:
+Fri Jan 18 18:04:28 unknown /Developer/Library/Daemons/DTFetchSymbols[5092] <Notice>: /usr/lib/dyld
+Fri Jan 18 18:04:28 unknown /Developer/Library/Daemons/DTFetchSymbols[5092] <Notice>: /System/Library/Caches/com.apple.dyld/dyld_shared_cache_armv6
+> 
+Fri Jan 18 18:04:33 unknown lockdownd[19] <Error>: 00389000 handle_connection: Could not receive USB message #6 from Xcode. Killing connection
+Fri Jan 18 18:04:33 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+> 
+Fri Jan 18 18:05:05 unknown /usr/libexec/securityd[5093] <Notice>: MS:Notice: Installing: (null) [securityd] (550.52)
+Fri Jan 18 18:05:05 unknown lockdownd[19] <Error>: 2ff68000 handle_connection: Could not receive USB message #7 from Xcode. Killing connection
+Fri Jan 18 18:05:05 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+> 
+Fri Jan 18 18:05:10 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+Fri Jan 18 18:05:10 unknown lockdownd[19] <Error>: 2ff68000 handle_connection: Could not receive USB message #6 from Xcode. Killing connection
+> 
+Fri Jan 18 18:05:11 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+Fri Jan 18 18:05:11 unknown lockdownd[19] <Error>: 2ff68000 handle_connection: Could not receive USB message #6 from Xcode. Killing connection
+> 
+Fri Jan 18 18:05:14 unknown lockdownd[19] <Error>: 2ff68000 handle_connection: Could not receive USB message #6 from Xcode. Killing connection
+Fri Jan 18 18:05:14 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+Fri Jan 18 18:05:15 unknown lockdownd[19] <Error>: 2ff68000 handle_connection: Could not receive USB message #6 from Xcode. Killing connection
+Fri Jan 18 18:05:15 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+Fri Jan 18 18:05:18 unknown SpringBoard[159] <Warning>: Killing <SBApplication: 0x3ef4280> com.teluu.ipjsua  activate:  deactivate:  for app installation
+> 
+Fri Jan 18 18:05:25 unknown SpringBoard[159] <Warning>: Suspended activation attempted on <SBApplication: 0x3ef4280> com.teluu.ipjsua  activate: suspended  deactivate: , for which suspended activation is not available.
+Fri Jan 18 18:05:25 unknown SpringBoard[159] <Warning>: Reloading application state for 'com.teluu.ipjsua' as its modification date has changed
+Fri Jan 18 18:05:25 unknown com.apple.launchd[1] <Notice>: (UIKitApplication:com.teluu.ipjsua[0xf292]) Exited: Killed
+Fri Jan 18 18:05:25 unknown kernel[0] <Debug>: launchd[5103] Builtin profile: container (sandbox)
+Fri Jan 18 18:05:25 unknown kernel[0] <Debug>: launchd[5103] Container: /private/var/mobile/Applications/5338F66E-2F34-46D0-B87C-136E6809F435 [69] (sandbox)
+Fri Jan 18 18:05:25 unknown CommCenter[31] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Fri Jan 18 18:05:25 unknown CommCenter[31] <Notice>: Scheduling PDP tear down timer for (380205625.873503) (current time == 380205325.873537)
+> 
+Fri Jan 18 18:05:26 unknown SpringBoard[159] <Warning>: Reloading and rendering all application icons.
+ >  > 
+Fri Jan 18 18:05:29 unknown lockdownd[19] <Error>: 2ffea000 handle_connection: Could not receive USB message #6 from Xcode. Killing connection
+Fri Jan 18 18:05:29 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+Fri Jan 18 18:05:29 unknown SpringBoard[159] <Warning>: Application 'ipjsua' exited abnormally with signal 9: Killed
+> 
+Fri Jan 18 18:05:30 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+Fri Jan 18 18:05:30 unknown lockdownd[19] <Error>: 2ffea000 handle_connection: Could not receive USB message #6 from Xcode. Killing connection
+> 
+Fri Jan 18 18:05:31 unknown apsd[153] <Warning>: <APSCourier: 0x114780>: Stream error occurred for <APSTCPStream: 0x4453b0>: TLS Error Code=-9831 "peer reported unknown certificate authority"
+Fri Jan 18 18:05:31 unknown lockdownd[19] <Error>: 2ffea000 handle_connection: Could not receive USB message #6 from Xcode. Killing connection
+Fri Jan 18 18:05:32 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+Fri Jan 18 18:05:32 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+Fri Jan 18 18:05:32 unknown lockdownd[19] <Error>: 2ffea000 handle_connection: Could not receive USB message #6 from Xcode. Killing connection
+Fri Jan 18 18:05:33 unknown lockdownd[19] <Error>: 2ffea000 handle_connection: Could not receive USB message #6 from Xcode. Killing connection
+Fri Jan 18 18:05:33 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+> 
+Fri Jan 18 18:05:33 unknown lockdownd[19] <Error>: 2ffea000 handle_connection: Could not receive USB message #6 from Xcode. Killing connection
+Fri Jan 18 18:05:33 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+> 
+Fri Jan 18 18:05:34 unknown kernel[0] <Debug>: lockbot[5095] Builtin profile: debugserver (sandbox)
+Fri Jan 18 18:05:34 unknown com.apple.debugserver-48[5110] <Warning>: debugserver-48 for armv6 Copyright (c) 2007-2009 Apple, Inc.  All Rights Reserved.
+Fri Jan 18 18:05:34 unknown com.apple.debugserver-48[5110] <Warning>: Connecting to com.apple.debugserver service...
+Fri Jan 18 18:05:34 unknown lockdownd[19] <Error>: 2ffea000 handle_connection: Could not receive USB message #6 from Xcode. Killing connection
+Fri Jan 18 18:05:34 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+Fri Jan 18 18:05:35 unknown lockdownd[19] <Error>: 2ffea000 handle_connection: Could not receive USB message #6 from Xcode. Killing connection
+Fri Jan 18 18:05:35 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+Fri Jan 18 18:05:36 unknown SpringBoard[159] <Notice>: MultitouchHID(21e470) uilock state: 1 -> 0
+> 
+Fri Jan 18 18:05:36 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+Fri Jan 18 18:05:36 unknown lockdownd[19] <Error>: 2ffea000 handle_connection: Could not receive USB message #6 from Xcode. Killing connection
+Fri Jan 18 18:05:36 unknown /System/Library/CoreServices/MobileStorageMounter.app/MobileStorageMounter[5112] <Notice>: MS:Notice: Installing: com.apple.MobileStorageMounter [MobileStorageMounter] (550.52)
+Fri Jan 18 18:05:36 unknown MobileStorageMounter[5112] <Notice>: (0x3e7518b8) platform_supports_camera_import: Platform is NOT configured for camera import
+> 
+Fri Jan 18 18:05:37 unknown com.apple.launchd[1] <Warning>: (UIKitApplication:com.teluu.ipjsua[0x9e02]) Spawned and waiting for the debugger to attach before continuing...
+Fri Jan 18 18:05:37 unknown com.apple.debugserver-48[5110] <Warning>: Got a connection, waiting for debugger instructions for task "(null)".
+Fri Jan 18 18:05:37 unknown kernel[0] <Debug>: launchd[5115] Builtin profile: container (sandbox)
+Fri Jan 18 18:05:37 unknown kernel[0] <Debug>: launchd[5115] Container: /private/var/mobile/Applications/5338F66E-2F34-46D0-B87C-136E6809F435 [69] (sandbox)
+Fri Jan 18 18:05:38 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+Fri Jan 18 18:05:38 unknown lockdownd[19] <Error>: 2ffea000 handle_connection: Could not receive USB message #6 from Xcode. Killing connection
+> 
+Fri Jan 18 18:05:39 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+Fri Jan 18 18:05:39 unknown lockdownd[19] <Error>: 2ffea000 handle_connection: Could not receive USB message #6 from Xcode. Killing connection
+> 
+Fri Jan 18 18:05:40 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+Fri Jan 18 18:05:40 unknown lockdownd[19] <Error>: 2ffea000 handle_connection: Could not receive USB message #6 from Xcode. Killing connection
+> 
+Fri Jan 18 18:05:41 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+Fri Jan 18 18:05:41 unknown lockdownd[19] <Error>: 2ffea000 handle_connection: Could not receive USB message #6 from Xcode. Killing connection
+> 
+Fri Jan 18 18:05:42 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+Fri Jan 18 18:05:42 unknown lockdownd[19] <Error>: 2ffea000 handle_connection: Could not receive USB message #6 from Xcode. Killing connection
+Fri Jan 18 18:05:43 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+Fri Jan 18 18:05:43 unknown lockdownd[19] <Error>: 2ffea000 handle_connection: Could not receive USB message #6 from Xcode. Killing connection
+Fri Jan 18 18:05:44 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+> 
+Fri Jan 18 18:05:44 unknown lockdownd[19] <Error>: 2ffea000 handle_connection: Could not receive USB message #6 from Xcode. Killing connection
+Fri Jan 18 18:05:45 unknown /var/mobile/Applications/5338F66E-2F34-46D0-B87C-136E6809F435/ipjsua.app/ipjsua[5115] <Notice>: MS:Notice: Installing: com.teluu.ipjsua [ipjsua] (550.52)
+> 
+Fri Jan 18 18:05:45 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+Fri Jan 18 18:05:45 unknown lockdownd[19] <Error>: 2ffea000 handle_connection: Could not receive USB message #6 from Xcode. Killing connection
+Fri Jan 18 18:05:46 unknown lockdownd[19] <Error>: 2ffea000 handle_connection: Could not receive USB message #6 from Xcode. Killing connection
+Fri Jan 18 18:05:46 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+> 
+Fri Jan 18 18:05:46 unknown MobileStorageMounter[5112] <Notice>: (0x3e7518b8) idle_timer_callback: Exiting after idle timeout
+Fri Jan 18 18:05:47 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+Fri Jan 18 18:05:47 unknown lockdownd[19] <Error>: 2ffea000 handle_connection: Could not receive USB message #6 from Xcode. Killing connection
+Fri Jan 18 18:05:49 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+> 
+Fri Jan 18 18:05:49 unknown lockdownd[19] <Error>: 2ffea000 handle_connection: Could not receive USB message #6 from Xcode. Killing connection
+Fri Jan 18 18:05:49 unknown /System/Library/PrivateFrameworks/MediaRemote.framework/Support/mediaremoted[5127] <Notice>: MS:Notice: Installing: (null) [mediaremoted] (550.52)
+Fri Jan 18 18:05:49 unknown mediaremoted[5127] <Warning>: BTM: attaching to BTServer
+Fri Jan 18 18:05:49 unknown ipjsua[5115] <Warning>: Using two-stage rotation animation. To use the smoother single-stage animation, this application must remove two-stage method implementations.
+> 
+Fri Jan 18 18:05:50 unknown ipjsua[5115] <Warning>: 18:05:50.098 os_core_unix.c !pjlib 2.0.1 for POSIX initialized
+Fri Jan 18 18:05:50 unknown ipjsua[5115] <Warning>: 18:05:50.211 sip_endpoint.c  .Creating endpoint instance...
+Fri Jan 18 18:05:50 unknown ipjsua[5115] <Warning>: 18:05:50.240          pjlib  .select() I/O Queue created (0x185e144)
+Fri Jan 18 18:05:50 unknown ipjsua[5115] <Warning>: 18:05:50.253 sip_endpoint.c  .Module "mod-msg-print" registered
+Fri Jan 18 18:05:50 unknown ipjsua[5115] <Warning>: 18:05:50.267 sip_transport.  .Transport manager created.
+Fri Jan 18 18:05:50 unknown ipjsua[5115] <Warning>: 18:05:50.322   pjsua_core.c  .PJSUA state changed: NULL --> CREATED
+Fri Jan 18 18:05:50 unknown mediaremoted[5127] <Warning>: BTM: posting notification BluetoothAvailabilityChangedNotification
+Fri Jan 18 18:05:50 unknown ipjsua[5115] <Warning>: 18:05:50.759 sip_endpoint.c  .Module "mod-pjsua-log" registered
+Fri Jan 18 18:05:50 unknown ipjsua[5115] <Warning>: 18:05:50.781 sip_endpoint.c  .Module "mod-tsx-layer" registered
+Fri Jan 18 18:05:50 unknown ipjsua[5115] <Warning>: 18:05:50.791 sip_endpoint.c  .Module "mod-stateful-util" registered
+Fri Jan 18 18:05:50 unknown ipjsua[5115] <Warning>: 18:05:50.819 sip_endpoint.c  .Module "mod-ua" registered
+Fri Jan 18 18:05:50 unknown ipjsua[5115] <Warning>: 18:05:50.838 sip_endpoint.c  .Module "mod-100rel" registered
+Fri Jan 18 18:05:50 unknown ipjsua[5115] <Warning>: 18:05:50.852 sip_endpoint.c  .Module "mod-pjsua" registered
+Fri Jan 18 18:05:50 unknown ipjsua[5115] <Warning>: 18:05:50.867 sip_endpoint.c  .Module "mod-invite" registered
+Fri Jan 18 18:05:50 unknown ipjsua[5115] <Warning>: 18:05:50.902 coreaudio_dev.  .. dev_id 0: iPhone IO device  (in=1, out=1) 8000Hz
+Fri Jan 18 18:05:50 unknown ipjsua[5115] <Warning>: 18:05:50.932 coreaudio_dev.  ..core audio initialized
+Fri Jan 18 18:05:50 unknown ipjsua[5115] <Warning>: 18:05:50.962          pjlib  ..select() I/O Queue created (0x186d414)
+Fri Jan 18 18:05:51 unknown com.apple.mobile.lockdown[19] <Notice>: Could not receive size of message
+Fri Jan 18 18:05:51 unknown lockdownd[19] <Error>: 2ffea000 handle_connection: Could not receive USB message #6 from Xcode. Killing connection
+> 
+Fri Jan 18 18:05:51 unknown ipjsua[5115] <Warning>: 18:05:51.260    pjsua_vid.c  ..Initializing video subsystem..
+Fri Jan 18 18:05:51 unknown ipjsua[5115] <Warning>: 18:05:51.683      ios_dev.c  ...iOS video initialized with 2 devices
+Fri Jan 18 18:05:51 unknown ipjsua[5115] <Warning>: 18:05:51.751 colorbar_dev.c  ...Colorbar video src initialized with 1 device(s):
+Fri Jan 18 18:05:51 unknown ipjsua[5115] <Warning>: 18:05:51.761 colorbar_dev.c  ... 0: Colorbar generator
+Fri Jan 18 18:05:51 unknown ipjsua[5115] <Warning>: 18:05:51.824      sdl_dev.c  ...SDL 2.0 initialized
+Fri Jan 18 18:05:51 unknown ipjsua[5115] <Warning>: 18:05:51.835 sip_endpoint.c  .Module "mod-evsub" registered
+Fri Jan 18 18:05:51 unknown ipjsua[5115] <Warning>: 18:05:51.844 sip_endpoint.c  .Module "mod-presence" registered
+Fri Jan 18 18:05:51 unknown ipjsua[5115] <Warning>: 18:05:51.853 sip_endpoint.c  .Module "mod-mwi" registered
+Fri Jan 18 18:05:51 unknown ipjsua[5115] <Warning>: 18:05:51.867 sip_endpoint.c  .Module "mod-refer" registered
+Fri Jan 18 18:05:51 unknown ipjsua[5115] <Warning>: 18:05:51.876 sip_endpoint.c  .Module "mod-pjsua-pres" registered
+Fri Jan 18 18:05:51 unknown ipjsua[5115] <Warning>: 18:05:51.884 sip_endpoint.c  .Module "mod-pjsua-im" registered
+Fri Jan 18 18:05:51 unknown ipjsua[5115] <Warning>: 18:05:51.900 sip_endpoint.c  .Module "mod-pjsua-options" registered
+Fri Jan 18 18:05:51 unknown ipjsua[5115] <Warning>: 18:05:51.908   pjsua_core.c  .1 SIP worker threads created
+Fri Jan 18 18:05:51 unknown ipjsua[5115] <Warning>: 18:05:51.917   pjsua_core.c  .pjsua version 2.0.1 for iPhone OS-4.2.1/arm/iOS-SDK-5.1 initialized
+Fri Jan 18 18:05:51 unknown ipjsua[5115] <Warning>: 18:05:51.948   pjsua_core.c  .PJSUA state changed: CREATED --> INIT
+Fri Jan 18 18:05:51 unknown ipjsua[5115] <Warning>: 18:05:51.963 sip_endpoint.c  Module "mod-default-handler" registered
+Fri Jan 18 18:05:51 unknown ipjsua[5115] <Warning>: 18:05:51.978   pjsua_core.c  SIP UDP socket reachable at 192.168.1.3:5060
+Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: 18:05:52.008   udp0x187a400  SIP UDP transport started, published address is 192.168.1.3:5060
+Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: 18:05:52.020    pjsua_acc.c  Adding account: id=<sip:192.168.1.3:5060>
+  Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: 18:05:52.033    pjsua_acc.c  .Account <sip:192.168.1.3:5060> added with id 0
+  Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: 18:05:52.045    pjsua_acc.c  Modifying accunt 0
+  Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: 18:05:52.062    pjsua_acc.c  Acc 0: setting online status to 1..
+  Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: 18:05:52.075    tcplis:5060  SIP TCP listener ready for incoming connections at 192.168.1.3:5060
+  Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: 18:05:52.085    pjsua_acc.c  Adding account: id=<sip:192.168.1.3:5060;transport=TCP>
+  Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: 18:05:52.137    pjsua_acc.c  .Account <sip:192.168.1.3:5060;transport=TCP> added with id 1
+  Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: 18:05:52.147    pjsua_acc.c  Modifying accunt 1
+  Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: 18:05:52.159    pjsua_acc.c  Acc 1: setting online status to 1..
+  Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: 18:05:52.189   pjsua_core.c  PJSUA state changed: INIT --> STARTING
+  Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: 18:05:52.202  pjsua_media.c  ..NAT type detection failed: Invalid STUN server or server not configured (PJNATH_ESTUNINSERVER)
+  > 
+Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: 18:05:52.221 sip_endpoint.c  .Module "mod-unsolicited-mwi" registered
+Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: 18:05:52.233   pjsua_core.c  .PJSUA state changed: STARTING --> RUNNING
+Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: >>>>
+Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: Account list:
+Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>:   [ 0] <sip:192.168.1.3:5060>: does not register
+Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>:        Online status: Online
+Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>:  *[ 1] <sip:192.168.1.3:5060;transport=TCP>: does not register
+Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>:        Online status: Online
+Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: Buddy list:
+Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>:  -none-
+Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: 
+Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: +=============================================================================+
+Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: |       Call Commands:         |   Buddy, IM & Presence:  |     Account:      |
+Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: |                              |                          |                   |
+Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: |  m  Make new call            | +b  Add new buddy       .| +a  Add new accnt |
+Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: |  M  Make multiple calls      | -b  Delete buddy         | -a  Delete accnt. |
+  Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: |  a  Answer call              |  i  Send IM              | !a  Modify accnt. |
+  Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: |  h  Hangup call  (ha=all)    |  s  Subscribe presence   | rr  (Re-)register |
+  Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: |  H  Hold call                |  u  Unsubscribe presence | ru  Unregister    |
+  Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: |  v  re-inVite (release hold) |  t  ToGgle Online status |  >  Cycle next ac.|
+  Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: |  U  send UPDATE              |  T  Set online status    |  <  Cycle prev ac.|
+  Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: | ],[ Select next/prev call    +--------------------------+-------------------+
+  Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: |  x  Xfer call                |      Media Commands:     |  Status & Config: |
+  Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: |  X  Xfer with Replaces       |                          |                   |
+  Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: |  #  Send RFC 2833 DTMF       | cl  List ports           |  d  Dump status   |
+  Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: |  *  Send DTMF with INFO      | cc  Connect port         | dd  Dump detailed |
+  Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: | dq  Dump curr. call quality  | cd  Disconnect port      | dc  Dump config   |
+  Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: |                              |  V  Adjust audio Volume  |  f  Save config   |
+  Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: |  S  Send arbitrary REQUEST   | Cp  Codec priorities     |                   |
+  Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: +-----------------------------------------------------------------------------+
+  Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: | Video: "vid help" for more info                                             |
+  Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: +-----------------------------------------------------------------------------+
+  Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: |  q  QUIT   L  ReLoad   sleep MS   echo [0|1|txt]     n: detect NAT type     |
+  Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: +=============================================================================+
+  Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: You have 0 active call
+  Fri Jan 18 18:05:52 unknown ipjsua[5115] <Warning>: >>> 
+  > 
+Fri Jan 18 18:05:55 unknown /usr/libexec/sandboxd[5130] <Notice>: MS:Notice: Installing: (null) [sandboxd] (550.52)
+Fri Jan 18 18:05:55 unknown sandboxd[5130] <Notice>: ipjsua(5115) deny file-read-metadata /private/var/mobile/Library/Caches
+Fri Jan 18 18:05:55 unknown sandboxd[5130] <Notice>: ipjsua(5115) deny file-write-data /private/var/mobile/Library/Caches/com.apple.keyboards/store.db
+> 
+Fri Jan 18 18:06:01 unknown ipjsua[5115] <Warning>: 18:06:01.009    pjsua_acc.c  Adding account: id=sip:ashishlalwork1@sip.antisip.com
+Fri Jan 18 18:06:01 unknown ipjsua[5115] <Warning>: 18:06:01.074    pjsua_acc.c  .Account sip:ashishlalwork1@sip.antisip.com added with id 2
+Fri Jan 18 18:06:01 unknown ipjsua[5115] <Warning>: 18:06:01.082    pjsua_acc.c  .Acc 2: setting registration..
+Fri Jan 18 18:06:01 unknown ipjsua[5115] <Warning>: 18:06:01.239   pjsua_core.c  ...TX 570 bytes Request msg REGISTER/cseq=2674 (tdta0x18a5c00) to UDP 91.121.81.212:5060:
+	REGISTER sip:sip.antisip.com SIP/2.0
+	
+	Via: SIP/2.0/UDP 192.168.1.3:5060;rport;branch=z9hG4bKPjEh3bMsVEMy8uKPkFLT-S2SSzCK1ASGIY
+	
+	Max-Forwards: 70
+	
+	From: <sip:ashishlalwork1@sip.antisip.com>;tag=KA8xq7wm7jIRUyRc0e5P0TYHUGr11P7U
+	
+	To: <sip:ashishlalwork1@sip.antisip.com>
+	
+	Call-ID: WL9-u1Ly3bwlSam6t04ub7GPz4lyFt06
+	
+	CSeq: 2674 REGISTER
+	
+	User-Agent: PJSUA v2.0.1 iPhone OS-4.2.1/arm/iOS-SDK-5.1
+	
+	Contact: <sip:ashishlalwork1@192.168.1.3:5060;ob>
+	
+	Expires: 300
+	
+	Allow: PRACK, INVITE, ACK, BYE, CANCEL, UPDATE, SUBSCRIBE, NOTIFY, REFER, MESSAGE, OPTIONS
+	
+	Content-Length:  0
+	
+	
+	
+	
+	--end msg--
+Fri Jan 18 18:06:01 unknown ipjsua[5115] <Warning>: 18:06:01.249    pjsua_acc.c  ..Acc 2: Registration sent
+Fri Jan 18 18:06:01 unknown ipjsua[5115] <Warning>: >>> 
+Fri Jan 18 18:06:01 unknown ipjsua[5115] <Warning>: 18:06:01.750   pjsua_core.c  .TX 570 bytes Request msg REGISTER/cseq=2674 (tdta0x18a5c00) to UDP 91.121.81.212:5060:
+	REGISTER sip:sip.antisip.com SIP/2.0
+	
+	Via: SIP/2.0/UDP 192.168.1.3:5060;rport;branch=z9hG4bKPjEh3bMsVEMy8uKPkFLT-S2SSzCK1ASGIY
+	
+	Max-Forwards: 70
+	
+	From: <sip:ashishlalwork1@sip.antisip.com>;tag=KA8xq7wm7jIRUyRc0e5P0TYHUGr11P7U
+	
+	To: <sip:ashishlalwork1@sip.antisip.com>
+	
+	Call-ID: WL9-u1Ly3bwlSam6t04ub7GPz4lyFt06
+	
+	CSeq: 2674 REGISTER
+	
+	User-Agent: PJSUA v2.0.1 iPhone OS-4.2.1/arm/iOS-SDK-5.1
+	
+	Contact: <sip:ashishlalwork1@192.168.1.3:5060;ob>
+	
+	Expires: 300
+	
+	Allow: PRACK, INVITE, ACK, BYE, CANCEL, UPDATE, SUBSCRIBE, NOTIFY, REFER, MESSAGE, OPTIONS
+	
+	Content-Length:  0
+	
+	
+	
+	
+	--end msg--
+Fri Jan 18 18:06:01 unknown ipjsua[5115] <Warning>: 18:06:01.801   pjsua_core.c  .RX 502 bytes Response msg 401/REGISTER/cseq=2674 (rdata0x1888014) from UDP 91.121.81.212:5060:
+	SIP/2.0 401 Unauthorized
+	
+	Via: SIP/2.0/UDP 192.168.1.3:5060;rport=5060;branch=z9hG4bKPjEh3bMsVEMy8uKPkFLT-S2SSzCK1ASGIY
+	
+	From: <sip:ashishlalwork1@sip.antisip.com>;tag=KA8xq7wm7jIRUyRc0e5P0TYHUGr11P7U
+	
+	To: <sip:ashishlalwork1@sip.antisip.com>;tag=b27e1a1d33761e85846fc98f5f3a7e58.2ac0
+	
+	Call-ID: WL9-u1Ly3bwlSam6t04ub7GPz4lyFt06
+	
+	CSeq: 2674 REGISTER
+	
+	WWW-Authenticate: Digest realm="sip.antisip.com", nonce="UPlFmVD5QbFszbZ+imRfapTepxpvjpfB"
+	
+	Server: kamailio (3.2.1 (i386/linux))
+	
+	Content-Length: 0
+	
+	
+	
+	
+	--end msg--
+Fri Jan 18 18:06:01 unknown ipjsua[5115] <Warning>: 18:06:01.857   pjsua_core.c  ....TX 758 bytes Request msg REGISTER/cseq=2675 (tdta0x18a5c00) to UDP 91.121.81.212:5060:
+	REGISTER sip:sip.antisip.com SIP/2.0
+	
+	Via: SIP/2.0/UDP 192.168.1.3:5060;rport;branch=z9hG4bKPjsLHPXeKK6rNifVOm4d8w6JnV.tRFh0.O
+	
+	Max-Forwards: 70
+	
+	From: <sip:ashishlalwork1@sip.antisip.com>;tag=KA8xq7wm7jIRUyRc0e5P0TYHUGr11P7U
+	
+	To: <sip:ashishlalwork1@sip.antisip.com>
+	
+	Call-ID: WL9-u1Ly3bwlSam6t04ub7GPz4lyFt06
+	
+	CSeq: 2675 REGISTER
+	
+	User-Agent: PJSUA v2.0.1 iPhone OS-4.2.1/arm/iOS-SDK-5.1
+	
+	Contact: <sip:ashishlalwork1@192.168.1.3:5060;ob>
+	
+	Expires: 300
+	
+	Allow: PRACK, INVITE, ACK, BYE, CANCEL, UPDATE, SUBSCRIBE, NOTIFY, REFER, MESSAGE, OPTIONS
+	
+	Authorization: Digest username="ashishlalwork1", realm="sip.antisip.com", nonce="UPlFmVD5QbFszbZ+imRfapTepxpvjpfB", uri="sip:sip.antisip.com", response="9c938b71e8087889ce8ed78d10cf95f8"
+	
+	Content-Length:  0
+	
+	
+	
+	
+	--end msg--
+Fri Jan 18 18:06:01 unknown ipjsua[5115] <Warning>: 18:06:01.953   pjsua_core.c  .RX 502 bytes Response msg 401/REGISTER/cseq=2674 (rdata0x1888014) from UDP 91.121.81.212:5060:
+	SIP/2.0 401 Unauthorized
+	
+	Via: SIP/2.0/UDP 192.168.1.3:5060;rport=5060;branch=z9hG4bKPjEh3bMsVEMy8uKPkFLT-S2SSzCK1ASGIY
+	
+	From: <sip:ashishlalwork1@sip.antisip.com>;tag=KA8xq7wm7jIRUyRc0e5P0TYHUGr11P7U
+	
+	To: <sip:ashishlalwork1@sip.antisip.com>;tag=b27e1a1d33761e85846fc98f5f3a7e58.2ac0
+	
+	Call-ID: WL9-u1Ly3bwlSam6t04ub7GPz4lyFt06
+	
+	CSeq: 2674 REGISTER
+	
+	WWW-Authenticate: Digest realm="sip.antisip.com", nonce="UPlFmlD5QbLAGDAHYZn9ddTMnu+KH2vo"
+	
+	Server: kamailio (3.2.1 (i386/linux))
+	
+	Content-Length: 0
+	
+	
+	
+	
+	--end msg--
+Fri Jan 18 18:06:02 unknown ipjsua[5115] <Warning>: 18:06:02.042   pjsua_core.c  .RX 463 bytes Response msg 200/REGISTER/cseq=2675 (rdata0x1888014) from UDP 91.121.81.212:5060:
+	SIP/2.0 200 OK
+	
+	Via: SIP/2.0/UDP 192.168.1.3:5060;rport=5060;branch=z9hG4bKPjsLHPXeKK6rNifVOm4d8w6JnV.tRFh0.O
+	
+	From: <sip:ashishlalwork1@sip.antisip.com>;tag=KA8xq7wm7jIRUyRc0e5P0TYHUGr11P7U
+	
+	To: <sip:ashishlalwork1@sip.antisip.com>;tag=b27e1a1d33761e85846fc98f5f3a7e58.4f7a
+	
+	Call-ID: WL9-u1Ly3bwlSam6t04ub7GPz4lyFt06
+	
+	CSeq: 2675 REGISTER
+	
+	Contact: <sip:ashishlalwork1@192.168.1.3:5060;ob>;expires=300
+	
+	Server: kamailio (3.2.1 (i386/linux))
+	
+	Content-Length: 0
+	
+	
+	
+	
+	--end msg--
+Fri Jan 18 18:06:02 unknown ipjsua[5115] <Warning>: 18:06:02.055    pjsua_acc.c  ....SIP outbound status for acc 2 is not active
+Fri Jan 18 18:06:02 unknown ipjsua[5115] <Warning>: 18:06:02.080    pjsua_acc.c  ....sip:ashishlalwork1@sip.antisip.com: registration success, status=200 (OK), will re-register in 300 seconds
+Fri Jan 18 18:06:02 unknown ipjsua[5115] <Warning>: 18:06:02.095    pjsua_acc.c  ....Keep-alive timer started for acc 2, destination:91.121.81.212:5060, interval:15s
+Fri Jan 18 18:06:11 unknown ipjsua[5115] <Warning>: 18:06:11.530    pjsua_app.c !Video will be enabled in next offer/answer
+> 
+Fri Jan 18 18:06:11 unknown ipjsua[5115] <Warning>: >>> 
+ >  > 
+Fri Jan 18 18:06:27 unknown ipjsua[5115] <Warning>: 18:06:27.085    pjsua_acc.c !Modifying accunt 2
+Fri Jan 18 18:06:27 unknown ipjsua[5115] <Warning>: >>> 
+> 
+Fri Jan 18 18:06:37 unknown ipjsua[5115] <Warning>: 18:06:37.842    pjsua_acc.c !Modifying accunt 2
+Fri Jan 18 18:06:37 unknown ipjsua[5115] <Warning>: >>> 
+> 
+Fri Jan 18 18:06:41 unknown ipjsua[5115] <Warning>: (You currently have 0 calls)
+Fri Jan 18 18:06:41 unknown ipjsua[5115] <Warning>: Buddy list:
+Fri Jan 18 18:06:41 unknown ipjsua[5115] <Warning>:  -none-
+Fri Jan 18 18:06:41 unknown ipjsua[5115] <Warning>: 
+Fri Jan 18 18:06:41 unknown ipjsua[5115] <Warning>: Choices:
+	   0         For current dialog.
+	  -1         All 0 buddies in buddy list
+	  [1 - 0]    Select from buddy list
+	  URL        An URL
+	  <Enter>    Empty input (or 'q') to cancel
+Fri Jan 18 18:06:41 unknown ipjsua[5115] <Warning>: Make call: 
+> 
+Fri Jan 18 18:07:11 unknown ipjsua[5115] <Warning>: 18:07:11.324   pjsua_call.c !Making call with acc #2 to sip:ashishlalwork@sip.antisip.com
+Fri Jan 18 18:07:11 unknown ipjsua[5115] <Warning>: 18:07:11.466    pjsua_aud.c  .Set sound device: capture=-1, playback=-2
+Fri Jan 18 18:07:11 unknown ipjsua[5115] <Warning>: 18:07:11.484    pjsua_app.c  ..Turning sound device ON
+Fri Jan 18 18:07:11 unknown ipjsua[5115] <Warning>: 18:07:11.494    pjsua_aud.c  ..Opening sound device PCM@8000/1/20ms
+Fri Jan 18 18:07:11 unknown ipjsua[5115] <Warning>: 18:07:11.508 coreaudio_dev.  ...Using VoiceProcessingIO audio unit
+> 
+Fri Jan 18 18:07:12 unknown ipjsua[5115] <Warning>: 18:07:12.817 coreaudio_dev.  ...core audio stream started
+Fri Jan 18 18:07:12 unknown ipjsua[5115] <Warning>: 18:07:12.863 os_core_unix.c  Info: possibly re-registering existing thread
+Fri Jan 18 18:07:12 unknown ipjsua[5115] <Warning>: 18:07:12.882  pjsua_media.c  .Call 0: initializing media..
+Fri Jan 18 18:07:12 unknown ipjsua[5115] <Warning>: 18:07:12.902  pjsua_media.c !..RTP socket reachable at 192.168.1.3:4000
+Fri Jan 18 18:07:12 unknown ipjsua[5115] <Warning>: 18:07:12.920  pjsua_media.c  ..RTCP socket reachable at 192.168.1.3:4001
+Fri Jan 18 18:07:12 unknown ipjsua[5115] <Warning>: 18:07:12.938  pjsua_media.c  ..RTP socket reachable at 192.168.1.3:4002
+Fri Jan 18 18:07:12 unknown ipjsua[5115] <Warning>: 18:07:12.952  pjsua_media.c  ..RTCP socket reachable at 192.168.1.3:4003
+Fri Jan 18 18:07:12 unknown ipjsua[5115] <Warning>: 18:07:12.964  pjsua_media.c  ..Media index 0 selected for audio call 0
+Fri Jan 18 18:07:13 unknown ipjsua[5115] <Warning>: 18:07:13.030  tcpc0x1914614  ....TCP client transport created
+Fri Jan 18 18:07:13 unknown ipjsua[5115] <Warning>: 18:07:13.044  tcpc0x1914614  ....TCP transport 192.168.1.3:51748 is connecting to 91.121.81.212:5060...
+Fri Jan 18 18:07:13 unknown ipjsua[5115] <Warning>: 18:07:13.129   pjsua_core.c  ....TX 1392 bytes Request msg INVITE/cseq=19591 (tdta0x1910e00) to tcp 91.121.81.212:5060:
+	INVITE sip:ashishlalwork@sip.antisip.com SIP/2.0
+	
+	Via: SIP/2.0/TCP 192.168.1.3:51748;rport;branch=z9hG4bKPjvv8Bz5ll.Up0sqq0Hj4Fqhcue45Y52jA
+	
+	Max-Forwards: 70
+	
+	From: sip:ashishlalwork1@sip.antisip.com;tag=QCPogh10YwnTUvWvChuHVLZ8m3bq..oI
+	
+	To: sip:ashishlalwork@sip.antisip.com
+	
+	Contact: <sip:ashishlalwork1@192.168.1.3:5060;ob>
+	
+	Call-ID: pjAU8lC2O1aPkXgi8bIB4u3qAcE59Wp9
+	
+	CSeq: 19591 INVITE
+	
+	Allow: PRACK, INVITE, ACK, BYE, CANCEL, UPDATE, SUBSCRIBE, NOTIFY, REFER, MESSAGE, OPTIONS
+	
+	Supported: replaces, 100rel, timer, norefersub
+	
+	Session-Expires: 1800
+	
+	Min-SE: 90
+	
+	User-Agent: PJSUA v2.0.1 iPhone OS-4.2.1/arm/iOS-SDK-5.1
+	
+	Content-Type: application/sdp
+	
+	Content-Length:   712
+	
+	
+	
+	v=0
+	
+	o=- 3567501432 3567501432 IN IP4 192.168.1.3
+	
+	s=pjmedia
+	
+	c=IN IP4 192.168.1.3
+	
+	b=AS:352
+	
+	t=0 0
+	
+	a=X-nat:0
+	
+	m=audio 4000 RTP/AVP 98 97 99 104 3 0 8 96
+	
+	c=IN IP4 192.168.1.3
+	
+	b=TIAS:64000
+	
+	a=rtcp:4001 IN IP4 192.168.1.3
+	
+	a=sendrecv
+	
+	a=rtpmap:98 speex/16000
+	
+	a=rtpmap:97 speex/8000
+	
+	a=rtpmap:99 speex/32000
+	
+	a=rtpmap:104 iLBC/8000
+	
+	a=fmtp:104 mode=30
+	
+	a=rtpmap:3 GSM/8000
+	
+	a=rtpmap:0 PCMU/8000
+	
+	a=rtpmap:8 PCMA/8000
+	
+	a=rtpmap:96 telephone-event/8000
+	
+	a=fmtp:96 0-15
+	
+	m=video 4002 RTP/AVP 97 96
+	
+	c=IN IP4 192.168.1.3
+	
+	b=TIAS:256000
+	
+	a=rtcp:4003 IN IP4 192.168.1.3
+	
+	a=sendrecv
+	
+	a=rtpmap:97 H264/90000
+	
+	a=fmtp:97 profile-level-id=42e01e; packetization-mode=1
+	
+	a=rtpmap:96 H263-1998/90000
+	
+	a=fmtp:96 CIF=1;QCIF=1
+	
+	
+	--end msg--
+Fri Jan 18 18:07:13 unknown ipjsua[5115] <Warning>: 18:07:13.172    pjsua_app.c  .......Call 0 state changed to CALLING
+Fri Jan 18 18:07:13 unknown ipjsua[5115] <Warning>: >>> 
+Fri Jan 18 18:07:13 unknown ipjsua[5115] <Warning>: 18:07:13.821  tcpc0x1914614 !TCP transport 192.168.1.3:51748 is connected to 91.121.81.212:5060
+Fri Jan 18 18:07:13 unknown ipjsua[5115] <Warning>: 18:07:13.837    pjsua_app.c  SIP tcp transport is connected to [91.121.81.212:5060]
+> 
+Fri Jan 18 18:07:14 unknown /var/mobile/Applications/5338F66E-2F34-46D0-B87C-136E6809F435/ipjsua.app/ipjsua[5115] <Error>: spd:_spd_initialize_communication:112 bootstrap_look_up(): 1102
+Fri Jan 18 18:07:14 unknown ipjsua[5115] <Warning>: 18:07:14.373   pjsua_core.c  .RX 541 bytes Response msg 407/INVITE/cseq=19591 (rdata0x19147bc) from tcp 91.121.81.212:5060:
+	SIP/2.0 407 Proxy Authentication Required
+	
+	Via: SIP/2.0/TCP 192.168.1.3:51748;rport=13516;branch=z9hG4bKPjvv8Bz5ll.Up0sqq0Hj4Fqhcue45Y52jA;received=122.170.64.214
+	
+	From: sip:ashishlalwork1@sip.antisip.com;tag=QCPogh10YwnTUvWvChuHVLZ8m3bq..oI
+	
+	To: sip:ashishlalwork@sip.antisip.com;tag=b27e1a1d33761e85846fc98f5f3a7e58.8b89
+	
+	Call-ID: pjAU8lC2O1aPkXgi8bIB4u3qAcE59Wp9
+	
+	CSeq: 19591 INVITE
+	
+	Proxy-Authenticate: Digest realm="sip.antisip.com", nonce="UPlF4lD5QfrWvR1yYaip+LZz3t9p/Vs8"
+	
+	Server: kamailio (3.2.1 (i386/linux))
+	
+	Content-Length: 0
+	
+	
+	
+	
+	--end msg--
+Fri Jan 18 18:07:14 unknown ipjsua[5115] <Warning>: 18:07:14.410   pjsua_core.c  ..TX 398 bytes Request msg ACK/cseq=19591 (tdta0x1919400) to tcp 91.121.81.212:5060:
+	ACK sip:ashishlalwork@sip.antisip.com SIP/2.0
+	
+	Via: SIP/2.0/TCP 192.168.1.3:51748;rport;branch=z9hG4bKPjvv8Bz5ll.Up0sqq0Hj4Fqhcue45Y52jA
+	
+	Max-Forwards: 70
+	
+	From: sip:ashishlalwork1@sip.antisip.com;tag=QCPogh10YwnTUvWvChuHVLZ8m3bq..oI
+	
+	To: sip:ashishlalwork@sip.antisip.com;tag=b27e1a1d33761e85846fc98f5f3a7e58.8b89
+	
+	Call-ID: pjAU8lC2O1aPkXgi8bIB4u3qAcE59Wp9
+	
+	CSeq: 19591 ACK
+	
+	Content-Length:  0
+	
+	
+	
+	
+	--end msg--
+Fri Jan 18 18:07:14 unknown ipjsua[5115] <Warning>: 18:07:14.548   pjsua_core.c  .......TX 1600 bytes Request msg INVITE/cseq=19592 (tdta0x1910e00) to tcp 91.121.81.212:5060:
+	INVITE sip:ashishlalwork@sip.antisip.com SIP/2.0
+	
+	Via: SIP/2.0/TCP 192.168.1.3:51748;rport;branch=z9hG4bKPj9z8IK-mGXIr6y-rf4OM8azPtyBmfaNeT
+	
+	Max-Forwards: 70
+	
+	From: sip:ashishlalwork1@sip.antisip.com;tag=QCPogh10YwnTUvWvChuHVLZ8m3bq..oI
+	
+	To: sip:ashishlalwork@sip.antisip.com
+	
+	Contact: <sip:ashishlalwork1@192.168.1.3:5060;ob>
+	
+	Call-ID: pjAU8lC2O1aPkXgi8bIB4u3qAcE59Wp9
+	
+	CSeq: 19592 INVITE
+	
+	Allow: PRACK, INVITE, ACK, BYE, CANCEL, UPDATE, SUBSCRIBE, NOTIFY, REFER, MESSAGE, OPTIONS
+	
+	Supported: replaces, 100rel, timer, norefersub
+	
+	Session-Expires: 1800
+	
+	Min-SE: 90
+	
+	User-Agent: PJSUA v2.0.1 iPhone OS-4.2.1/arm/iOS-SDK-5.1
+	
+	Proxy-Authorization: Digest username="ashishlalwork1", realm="sip.antisip.com", nonce="UPlF4lD5QfrWvR1yYaip+LZz3t9p/Vs8", uri="sip:ashishlalwork@sip.antisip.com", response="17509c416ffb92af72d21c01a307785a"
+	
+	Content-Type: application/sdp
+	
+	Content-Length:   712
+	
+	
+	
+	v=0
+	
+	o=- 3567501432 3567501432 IN IP4 192.168.1.3
+	
+	s=pjmedia
+	
+	c=IN IP4 192.168.1.3
+	
+	b=AS:352
+	
+	t=0 0
+	
+	a=X-nat:0
+	
+	m=audio 4000 RTP/AVP 98 97 99 104 3 0 8 96
+	
+	c=IN IP4 192.168.1.3
+	
+	b=TIAS:64000
+	
+	a=rtcp:4001 IN IP4 192.168.1.3
+	
+	a=sendrecv
+	
+	a=rtpmap:98 speex/16000
+	
+	a=rtpmap:97 speex/8000
+	
+	a=rtpmap:99 speex/32000
+	
+	a=rtpmap:104 iLBC/8000
+	
+	a=fmtp:104 mode=30
+	
+	a=rtpmap:3 GSM/8000
+	
+	a=rtpmap:0 PCMU/8000
+	
+	a=rtpmap:8 PCMA/8000
+	
+	a=rtpmap:96 telephone-event/8000
+	
+	a=fmtp:96 0-15
+	
+	m=video 4002 RTP/AVP 97 96
+	
+	c=IN IP4 192.168.1.3
+	
+	b=TIAS:256000
+	
+	a=rtcp:4003 IN IP4 192.168.1.3
+	
+	a=sendrecv
+	
+	a=rtpmap:97 H264/90000
+	
+	a=fmtp:97 profile-level-id=42e01e; packetization-mode=1
+	
+	a=rtpmap:96 H263-1998/90000
+	
+	a=fmtp:96 CIF=1;QCIF=1
+	
+	
+	--end msg--
+Fri Jan 18 18:07:15 unknown ipjsua[5115] <Warning>: 18:07:15.245   pjsua_core.c  .RX 414 bytes Response msg 100/INVITE/cseq=19592 (rdata0x19147bc) from tcp 91.121.81.212:5060:
+	SIP/2.0 100 trying -- your call is important to us
+	
+	Via: SIP/2.0/TCP 192.168.1.3:51748;rport=13516;branch=z9hG4bKPj9z8IK-mGXIr6y-rf4OM8azPtyBmfaNeT;received=122.170.64.214
+	
+	From: sip:ashishlalwork1@sip.antisip.com;tag=QCPogh10YwnTUvWvChuHVLZ8m3bq..oI
+	
+	To: sip:ashishlalwork@sip.antisip.com
+	
+	Call-ID: pjAU8lC2O1aPkXgi8bIB4u3qAcE59Wp9
+	
+	CSeq: 19592 INVITE
+	
+	Server: kamailio (3.2.1 (i386/linux))
+	
+	Content-Length: 0
+	
+	
+	
+	
+	--end msg--
+> 
+Fri Jan 18 18:07:16 unknown ipjsua[5115] <Warning>: 18:07:16.072   pjsua_core.c  .RX 643 bytes Response msg 180/INVITE/cseq=19592 (rdata0x19147bc) from tcp 91.121.81.212:5060:
+	SIP/2.0 180 Ringing
+	
+	Via: SIP/2.0/TCP 192.168.1.3:51748;received=122.170.64.214;rport=13516;branch=z9hG4bKPj9z8IK-mGXIr6y-rf4OM8azPtyBmfaNeT
+	
+	Record-Route: <sip:91.121.81.212;lr;r2=on;frc=yes;mr=yes>
+	
+	Record-Route: <sip:91.121.81.212;transport=tcp;r2=on;lr;frc=yes;mr=yes>
+	
+	Contact: <sip:ashishlalwork@122.170.64.214:5060;rinstance=db814395565c8d2f>
+	
+	To: <sip:ashishlalwork@sip.antisip.com>;tag=ad343f70
+	
+	From: <sip:ashishlalwork1@sip.antisip.com>;tag=QCPogh10YwnTUvWvChuHVLZ8m3bq..oI
+	
+	Call-ID: pjAU8lC2O1aPkXgi8bIB4u3qAcE59Wp9
+	
+	CSeq: 19592 INVITE
+	
+	User-Agent: X-Lite release 5.0.0 stamp 67285
+	
+	Content-Length: 0
+	
+	P-PMR: mediarelay enabled
+	
+	
+	
+	
+	--end msg--
+Fri Jan 18 18:07:16 unknown ipjsua[5115] <Warning>: 18:07:16.090    pjsua_aud.c  .....Conf connect: 1 --> 0
+Fri Jan 18 18:07:16 unknown ipjsua[5115] <Warning>: 18:07:16.125   conference.c  ......Port 1 (ringback) transmitting to port 0 (iPhone IO device)
+Fri Jan 18 18:07:16 unknown ipjsua[5115] <Warning>: 18:07:16.145    pjsua_app.c  .....Call 0 state changed to EARLY (180 Ringing)
+> 
+Fri Jan 18 18:07:27 unknown ipjsua[5115] <Warning>: 18:07:27.125   pjsua_core.c  .RX 1171 bytes Response msg 200/INVITE/cseq=19592 (rdata0x19147bc) from tcp 91.121.81.212:5060:
+	SIP/2.0 200 OK
+	
+	Via: SIP/2.0/TCP 192.168.1.3:51748;received=122.170.64.214;rport=13516;branch=z9hG4bKPj9z8IK-mGXIr6y-rf4OM8azPtyBmfaNeT
+	
+	Record-Route: <sip:91.121.81.212;lr;r2=on;frc=yes;mr=yes>
+	
+	Record-Route: <sip:91.121.81.212;transport=tcp;r2=on;lr;frc=yes;mr=yes>
+	
+	Contact: <sip:ashishlalwork@122.170.64.214:5060;rinstance=db814395565c8d2f>
+	
+	To: <sip:ashishlalwork@sip.antisip.com>;tag=ad343f70
+	
+	From: <sip:ashishlalwork1@sip.antisip.com>;tag=QCPogh10YwnTUvWvChuHVLZ8m3bq..oI
+	
+	Call-ID: pjAU8lC2O1aPkXgi8bIB4u3qAcE59Wp9
+	
+	CSeq: 19592 INVITE
+	
+	Allow: INVITE, ACK, CANCEL, OPTIONS, BYE, REFER, NOTIFY, MESSAGE, SUBSCRIBE, INFO
+	
+	Content-Type: application/sdp
+	
+	Supported: replaces
+	
+	User-Agent: X-Lite release 5.0.0 stamp 67285
+	
+	Content-Length: 396
+	
+	P-PMR: mediarelay enabled
+	
+	
+	
+	v=0
+	
+	o=- 1358512647721371 1 IN IP4 91.121.81.212
+	
+	s=CounterPath X-Lite 5.0.0
+	
+	c=IN IP4 91.121.81.212
+	
+	b=AS:1638
+	
+	t=0 0
+	
+	m=audio 51382 RTP/AVP 0 8 96
+	
+	a=rtpmap:96 telephone-event/8000
+	
+	a=fmtp:96 0-15
+	
+	a=sendrecv
+	
+	m=video 51384 RTP/AVP 96
+	
+	b=TIAS:1574400
+	
+	a=rtpmap:96 H263-1998/90000
+	
+	a=fmtp:96 QCIF=1;CUSTOM=160,120,1;CIF=1;CUSTOM=320,240,1;VGA=1;CIF4=1;I=1;J=1;T=1
+	
+	a=sendrecv
+	
+	a=nortpproxy:yes
+	
+	
+	--end msg--
+Fri Jan 18 18:07:27 unknown ipjsua[5115] <Warning>: 18:07:27.145    pjsua_app.c  .....Call 0 state changed to CONNECTING
+Fri Jan 18 18:07:27 unknown ipjsua[5115] <Warning>: 18:07:27.199  pjsua_media.c  .....Call 0: updating media..
+Fri Jan 18 18:07:27 unknown ipjsua[5115] <Warning>: 18:07:27.212    pjsua_aud.c  ......Audio channel update..
+Fri Jan 18 18:07:27 unknown ipjsua[5115] <Warning>: 18:07:27.235  strm0x1919c14  .......VAD temporarily disabled
+Fri Jan 18 18:07:27 unknown ipjsua[5115] <Warning>: 18:07:27.258  strm0x1919c14  .......Encoder stream started
+Fri Jan 18 18:07:27 unknown ipjsua[5115] <Warning>: 18:07:27.277  strm0x1919c14  .......Decoder stream started
+Fri Jan 18 18:07:27 unknown ipjsua[5115] <Warning>: 18:07:27.300  pjsua_media.c  ......Audio updated, stream #0: PCMU (sendrecv)
+Fri Jan 18 18:07:27 unknown ipjsua[5115] <Warning>: 18:07:27.342    pjsua_vid.c !......Video channel update..
+Fri Jan 18 18:07:27 unknown ipjsua[5115] <Warning>: 18:07:27.942  strm0x1919c14 !VAD re-enabled
+Fri Jan 18 18:07:28 unknown ipjsua[5115] <Warning>: 18:07:28.047 vstenc0x192341  .......Encoder stream started
+Fri Jan 18 18:07:28 unknown ipjsua[5115] <Warning>: 18:07:28.068 vstdec0x192341  .......Decoder stream started
+Fri Jan 18 18:07:28 unknown ipjsua[5115] <Warning>: 18:07:28.087    pjsua_vid.c  .......Setting up RX..
+Fri Jan 18 18:07:28 unknown ipjsua[5115] <Warning>: 18:07:28.114    pjsua_vid.c  ........Creating video window: type=stream, cap_id=-1, rend_id=0
+Fri Jan 18 18:07:28 unknown ipjsua[5115] <Warning>: 18:07:28.152     vid_port.c  .........Opening device iOS UIView [iOS] for render: format=BGRA, size=352x288 @45000:1001 fps
+> 
+Fri Jan 18 18:07:28 unknown ipjsua[5115] <Warning>: 18:07:28.199     vid_port.c  .........Device iOS UIView [iOS] opened: format=BGRA, size=352x288 @45000:1001 fps
+Fri Jan 18 18:07:28 unknown ipjsua[5115] <Warning>: 18:07:28.270    pjsua_vid.c  .........stream window id 0 created for cap_dev=-1 rend_dev=0
+Fri Jan 18 18:07:28 unknown ipjsua[5115] <Warning>: 18:07:28.294    pjsua_vid.c  .........Window 0 created
+Fri Jan 18 18:07:28 unknown ipjsua[5115] <Warning>: 18:07:28.314      ios_dev.c  ........!!!!!!!!!!VIDEO STREAM GOING TO START!!!!!!!!!!!!!!!!
+Fri Jan 18 18:07:28 unknown ipjsua[5115] <Warning>: 18:07:28.331      ios_dev.c  ........Starting ios video stream
+Fri Jan 18 18:07:28 unknown ipjsua[5115] <Warning>: 18:07:28.360      ios_dev.c  ........!!!!!!!!!!VIDEO STREAM RUNNING!!!!!!!!!!!!!!!!
+Fri Jan 18 18:07:28 unknown ipjsua[5115] <Warning>: 18:07:28.377      ios_dev.c  ........imgView 0x1009130 on top
+Fri Jan 18 18:07:28 unknown ipjsua[5115] <Warning>: 18:07:28.400    pjsua_vid.c  .......Setting up TX..
+Fri Jan 18 18:07:28 unknown ipjsua[5115] <Warning>: 18:07:28.452      ios_dev.c !.............Inside ios_stream_put_frame............
+Fri Jan 18 18:07:28 unknown ipjsua[5115] <Warning>: 18:07:28.466    pjsua_vid.c !........Creating video window: type=preview, cap_id=1, rend_id=0
+Fri Jan 18 18:07:28 unknown ipjsua[5115] <Warning>: 18:07:28.482      ios_dev.c !Inside update_image
+Fri Jan 18 18:07:28 unknown ipjsua[5115] <Warning>: 18:07:28.551      ios_dev.c !Inside update_image-2: 0x109e710
+Fri Jan 18 18:07:28 unknown ipjsua[5115] <Warning>: 18:07:28.574      ios_dev.c  111111-imgView 0x1009130 on top
+> 
+Fri Jan 18 18:07:31 unknown SCHelper[221] <Notice>: active (but IDLE) sessions
+Fri Jan 18 18:07:31 unknown SCHelper[221] <Notice>:   0x11ec50 {port = 0x2407, caller = SpringBoard(159):com.apple.preferences, path = /Library/Preferences/SystemConfiguration/preferences.plist}
+> 
+Fri Jan 18 18:07:43 unknown CommCenter[31] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Fri Jan 18 18:07:43 unknown CommCenter[31] <Notice>: Scheduling PDP tear down timer for (380205763.907212) (current time == 380205463.907246)
+Fri Jan 18 18:07:44 unknown /usr/libexec/securityd[5132] <Notice>: MS:Notice: Installing: (null) [securityd] (550.52)
+> 
+Fri Jan 18 18:07:49 unknown apsd[153] <Warning>: <APSCourier: 0x114780>: Stream error occurred for <APSTCPStream: 0x449920>: TLS Error Code=-9831 "peer reported unknown certificate authority"
+ >  > 
+Fri Jan 18 18:09:49 unknown SCHelper[221] <Notice>: active (but IDLE) sessions
+Fri Jan 18 18:09:49 unknown SCHelper[221] <Notice>:   0x11ec50 {port = 0x2407, caller = SpringBoard(159):com.apple.preferences, path = /Library/Preferences/SystemConfiguration/preferences.plist}
+> 
+Fri Jan 18 18:10:12 unknown CommCenter[31] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Fri Jan 18 18:10:12 unknown CommCenter[31] <Notice>: Scheduling PDP tear down timer for (380205912.969494) (current time == 380205612.969528)
+Fri Jan 18 18:10:13 unknown /usr/libexec/securityd[5134] <Notice>: MS:Notice: Installing: (null) [securityd] (550.52)
+> 
+Fri Jan 18 18:10:16 unknown apsd[153] <Warning>: <APSCourier: 0x114780>: Stream error occurred for <APSTCPStream: 0x45a160>: TLS Error Code=-9831 "peer reported unknown certificate authority"
+ >  > 
+Fri Jan 18 18:12:16 unknown SCHelper[221] <Notice>: active (but IDLE) sessions
+Fri Jan 18 18:12:16 unknown SCHelper[221] <Notice>:   0x11ec50 {port = 0x2407, caller = SpringBoard(159):com.apple.preferences, path = /Library/Preferences/SystemConfiguration/preferences.plist}
+> 
+Fri Jan 18 18:14:29 unknown CommCenter[31] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Fri Jan 18 18:14:29 unknown CommCenter[31] <Notice>: Scheduling PDP tear down timer for (380206169.397283) (current time == 380205869.397317)
+Fri Jan 18 18:14:29 unknown /usr/libexec/securityd[5136] <Notice>: MS:Notice: Installing: (null) [securityd] (550.52)
+> 
+Fri Jan 18 18:14:34 unknown apsd[153] <Warning>: <APSCourier: 0x114780>: Stream error occurred for <APSTCPStream: 0x47c990>: TLS Error Code=-9831 "peer reported unknown certificate authority"
+ >  
