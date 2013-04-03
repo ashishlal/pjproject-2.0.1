@@ -175,14 +175,15 @@ fi
 # Other settings to feed to configure script. 
 #ARCH="-arch armv6"
 MYARCH="-arch $ARCH"
-MYEXTRA_FLAGS=""
+MYEXTRA_CFLAGS=""
+MYEXTRA_LDFLAGS=""
 if [ $ARCH == "i386" ]
 then
     MYEXTRA_CFLAGS="-02 -m32 -miphoneos-version-min=3.0 -DPJ_CONFIG_IPHONE_SIMULATOR"
     MYEXTRA_LDFLAGS="-02 -m32"
 fi
-export CFLAGS="${CFLAGS} -DPJ_SDK_NAME=\"\\\"`basename $SDKPATH`\\\"\" ${MYARCH} -isysroot ${SDKPATH} -I ${FFMPEG_INCLUDE_DIR} -I ${SDL_INCLUDE_DIR} -I/usr/local/include $MYEXTRA_CFLAGS"
-export LDFLAGS="${LDFLAGS} ${MYARCH} -isysroot ${SDKPATH} -framework AudioToolbox -framework Foundation -L ${SDL_LIB_DIR} -L ${FFMPEG_LIB_DIR} -L ${x264_LIB_DIR} -lx264 -lSDL2 -lavformat -lavcodec -lswscale -lavutil -lavdevice -lavfilter -framework OpenGLES -lz $MYEXTRA_LDFLAGS"
+export CFLAGS="${CFLAGS} -DPJ_SDK_NAME=\"\\\"`basename $SDKPATH`\\\"\" ${MYARCH} -isysroot ${SDKPATH} -I ${SDKPATH}/System/Library/Frameworks/Accelerate.framework/Frameworks/vImage.framework/Headers -I ${FFMPEG_INCLUDE_DIR} -I ${SDL_INCLUDE_DIR} -I/usr/local/include $MYEXTRA_CFLAGS"
+export LDFLAGS="${LDFLAGS} ${MYARCH} -isysroot ${SDKPATH} -framework AudioToolbox -framework Foundation -L ${SDL_LIB_DIR} -L ${FFMPEG_LIB_DIR} -L ${x264_LIB_DIR} -lx264 -lSDL2 -lavformat -lavcodec -lswscale -lavutil -lavdevice -lavfilter -framework OpenGLES -framework Accelerate -lz $MYEXTRA_LDFLAGS"
 export AR="${DEVPATH}/usr/bin/libtool -static -o"
 export RANLIB="echo ranlib"
 # Use gcc -E as preprocessor instead of cpp, since cpp will find the

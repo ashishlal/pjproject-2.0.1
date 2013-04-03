@@ -411,11 +411,13 @@ PJ_DEF(pj_status_t) pjmedia_h263_1996_packetize(pjmedia_h263_packetizer *pktz,
 	
 	//printf("------------------%s: Inside pjmedia_h263_1996_packetize---------------, %d\n", THIS_FILE, (int)(end-p));
 
+    // copy the bits into a buffer in the packetizer for manipulation
 	if(*pos == 0) {
 		if(bits_len < pktz->max_encoded_size) {
 	        memcpy(pktz->packet, bits, bits_len);
         }
         else {
+	        // align the buffer on a 64 byte boundary
 			pktz->max_encoded_size = bits_len;
 			pktz->pktOrig = (unsigned *)realloc(pktz->pktOrig, pktz->max_encoded_size+64+4);
 			unsigned  *r = (unsigned *)(((unsigned)(pktz->pktOrig) + 64) & (~63));
@@ -423,21 +425,36 @@ PJ_DEF(pj_status_t) pjmedia_h263_1996_packetize(pjmedia_h263_packetizer *pktz,
 			memcpy(pktz->packet, bits, bits_len);
         }
 	}
+	// Increment as per the current position in the buffer
+	// data points to the current position where processing should start.
 	const unsigned char * data = pktz->packet + *pos;
     {
+	    // get_gbsc_bytealigned returns the next GBSC byte position
+	    // len = Minimum of MTU and buffer length
 	    unsigned len = get_gbsc_bytealigned((pj_uint8_t *)data, 
 	                   (pj_uint8_t *)PJ_MIN(((unsigned)(data))+pktz->cfg.mtu,((unsigned)(pktz->packet))+bits_len));
+	    // iphone sends only mode A pkts
+	    // 4 byte header
 	    unsigned char header[4];
 		memset(header, 0, 4);
 		int iFrame = ((data[4] & 2) == 0);
+	//	0                   1                   2                   3
+	//    0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+	//   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+	//   |F|P|SBIT |EBIT | SRC |I|U|S|A|R      |DBQ| TRB |    TR         |
+	//   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+	
 #ifndef MS_LYNC
+        // For iPhone video size is 352x288 (CIF) or 176x144 (QCIF)
         // assume video size is CIF or QCIF
+        // set the 3 SRC bit as per the spec
         if (pktz->width == 352 && pktz->height == 288) 
             header[1] = 0x60;
         else header[1] = 0x40;
 		if(!iFrame) header[1] |= 0x10;
 #else
         // Assume CIF only for MS-Lync
+        // set the first 2 bytes as per the spec
         if(!iFrame) {
 			header[0] = 0x05;
 			header[1] = 0x60;
@@ -474,7 +491,12 @@ PJ_DEF(pj_status_t) pjmedia_h263_1996_unpacketize (pjmedia_h263_packetizer *pktz
 	int iFrame=0;
     const pj_uint8_t *p = payload;
     pj_uint8_t *q;
-	
+#ifdef MS_LYNC
+	unsigned sbit=0;
+	unsigned ebit=0;
+	static unsigned char cleanup_byte = 0;
+	static unsigned last_e_bit = 0;
+#endif	
     q = bits + *pos;
 
    // printf("-------------%s: Inside pjmedia_h263_1996_unpacketize-------------\n", THIS_FILE);
@@ -492,9 +514,16 @@ PJ_DEF(pj_status_t) pjmedia_h263_1996_unpacketize (pjmedia_h263_packetizer *pktz
     }
 
     /* Reset last sync point for every new picture bitstream */
-    if (*pos == 0)
+    if (*pos == 0) {
 	    pktz->unpack_last_sync_pos = 0;
+#ifdef MS_LYNC
+		cleanup_byte = 0;
+#endif
+	}
 #ifndef MS_LYNC
+    // We can receive mode A or B or C pkts.
+    // Decode all.
+    // Tested with XLite and MS-Lync
 	if ((p[0] & 0x80) == 0) {
 		iFrame = ((p[1] & 0x10) == 0);
 	    hdrLen = 4;
@@ -511,22 +540,26 @@ PJ_DEF(pj_status_t) pjmedia_h263_1996_unpacketize (pjmedia_h263_packetizer *pktz
 	    mode = 'C';
 	}
 #else
+    // Example given in MS-Lync spec
     if ((p[0] == 0x05) && (p[1] == 0x60) && (p[2] == 0) && (p[3] == 0)) {
 		iFrame = 0;
 	    hdrLen = 4;
 	    mode = 'A';
 	} 
+	// Example given in MS-Lync spec
 	else if ((p[0] == 0x02) && (p[1] == 0x70) && (p[2] == 0) && (p[3] == 0)) {
 		iFrame = 1;
 	    hdrLen = 4;
 	    mode = 'A';
 	} 
+	// Example given in MS-Lync spec
 	else if ((p[0] == 0xbd) && (p[1] == 0x67) && (p[2] == 0) && (p[3] == 0x14)
 	         && (p[4] == 0) && (p[5] == 0) && (p[6] == 0) && (p[7] == 0)) {
 		iFrame = 0;
 		hdrLen = 8;
 		mode = 'B';
 	}
+	// Example given in MS-Lync spec
 	else if ((p[0] == 0xa1) && (p[1] == 0x67) && (p[2] == 0) && (p[3] == 0x18)
 	         && (p[4] == 0x8f) && (p[5] == 0) && (p[6] == 0x80) && (p[7] == 0)) {
 		iFrame = 1;
@@ -534,9 +567,32 @@ PJ_DEF(pj_status_t) pjmedia_h263_1996_unpacketize (pjmedia_h263_packetizer *pktz
 		mode = 'B';
 	}
 	else {
+		// defaults to this posiion.
+		// MS-LYnc usually sends mode A with sbit and ebit.
+		/*      MODE A
+		                        0                   1                   2                   3
+		                        0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+		                        +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+		                        |F|P|SBIT |EBIT | SRC |I|U|S|A|R      |DBQ| TRB |    TR         |
+		                        +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+		                */
 	    iFrame = 0;
-	    hdrLen = 12;
-	    mode = 'C';
+		//hdrLen = 0;
+	    //if(*pos == 0)
+		unsigned modeBit = p[0] & 0x80;
+		if(modeBit == 0) {
+	        hdrLen = 4;
+	        mode = 'A';
+        }
+        else {
+	        hdrLen = 8;
+	        mode = 'B';
+        }
+		sbit = (p[0] & 0x38) >> 3;
+		ebit = p[0] & 0x07;
+		if(ebit) {
+			
+		}
 	}
 #endif
 	/* H263-1996 payload header size is more than hdrLen */
@@ -552,8 +608,30 @@ PJ_DEF(pj_status_t) pjmedia_h263_1996_unpacketize (pjmedia_h263_packetizer *pktz
 
     /* Get bitstream length */
 	p += hdrLen;
+#ifdef MS_LYNC
+    // if the sbit is set, and sbit + ebit size is 8, set the cleanup byte.
+    // ebit is taken from the previous packet
+	if(sbit) {
+		unsigned char start_byte = *p;
+		unsigned char temp = (start_byte & (0xff >> sbit));
+		unsigned cleanup = sbit + last_e_bit;
+		if(cleanup == 8) {
+		    temp |= cleanup_byte;
+		    *q = temp;
+		    p++; q++;
+			last_e_bit = 0;
+	    }
+	}
+#endif
     if (payload_len > (pj_size_t)(p - payload)) {
 	    payload_len -= (p - payload);
+#ifdef MS_LYNC
+       // if ebit is set decrement the payload len as the last byte is the cleanup byte
+		if(ebit) {
+			//cleanup_byte = 
+			payload_len--;
+		}
+#endif
     } else {
 	    /* Invalid bitstream, discard this payload */
 	    pktz->unpack_prev_lost = PJ_TRUE;
@@ -570,12 +648,17 @@ PJ_DEF(pj_status_t) pjmedia_h263_1996_unpacketize (pjmedia_h263_packetizer *pktz
 	/* Write the payload to the bitstream */
     pj_memcpy(q, p, payload_len);
     q += payload_len;
-
+#ifdef MS_LYNC
+		if(ebit) {
+			cleanup_byte = (p[payload_len] & (0xff << ebit));
+			last_e_bit = ebit;
+		}
+#endif
     /* Update the bitstream writing offset */
     *pos = q - bits;
 
-    //printf("Unpack: bits: 0x%02x, p: 0x%02x, payload_len: %d, hdrLen: %d, pos: %d, bits_len: %d, iFrame:%d\n", 
-	//    bits, p, payload_len, hdrLen, *pos, bits_size, iFrame);
+    //printf("Unpack: bits: 0x%02x, p: 0x%02x, payload_len: %d, hdrLen: %d, pos: %d, bits_len: %d, iFrame:%d,s:%d, e: %d\n", 
+	//    bits, p, payload_len, hdrLen, *pos, bits_size, iFrame, sbit, ebit);
 	
     pktz->unpack_prev_lost = PJ_FALSE;
 	

@@ -75,6 +75,8 @@ typedef struct pjmedia_h263_packetizer_cfg
 
 } pjmedia_h263_packetizer_cfg;
 
+// move the packetizer into the header file
+// create a field to copy the packet buffer for manipulation
 struct pjmedia_h263_packetizer {
     /* Current settings */
     pjmedia_h263_packetizer_cfg cfg;

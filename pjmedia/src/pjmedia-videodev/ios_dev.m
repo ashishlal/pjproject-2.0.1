@@ -27,6 +27,7 @@ j * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import <vImage_Types.h>
 
 #define THIS_FILE		"ios_dev.m"
 #define DEFAULT_CLOCK_RATE	90000
@@ -67,7 +68,9 @@ struct ios_factory
 {
 @public
     struct ios_stream *stream;
+	
 }
+- (UIImage *) imageFromSampleBuffer:(CMSampleBufferRef) sampleBuffer;
 @end
 
 /* Video stream. */
@@ -329,7 +332,104 @@ static pj_status_t ios_factory_default_param(pj_pool_t *pool,
 }
 
 #ifndef PJ_CONFIG_IPHONE_SIMULATOR
+static inline size_t at (size_t x, size_t y, size_t width)
+{
+    return y*width + x;
+}
+
+static inline void rotate_90_degrees_clockwise (
+    const pj_uint32_t * in,
+    size_t in_width,
+    size_t in_height,
+    pj_uint32_t * out)
+{
+	size_t x=0, y=0;
+    for (x = 0; x < in_width; ++x) {
+        for (y = 0; y < in_height; ++y)
+            out [at (y, in_width-x, in_height)]
+               = in [at (x, y, in_width)];
+    }
+}
+
+static inline void transpose(pj_uint32_t *src, pj_uint32_t cols, pj_uint32_t rows,
+                             pj_uint32_t *dst)
+{
+  int i, j;
+  pj_uint32_t *col, *pix;
+    if(!src) return;
+
+  pix = src;
+  for (i = 0; i < rows ; i++)
+  {
+    col = dst + i;
+    for (j = cols; j ; --j)
+    {
+		pj_uint32_t temp = ((*pix & 0xff000000) >> 24) | ((*pix & 0xff0000) >> 8) | ((*pix & 0xff00) << 8) | ((*pix & 0xff) << 24);
+		*col = temp;
+		pix++;
+		col += rows;
+    }
+  }
+}
+
+static inline void transpose_flip(pj_uint32_t *src, pj_uint32_t cols, pj_uint32_t rows,
+                                  pj_uint32_t *dst)
+{
+  int i, j;
+  pj_uint32_t *col, *pix;
+    if(!src) return;
+
+  pix = src;
+  for (i = rows - 1; i != 0 ; i--)
+  {
+    col = dst + i;
+    for (j = cols; j ; --j)
+    {
+      //*col = *pix++;
+      	pj_uint32_t temp = ((*pix & 0xff000000) >> 24) | ((*pix & 0xff0000) >> 8) | ((*pix & 0xff00) << 8) | ((*pix & 0xff) << 24);
+		*col = temp;
+		pix++;
+      col += rows;
+    }
+  }
+}
+
 @implementation VOutDelegate
+
+#if 0
+- (unsigned char*) rotateBuffer: (CMSampleBufferRef) sampleBuffer
+{
+ CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
+ CVPixelBufferLockBaseAddress(imageBuffer,0);
+
+ size_t bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer);
+ size_t width = CVPixelBufferGetWidth(imageBuffer);
+ size_t height = CVPixelBufferGetHeight(imageBuffer);
+ size_t currSize = bytesPerRow*height*sizeof(unsigned char); 
+ size_t bytesPerRowOut = 4*height*sizeof(unsigned char); 
+
+ void *srcBuff = CVPixelBufferGetBaseAddress(imageBuffer);
+
+ /*
+  * rotationConstant:   0 -- rotate 0 degrees (simply copy the data from src to dest)
+  *             1 -- rotate 90 degrees counterclockwise
+  *             2 -- rotate 180 degress
+  *             3 -- rotate 270 degrees counterclockwise
+  */
+ uint8_t rotationConstant = 1;
+
+ unsigned char *outBuff = (unsigned char*)malloc(currSize);  
+
+ vImage_Buffer ibuff = { srcBuff, height, width, bytesPerRow};
+ vImage_Buffer ubuff = { outBuff, width, height, bytesPerRowOut};
+
+ vImage_Error err= vImageRotate90_ARGB8888 (&ibuff, &ubuff, NULL, rotationConstant, NULL,0);
+ if (err != kvImageNoError) NSLog(@"%ld", err);
+
+ return outBuff;
+}
+#endif
+
 - (void)update_image
 {
     // Hieu add to register thread
@@ -396,49 +496,60 @@ static pj_status_t ios_factory_default_param(pj_pool_t *pool,
     [stream->imgView setImage:image];
 }
 
+static inline double radians (double degrees) {return degrees * M_PI/180;}
+UIImage* rotate(UIImage* src, UIImageOrientation orientation)
+{
+    UIGraphicsBeginImageContext(src.size);
+
+    CGContextRef context = UIGraphicsGetCurrentContext();
+
+    if (orientation == UIImageOrientationRight) {
+        CGContextRotateCTM (context, radians(90));
+    } else if (orientation == UIImageOrientationLeft) {
+        CGContextRotateCTM (context, radians(-90));
+    } else if (orientation == UIImageOrientationDown) {
+        // NOTHING
+    } else if (orientation == UIImageOrientationUp) {
+        CGContextRotateCTM (context, radians(90));
+    }
+
+    [src drawAtPoint:CGPointMake(0, 0)];
+
+    return UIGraphicsGetImageFromCurrentImageContext();
+}
 - (UIImage *) imageFromSampleBuffer:(CMSampleBufferRef) sampleBuffer
 {
-    
+    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
     CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
     // Lock the base address of the pixel buffer.
     CVPixelBufferLockBaseAddress(imageBuffer,0);
     
-    // Get the number of bytes per row for the pixel buffer.
-    size_t bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer);
-    // Get the pixel buffer width and height.
-    size_t width = CVPixelBufferGetWidth(imageBuffer);
-    size_t height = CVPixelBufferGetHeight(imageBuffer);
-    
-    // Create a device-dependent RGB color space.
-    static CGColorSpaceRef colorSpace = NULL;
-    if (colorSpace == NULL) {
-        colorSpace = CGColorSpaceCreateDeviceRGB();
-        if (colorSpace == NULL) {
-            // Handle the error appropriately.
-            return nil;
-        }
-    }
-    
-    // Get the base address of the pixel buffer.
-    uint8_t *baseAddress = malloc( bytesPerRow * height );
-    memcpy( baseAddress, CVPixelBufferGetBaseAddress(imageBuffer), bytesPerRow * height );
-    
-    // Get the data size for contiguous planes of the pixel buffer.
-    size_t bufferSize = CVPixelBufferGetDataSize(imageBuffer);
-    
-    // Create a Quartz direct-access data provider that uses data we supply.
-    CGDataProviderRef dataProvider = CGDataProviderCreateWithData(NULL, baseAddress, bufferSize, NULL);
-    // Create a bitmap image from data supplied by the data provider.
-    CGImageRef cgImage = CGImageCreate(width, height, 8, 32, bytesPerRow,
-                                       colorSpace, kCGImageAlphaNoneSkipFirst | kCGBitmapByteOrder32Little, dataProvider, NULL, true, kCGRenderingIntentDefault);
-    
-    CGDataProviderRelease(dataProvider);
-    
-    // Create and return an image object to represent the Quartz image.
-    UIImage *image = [UIImage imageWithCGImage:cgImage];
-    CGImageRelease(cgImage);
-    free(baseAddress);
-    CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
+    /*Get information about the image*/
+	    uint8_t *baseAddress = (uint8_t *)CVPixelBufferGetBaseAddress(imageBuffer); 
+	    size_t bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer); 
+	    size_t width = CVPixelBufferGetWidth(imageBuffer); 
+	    size_t height = CVPixelBufferGetHeight(imageBuffer);  
+
+	    /*Create a CGImageRef from the CVImageBufferRef*/
+	    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB(); 
+	    CGContextRef newContext = CGBitmapContextCreate(baseAddress, width, height, 8, bytesPerRow, colorSpace, kCGBitmapByteOrder32Little | kCGImageAlphaPremultipliedFirst);
+	    CGImageRef newImage = CGBitmapContextCreateImage(newContext); 
+
+	    /*We release some components*/
+	    CGContextRelease(newContext); 
+	    CGColorSpaceRelease(colorSpace);
+
+	    /*We display the result on the image view (We need to change the orientation of the image so that the video is displayed correctly).
+	     Same thing as for the CALayer we are not in the main thread so ...*/
+	    UIImage *image= [UIImage imageWithCGImage:newImage scale:1.0 orientation:UIImageOrientationUp];
+
+	    /*We relase the CGImageRef*/
+	    CGImageRelease(newImage);
+
+	    /*We unlock the  image buffer*/
+	    CVPixelBufferUnlockBaseAddress(imageBuffer,0);
+
+	    [pool drain];
     
     return image;
 }
@@ -453,29 +564,60 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     
     if (!sampleBuffer)
         return;
-    
-    /* Get a CMSampleBuffer's Core Video image buffer for the media data */
+#if 1
+    imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
+    frame.type = PJMEDIA_FRAME_TYPE_VIDEO;
+	printf("Here===========\n");
+    /* Lock the base address of the pixel buffer */
+    CVPixelBufferLockBaseAddress(imageBuffer, 0);
+	frame.buf = stream->buf;
+	size_t bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer);
+	    size_t width = CVPixelBufferGetWidth(imageBuffer);
+	    size_t height = CVPixelBufferGetHeight(imageBuffer);
+
+	    void *src_buff = CVPixelBufferGetBaseAddress(imageBuffer);
+
+	    NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
+	                             [NSNumber numberWithBool:YES], kCVPixelBufferCGImageCompatibilityKey,
+	                             [NSNumber numberWithBool:YES], kCVPixelBufferCGBitmapContextCompatibilityKey,
+	                             nil];
+
+	    CVPixelBufferRef pxbuffer = NULL;
+	    //CVReturn status = CVPixelBufferPoolCreatePixelBuffer (NULL, _pixelWriter.pixelBufferPool, &pxbuffer);
+	    CVReturn status = CVPixelBufferCreate(kCFAllocatorDefault, width,
+	                                          height, kCVPixelFormatType_32BGRA, (CFDictionaryRef) options, 
+	                                          &pxbuffer);
+
+	    NSParameterAssert(status == kCVReturnSuccess && pxbuffer != NULL);
+
+	    CVPixelBufferLockBaseAddress(pxbuffer, 0);
+	    void *dest_buff = CVPixelBufferGetBaseAddress(pxbuffer);
+	    NSParameterAssert(dest_buff != NULL);
+	    int *src = (int*) src_buff ;
+		    int *dest= (int*) dest_buff ;
+		    size_t count = (bytesPerRow * height) / 4 ;
+		    while (count--) {
+		        *dest++ = *src++;
+		    }
+	    rotate_90_degrees_clockwise((pj_uint32_t *)CVPixelBufferGetBaseAddress(pxbuffer),
+	            CVPixelBufferGetWidth(imageBuffer),
+	            CVPixelBufferGetHeight(imageBuffer),
+	            (pj_uint32_t *)frame.buf);
+	CVPixelBufferUnlockBaseAddress(pxbuffer, 0);
+	frame.size = stream->frame_size;
+    frame.bit_info = 0;
+    frame.timestamp.u64 = stream->frame_ts.u64;
+#else
     imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
     
     /* Lock the base address of the pixel buffer */
     CVPixelBufferLockBaseAddress(imageBuffer, 0);
-    
     frame.type = PJMEDIA_FRAME_TYPE_VIDEO;
     frame.buf = CVPixelBufferGetBaseAddress(imageBuffer);
-#if 0
-    size_t bytesPerRow      = CVPixelBufferGetBytesPerRow(imageBuffer); 
-    size_t width            = CVPixelBufferGetWidth(imageBuffer); 
-    size_t height           = CVPixelBufferGetHeight(imageBuffer);
-    stream->size.w = width;
-    stream->size.h = height;
-    stream->bytes_per_row = bytesPerRow;
-    stream->frame_size = stream->bytes_per_row * stream->size.h;
-    frame.size = stream->frame_size;
-#else
-    frame.size = stream->frame_size;
-#endif
+	frame.size = stream->frame_size;
     frame.bit_info = 0;
     frame.timestamp.u64 = stream->frame_ts.u64;
+#endif
     
     if (stream->vid_cb.capture_cb) {
         //NSLog(@"[captureOutput]-stream->vid_cb.capture_cb");
@@ -485,10 +627,11 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
         (*stream->vid_cb.capture_cb)(&stream->base, stream->user_data, &frame);
     }
     
-    stream->frame_ts.u64 += stream->ts_inc=
+	stream->frame_ts.u64 += stream->ts_inc;
     
     /* Unlock the pixel buffer */
     CVPixelBufferUnlockBaseAddress(imageBuffer,0);
+    
 }
 @end
 
@@ -554,6 +697,9 @@ static pj_status_t ios_factory_create_stream(
     strm->bytes_per_row = strm->size.w * strm->bpp / 8;
     strm->frame_size = strm->bytes_per_row * strm->size.h;
     strm->ts_inc = PJMEDIA_SPF2(param->clock_rate, &vfd->fps, 1);
+    /* Init buffer to rotate the acquired frame */
+    // FIXME init in captureOuput: callback ?
+    strm->buf = pj_pool_zalloc(strm->pool, strm->frame_size);
     
     if (param->dir & PJMEDIA_DIR_CAPTURE) {
         /* Create capture stream here */
@@ -635,6 +781,14 @@ static pj_status_t ios_factory_create_stream(
         strm->video_output.minFrameDuration = CMTimeMake(vfd->fps.denum,
                                                          vfd->fps.num);
         
+        
+        //if ([stream->video_output isVideoOrientationSupported])
+        //{
+        //    AVCaptureVideoOrientation orientation = AVCaptureVideoOrientationPortrait;
+        //    [strm->video_output setVideoOrientation:orientation];
+        //}
+        
+
         // Hieu add
 #if 0
 #if __IPHONE_OS_VERSION_MIN_REQUIRED >= 50000

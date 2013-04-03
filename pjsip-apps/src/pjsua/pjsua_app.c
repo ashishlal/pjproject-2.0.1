@@ -4742,7 +4742,7 @@ void console_app_main(const pj_str_t *uri_to_call)
             //char* uname = "ashishlalwork3";
             //char* passwd = "e2wdxxxeyk";
             char* id = "sip:hnguyen1.fisil@nextuc.net";
-            char* registrar = "sip:sip.nextuc.net:5061;transport=tcp";
+            char* registrar = "sip:sip.nextuc.net:5061;transport=tls";
             char* realm = "nextuc.net";
             char* uname = "hnguyen1.fisil";
             char* passwd = "bigboss";

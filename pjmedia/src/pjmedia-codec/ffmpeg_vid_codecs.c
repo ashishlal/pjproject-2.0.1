@@ -291,6 +291,7 @@ static ffmpeg_codec_desc codec_desc[] =
 	      {{" packetization-mode",19},  {"1",1}}, } },
 	},
 #endif
+//set the H264 codec setting for iPhone.
 #if PJMEDIA_HAS_FFMPEG_CODEC_H264
     {
 	{PJMEDIA_FORMAT_H264, PJMEDIA_RTP_PT_H264, {"H264",4},
@@ -300,7 +301,7 @@ static ffmpeg_codec_desc codec_desc[] =
 	&h264_packetize, &h264_unpacketize, &h264_preopen, &h264_postopen,
 	&pjmedia_vid_codec_h264_match_sdp,
 	/* Leading space for better compatibility (strange indeed!) */
-	{2, { {{"profile-level-id",16},    {"42000d",6}}, 
+	{2, { {{"profile-level-id",16},    {"42e00d",6}}, 
 	      {{" packetization-mode",19},  {"1",1}}, } },
     },
 #endif
